@@ -19,7 +19,7 @@ import numpy as np
 import helper_functions
 import warnings
 from matplotlib.patches import FancyArrowPatch
-import multiprocess 
+
 def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
     # Get XYZ positions from the DataFrame columns
     x1, y1, z1 = df1['X'], df1['Y'], df1['Z']

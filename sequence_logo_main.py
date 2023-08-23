@@ -109,6 +109,7 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
                     graphs.append(line_trace)
 
     # Create the figure and add the traces
+    fig.update_layout(showlegend=False)
     fig = go.Figure(data=graphs, layout=layout)
     fig.update_layout(updatemenus=updatemenus)
     # Show the interactive plot

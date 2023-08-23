@@ -44,6 +44,7 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
         marker=dict(
             size=9,
             color=color_shapely,
+            opacity=0,
             line=dict(color='black', width=2)
         ),
         text=df1['AA'],  
@@ -59,6 +60,7 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
         marker=dict(
             size=size2,
             color=color_df2,
+            opacity=0,
             line=dict(color='white', width=5)
         ),
         text = names,
@@ -92,18 +94,19 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
     for bond in ligand_bonds:
         for pair in ligand_bonds[bond]:
             comb = [str(bond), str(pair)]
-            if [str(bond), str(pair)] not in bonds_made or [ str(pair),str(bond)] not in bonds_made:
+            if comb not in bonds_made or comb not in bonds_made:
                 bonds_made.append(comb)
                 atom_coords = df2[df2['atom_serial_number'].isin(comb)]
                 if len(atom_coords) >= 2:
-                    point1 = atom_coords.loc[atom_coords['atom_serial_number'] == comb[0], ['X', 'Y', 'Z']].values[0]
-                    point2 = atom_coords.loc[atom_coords['atom_serial_number'] == comb[1], ['X', 'Y', 'Z']].values[0]
+                    point1 = atom_coords[['X', 'Y', 'Z']].values[0]
+                    point2 = atom_coords[['X', 'Y', 'Z']].values[1]
                     line_trace = go.Scatter3d(
                         x=[point1[0], point2[0]],
                         y=[point1[1], point2[1]],
                         z=[point1[2], point2[2]],
                         mode='lines',
-                        line=dict(color='black', width=8)
+                        line=dict(color='black', width=8),
+                        hoverinfo='skip'
                     )
                     graphs.append(line_trace)
 
@@ -211,17 +214,6 @@ def calculate_bits(list_of_AA, sequence_list):
     return heights
 
 
-def create_sequence_logo(df, target):
-    # Create a Logo object
-
-    logo = logomaker.Logo(df,
-                          color_scheme='NajafabadiEtAl2017')
-    logo.ax.set_ylabel('Frequency')
-    positions = [i for i in range(len(target))]
-    logo.ax.set_xticklabels(target)
-    logo.ax.set_xticks(positions)
-    logo.ax.set_title(f'Residues Indexes: {"-".join(map(str,target))} ')
-    return logo
 
 def create_sequence_logo_list(df_list):
     # Calculate the number of columns based on the number of logos
@@ -246,7 +238,7 @@ def create_sequence_logo_list(df_list):
         logo.ax.set_xticklabels(df[1])
         logo.ax.set_xticks(positions)
 
-        ax.set_title(f'Residues Indexes: {"-".join(map(str, df[1]))}')
+        ax.set_title("Target ligand residue(s)")
 
     # Hide any unused subplots if there are fewer logos than the number of axes
     for ax in axes_flat[num_logos:]:
@@ -296,6 +288,7 @@ def plot(list_of_paths, target_chain, binder, is_ligand,to_show, distance):
     for file in list_of_paths:        
         binder_chain_cordinates += helper_functions.extract_info_pdb(file, binder)
 
+            
     data_frame_binders = pd.DataFrame(binder_chain_cordinates)
     if to_show == "all":
         nearest_neighbors_df = find_nearest_points(data_frame_target, data_frame_binders, distance,is_ligand)
@@ -333,12 +326,14 @@ def sequence_logos(data_frame_target, data_frame_binder, sequence_logo_targets, 
         if near_neighbor_current.empty:
             continue
         AA_sq = transform_to_1_letter_code(near_neighbor_current['AA'].values.tolist())
-        residues.append(f' {target}, n = {len(AA_sq)} ')
+        residues.append(f' {target} \n n = {len(AA_sq)} ')
         bits = calculate_bits(list_of_AA, AA_sq)
         rows_bits.append(bits)
         df = pd.DataFrame(columns=model.columns)
         df = pd.concat([df, pd.DataFrame([bits], columns=df.columns)], ignore_index=True)
         plots.append([df, [target]])
+        
+     
     if not len(residues) == 1:
         df = pd.DataFrame(columns=model.columns)
         df = pd.concat([df, pd.DataFrame(rows_bits, columns=df.columns)], ignore_index=True)

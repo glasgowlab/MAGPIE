@@ -105,7 +105,8 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
                         y=[point1[1], point2[1]],
                         z=[point1[2], point2[2]],
                         mode='lines',
-                        line=dict(color='black', width=8)
+                        line=dict(color='black', width=8),
+                        hoverinfo='skip'
                     )
                     graphs.append(line_trace)
 
@@ -213,17 +214,6 @@ def calculate_bits(list_of_AA, sequence_list):
     return heights
 
 
-def create_sequence_logo(df, target):
-    # Create a Logo object
-
-    logo = logomaker.Logo(df,
-                          color_scheme='NajafabadiEtAl2017')
-    logo.ax.set_ylabel('Frequency')
-    positions = [i for i in range(len(target))]
-    logo.ax.set_xticklabels(target)
-    logo.ax.set_xticks(positions)
-    logo.ax.set_title(f'Residues Indexes: {"-".join(map(str,target))} ')
-    return logo
 
 def create_sequence_logo_list(df_list):
     # Calculate the number of columns based on the number of logos
@@ -248,7 +238,7 @@ def create_sequence_logo_list(df_list):
         logo.ax.set_xticklabels(df[1])
         logo.ax.set_xticks(positions)
 
-        ax.set_title(f'Residues Indexes: {"-".join(map(str, df[1]))}')
+        ax.set_title("Target ligand residue(s)")
 
     # Hide any unused subplots if there are fewer logos than the number of axes
     for ax in axes_flat[num_logos:]:
@@ -284,7 +274,7 @@ def plot_sequence_logo(df, filename=None):
         plt.show()
 
 
-def plot(list_of_paths, target_chain, binder, is_ligand,to_show, distance, threads_num):
+def plot(list_of_paths, target_chain, binder, is_ligand,to_show, distance):
     
     if is_ligand:
         target_chain_cordinates = helper_functions.extract_info_ligand(list_of_paths[0], target_chain)
@@ -295,25 +285,9 @@ def plot(list_of_paths, target_chain, binder, is_ligand,to_show, distance, threa
     data_frame_target = pd.DataFrame(target_chain_cordinates)
     binder_chain_cordinates = []
     
-    if threads_num == 1:
-        for file in list_of_paths:        
-            binder_chain_cordinates += helper_functions.extract_info_pdb(file, binder)
-    else:
-        chunks = helper_functions.make_chunks(list_of_paths,threads_num)
-        result_queue = multiprocess.Queue()  
-        threads = []
-        for thread_num in range(threads_num):
-            current_thread = multiprocess.Process(target=helper_functions.extract_list_pdb,args=(
-            chunks[thread_num], 
-            binder,
-            result_queue))
-            threads.append(current_thread)
-            current_thread.start()
-        for t in threads:
-            t.join()        
-        for _ in threads:
-            thread_num, result = result_queue.get()
-            binder_chain_cordinates += result 
+    for file in list_of_paths:        
+        binder_chain_cordinates += helper_functions.extract_info_pdb(file, binder)
+
             
     data_frame_binders = pd.DataFrame(binder_chain_cordinates)
     if to_show == "all":
@@ -352,12 +326,14 @@ def sequence_logos(data_frame_target, data_frame_binder, sequence_logo_targets, 
         if near_neighbor_current.empty:
             continue
         AA_sq = transform_to_1_letter_code(near_neighbor_current['AA'].values.tolist())
-        residues.append(f' {target}, n = {len(AA_sq)} ')
+        residues.append(f' {target} \n n = {len(AA_sq)} ')
         bits = calculate_bits(list_of_AA, AA_sq)
         rows_bits.append(bits)
         df = pd.DataFrame(columns=model.columns)
         df = pd.concat([df, pd.DataFrame([bits], columns=df.columns)], ignore_index=True)
         plots.append([df, [target]])
+        
+     
     if not len(residues) == 1:
         df = pd.DataFrame(columns=model.columns)
         df = pd.concat([df, pd.DataFrame(rows_bits, columns=df.columns)], ignore_index=True)

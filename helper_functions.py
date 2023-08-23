@@ -151,7 +151,10 @@ def extract_connections(pdb_file : str) -> list:
         for line in file:
             if "CONECT" in line:
                 positions = []
-                line_list = line.split("  ")
+                if len(line.split("  ")) != 1:
+                  line_list = line.split("  ")
+                else:
+                  line_list = line.split(" ")
                 for i in range(len(line_list)):
                     if i == 0 or i == 1:
                         continue

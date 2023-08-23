@@ -237,7 +237,7 @@ def create_sequence_logo_list(df_list):
         logo.ax.set_xticklabels(df[1])
         logo.ax.set_xticks(positions)
 
-        ax.set_title("Target ligand residue(s)")
+        ax.set_title("AA interactions with target ligand residue(s)")
 
     # Hide any unused subplots if there are fewer logos than the number of axes
     for ax in axes_flat[num_logos:]:

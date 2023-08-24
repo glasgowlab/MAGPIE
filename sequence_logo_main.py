@@ -44,11 +44,13 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
         marker=dict(
             size=9,
             color=color_shapely,
+            opacity=0,
             line=dict(color='black', width=2)
         ),
         text=df1['AA'],  
         hoverinfo='text',
-        hoverlabel = dict(bgcolor='yellow', bordercolor='black')
+        hoverlabel = dict(bgcolor='yellow', bordercolor='black'),
+        name = "Binding Residues"
     )
 
     scatter_trace2 = go.Scatter3d(
@@ -59,11 +61,14 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
         marker=dict(
             size=size2,
             color=color_df2,
+            opacity=0,
             line=dict(color='white', width=5)
         ),
         text = names,
         hoverinfo='text',
-        hoverlabel=dict(bgcolor='gray', bordercolor='white')
+        hoverlabel=dict(bgcolor='gray', bordercolor='white'),
+        name = "Target"
+        
     )
     buttons = []
     buttons.append(dict(label='Shapely Colours', method='restyle',  args=[{'marker.color': [color_shapely]}, [0]]))
@@ -104,17 +109,18 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
                         z=[point1[2], point2[2]],
                         mode='lines',
                         line=dict(color='black', width=8),
-                        hoverinfo='skip'
+                        hoverinfo='skip',
+                        showlegend = False
                     )
+                    
                     graphs.append(line_trace)
 
     # Create the figure and add the traces
     fig = go.Figure(data=graphs, layout=layout)
     fig.update_layout(updatemenus=updatemenus)
-    fig.update_layout(showlegend=False)
-
     # Show the interactive plot
     iplot(fig)
+
 
 
 def find_nearest_points(target, binders, radius, is_ligand

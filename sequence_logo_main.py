@@ -49,7 +49,8 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
         ),
         text=df1['AA'],  
         hoverinfo='text',
-        hoverlabel = dict(bgcolor='yellow', bordercolor='black')
+        hoverlabel = dict(bgcolor='yellow', bordercolor='black'),
+        name = "Binding Residues"
     )
 
     scatter_trace2 = go.Scatter3d(
@@ -65,7 +66,9 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
         ),
         text = names,
         hoverinfo='text',
-        hoverlabel=dict(bgcolor='gray', bordercolor='white')
+        hoverlabel=dict(bgcolor='gray', bordercolor='white'),
+        name = "Target"
+        
     )
     buttons = []
     buttons.append(dict(label='Shapely Colours', method='restyle',  args=[{'marker.color': [color_shapely]}, [0]]))
@@ -106,8 +109,10 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
                         z=[point1[2], point2[2]],
                         mode='lines',
                         line=dict(color='black', width=8),
-                        hoverinfo='skip'
+                        hoverinfo='skip',
+                        showlegend = False
                     )
+                    
                     graphs.append(line_trace)
 
     # Create the figure and add the traces

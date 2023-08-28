@@ -1,3 +1,4 @@
+
 from difflib import SequenceMatcher
 import argparse
 import os
@@ -58,12 +59,52 @@ def parse_pdb(input_pdb_path: str) -> list:
                 parsed_pdb.append(line)
     return parsed_pdb
 
+def parse_ligand_pdb(input_pdb_path: str) -> list:
+    parsed_pdb = []
+    with open(input_pdb_path, "r") as inputPDB:
+        for line in inputPDB:
+            if "HETATM" in line[0:6] or "TER" in line[0:6] or "END" in line[0:6] and not "#" in line:
+                parsed_pdb.append(line)
+    return parsed_pdb
+
 
 def arg_spliter(arg_str : str) -> list:
     if "," in arg_str:
         return arg_str.split(",")
     return [arg_str]
 
+
+def ligand_search(input_pdb_path: str, ligand_names : str = None, ligand_chains : str = None, order: str = "chains") -> list:
+    parsed = parse_ligand_pdb(input_pdb_path)
+    ligand_filtered = []
+
+    for line in parsed:
+        if "TER" in line[0:6] or "END" in line[0:6]:
+            ligand_filtered.append(line)
+            continue
+        chain = line[21]
+        if order == "chains" and ligand_chains:
+            if chain in ligand_chains:
+                if ligand_names:
+                    if line[17:20] in ligand_names:
+                        ligand_filtered.append(line)
+                else:
+                    ligand_filtered.append(line)
+        elif order == "chains" and ligand_names:
+            if line[17:20] in ligand_names:
+                ligand_filtered.append(line)
+        elif order == "name" and ligand_names:
+            if line[17:20] in ligand_names:
+                if ligand_chains:
+                    if chain in ligand_chains:
+                        ligand_filtered.append(line)
+                else:
+                    ligand_filtered.append(line)
+        elif order == "name" and ligand_chains:
+            if chain in ligand_chains:
+                ligand_filtered.append(line)
+    print(ligand_filtered)
+    return ligand_filtered
 
 def chain_search(chains : str, parsed_pdb : list = None,input_pdb_path: str = None ) -> list:
 
@@ -96,8 +137,9 @@ def seq_search(seq : str, parsed_pdb : list = None,input_pdb_path: str = None, s
 
     return pdb_seq_hits
 
-def seq_and_chain_search(input_pdb_path: str, binder_seq : str = None, antigen_seq : str = None, binder_chains : str = None, antigen_chains : str = None, order : str = "chain", seq_id : int = 95) -> dict:
-    pdb_hits = {"binder":[],"antigen":[]}
+def seq_and_chain_search(input_pdb_path: str, binder_seq : str = None, antigen_seq : str = None, binder_chains : str = None, antigen_chains : str = None, order : str = "chains", seq_id : int = 95, ligand_name : str = None, ligand_chains : str = None, search_ligand : str = "chains") -> dict:
+    pdb_hits = {"binder":[],"antigen":[],"ligand":[]}
+
     if (binder_seq and binder_chains):
         if order == "seq":
             pdb_binder_seq_hits = seq_search(binder_seq, None, input_pdb_path, seq_identity=seq_id)
@@ -126,20 +168,28 @@ def seq_and_chain_search(input_pdb_path: str, binder_seq : str = None, antigen_s
     elif antigen_chains:
 
         pdb_hits["antigen"] = chain_search(antigen_chains, None, input_pdb_path)
-    else:
+    elif not ligand_name and not ligand_chains:
         print("ERROR no chain or seq selected for antigen")
         exit(1)
 
+    if ligand_chains or ligand_name:
+
+        if ligand_chains:
+            ligand_chains = arg_spliter(ligand_chains)
+        if ligand_name:
+            ligand_name = arg_spliter(ligand_name)
+        print("SDFSDFS")
+        print(ligand_chains)
+        pdb_hits["ligand"] = ligand_search(input_pdb_path,ligand_name,ligand_chains,search_ligand)
+
 
     return pdb_hits
-
 
 
 def write_pdbs(pdb_name : str, pdb_hits: dict, output_path : str) -> None:
 
     out_atom_index = 0
     out_chain = 64
-
     with open(output_path+"/"+pdb_name, "w") as output_pdb:
         ter_used_last = False
         for key in pdb_hits:
@@ -147,11 +197,13 @@ def write_pdbs(pdb_name : str, pdb_hits: dict, output_path : str) -> None:
             out_res_index = 0
             last_res_index = 0
             last_chain = "5"
-            for line in pdb_hits[key]:
+            for x, line in enumerate(pdb_hits[key]):
                 if "TER" in line[0:6] and not ter_used_last:
                     ter_used_last = True
+                    if x == 0:
+                        continue
                     output_pdb.write(line)
-                if "ATOM" in line[0:6]:
+                if "ATOM" in line[0:6] or "HETATM" in line[0:6]:
                     ter_used_last = False
                     chain = line[21]
                     res_index = int(line[22:26].strip())
@@ -161,13 +213,13 @@ def write_pdbs(pdb_name : str, pdb_hits: dict, output_path : str) -> None:
                         last_chain = chain
 
                     out_atom_index += 1
-                    output_pdb.write("ATOM  " + ((5 - len(str(out_atom_index))) * " ") + str(out_atom_index) + line[11:21] + chr(out_chain) + ((4 - len(str(out_res_index))) * " ") + str(out_res_index) + line[26:])
+                    output_pdb.write(line[0:6] + ((5 - len(str(out_atom_index))) * " ") + str(out_atom_index) + line[11:21] + chr(out_chain) + ((4 - len(str(out_res_index))) * " ") + str(out_res_index) + line[26:])
 
 
-def main(input_pdb_path: str, output_path: str, binder_seq : str = None, antigen_seq : str = None, binder_chains : str = None, anitgen_chains : str = None, order : str = None, seq_identity: int = 95) -> None:
+def main(input_pdb_path: str, output_path: str, binder_seq : str = None, antigen_seq : str = None, binder_chains : str = None, anitgen_chains : str = None, order : str = None, seq_identity: int = 95, ligand_name : str = None, ligand_chains : str = None, search_ligand : str = "chains") -> None:
 
 
-    pdb_to_write = seq_and_chain_search(input_pdb_path,binder_seq,antigen_seq,binder_chains,anitgen_chains,order,seq_identity)
+    pdb_to_write = seq_and_chain_search(input_pdb_path,binder_seq,antigen_seq,binder_chains,anitgen_chains,order,seq_identity,ligand_name,ligand_chains,search_ligand)
     pdb_name = os.path.basename(input_pdb_path).replace(".pdb","_cleaned.pdb")
     write_pdbs(pdb_name,pdb_to_write,output_path)
 
@@ -176,9 +228,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-S", "--binder_seqs", type=str, help="the sequence of the binder used for identification", default=None)
     parser.add_argument("-s", "--antigen_seqs", type=str, help="the sequence of the antigen used for identification", default=None)
+    parser.add_argument("-L", "--ligand_3_names", type=str, help="the three letter code of the ligand", default=None)
     parser.add_argument("-C", "--binder_chains", type=str, help="the chains of the binder used for identification", default=None)
     parser.add_argument("-c", "--antigen_chains", type=str, help="the chains of the antigen used for identification", default=None)
-    parser.add_argument("-f", "--search_first", type=str, help="if using both chains and sequences search, what should be used to be filtered first?",default="chain",choices=["chains","sequences"])
+    parser.add_argument("-l", "--ligand_chains", type=str, help="the chain(s) the ligand is/are on", default=None)
+    parser.add_argument("-F", "--search_first_protein", type=str, help="if using both chains and sequences search, what should be used to be filtered first?",default="chains",choices=["chains","sequences"])
+    parser.add_argument("-f", "--search_first_ligand", type=str,help="if using both chains and name search for ligands, what should be used to be filtered first?", default="chains", choices=["chains", "name"])
     parser.add_argument("-d", "--seq_identity", type=int,help="if using both chains and sequences search, what should be used to be filtered first?",default=95)
     parser.add_argument("-i", "--input_path", type=str, help="path of the input pdb (file or directory)", required=True)
     parser.add_argument("-o", "--output_path", type=str, help="path of the output directory", required=True)
@@ -186,8 +241,8 @@ if __name__ == "__main__":
     if not args.binder_seqs and not args.binder_chains:
         print("You must enter a binder chain or sequence or both!")
         exit(1)
-    if not args.antigen_seqs and not args.antigen_chains:
-        print("You must enter an antigen chain or sequence or both!")
+    if not args.antigen_seqs and not args.antigen_chains and not args.ligand_3_names and not args.ligand_chains:
+        print("You must enter an antigen chain and/or sequence or ligand name and/or chain or both!")
         exit(1)
 
     if not os.path.exists(args.input_path):
@@ -200,15 +255,12 @@ if __name__ == "__main__":
 
     if os.path.isfile(args.input_path):
         if pathlib.Path(args.input_path).suffix == ".pdb":
-            main(args.input_path, args.output_path, args.binder_seqs, args.antigen_seqs, args.binder_chains,args.antigen_chains, args.search_first, args.seq_identity)
+            main(args.input_path, args.output_path, args.binder_seqs, args.antigen_seqs, args.binder_chains,args.antigen_chains, args.search_first_protein, args.seq_identity, args.ligand_3_names, args.ligand_chains, args.search_first_ligand)
         else:
             print("non .pdb file types are not supported!")
             exit(1)
     else:
         for file in os.listdir(args.input_path):
             if ".pdb" in file:
-                main(os.path.join(args.input_path,file), args.output_path, args.binder_seqs, args.antigen_seqs, args.binder_chains, args.antigen_chains, args.search_first, args.seq_identity)
-
-
-
+                main(os.path.join(args.input_path,file), args.output_path, args.binder_seqs, args.antigen_seqs, args.binder_chains, args.antigen_chains, args.search_first_protein, args.seq_identity, args.ligand_3_names, args.ligand_chains, args.search_first_ligand)
 

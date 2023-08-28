@@ -69,13 +69,13 @@ if __name__ == "__main__":
     argparser.add_argument("--target_chain", type=str, default="B",
                            help="Chain id to graph around, target chain")
     argparser.add_argument("--binder_chain", type=str, default="A", help="Chain id that binds to target chain.")
-    argparser.add_argument("--is_ligand", type=bool, default=False,
+    argparser.add_argument("--is_ligand",  type=str, default= "False",
                            help="Is the target chain a ligand? ")
     argparser.add_argument("--distance", type=int, default=8,
                            help="distance in A to graph around target chain")
     argparser.add_argument("--to_plot", type=str, default="",
                            help="Amino acids to generate MAGPIE graphs.")
-    argparser.add_argument("--combined_flag", type = bool, default=False,
+    argparser.add_argument("--combined_flag",   type=str, default= "False",
                            help="Flag to load ProteinMPNN weights trained on soluble proteins only.")
     argparser.add_argument("--threads", type=int, default=1,
                            help="How many threads")
@@ -96,6 +96,15 @@ if __name__ == "__main__":
 
     for t in threads:
         t.join()
+
+    if args.is_ligand == "True":
+        is_ligand = True
+    else:
+        is_ligand = False
+    if args.combined_flag == "True":
+        combined_flag = True
+    else:
+        combined_flag= False
     binder_df = merge_json_files_to_dataframe("temp/*.json")
     to_plot = args.to_plot
     if args.is_ligand:
@@ -103,4 +112,4 @@ if __name__ == "__main__":
     else:
         plot_list = [int(x) for x in to_plot.split(",")]
 
-    sequence_logo_main.sequence_logos(list_of_binders[0], args.target_chain, binder_df, plot_list,args.is_ligand,args.combined_flag,args.distance)
+    sequence_logo_main.sequence_logos(list_of_binders[0], args.target_chain, binder_df, plot_list,is_ligand,combined_flag,args.distance)

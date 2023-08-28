@@ -20,7 +20,8 @@ import helper_functions
 import warnings
 from matplotlib.patches import FancyArrowPatch
 
-def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
+
+def create_3d_graph(df1, df2, is_ligand, ligand_bonds={}):
     # Get XYZ positions from the DataFrame columns
     x1, y1, z1 = df1['X'], df1['Y'], df1['Z']
     x2, y2, z2 = df2['X'], df2['Y'], df2['Z']
@@ -28,7 +29,7 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
     color_polar = df1['polar'].values.tolist()
     if is_ligand:
         names = df2['atom_name'].values.tolist()
-        color_df2=  df2["color"].values.tolist()
+        color_df2 = df2["color"].values.tolist()
         size2 = 15
     else:
         names = df2['residue_index'].values.tolist()
@@ -46,10 +47,10 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
             color=color_shapely,
             line=dict(color='black', width=2)
         ),
-        text=df1['AA'],  
+        text=df1['AA'],
         hoverinfo='text',
-        hoverlabel = dict(bgcolor='yellow', bordercolor='black'),
-        name = "Binding Residues"
+        hoverlabel=dict(bgcolor='yellow', bordercolor='black'),
+        name="Binding Residues"
     )
 
     scatter_trace2 = go.Scatter3d(
@@ -62,14 +63,14 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
             color=color_df2,
             line=dict(color='white', width=5)
         ),
-        text = names,
+        text=names,
         hoverinfo='text',
         hoverlabel=dict(bgcolor='gray', bordercolor='white'),
-        name = "Target"
-        
+        name="Target"
+
     )
     buttons = []
-    buttons.append(dict(label='Shapely Colours', method='restyle',  args=[{'marker.color': [color_shapely]}, [0]]))
+    buttons.append(dict(label='Shapely Colours', method='restyle', args=[{'marker.color': [color_shapely]}, [0]]))
     buttons.append(dict(label='Amino Colours', method='restyle', args=[{'marker.color': [color_polar]}, [0]]))
     updatemenus = [
         dict(buttons=buttons, showactive=True),
@@ -88,8 +89,7 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
         ),
         title='MAGPIE'
     )
-    
-    
+
     bonds_made = []
     graphs = [scatter_trace1, scatter_trace2]
     for bond in ligand_bonds:
@@ -108,9 +108,9 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
                         mode='lines',
                         line=dict(color='black', width=8),
                         hoverinfo='skip',
-                        showlegend = False
+                        showlegend=False
                     )
-                    
+
                     graphs.append(line_trace)
 
     # Create the figure and add the traces
@@ -118,7 +118,6 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
     fig.update_layout(updatemenus=updatemenus)
     # Show the interactive plot
     iplot(fig)
-
 
 
 def find_nearest_points(target, binders, radius, is_ligand
@@ -158,7 +157,6 @@ def calculate_arrow_position(subplot_index):
     arrow_x = (subplot_index - 1) * 0.25 + 0.1
     arrow_tail_x = arrow_x + 0.1
     return arrow_x, arrow_tail_x
-
 
 
 def transform_to_1_letter_code(amino_acids_3_letter):
@@ -218,7 +216,6 @@ def calculate_bits(list_of_AA, sequence_list):
     return heights
 
 
-
 def create_sequence_logo_list(df_list):
     # Calculate the number of columns based on the number of logos
     num_logos = len(df_list)
@@ -250,8 +247,10 @@ def create_sequence_logo_list(df_list):
 
     # Adjust the spacing between subplots
     plt.subplots_adjust(wspace=0.5, hspace=0.5)  # Modify wspace and hspace as needed
-    
+
     plt.show()
+
+
 def plot_sequence_logo(df, filename=None):
     # Calculate the height of each letter for each position
     stacked_df = df.apply(lambda row: pd.Series(row.sort_values(ascending=False).values), axis=1)
@@ -278,55 +277,29 @@ def plot_sequence_logo(df, filename=None):
         plt.show()
 
 
-def plot(list_of_paths, target_chain, binder, is_ligand,to_show, distance):
-    
-    if is_ligand:
-        target_chain_cordinates = helper_functions.extract_info_ligand(list_of_paths[0], target_chain)
-        ligand_bonds = helper_functions.extract_connections(list_of_paths[0])
-    else:
-        target_chain_cordinates = helper_functions.extract_info_pdb(list_of_paths[0], target_chain)
-    
-    data_frame_target = pd.DataFrame(target_chain_cordinates)
-    binder_chain_cordinates = []
-    
-    for file in list_of_paths:        
-        binder_chain_cordinates += helper_functions.extract_info_pdb(file, binder)
-
-            
-    data_frame_binders = pd.DataFrame(binder_chain_cordinates)
-    if to_show == "all":
-        nearest_neighbors_df = find_nearest_points(data_frame_target, data_frame_binders, distance,is_ligand)
-    else:
-        if is_ligand:
-            to_show_df =data_frame_target[data_frame_target['atom_name'].isin(to_show)]
-        else:
-            to_show_df =data_frame_target.loc[data_frame_target['residue_index'].isin(to_show)]
-        nearest_neighbors_df = find_nearest_points(to_show_df, data_frame_binders, distance,is_ligand)
-        
-    if is_ligand:   
-        create_3d_graph(nearest_neighbors_df,data_frame_target, is_ligand, ligand_bonds)
-    else:
-        create_3d_graph(nearest_neighbors_df,data_frame_target, is_ligand)
-    
-    return data_frame_target,data_frame_binders
-    
-def sequence_logos(data_frame_target, data_frame_binder, sequence_logo_targets, is_ligand, only_combined_logo, distance):
-
+def sequence_logos(target_file, target_chain, data_frame_binder, sequence_logo_targets, is_ligand, only_combined_logo,
+                   distance):
     warnings.filterwarnings("ignore")
     model = logomaker.get_example_matrix('ww_information_matrix',
                                          print_description=False)
     list_of_AA = model.columns.to_list()
-    rows_bits= []
+    rows_bits = []
     residues = []
     plots = []
 
+    if is_ligand:
+        target_chain_cordinates = helper_functions.extract_info_ligand(target_file, target_chain)
+    else:
+        target_chain_cordinates = helper_functions.extract_info_pdb(target_file, target_chain)
 
-    for i,target in enumerate(sequence_logo_targets):
+    data_frame_target = pd.DataFrame(target_chain_cordinates)
+
+    for i, target in enumerate(sequence_logo_targets):
         if is_ligand:
             current_df = data_frame_target.loc[data_frame_target['atom_name'] == target]
         else:
-            current_df = data_frame_target.loc[data_frame_target['residue_index'] == target ]
-        near_neighbor_current = find_nearest_points(current_df,data_frame_binder,distance, is_ligand)
+            current_df = data_frame_target.loc[data_frame_target['residue_index'] == target]
+        near_neighbor_current = find_nearest_points(current_df, data_frame_binder, distance, is_ligand)
         if near_neighbor_current.empty:
             continue
         AA_sq = transform_to_1_letter_code(near_neighbor_current['AA'].values.tolist())
@@ -336,18 +309,13 @@ def sequence_logos(data_frame_target, data_frame_binder, sequence_logo_targets, 
         df = pd.DataFrame(columns=model.columns)
         df = pd.concat([df, pd.DataFrame([bits], columns=df.columns)], ignore_index=True)
         plots.append([df, [target]])
-        
-     
+
     if not len(residues) == 1:
         df = pd.DataFrame(columns=model.columns)
         df = pd.concat([df, pd.DataFrame(rows_bits, columns=df.columns)], ignore_index=True)
         plots.append([df, residues])
-    if  only_combined_logo:
+    if only_combined_logo:
         df = pd.DataFrame(columns=model.columns)
         df = pd.concat([df, pd.DataFrame(rows_bits, columns=df.columns)], ignore_index=True)
         plots = [[df, residues]]
     create_sequence_logo_list(plots)
-    
-
-
-    

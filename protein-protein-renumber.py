@@ -103,7 +103,6 @@ def ligand_search(input_pdb_path: str, ligand_names : str = None, ligand_chains 
         elif order == "name" and ligand_chains:
             if chain in ligand_chains:
                 ligand_filtered.append(line)
-    print(ligand_filtered)
     return ligand_filtered
 
 def chain_search(chains : str, parsed_pdb : list = None,input_pdb_path: str = None ) -> list:
@@ -178,8 +177,6 @@ def seq_and_chain_search(input_pdb_path: str, binder_seq : str = None, antigen_s
             ligand_chains = arg_spliter(ligand_chains)
         if ligand_name:
             ligand_name = arg_spliter(ligand_name)
-        print("SDFSDFS")
-        print(ligand_chains)
         pdb_hits["ligand"] = ligand_search(input_pdb_path,ligand_name,ligand_chains,search_ligand)
 
 
@@ -187,7 +184,13 @@ def seq_and_chain_search(input_pdb_path: str, binder_seq : str = None, antigen_s
 
 
 def write_pdbs(pdb_name : str, pdb_hits: dict, output_path : str) -> None:
-
+    """
+    used to write the output pdb file. Takes the info from the filtering step and outputs it into a pdb
+    :param pdb_name: the name of the output pdb file
+    :param pdb_hits: the dict of lines for the binder, antigen, and ligand use to make the output file
+    :param output_path: the output file path directory
+    :return: None
+    """
     out_atom_index = 0
     out_chain = 64
     with open(output_path+"/"+pdb_name, "w") as output_pdb:
@@ -225,6 +228,11 @@ def main(input_pdb_path: str, output_path: str, binder_seq : str = None, antigen
 
 
 if __name__ == "__main__":
+
+    """
+    add arguments to arg parse
+    see below for what each term does
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument("-S", "--binder_seqs", type=str, help="the sequence of the binder used for identification", default=None)
     parser.add_argument("-s", "--antigen_seqs", type=str, help="the sequence of the antigen used for identification", default=None)
@@ -238,27 +246,37 @@ if __name__ == "__main__":
     parser.add_argument("-i", "--input_path", type=str, help="path of the input pdb (file or directory)", required=True)
     parser.add_argument("-o", "--output_path", type=str, help="path of the output directory", required=True)
     args = parser.parse_args()
+
+
+    #checking to see if a binder is present
     if not args.binder_seqs and not args.binder_chains:
         print("You must enter a binder chain or sequence or both!")
         exit(1)
+
+    # checking to see if a ligand or antigen is present
     if not args.antigen_seqs and not args.antigen_chains and not args.ligand_3_names and not args.ligand_chains:
         print("You must enter an antigen chain and/or sequence or ligand name and/or chain or both!")
         exit(1)
 
+    # checking to see if the input path is real
     if not os.path.exists(args.input_path):
         print("the input path you entered does not exist!")
         exit(1)
 
+    # checking to see if the output path is real
     if not os.path.exists(args.output_path):
         print("the output path you entered does not exist!")
         exit(1)
 
+    # running the main method for a single file that is a .pdb
     if os.path.isfile(args.input_path):
         if pathlib.Path(args.input_path).suffix == ".pdb":
             main(args.input_path, args.output_path, args.binder_seqs, args.antigen_seqs, args.binder_chains,args.antigen_chains, args.search_first_protein, args.seq_identity, args.ligand_3_names, args.ligand_chains, args.search_first_ligand)
         else:
             print("non .pdb file types are not supported!")
             exit(1)
+
+    # running the main method for all pdbs in a directory
     else:
         for file in os.listdir(args.input_path):
             if ".pdb" in file:

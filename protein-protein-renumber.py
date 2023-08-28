@@ -1,4 +1,3 @@
-
 from difflib import SequenceMatcher
 import argparse
 import os
@@ -207,8 +206,8 @@ if __name__ == "__main__":
             exit(1)
     else:
         for file in os.listdir(args.input_path):
-            main(os.path.join(args.input_path,file), args.output_path, args.binder_seqs, args.antigen_seqs, args.binder_chains, args.antigen_chains, args.search_first, args.seq_identity)
-
+            if ".pdb" in file:
+                main(os.path.join(args.input_path,file), args.output_path, args.binder_seqs, args.antigen_seqs, args.binder_chains, args.antigen_chains, args.search_first, args.seq_identity)
 
 
 

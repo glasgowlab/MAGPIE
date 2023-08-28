@@ -186,50 +186,5 @@ if __name__ == "__main__":
     if not args.antigen_seqs and not args.antigen_chains:
         print("You must enter an antigen chain or sequence or both!")
         exit(1)
-    #file = "1_2p9h_120021-clean-3.pdb"
-    #outfile = "5xuk_clean.pdb"
     main(args.input_path,args.output_path,args.binder_seqs,args.antigen_seqs,args.binder_chains,args.antigen_chains,args.search_first)
 
-
-
-
-
-
-'''
-for later
-
-    chain_seq = {}
-    chain_pdb_info = {}
-
-    last_chain = "5"
-    last_res_index = 0
-    current_res_index = 0
-    current_atom_index = 0
-    current_chain = 64
-
-    with open(output_path, "W") as output_pdb:
-        ter_used_last = False
-        for key in pdb_hits:
-            for line in pdb_hits[key]:
-                if "TER" in line[0:6] and not ter_used_last:
-                    ter_used_last = True
-                    output_pdb.write(line)
-                if "ATOM" in line[0:6]:
-                    ter_used_last = False
-                    chain = line[21]
-                    res_index = int(line[22:26].strip())
-                    if res_index != last_res_index:
-                        if chain != last_chain:
-
-                        else:
-                            current_res_index += 1
-                            last_res_index += 1
-
-                        if line[17:21].strip() in VALID_3_LINE_STARTERS:
-                            chain_seq[chr(current_chain)] += line[17:21].strip()
-
-                    current_atom_index += 1
-                    print(line[12:21])
-                    chain_pdb_info[chr(current_chain)].append("ATOM  " + ((5 - len(str(current_atom_index))) * " ") + str(current_atom_index) + line[11:21] + chr(current_chain) + ((4 - len(str(current_res_index))) * " ") + str(current_res_index) + line[26:])
-y
-'''

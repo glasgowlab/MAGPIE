@@ -302,7 +302,7 @@ if __name__ == "__main__":
     parser.add_argument("-l", "--ligand_chains", type=str, help="the chain(s) the ligand is/are on", default=None)
     parser.add_argument("-F", "--search_first_protein", type=str, help="if using both chains and sequences search, what should be used to be filtered first?",default="chains",choices=["chains","sequences"])
     parser.add_argument("-f", "--search_first_ligand", type=str,help="if using both chains and name search for ligands, what should be used to be filtered first?", default="chains", choices=["chains", "name"])
-    parser.add_argument("-d", "--seq_identity", type=int,help="if using both chains and sequences search, what should be used to be filtered first?",default=95)
+    parser.add_argument("-d", "--seq_identity", type=int,help="sequence identity used for filtering",default=95)
     parser.add_argument("-i", "--input_path", type=str, help="path of the input pdb (file or directory)", required=True)
     parser.add_argument("-o", "--output_path", type=str, help="path of the output directory", required=True)
     args = parser.parse_args()

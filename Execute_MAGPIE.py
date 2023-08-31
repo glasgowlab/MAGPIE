@@ -1,5 +1,6 @@
 import argparse
-import json
+
+import time
 
 import helper_functions
 import pandas as pd
@@ -61,12 +62,13 @@ def merge_json_files_to_dataframe(file_pattern):
     return merged_dataframe
 
 if __name__ == "__main__":
+    start_time = time.time()
     argparser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     argparser.add_argument("--path_to_pdbs", type=str, default='Ligand_Example',
-                           help="path to pdbs, examples: 'Ligand_Example' or 'Protein Example'a")
+                           help="path to pdbs, examples: 'Ligand_Example' or 'Protein Example'")
 
-    argparser.add_argument("--target_chain", type=str, default="B",
+    argparser.add_argument("--target_chain", type=str, default="X",
                            help="Chain id to graph around, target chain")
     argparser.add_argument("--binder_chain", type=str, default="A", help="Chain id that binds to target chain.")
     argparser.add_argument("--is_ligand",  type=str, default= "False",
@@ -76,15 +78,15 @@ if __name__ == "__main__":
     argparser.add_argument("--to_plot", type=str, default="",
                            help="Amino acids to generate MAGPIE graphs.")
     argparser.add_argument("--combined_flag",   type=str, default= "False",
-                           help="Flag to load ProteinMPNN weights trained on soluble proteins only.")
+                           help="Show individual plots for residues in to_plot or only the combined plot? (True or False)")
     argparser.add_argument("--threads", type=int, default=1,
-                           help="How many threads")
+                           help="How many threads to use?")
     args = argparser.parse_args()
     input_folder = args.path_to_pdbs
+
     list_of_binders = glob.glob(input_folder + '/*.pdb')
     chunks = make_chunks(list_of_binders, args.threads)
     threads = []
-
     for thread_num in range(args.threads):
         current_thread = multiprocessing.Process(target=process_files, args=(
             chunks[thread_num],  # PDB Files
@@ -107,9 +109,9 @@ if __name__ == "__main__":
         combined_flag= False
     binder_df = merge_json_files_to_dataframe("temp/*.json")
     to_plot = args.to_plot
-    if args.is_ligand:
+    if is_ligand:
         plot_list = [str(x) for x in to_plot.split(",")]
     else:
         plot_list = [int(x) for x in to_plot.split(",")]
-
     sequence_logo_main.sequence_logos(list_of_binders[0], args.target_chain, binder_df, plot_list,is_ligand,combined_flag,args.distance)
+

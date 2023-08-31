@@ -285,13 +285,12 @@ def sequence_logos(target_file, target_chain, data_frame_binder, sequence_logo_t
     list_of_AA = model.columns.to_list()
     rows_bits = []
     residues = []
-    plots = []
+    plots = []  
 
     if is_ligand:
         target_chain_cordinates = helper_functions.extract_info_ligand(target_file, target_chain)
     else:
         target_chain_cordinates = helper_functions.extract_info_pdb(target_file, target_chain)
-
     data_frame_target = pd.DataFrame(target_chain_cordinates)
 
     for i, target in enumerate(sequence_logo_targets):

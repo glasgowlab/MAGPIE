@@ -1,7 +1,7 @@
 ## MAGPIE: Mapping Areas of Genetic Parsimony In Epitopes
 ### An interactive tool for visualizing and analyzing many protein-ligand interactions
 
-<a target="_blank" href="https://colab.research.google.com/github/https://colab.research.google.com/github/glasgowlab/MAGPIE/blob/GoogleColab/MAGPIE_COLAB.ipynb">
+<a target="_blank" href="https://colab.research.google.com/github/glasgowlab/MAGPIE/blob/GoogleColab/MAGPIE_COLAB.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 

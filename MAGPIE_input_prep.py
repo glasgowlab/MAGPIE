@@ -187,7 +187,7 @@ def seq_search(seq : str, parsed_pdb : list = None,input_pdb_path: str = None, s
 
     return pdb_seq_hits
 
-def seq_and_chain_search(input_pdb_path: str, binder_seq : str = None, target_protein_seq : str = None, binder_chains : str = None, target_protein_protein_chains : str = None, order : str = "chains", seq_id : int = 95, sm_name : str = None, target_sm_chains : str = None, search_sm : str = "chains") -> dict:
+def seq_and_chain_search(input_pdb_path: str, binder_seq : str = None, target_protein_seq : str = None, binder_chains : str = None, target_protein_chains : str = None, order : str = "chains", seq_id : int = 95, sm_name : str = None, target_sm_chains : str = None, search_sm : str = "chains") -> dict:
     """
     This function is used to determine the order of filtering and what to filter out using the user input. The binder/target_protein are identical calls, just different inputs
     All the params from main are passed into here
@@ -211,19 +211,19 @@ def seq_and_chain_search(input_pdb_path: str, binder_seq : str = None, target_pr
         print("ERROR no chain or seq selected for binder")
         exit(1)
 
-    if (target_protein_seq and target_protein_protein_chains):
+    if (target_protein_seq and target_protein_chains):
         if order == "seq":
             pdb_target_protein_seq_hits = seq_search(target_protein_seq, None, input_pdb_path, seq_identity=seq_id)
-            pdb_hits["target_protein"] = chain_search(target_protein_protein_chains, pdb_target_protein_seq_hits)
+            pdb_hits["target_protein"] = chain_search(target_protein_chains, pdb_target_protein_seq_hits)
         else:
-            pdb_target_protein_chain_hits = chain_search(target_protein_protein_chains, None, input_pdb_path)
+            pdb_target_protein_chain_hits = chain_search(target_protein_chains, None, input_pdb_path)
             pdb_hits["target_protein"] = seq_search(target_protein_seq, pdb_target_protein_chain_hits, None, seq_identity=seq_id)
     elif target_protein_seq:
 
         pdb_hits["target_protein"] = seq_search(target_protein_seq,None,input_pdb_path, seq_identity=seq_id)
-    elif target_protein_protein_chains:
+    elif target_protein_chains:
 
-        pdb_hits["target_protein"] = chain_search(target_protein_protein_chains, None, input_pdb_path)
+        pdb_hits["target_protein"] = chain_search(target_protein_chains, None, input_pdb_path)
     elif not sm_name and not target_sm_chains:
         print("ERROR no chain or seq selected for target_protein")
         exit(1)
@@ -314,7 +314,7 @@ if __name__ == "__main__":
         exit(1)
 
     # checking to see if a sm or target_protein is present
-    if not args.target_protein_seqs and not args.target_protein_protein_chains and not args.target_sm_3_names and not args.target_sm_chains:
+    if not args.target_protein_seqs and not args.target_protein_chains and not args.target_sm_3_names and not args.target_sm_chains:
         print("You must enter an target protein chain and/or sequence or small molecule name and/or chain or both!")
         exit(1)
 
@@ -331,7 +331,7 @@ if __name__ == "__main__":
     # running the main method for a single file that is a .pdb
     if os.path.isfile(args.input_path):
         if pathlib.Path(args.input_path).suffix == ".pdb":
-            main(args.input_path, args.output_path, args.binder_seqs, args.target_protein_seqs, args.binder_chains,args.target_protein_protein_chains, args.search_first_protein, args.seq_identity, args.target_sm_3_names, args.target_sm_chains, args.search_first_sm)
+            main(args.input_path, args.output_path, args.binder_seqs, args.target_protein_seqs, args.binder_chains,args.target_protein_chains, args.search_first_protein, args.seq_identity, args.target_sm_3_names, args.target_sm_chains, args.search_first_sm)
         else:
             print("non .pdb file types are not supported!")
             exit(1)
@@ -340,5 +340,5 @@ if __name__ == "__main__":
     else:
         for file in os.listdir(args.input_path):
             if ".pdb" in file:
-                main(os.path.join(args.input_path,file), args.output_path, args.binder_seqs, args.target_protein_seqs, args.binder_chains, args.target_protein_protein_chains, args.search_first_protein, args.seq_identity, args.target_sm_3_names, args.target_sm_chains, args.search_first_sm)
+                main(os.path.join(args.input_path,file), args.output_path, args.binder_seqs, args.target_protein_seqs, args.binder_chains, args.target_protein_chains, args.search_first_protein, args.seq_identity, args.target_sm_3_names, args.target_sm_chains, args.search_first_sm)
 

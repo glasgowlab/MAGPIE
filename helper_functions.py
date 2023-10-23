@@ -1,7 +1,7 @@
 import pdb_parser
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
-
+import os
 def extract_info_pdb(pdb_file, chain_id) -> list:
     all_Ca = []
     shaply = {
@@ -220,3 +220,10 @@ def make_chunks(data: list, thread_count) -> dict:
         if thread == thread_count:
             thread = 0
     return threads
+
+
+def create_directory(directory_path):
+    if os.path.exists(directory_path):
+        return f"The directory '{directory_path}' already exists."
+    else:
+        os.makedirs(directory_path)

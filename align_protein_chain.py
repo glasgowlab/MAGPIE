@@ -18,14 +18,17 @@ def align(path, output, chain, rmsd_threshold):
             continue
         pymol.cmd.select("current", f"chain {chain} and model {str(i)}")
         rmsd = pymol.cmd.cealign("reference", "current")
-
         rmsd_value  = rmsd["RMSD"]
+
         if rmsd_value <= rmsd_threshold:
+            print("saved")
             pdb_name = os.path.basename(file).replace(".pdb", "_aligned.pdb")
             pymol.cmd.save(os.path.join(output, pdb_name), f"model {str(i)}")
+            pymol.cmd.delete(f"model {str(i)}")
+            pymol.cmd.remove("current")
         else:
             print(f"Alignment RMSD {rmsd_value} for {file} exceeds threshold {rmsd_threshold}, so it is not included in the aligment")
-        pymol.cmd.reinitialize()
+    pymol.cmd.reinitialize()
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

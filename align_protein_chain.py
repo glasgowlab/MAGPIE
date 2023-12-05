@@ -9,6 +9,7 @@ def align(path, output, chain, rmsd_threshold):
     pdb_files = glob.glob(path + "/*.pdb")
     for i, file in enumerate(pdb_files):
         pymol.cmd.load(file, str(i))
+        pymol.cmd.h_add(stringselection = "(all)" )
         atom_count = pymol.cmd.count_atoms(f"chain {chain} and model {str(i)}")
         if atom_count == 0:
             print(f"Skipping {file} as it does not contain chain {chain}")

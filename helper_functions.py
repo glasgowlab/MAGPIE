@@ -1,9 +1,12 @@
+import Bio.PDB.Chain
+
 import pdb_parser
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
+# import matplotlib.pyplot as plt
+# from mpl_toolkits.mplot3d import Axes3D
 import os
-def extract_info_pdb(pdb_file, chain_id) -> list:
-    all_Ca = []
+from Bio import *
+def extract_atoms_from_chain(chain: Bio.PDB.Chain.Chain, atom_index: str = "" , file = "" ) -> list:
+
     shaply = {
         'ALA': '#8CFF8C',
         'GLY': '#FFFFFF',
@@ -24,7 +27,8 @@ def extract_info_pdb(pdb_file, chain_id) -> list:
         'HIS': '#7070FF',
         'CYS': '#FFFF70',
         'MET': '#B8A042',
-        'TRP': '#4F4600'
+        'TRP': '#4F4600',
+        'Others': '#BEA06E'
     }
     polar = {
         'ASP': '#E60A0A',
@@ -49,30 +53,36 @@ def extract_info_pdb(pdb_file, chain_id) -> list:
         'PRO': '#DC9682',
         'Others': '#BEA06E'
     }
-    with open(pdb_file, "r") as file:
-        found_chain = False
-        for line in file:
-            dict_of_atoms = {}
-            if "ATOM " in line or "HETATM"  in line:
-                if "TER" in line and found_chain:
-                    break
-                parsed_line = pdb_parser.PDBLineParser(line)
-                parsed_line.parse_line()
-                if parsed_line.chain_identifier == chain_id and parsed_line.atom_name == 'CA':
-                    dict_of_atoms['X'] = parsed_line.x_cord
-                    dict_of_atoms['Y'] = parsed_line.y_cord
-                    dict_of_atoms['Z'] = parsed_line.z_cord
-                    dict_of_atoms['chain'] = parsed_line.chain_identifier
-                    dict_of_atoms['residue_index'] = parsed_line.residue_sequence_number
-                    dict_of_atoms['AA'] = parsed_line.residue_name
-                    dict_of_atoms['atom_name'] = parsed_line.atom_name
-                    dict_of_atoms['file'] = pdb_file
-                    dict_of_atoms['shapely'] = shaply[parsed_line.residue_name]
-                    dict_of_atoms['polar'] = polar[parsed_line.residue_name]
-                    found_chain = True
-                    all_Ca.append(dict_of_atoms)
-    
-    return all_Ca
+
+    all_atoms = []
+    for residue in chain:
+        dict_of_atoms = {}
+        for atom in residue:
+            atom_coordinates = atom.get_coord()
+            atom_flag = False
+            if atom_index == "" or atom_index == atom.get_name():
+                dict_of_atoms['X'] = atom_coordinates[0]
+                dict_of_atoms['Y'] = atom_coordinates[1]
+                dict_of_atoms['Z'] = atom_coordinates[2]
+                dict_of_atoms['chain'] = chain.get_id()
+                dict_of_atoms['residue_index'] = int(residue.__repr__().split("resseq=")[1].split(" icode")[0])
+                dict_of_atoms['AA'] = residue.get_resname()
+                dict_of_atoms['atom_name'] = atom.get_name()
+                dict_of_atoms['shapely'] = shaply[residue.get_resname()]
+                dict_of_atoms['polar'] = polar[residue.get_resname()]
+                dict_of_atoms['file'] = file.split("/")[-1]
+
+                if  atom_index == atom.get_name():
+                    atom_flag = True
+            if atom_flag:
+                break
+        all_atoms.append(dict_of_atoms)
+
+
+
+    return all_atoms
+
+
 def extract_list_pdb(pdb_list, chain_id) ->list:
     all_Ca = []
     for pdb_file in pdb_list:
@@ -138,7 +148,7 @@ def extract_list_pdb(pdb_list, chain_id) ->list:
                         dict_of_atoms['residue_index'] = parsed_line.residue_sequence_number
                         dict_of_atoms['AA'] = parsed_line.residue_name
                         dict_of_atoms['atom_name'] = parsed_line.atom_name
-                        dict_of_atoms['file'] = pdb_file
+                        dict_of_atoms['file'] = file.split("/")[-1]
                         dict_of_atoms['shapely'] = shaply[parsed_line.residue_name]
                         dict_of_atoms['polar'] = polar[parsed_line.residue_name]
                         found_chain = True
@@ -176,7 +186,7 @@ def extract_info_ligand (pdb_file, chain_id) -> list:
                     continue
                 parsed_line = pdb_parser.PDBLineParser(line)
                 parsed_line.parse_line()
-                if parsed_line.chain_identifier == chain_id and not "H" in  parsed_line.atom_name:
+                if parsed_line.chain_identifier == chain_id:
                     dict_of_atoms['X'] = parsed_line.x_cord
                     dict_of_atoms['Y'] = parsed_line.y_cord
                     dict_of_atoms['Z'] = parsed_line.z_cord
@@ -196,7 +206,8 @@ def get_color_code(atom_name):
         'N': '#0000FF',  # Nitrogen - Blue
         'C': '#808080',  # Carbon - Grey
         'S': '#FFFF00',  # Sulfur - Yellow
-        'P': '#FFA500'   # Phosphorus - Orange 
+        'P': '#FFA500',   # Phosphorus - Orange
+        'H': '#33FFFF'
        }
     return color.get(atom_name, "#000000") 
 

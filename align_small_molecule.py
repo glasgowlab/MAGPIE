@@ -9,6 +9,7 @@ def align_small(path, output, chain, rmsd_threshold):
     references = []
     for i, file in enumerate(pdb_files):
         pymol.cmd.load(file, str(i))
+        pymol.cmd.h_add(stringselection="(all)")
         atom_count = pymol.cmd.count_atoms(f"chain {chain} and model {str(i)}")
 
         if atom_count == 0:
@@ -42,11 +43,16 @@ def align_small(path, output, chain, rmsd_threshold):
             references.append(ref_name_new)
             pdb_name = os.path.basename(file).replace(".pdb", f"{ref_name_new}.pdb")
             pymol.cmd.save(os.path.join(output, pdb_name), f"model {str(i)}")
+        # pymol.cmd.delete(f"model {str(i)}")
+        # pymol.cmd.remove(f"model {str(i)}")
 
     pymol.cmd.reinitialize()
 
 
 if __name__ == "__main__":
+
+    # Remove structures that were aligned already
+
     parser = argparse.ArgumentParser()
     parser.add_argument("-c", "--chain_to_align", type=str, help="chain identifier for chains to align", default="A", required=True)
     parser.add_argument("-T", "--rmsd_threshold", type=float, help="RMSD Threshold Difference", default=0.3)

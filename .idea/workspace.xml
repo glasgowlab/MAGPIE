@@ -5,15 +5,162 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6408f55b-b0f5-4da5-a85e-7c85272a7ca6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/hbonds_saltbridges.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/LogoMaker-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/LogoMaker-checkpoint.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/MAGPIE_LOCAL-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/MAGPIE_LOCAL-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ligand Example/5xuk.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Ligand Example/5xuk.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ligand Example/6arb.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Ligand Example/6arb.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ligand Example/6as5.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Ligand Example/6as5.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ligand Example/6b3t.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Ligand Example/6b3t.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ligand Example/6be0.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Ligand Example/6be0.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ligand Example/6ct5.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Ligand Example/6ct5.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ligand Example/6he2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Ligand Example/6he2.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ligand Example/6j1e.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Ligand Example/6j1e.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ligand Example/6nds.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Ligand Example/6nds.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ligand Example/6p7k.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Ligand Example/6p7k.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ligand Example/6qwu.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Ligand Example/6qwu.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ligand Example/6zzk.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Ligand Example/6zzk.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ligand Example/7b4r.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Ligand Example/7b4r.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ligand Example/7bcz.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Ligand Example/7bcz.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ligand Example/7ed0.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Ligand Example/7ed0.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ligand Example/7n8e.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Ligand Example/7n8e.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ligand Example/7s3u.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Ligand Example/7s3u.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ligand Example/7uul.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Ligand Example/7uul.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ligand Example/7xwv.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Ligand Example/7xwv.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ligand Example/8a9n.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Ligand Example/8a9n.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MAGPIE_LOCAL.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/MAGPIE_LOCAL.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MAGPIE_input_prep.py" beforeDir="false" afterPath="$PROJECT_DIR$/MAGPIE_input_prep.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/2-15_7L5B.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/2-15_7L5B.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/298_7K9Z.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/298_7K9Z.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/2H2_7DK4.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/2H2_7DK4.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/52_7K9Z.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/52_7K9Z.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/B38_7BZ5.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/B38_7BZ5.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/BD-236_7CHB.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/BD-236_7CHB.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/BD-368-2_7CHF.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/BD-368-2_7CHF.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/BD-604_7CHF.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/BD-604_7CHF.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/BD-629_7CH5.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/BD-629_7CH5.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/BD23_7BYR.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/BD23_7BYR.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/C002_7K8T.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C002_7K8T.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/C102_7K8M.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C102_7K8M.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/C104_7K8U.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C104_7K8U.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/C105_6XCM.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C105_6XCM.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/C110_7K8V.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C110_7K8V.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/C119_7K8W.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C119_7K8W.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/C121_7K8X.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C121_7K8X.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/C135_7K8Z.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C135_7K8Z.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/C144_7K90.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C144_7K90.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/C1A-B12_7KFV.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C1A-B12_7KFV.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/CB6_7C01.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/CB6_7C01.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/CC12.1_6XC3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/CC12.1_6XC3.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/CC12.3_6XC4.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/CC12.3_6XC4.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/COVA1-16_7JMW.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/COVA1-16_7JMW.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/COVA2-04_7JMO.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/COVA2-04_7JMO.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/COVA2-39_7JMP.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/COVA2-39_7JMP.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/CR3014-C8_7KZB.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/CR3014-C8_7KZB.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/CR3022_6YLA.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/CR3022_6YLA.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/CT-P59_7CM4.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/CT-P59_7CM4.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/CV07-250_6XKQ.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/CV07-250_6XKQ.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/CV07-270_6XKP.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/CV07-270_6XKP.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/CV30_6XE1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/CV30_6XE1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/DH1047_7LD1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/DH1047_7LD1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/EY6A_6ZCZ.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/EY6A_6ZCZ.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/E_7KN5.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/E_7KN5.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/H014_7CAI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/H014_7CAI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/H11-D4_6YZ5.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/H11-D4_6YZ5.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/H11-H4_6ZH9.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/H11-H4_6ZH9.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/LY-CoV481_7KMI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/LY-CoV481_7KMI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/LY-CoV488_7KMH.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/LY-CoV488_7KMH.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/LY-CoV555_7KMG.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/LY-CoV555_7KMG.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/MR17_7C8W.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/MR17_7C8W.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/Nb20_7JVB.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/Nb20_7JVB.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/P17_7CWN.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/P17_7CWN.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/P2B-2F6_7BWJ.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/P2B-2F6_7BWJ.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/P2C-1A3_7CDJ.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/P2C-1A3_7CDJ.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/P2C-1F11_7CDI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/P2C-1F11_7CDI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/P4A1_7CJF.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/P4A1_7CJF.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/REGN10933_6XDG.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/REGN10933_6XDG.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/REGN10987_6XDG.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/REGN10987_6XDG.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/S2A4_7JVC.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/S2A4_7JVC.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/S2E12_7K4N.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/S2E12_7K4N.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/S2H13_7JV6.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/S2H13_7JV6.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/S2H14_7JX3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/S2H14_7JX3.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/S2M11_7K43.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/S2M11_7K43.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/S304_7JX3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/S304_7JX3.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/S309_7JX3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/S309_7JX3.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/SR4_7C8V.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/SR4_7C8V.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/STE90-C11_7B3O.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/STE90-C11_7B3O.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/Sb16_7KGK.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/Sb16_7KGK.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/Sb23_7A29.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/Sb23_7A29.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/Sb45_7KGJ.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/Sb45_7KGJ.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/Sb68_7KLW.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/Sb68_7KLW.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/Ty1_6ZXN.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/Ty1_6ZXN.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/U_7KN5.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/U_7KN5.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/V_7KN6.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/V_7KN6.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/W_7KN7.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/W_7KN7.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/mNb6_7KKL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/mNb6_7KKL.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/align_protein_chain.py" beforeDir="false" afterPath="$PROJECT_DIR$/align_protein_chain.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/align_small_molecule.py" beforeDir="false" afterPath="$PROJECT_DIR$/align_small_molecule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/1c0freference_2.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/1d4xreference_3.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/1d9zreference_4.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/1dejreference_2.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/1e24reference_5.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/1e2qreference_6.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/1e4greference_7.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/1e79reference_8.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/1e8xreference_9.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/1ee1reference_10.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/1eqyreference_11.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/1esqreference_12.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/1esvreference_13.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/1fmwreference_14.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/1fq1reference_15.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/1g5treference_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/1g64reference_17.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/1gn8reference_18.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/1golreference_19.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/1gtrreference_20.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/1gy3reference_21.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/1gz3reference_22.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/1gz4reference_23.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/1h1vreference_24.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/1h1wreference_25.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/pdb1a0ireference_26.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/pdb1a49reference_27.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/pdb1a5ureference_27.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/pdb1a82reference_28.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/pdb1aq2reference_29.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/pdb1aszreference_30.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/pdb1atnreference_31.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/pdb1b0ureference_32.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/pdb1b38reference_33.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/pdb1b39reference_34.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/pdb1b8areference_35.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/pdb1bcpreference_36.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/pdb1c0greference_2.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/pdb1csnreference_37.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/pdb1do0reference_38.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/pdb1dv2reference_39.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/pdb1dy3reference_40.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/pdb1f2ureference_41.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/pdb1f9areference_42.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/pdb1finreference_43.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/pdb1g21reference_44.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aligned/pdb1g3ireference_45.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/3cmm.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/5l6i.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/6zqh.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/pdb4ii3.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/pdb5l6h.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/pdb5l6j.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/pdb5tr4.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/pdb6dc6.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/pdb6o82.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/pdb7pvn.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/pdb7sol.pdb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/helper_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/helper_functions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sequence_logo_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/sequence_logo_main.py" afterDir="false" />
     </list>
@@ -54,22 +201,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "local-version",
-    "last_opened_file_path": "C:/Users/camlo/Desktop/RossmanDesign",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;local-version&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/camlo/Desktop/RossmanDesign&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.web.browsers&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="Python.sequence_logo_main">
     <configuration name="pdb_parser" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -93,6 +241,56 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="sequence_logo_main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MAGPIE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sequence_logo_main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="surfaceMaker" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MAGPIE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/surfaceMaker.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.sequence_logo_main" />
+        <item itemvalue="Python.surfaceMaker" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -105,10 +303,36 @@
       <workItem from="1697488449111" duration="3314000" />
       <workItem from="1697824493414" duration="42282000" />
       <workItem from="1698695737213" duration="20000" />
+      <workItem from="1699310368339" duration="30226000" />
+      <workItem from="1700021527741" duration="19849000" />
+      <workItem from="1700076243208" duration="16911000" />
+      <workItem from="1700717735024" duration="40961000" />
+      <workItem from="1700966460742" duration="47000" />
+      <workItem from="1701318907520" duration="21696000" />
+      <workItem from="1701366475467" duration="253000" />
+      <workItem from="1701366741127" duration="395000" />
+      <workItem from="1701369775287" duration="16820000" />
+      <workItem from="1701468303986" duration="9736000" />
+      <workItem from="1701728204644" duration="8597000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MAGPIE$surfaceMaker.coverage" NAME="surfaceMaker Coverage Results" MODIFIED="1700002287234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAGPIE$sequence_logo_main.coverage" NAME="sequence_logo_main Coverage Results" MODIFIED="1701814732704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -4,21 +4,19 @@ Created on Tue Jul  4 17:18:58 2023
 
 @author: camlo
 """
-import os.path
-import plotly.subplots
+import hbonds_saltbridges
+import Bio.PDB.PDBParser
 from plotly.offline import init_notebook_mode, iplot
-import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import pandas as pd
 import glob
 from scipy.spatial import KDTree
-from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
 import math
 import logomaker
 import numpy as np
 import helper_functions
-import warnings
-from matplotlib.patches import FancyArrowPatch
+from Bio import *
 
 def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
     # Get XYZ positions from the DataFrame columns
@@ -26,6 +24,10 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
     x2, y2, z2 = df2['X'], df2['Y'], df2['Z']
     color_shapely = df1['shapely'].values.tolist()
     color_polar = df1['polar'].values.tolist()
+    color_hb_sc = df1['H-Bond SC'].values.tolist()
+    color_hb_bb = df1['H-Bond BB'].values.tolist()
+
+
     if is_ligand:
         names = df2['atom_name'].values.tolist()
         color_df2=  df2["color"].values.tolist()
@@ -34,7 +36,8 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
         names = df2['residue_index'].values.tolist()
         color_df2 = "black"
         size2 = 15
-    init_notebook_mode(connected=True)
+        color_salt = df1['Salt Bridge'].values.tolist()
+    # init_notebook_mode(connected=True)
 
     scatter_trace1 = go.Scatter3d(
         x=x1,
@@ -44,7 +47,7 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
         marker=dict(
             size=9,
             color=color_shapely,
-            opacity=0,
+            opacity=1,
             line=dict(color='black', width=2)
         ),
         text=df1['AA'],  
@@ -61,7 +64,7 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
         marker=dict(
             size=size2,
             color=color_df2,
-            opacity=0,
+            opacity=1,
             line=dict(color='white', width=5)
         ),
         text = names,
@@ -73,6 +76,11 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
     buttons = []
     buttons.append(dict(label='Shapely Colours', method='restyle',  args=[{'marker.color': [color_shapely]}, [0]]))
     buttons.append(dict(label='Amino Colours', method='restyle', args=[{'marker.color': [color_polar]}, [0]]))
+    buttons.append(dict(label='H-Bond BB', method='restyle',  args=[{'marker.color': [color_hb_bb]}, [0]]))
+    buttons.append(dict(label='H-Bond SC', method='restyle', args=[{'marker.color': [color_hb_sc]}, [0]]))
+    if not is_ligand:
+        buttons.append(dict(label='Polar Interactions', method='restyle', args=[{'marker.color': [color_salt]}, [0]]))
+
     updatemenus = [
         dict(buttons=buttons, showactive=True),
         dict(direction='down', x=0.1, xanchor='left', y=1.1, yanchor='top'),
@@ -90,10 +98,25 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
         ),
         title='MAGPIE'
     )
-    
+    graphs = [scatter_trace1, scatter_trace2]
+    if not is_ligand:
+        line_trace_target = go.Scatter3d(
+            x=x2,
+            y=y2,
+            z=z2,
+            mode='lines',
+            line=dict(
+                color='black',  # Choose a color that stands out
+                width=8 # Adjust line width as needed
+            ),
+            hoverinfo='skip',  # Optionally disable hover info for the lines
+            showlegend=False  # Optionally hide the line trace from the legend
+        )
+        graphs.append(line_trace_target)
+
     
     bonds_made = []
-    graphs = [scatter_trace1, scatter_trace2]
+
     for bond in ligand_bonds:
         for pair in ligand_bonds[bond]:
             comb = [str(bond), str(pair)]
@@ -122,45 +145,52 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
     iplot(fig)
 
 
-def find_nearest_points(target, binders, radius, is_ligand
-                        ):
-    # Convert XYZ positions of target DataFrame to a list of tuples
-    target_points = target[['X', 'Y', 'Z']].values.tolist()
-    if is_ligand:
-        positions = list(target['atom_name'].values)
-    else:
-        positions = list(target['residue_index'].values)
+def find_nearest_points(target, binders, radius):
+    target_points_in_contact = []
+    binder_points_in_contact  = []
 
-    # Convert XYZ positions of binders DataFrame to a list of tuples
-    binder_points = binders[['X', 'Y', 'Z']].values.tolist()
-
-    # Create KDTree for binder_points
-    tree = KDTree(binder_points)
-
-    nearest_points_indices = []
-    for i, target_point in enumerate(target_points):
+    for i  in range(0,  len(target)):
+        # Create KDTree for binder_points
         # Query binders DataFrame within the specified radius of target_point
-        indices = tree.query_ball_point(target_point, r=radius)
-        if not indices:
-            continue
-        nearest_points_indices.append([indices, positions[i]])
-
-    # Create a new DataFrame with nearest points
-    nearest_points_df = pd.DataFrame()
-    for indices in nearest_points_indices:
-        temp_df = binders.iloc[indices[0]]
-        nearest_points_df = pd.concat([nearest_points_df, temp_df], ignore_index=True)
-
-    return nearest_points_df
+        current_target = target.iloc[i]
+        current_binder = binders.iloc[i]
+        pd.set_option('display.max_colwidth', None)
 
 
-# Function to calculate arrow position dynamically
+        binder_points= []
+        target_points = []
+
+        for row in current_binder:
+
+            if row is not None and len(row.keys() )!= 0:
+                binder_points.append([row['X'], row['Y'], row['Z']])
+        for row in current_target:
+            if row is not None and len(row.keys() )!= 0:
+                target_points.append([row['X'], row['Y'], row['Z']])
+
+        tree = KDTree(np.array(binder_points))
+
+        indices = tree.query_ball_point(np.array(target_points), r=radius)
+        targets_in_contact = []
+        binder_in_contact = []
+
+        for i,index in enumerate(indices):
+            if len(index) == 0:
+                continue
+            targets_in_contact.append(i)
+            binder_in_contact += index
+
+        target_points_in_contact.append(sorted(list(set(targets_in_contact))))
+        binder_points_in_contact.append(sorted(list(set(binder_in_contact))))
+
+    return target_points_in_contact, binder_points_in_contact
+
+def get_coords_from_row(row):
+    return [row['X'], row['Y'], row['Z']]
 def calculate_arrow_position(subplot_index):
     arrow_x = (subplot_index - 1) * 0.25 + 0.1
     arrow_tail_x = arrow_x + 0.1
     return arrow_x, arrow_tail_x
-
-
 
 def transform_to_1_letter_code(amino_acids_3_letter):
     # Mapping dictionary for 3-letter to 1-letter code
@@ -190,6 +220,30 @@ def transform_to_1_letter_code(amino_acids_3_letter):
     amino_acids_1_letter = [aa_mapping[aa] for aa in amino_acids_3_letter]
     return amino_acids_1_letter
 
+def find_points_within_radius(binder_point, target_points, radius):
+    # Convert the binder_point DataFrame to a NumPy array
+    binder_np = np.array(binder_point[['X', 'Y', 'Z']])
+
+    # Convert the target_points DataFrame to a NumPy array
+    target_np = np.array(target_points[['X', 'Y', 'Z']])
+
+    # Build a KDTree from the binder point
+    tree = KDTree(binder_np)
+
+    # Query the KDTree to find indices of points within the specified radius
+    indices = tree.query_ball_point(target_np, r=radius)
+
+    # Create a list to store the points within radius for each target point
+    points_within_radius = []
+
+    # Iterate through the indices and extract the corresponding target points
+    for i, index_list in enumerate(indices):
+        if len(index_list) == 0 :
+            continue
+        points_within_radius.append(i)
+
+    residues_points = target_points.iloc[points_within_radius]
+    return residues_points
 
 def calculate_frequency(character, lst):
     count = lst.count(character)
@@ -197,7 +251,6 @@ def calculate_frequency(character, lst):
     frequency = count / len(lst)
 
     return frequency
-
 
 def calculate_bits(list_of_AA, sequence_list):
     list_of_frequencies = []
@@ -218,137 +271,354 @@ def calculate_bits(list_of_AA, sequence_list):
         heights.append(np.abs(f * 100))
     return heights
 
+def create_sequence_logo_list(residue_in_contact, h_bond_contact,is_ligand):
+    # Number of rows and columns for the grid
+    num_rows = len(residue_in_contact)
+    num_cols = 4  # 1 from residue_in_contact + 3 from h_bond_contact per row
 
+    # Calculate the total figure height with some additional space for the last row's X-axis labels
+    total_fig_height = 5 * num_rows + 1  # Adjust the additional space as needed
 
-def create_sequence_logo_list(df_list):
-    # Calculate the number of columns based on the number of logos
-    num_logos = len(df_list)
-    num_cols = min(num_logos, 3)  # Change this value to control the number of columns
+    fig, axes = plt.subplots(num_rows, num_cols, figsize=(5 * num_cols, total_fig_height))
+    axes_flat = axes.flatten()
 
-    # Calculate the number of rows needed to display all logos in a grid
-    num_rows = (num_logos + num_cols - 1) // num_cols
-
-    # Set the figure size based on the number of rows and columns
-    fig, axes = plt.subplots(num_rows, num_cols, figsize=(5 * num_cols, 5 * num_rows),
-                             gridspec_kw={'width_ratios': [1] * num_cols})
-
-    # Flatten the axes to handle both single row and multiple row cases
-    axes_flat = axes.flat if isinstance(axes, np.ndarray) else [axes]
-
-    # Draw each sequence logo on its respective subplot
-    for i, (df, ax) in enumerate(zip(df_list, axes_flat)):
-        logo = logomaker.Logo(df[0], ax=ax, color_scheme='NajafabadiEtAl2017', shade_below=0.5)
+    # Plotting sequence logos from both lists
+    for i in range(num_rows):
+        # Plot from residue_in_contact
+        logo_data = residue_in_contact[i]
+        ax = axes_flat[i * num_cols]
+        logo = logomaker.Logo(logo_data[0], ax=ax, color_scheme='NajafabadiEtAl2017', shade_below=0.5)
         logo.ax.set_ylabel('Frequency')
-        positions = [i for i in range(len(df[1]))]
-        logo.ax.set_xticklabels(df[1])
+        positions = [i for i in range(len(logo_data[1]))]
+        logo.ax.set_xticklabels(logo_data[1])
         logo.ax.set_xticks(positions)
+        ax.set_title("Target residue(s)")
 
-        ax.set_title("Target ligand residue(s)")
+        # Plot 3 from h_bond_contact
 
-    # Hide any unused subplots if there are fewer logos than the number of axes
-    for ax in axes_flat[num_logos:]:
+        for j in range(3):
+            logo_data = h_bond_contact[i * 3 + j]
+            if logo_data[1] != None:
+                ax = axes_flat[i * num_cols + j + 1]
+                logo = logomaker.Logo(logo_data[0], ax=ax, color_scheme='NajafabadiEtAl2017', shade_below=0.5)
+                logo.ax.set_ylabel('Frequency')
+                positions = [i for i in range(len(logo_data[1]))]
+                logo.ax.set_xticklabels(logo_data[1])
+                logo.ax.set_xticks(positions)
+                if j == 0:
+                    ax.set_title("H-Bond Backbone")
+                if j == 1:
+                    ax.set_title("H-Bond Side-Chain")
+                if j == 2:
+                    ax.set_title("Polar Contact")
+
+
+
+    # Adjust subplot spacing to prevent label overlap
+    # Increase the vertical spacing between subplots
+    plt.subplots_adjust(wspace=0.5, hspace=0.7)  # Adjust hspace as needed
+
+    # Adjust the X-axis labels on the last row to prevent overlap
+    for ax in axes[-1, :]:
+        for label in ax.get_xticklabels():
+            label.set_rotation(45)  # Adjust the rotation angle as needed
+            label.set_ha('right')  # Align the labels to the right to prevent overlapping
+
+    # Hide unused axes
+    for ax in axes_flat[num_rows * num_cols:]:
         ax.axis('off')
 
-    # Adjust the spacing between subplots
-    plt.subplots_adjust(wspace=0.5, hspace=0.5)  # Modify wspace and hspace as needed
-    
+    # Tweak the layout to fit everything and prevent overlapping
+    plt.tight_layout(pad=3.0)
     plt.show()
-def plot_sequence_logo(df, filename=None):
-    # Calculate the height of each letter for each position
-    stacked_df = df.apply(lambda row: pd.Series(row.sort_values(ascending=False).values), axis=1)
-    bottom = stacked_df.cumsum(axis=1).shift(1, axis=1).fillna(0)
-    top = bottom + df.values
 
-    # Plotting the sequence logo
-    fig, ax = plt.subplots(figsize=(10, 5))
-
-    for base in df.columns:
-        ax.fill_between(df.index, bottom[base], top[base], alpha=0.8, linewidth=0.4)
-
-    ax.set_xticks(range(len(df.index)))
-    ax.set_xticklabels(df.index)
-    ax.set_yticks([0, 1])
-    ax.set_yticklabels(['0', '1'])
-    ax.set_xlabel('Position')
-    ax.set_ylabel('Probability')
-    ax.set_title('')
-
-    if filename:
-        plt.savefig(filename, dpi=300, bbox_inches='tight')  # Save the figure as an image file
-    else:
-        plt.show()
+def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance):
 
 
-def plot(list_of_paths, target_chain, binder, is_ligand,to_show, distance):
-    
-    if is_ligand:
-        target_chain_cordinates = helper_functions.extract_info_ligand(list_of_paths[0], target_chain)
-        ligand_bonds = helper_functions.extract_connections(list_of_paths[0])
-    else:
-        target_chain_cordinates = helper_functions.extract_info_pdb(list_of_paths[0], target_chain)
-    
-    data_frame_target = pd.DataFrame(target_chain_cordinates)
-    binder_chain_cordinates = []
-    
-    for file in list_of_paths:        
-        binder_chain_cordinates += helper_functions.extract_info_pdb(file, binder)
+    chains_target = []
+    chains_binder = []
 
-            
-    data_frame_binders = pd.DataFrame(binder_chain_cordinates)
-    if to_show == "all":
-        nearest_neighbors_df = find_nearest_points(data_frame_target, data_frame_binders, distance,is_ligand)
-    else:
+    parser  = Bio.PDB.PDBParser(QUIET=True)
+    reference_id = 0
+    current_len = 0
+    for i,path in enumerate(list_of_paths):
+        current_structure  =  parser.get_structure(i, path)
+        chains_list = list(current_structure.get_chains())  # Convert iterator to list once here
+        if len(chains_list) != 2:
+            print(f"{path.split('/')[0]} contains {len(chains_list)} chains instead of expected 2.")
+            exit(0)
+        for chain in chains_list:
+            current_chain_id =  chain.get_id()
+            if current_chain_id != target_id_chain and current_chain_id != binder_id_chain:
+                print(f"{path.split('/')[0]} contains chain {chain.get_id()}, which is not defined, please remove or rename chain.")
+                exit(0)
+            elif current_chain_id == target_id_chain:
+                chains_target.append(chain)
+                if len([x for x in chain]) > current_len:
+                    reference_id = i
+            elif current_chain_id == binder_id_chain:
+                chains_binder.append(chain)
+    target_chain_ca_coords = []
+    binder_chain_ca_coords = []
+
+    for i in range (0,len(chains_target)):
         if is_ligand:
-            to_show_df =data_frame_target[data_frame_target['atom_name'].isin(to_show)]
+            target_chain_ca_coords.append(helper_functions.extract_info_ligand(list_of_paths[i],target_id_chain))
         else:
-            to_show_df =data_frame_target.loc[data_frame_target['residue_index'].isin(to_show)]
-        nearest_neighbors_df = find_nearest_points(to_show_df, data_frame_binders, distance,is_ligand)
-        
-    if is_ligand:   
-        create_3d_graph(nearest_neighbors_df,data_frame_target, is_ligand, ligand_bonds)
-    else:
-        create_3d_graph(nearest_neighbors_df,data_frame_target, is_ligand)
-    
-    return data_frame_target,data_frame_binders
-    
-def sequence_logos(data_frame_target, data_frame_binder, sequence_logo_targets, is_ligand, only_combined_logo, distance):
+            target_chain_ca_coords.append(helper_functions.extract_atoms_from_chain(chains_target[i],"CA", list_of_paths[i]))
+        binder_chain_ca_coords.append(helper_functions.extract_atoms_from_chain(chains_binder[i],"CA",list_of_paths[i]))
+
+    target_chain_data_frame = pd.DataFrame(target_chain_ca_coords)
+    binder_chain_data_frame = pd.DataFrame(binder_chain_ca_coords)
+
+    ligand_bonds ={}
+    if is_ligand:
+        ligand_bonds = helper_functions.extract_connections(list_of_paths[0])
+
+    target_in_contact, binder_in_contact = find_nearest_points(target_chain_data_frame, binder_chain_data_frame,
+                                                               distance)
+    residues_to_plot = []
+    given_ph = 7
+    ph_range = 1.5
+
+    for i in range (len(target_in_contact)): #Every file
+        residues_in_contact_binder = []
+        residues_in_contact_target = []
+        residues_salt_bridges_binder = []
+        residues_salt_bridges_target = []
+        for k,residue in enumerate(chains_binder[i]):
+            if k in binder_in_contact[i]:
+                residues_in_contact_binder.append([hbonds_saltbridges.hydrogen_bond_donor_optimal_positions_and_directions(residue),hbonds_saltbridges.hydrogen_bond_acceptor_optimal_positions_and_directions(residue)])
+                residues_salt_bridges_binder.append(residue)
+
+        if is_ligand:
+            residue = chains_target[i].get_residues().__next__()
+            for k,atom in enumerate(residue):
+                if k in target_in_contact[i]:
+                    residues_in_contact_target.append(
+                        [hbonds_saltbridges.hydrogen_bond_donor_optimal_positions_and_directions_atom(atom,residue),
+                         hbonds_saltbridges.hydrogen_bond_acceptor_optimal_positions_and_directions_atom(atom,residue)])
+        else:
+            for k,residue in enumerate(chains_target[i]):
+                if k in target_in_contact[i]:
+                    residues_in_contact_target.append([hbonds_saltbridges.hydrogen_bond_donor_optimal_positions_and_directions(residue),hbonds_saltbridges.hydrogen_bond_acceptor_optimal_positions_and_directions(residue)])
+                    residues_salt_bridges_target.append(residue)
+                    residues_salt_bridges_target.append(residue)
+        for l in range (len(residues_in_contact_binder)):
+            binder_h_bond_sc = False
+            binder_h_bond_bb = False
+            found_salt_bridge = False
+            for k in range (len(residues_in_contact_target)):
+                if not is_ligand and not found_salt_bridge:
+                    salt_bridges_binder = residues_salt_bridges_binder[l]
+                    salt_bridges_target = residues_salt_bridges_target[k]
+                    charged_binder = hbonds_saltbridges.determine_charge(salt_bridges_binder,given_ph, ph_range)
+                    charged_target = hbonds_saltbridges.determine_charge(salt_bridges_target,given_ph, ph_range)
+                    if charged_binder*charged_target == -1 and charged_target +charged_binder == 0:
+                        found_salt_bridge = hbonds_saltbridges.compare_residue_distances(salt_bridges_target, salt_bridges_binder,4)
+                for residue in residues_in_contact_binder[l][0]:
+                    for residue_2 in residues_in_contact_target[k][1]:
+                        if residue_2[2] and not binder_h_bond_bb:
+                            binder_h_bond_bb = hbonds_saltbridges.check_hydrogen_bond(residue,residue_2)
+                        if not residue_2[2]  and not binder_h_bond_sc:
+                            binder_h_bond_sc = hbonds_saltbridges.check_hydrogen_bond(residue,residue_2)
+                for residue in residues_in_contact_binder[l][1]:
+
+                    for residue_2 in residues_in_contact_target[k][0]:
+                        if residue_2[2]  and not binder_h_bond_bb:
+                            binder_h_bond_bb = hbonds_saltbridges.check_hydrogen_bond(residue,residue_2)
+                        if not residue_2[2]  and not binder_h_bond_sc:
+                            binder_h_bond_sc = hbonds_saltbridges.check_hydrogen_bond(residue,residue_2)
+
+                if k == len(residues_in_contact_target)-1:
+
+                    residue_found = binder_chain_data_frame.iloc[i][binder_in_contact[i][l]]
+                    if  binder_h_bond_sc:
+                        residue_found["H-Bond SC"] = '#FF0000'
+                    else:
+                        residue_found["H-Bond SC"] = '#FFFFFF'
+
+                    if binder_h_bond_bb:
+                        residue_found["H-Bond BB"] = '#FF0000'
+                    else:
+                        residue_found["H-Bond BB"] = '#FFFFFF'
+                    if not is_ligand and found_salt_bridge:
+                        residue_found["Salt Bridge"] = "#FF0000"
+                    if not is_ligand and not found_salt_bridge:
+                        residue_found["Salt Bridge"] = "#FFFFFF"
+                    residues_to_plot.append(residue_found)
+
+                if binder_h_bond_sc and binder_h_bond_bb and found_salt_bridge:
+                    residue_found = binder_chain_data_frame.iloc[i][binder_in_contact[i][l]]
+                    residue_found["H-Bond SC"] = '#FF0000'
+                    residue_found["H-Bond BB"] = '#FF0000'
+                    if not is_ligand:
+                        residue_found["Salt Bridge"] = "#FF0000"
+                    residues_to_plot.append(residue_found)
+                    break
+
+    residue_found_df   = pd.DataFrame(residues_to_plot)
+
+    target_to_to_plot = []
+    for x in target_chain_data_frame.iloc[0]:
+        if x is not None:
+            target_to_to_plot.append(x)
+    #
+    create_3d_graph(residue_found_df,pd.DataFrame(target_to_to_plot), is_ligand, ligand_bonds)
+    return residue_found_df,pd.DataFrame(target_chain_ca_coords[reference_id])
+
+def sequence_logos(residues_found, target_residues, sequence_logo_targets, is_ligand, only_combined_logo, radius ):
 
     warnings.filterwarnings("ignore")
     model = logomaker.get_example_matrix('ww_information_matrix',
                                          print_description=False)
     list_of_AA = model.columns.to_list()
-    rows_bits= []
-    residues = []
-    plots = []
+    rows_bits_all_sq= []
+    rows_bits_bb= []
+    rows_bits_sc= []
+    rows_bits_pc= []
 
+    resi_combined_all_contacts = []
+    resi_combined_sc_bb = []
+    resi_combined_bb_hb = []
+    resi_combined_pc = []
+
+    plots = []
+    plots_rows = []
 
     for i,target in enumerate(sequence_logo_targets):
+
         if is_ligand:
-            current_df = data_frame_target.loc[data_frame_target['atom_name'] == target]
+            point =  target_residues[target_residues['atom_name'] == target]
+            all_contacts = find_points_within_radius(point, residues_found, radius)
+            bb_hydrogen_bonds = all_contacts.loc[
+                 (residues_found['H-Bond BB'] == '#FF0000')]
+            sc_hydrogen_bonds = all_contacts.loc[
+                (residues_found['H-Bond SC'] == '#FF0000')]
         else:
-            current_df = data_frame_target.loc[data_frame_target['residue_index'] == target ]
-        near_neighbor_current = find_nearest_points(current_df,data_frame_binder,distance, is_ligand)
-        if near_neighbor_current.empty:
+            point = target_residues[target_residues['residue_index'] == target]
+            all_contacts = find_points_within_radius(point, residues_found, radius)
+            bb_hydrogen_bonds = all_contacts.loc[
+                 (residues_found['H-Bond BB'] == '#FF0000')]
+            sc_hydrogen_bonds = all_contacts.loc[
+                (residues_found['H-Bond SC'] == '#FF0000')]
+            polar_contacts = all_contacts.loc[
+                (residues_found['Salt Bridge'] == '#FF0000')]
+
+        AA_all_contacts = transform_to_1_letter_code(all_contacts['AA'].values.tolist())
+        AA_bb = transform_to_1_letter_code(bb_hydrogen_bonds['AA'].values.tolist())
+        AA_sc = transform_to_1_letter_code(sc_hydrogen_bonds['AA'].values.tolist())
+        if not is_ligand:
+            AA_pc = transform_to_1_letter_code(polar_contacts['AA'].values.tolist())
+        else:
+            AA_pc = []
+
+        # Check if any transformed lists are empty and handle accordingly
+        if len( AA_all_contacts) == 0:
             continue
-        AA_sq = transform_to_1_letter_code(near_neighbor_current['AA'].values.tolist())
-        residues.append(f' {target} \n n = {len(AA_sq)} ')
-        bits = calculate_bits(list_of_AA, AA_sq)
-        rows_bits.append(bits)
-        df = pd.DataFrame(columns=model.columns)
-        df = pd.concat([df, pd.DataFrame([bits], columns=df.columns)], ignore_index=True)
-        plots.append([df, [target]])
-        
-     
-    if not len(residues) == 1:
-        df = pd.DataFrame(columns=model.columns)
-        df = pd.concat([df, pd.DataFrame(rows_bits, columns=df.columns)], ignore_index=True)
-        plots.append([df, residues])
+        else:
+            residue_num = f' {target} \n n = {len(AA_all_contacts)} '
+            resi_combined_all_contacts.append(residue_num)
+            all_bits = calculate_bits(list_of_AA, AA_all_contacts)
+            rows_bits_all_sq.append(all_bits)
+            df_all_contact = pd.DataFrame(columns=model.columns)
+            df_all_contact = pd.concat([df_all_contact, pd.DataFrame([all_bits], columns=df_all_contact.columns)],
+                                       ignore_index=True)
+            plots.append([df_all_contact, [residue_num]])
+
+        # Repeat the same check for other contact types
+        if len( AA_bb) == 0:
+            plots_rows.append([None,None])
+        else:
+            bb_residue_num = f' {target} \n n = {len(AA_bb)} '
+            resi_combined_bb_hb.append(bb_residue_num)
+            bb_bits = calculate_bits(list_of_AA, AA_bb)
+            rows_bits_bb.append(bb_bits)
+            df_bb = pd.DataFrame(columns=model.columns)
+            df_bb = pd.concat([df_bb, pd.DataFrame([bb_bits], columns=df_bb.columns)], ignore_index=True)
+            plots_rows.append([df_bb, [bb_residue_num]])
+
+        if len(AA_sc) == 0:
+            plots_rows.append([None,None])
+        else:
+            sc_residue_num = f' {target} \n n = {len(AA_sc)} '
+            resi_combined_sc_bb.append(sc_residue_num)
+            sc_bits = calculate_bits(list_of_AA, AA_sc)
+            rows_bits_sc.append(sc_bits)
+            df_sc = pd.DataFrame(columns=model.columns)
+            df_sc = pd.concat([df_sc, pd.DataFrame([sc_bits], columns=df_sc.columns)], ignore_index=True)
+            plots_rows.append([df_sc, [sc_residue_num]])
+
+        if len( AA_pc) == 0:
+            plots_rows.append([None,None])
+        else:
+            pc_residue_num = f' {target} \n n = {len(AA_pc)} '
+            resi_combined_pc.append(pc_residue_num)
+            pc_bits = calculate_bits(list_of_AA, AA_pc)
+            rows_bits_pc.append(pc_bits)
+            df_pc = pd.DataFrame(columns=model.columns)
+            df_pc = pd.concat([df_pc, pd.DataFrame([pc_bits], columns=df_pc.columns)], ignore_index=True)
+            plots_rows.append([df_pc, [pc_residue_num]])
+
+    if not len(resi_combined_all_contacts) == 1:
+        df_all_contact = pd.DataFrame(columns=model.columns)
+        df_all_contact = pd.concat([df_all_contact, pd.DataFrame(rows_bits_all_sq, columns=df_all_contact.columns)], ignore_index=True)
+        plots.append([df_all_contact, resi_combined_all_contacts])
+        if len(rows_bits_bb) == 0 :
+            plots_rows.append([None,None])
+        else:
+            df_bb= pd.DataFrame(columns=model.columns)
+            df_bb = pd.concat([df_bb, pd.DataFrame(rows_bits_bb, columns=df_bb.columns)],
+                                       ignore_index=True)
+            plots_rows.append([df_bb, resi_combined_bb_hb])
+        if len(rows_bits_sc) == 0 :
+            plots_rows.append([None,None])
+        else:
+            df_sc= pd.DataFrame(columns=model.columns)
+            df_sc = pd.concat([df_sc, pd.DataFrame(rows_bits_sc, columns=df_sc.columns)],
+                                       ignore_index=True)
+            plots_rows.append([df_sc, resi_combined_sc_bb])
+
+        if len(rows_bits_pc) == 0:
+            plots_rows.append([None,None])
+        else:
+            df_pc= pd.DataFrame(columns=model.columns)
+            df_pc = pd.concat([df_pc, pd.DataFrame(rows_bits_pc, columns=df_pc.columns)],
+                                       ignore_index=True)
+            plots_rows.append([df_pc, resi_combined_pc])
+
     if  only_combined_logo:
-        df = pd.DataFrame(columns=model.columns)
-        df = pd.concat([df, pd.DataFrame(rows_bits, columns=df.columns)], ignore_index=True)
-        plots = [[df, residues]]
-    create_sequence_logo_list(plots)
-    
+        plots_rows = []
+        df_all_contact = pd.DataFrame(columns=model.columns)
+        df_all_contact = pd.concat([df_all_contact, pd.DataFrame(rows_bits_all_sq, columns=df_all_contact.columns)], ignore_index=True)
+        plots = [[df_all_contact, resi_combined_all_contacts]]
+        if len(rows_bits_bb) == 0 :
+            plots_rows.append([None,None])
+        else:
+            df_bb= pd.DataFrame(columns=model.columns)
+            df_bb = pd.concat([df_bb, pd.DataFrame(rows_bits_bb, columns=df_bb.columns)],
+                                       ignore_index=True)
+            plots_rows.append([df_bb, resi_combined_bb_hb])
+        if len(rows_bits_sc) == 0 :
+            plots_rows.append([None,None])
+        else:
+            df_sc= pd.DataFrame(columns=model.columns)
+            df_sc = pd.concat([df_sc, pd.DataFrame(rows_bits_sc, columns=df_sc.columns)],
+                                       ignore_index=True)
+            plots_rows.append([df_sc, resi_combined_sc_bb])
+        if len(rows_bits_pc )== 0:
+            plots_rows.append([None,None])
+        else:
+            df_pc= pd.DataFrame(columns=model.columns)
+            df_pc = pd.concat([df_pc, pd.DataFrame(rows_bits_pc, columns=df_bb.columns)],
+                                       ignore_index=True)
+            plots_rows.append([df_pc, resi_combined_pc])
 
+    create_sequence_logo_list(plots, plots_rows,is_ligand)
 
-    
+# pd.set_option('display.max_columns', None)
+# pd.set_option('display.max_rows', None)
+#
+# paths = glob.glob("HA_docked_inputs/*.pdb")
+# df,target = plot(paths, "B","A",False,7)
+# sequence_logos(df, target,[x for x in range(100,200)], False,False, 7)

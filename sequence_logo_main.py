@@ -239,7 +239,7 @@ def create_sequence_logo_list(df_list):
         logo = logomaker.Logo(df[0], ax=ax, color_scheme='NajafabadiEtAl2017', shade_below=0.5)
         logo.ax.set_ylabel('Frequency')
         positions = [i for i in range(len(df[1]))]
-        logo.ax.set_xticklabels(df[1])
+        logo.ax.set_xticklabels(df[1], fontsize=8)
         logo.ax.set_xticks(positions)
 
         ax.set_title("AA interactions with target ligand residue(s)")
@@ -259,7 +259,7 @@ def plot_sequence_logo(df, filename=None):
     top = bottom + df.values
 
     # Plotting the sequence logo
-    fig, ax = plt.subplots(figsize=(10, 5))
+    fig, ax = plt.subplots(figsize=(10, 10))
 
     for base in df.columns:
         ax.fill_between(df.index, bottom[base], top[base], alpha=0.8, linewidth=0.4)
@@ -330,7 +330,7 @@ def sequence_logos(data_frame_target, data_frame_binder, sequence_logo_targets, 
         if near_neighbor_current.empty:
             continue
         AA_sq = transform_to_1_letter_code(near_neighbor_current['AA'].values.tolist())
-        residues.append(f' {target} \n n = {len(AA_sq)} ')
+        residues.append(f' {target} \n n={len(AA_sq)} ')
         bits = calculate_bits(list_of_AA, AA_sq)
         rows_bits.append(bits)
         df = pd.DataFrame(columns=model.columns)

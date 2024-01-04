@@ -4,9 +4,16 @@ import argparse
 import os
 import pathlib
 
+from Bio import pairwise2
+from Bio.pairwise2 import format_alignment
+
+
+import os
+
+
 VALID_3_LINE_STARTERS = {"ALA":"A", "CYS":"C", "ASP":"D", "GLU":"E", "GLY":"G", "HIS":"H", "ILE":"I", "LYS":"K", "LEU":"L", "MET":"M",
                          "ASN":"N", "PHE":"F", "PRO":"P", "GLN":"Q", "ARG":"R", "SER":"S", "THR":"T", "VAL":"V", "TRP":"W", "TYR":"T"}
-
+REF_SEQ = ""
 def similar(string_a : str, string_b: str) -> int:
     """
     This function is used to get the similarity of two strings and return a score in percent
@@ -31,6 +38,31 @@ def similar(string_a : str, string_b: str) -> int:
         if raw_score > best_score:
             best_score = raw_score
     return int(best_score*100)
+
+
+
+def get_sequence(list_pdb: list) -> str:
+    pre_tested_seq = ""
+    last_res_index = 0
+    last_chain = "5"
+    for line in list_pdb:
+        if "TER" in line[0:6] or "END" in line[0:6]:
+            continue
+        elif line[17:21].strip() in VALID_3_LINE_STARTERS:
+            chain = line[21]
+            res_index = int(line[22:26].strip())
+            if res_index != last_res_index or chain != last_chain:
+                last_chain = chain
+                last_res_index = res_index
+                pre_tested_seq += VALID_3_LINE_STARTERS[line[17:21].strip()]
+    return pre_tested_seq
+
+
+def align_proteins(protein_seq_1 : str, protein_seq_2: str) -> list:
+    alignments = format_alignment(*pairwise2.align.globalxx(protein_seq_1, protein_seq_2)[0])
+    return alignments
+
+
 
 def find_similar_seqs(query_sequences : list, list_pdb : list, seq_identity : int, first_only: bool = True) -> list:
     """
@@ -343,7 +375,10 @@ def seq_search(seq : str, parsed_pdb : list = None,input_pdb_path: str = None, s
 
     return pdb_seq_hits
 
-def seq_and_chain_search(input_pdb_path: str, binder_seq : str = None, target_protein_seq : str = None, binder_chains : str = None, target_protein_chains : str = None, order : str = "chains", seq_id : int = 95, sm_name : str = None, target_sm_chains : str = None, search_sm : str = "chains", take_first_ligand_only: bool = True, mesh_search_results:list = []) -> dict:
+
+
+
+def seq_and_chain_search(input_pdb_path: str, binder_seq : str = None, target_protein_seq : str = None, binder_chains : str = None, target_protein_chains : str = None, order : str = "chains", seq_id : int = 95, sm_name : str = None, target_sm_chains : str = None, search_sm : str = "chains", take_first_ligand_only: bool = True, mesh_search_results:list = []) -> [dict,int]:
     """
     This function is used to determine the order of filtering and what to filter out using the user input. The binder/target_protein are identical calls, just different inputs
     All the params from main are passed into here
@@ -398,8 +433,23 @@ def seq_and_chain_search(input_pdb_path: str, binder_seq : str = None, target_pr
                         if line not in holder:
                             pdb_hits["binder"].append(line)
             else:
-                pass
-                # add everything not in sequence and first?
+                if mesh_search_results:
+                    holder = chain_search(target_protein_chains, mesh_search_results)
+                    for line in mesh_search_results:
+                        if "TER" in line[0:6] or "END" in line[0:6]:
+                            continue
+                        if "HETATM" in line[0:6]:
+                            continue
+                        if line not in holder:
+                            pdb_hits["binder"].append(line)
+                else:
+                    holder = chain_search(target_protein_chains, None, input_pdb_path)
+                    parsed_pdb = parse_pdb(input_pdb_path)
+                    for line in parsed_pdb:
+                        if "TER" or "END" in line:
+                            continue
+                        if line not in holder:
+                            pdb_hits["binder"].append(line)
 
 
         elif(target_sm_chains or sm_name):
@@ -409,7 +459,8 @@ def seq_and_chain_search(input_pdb_path: str, binder_seq : str = None, target_pr
                         continue
                     pdb_hits["binder"].append(line)
             else:
-                pass
+                print("Error, not sure what to do here")
+                exit(1)
         else:
             print("ERROR no chain or seq selected for binder")
             exit(1)
@@ -441,6 +492,8 @@ def seq_and_chain_search(input_pdb_path: str, binder_seq : str = None, target_pr
         print("ERROR no chain or seq selected for target_protein")
         exit(1)
 
+
+
     if target_sm_chains or sm_name:
 
         if target_sm_chains:
@@ -452,11 +505,40 @@ def seq_and_chain_search(input_pdb_path: str, binder_seq : str = None, target_pr
         else:
             pdb_hits["sm"] = sm_search(sm_name,target_sm_chains,search_sm,take_first_ligand_only,input_pdb_path)
 
+    if (target_protein_seq or target_protein_chains):
+        global REF_SEQ
+        if REF_SEQ == "" or REF_SEQ is None:
+            REF_SEQ = get_sequence(pdb_hits["target_protein"])
+        else:
+            target_seq = get_sequence(pdb_hits["target_protein"])
+            alignment = align_proteins(protein_seq_2 = target_seq,protein_seq_1 = REF_SEQ)
+            print(alignment)
+            largest_match_ref = max(alignment.split("\n")[0].split("-"),key=len)
+            largest_match_align = max(alignment.split("\n")[2].split("-"), key=len)
 
-    return pdb_hits
+            match = SequenceMatcher(None, largest_match_ref, largest_match_align).find_longest_match(0, len(largest_match_ref), 0, len(largest_match_align))
 
 
-def write_pdbs(pdb_name : str, pdb_hits: dict, output_path : str, name_conversion: dict = None,binder_chain_rename = "C",target_protein_chain_rename = "A",target_sm_chain_rename = "B") -> None:
+            largest_match = largest_match_ref[match.a:match.a + match.size]
+
+            largest_index_ref = REF_SEQ.find(largest_match)
+            largest_index_align = target_seq.find(largest_match)
+
+
+            print(largest_match,largest_index_align,largest_index_ref)
+            print(input_pdb_path)
+
+            if largest_index_align >= largest_index_ref:
+                print(-1*(largest_index_align - largest_index_ref),"longer")
+                return [pdb_hits,-1*(largest_index_align - largest_index_ref)]
+            else:
+                print(largest_index_ref - largest_index_align,"shorter")
+                return [pdb_hits,  largest_index_ref - largest_index_align]
+
+    return [pdb_hits, None]
+
+
+def write_pdbs(pdb_name : str, pdb_hits: dict, output_path : str, name_conversion: dict = None,binder_chain_rename = "C",target_protein_chain_rename = "A",target_sm_chain_rename = "B",target_ref_start=None) -> None:
     """
     used to write the output pdb file. Takes the info from the filtering step and outputs it into a pdb
     :param pdb_name: the name of the output pdb file
@@ -471,6 +553,8 @@ def write_pdbs(pdb_name : str, pdb_hits: dict, output_path : str, name_conversio
             out_res_index = 0
             last_res_index = 0
             last_chain = 0
+            if key == "target_protein" and target_ref_start != None:
+                out_res_index = target_ref_start
             for x, line in enumerate(pdb_hits[key]):
                 if "TER" in line[0:6] and not ter_used_last:
                     ter_used_last = True
@@ -626,7 +710,7 @@ def main(input_pdb_path: str, output_path: str, binder_seq : str = None, target_
         pdb_to_write = seq_and_chain_search(input_pdb_path,binder_seq,target_protein_seq,binder_chains,anitgen_chains,order,seq_identity,sm_name,target_sm_chains,search_sm,take_first_ligand)
 
     pdb_name = os.path.basename(input_pdb_path).replace(".pdb","_cleaned.pdb")
-    write_pdbs(pdb_name,pdb_to_write,output_path, name_conversion,binder_rename,target_rename,sm_rename)
+    write_pdbs(pdb_name,pdb_to_write[0],output_path, name_conversion,binder_rename,target_rename,sm_rename,pdb_to_write[1])
 
 
 if __name__ == "__main__":
@@ -654,19 +738,13 @@ if __name__ == "__main__":
     parser.add_argument("-b", "--binder_chain_rename", type=str,help="what the binder chain is supposed to be named", default="C")
     parser.add_argument("-t", "--take_first_sm_only", type=bool, help="should we take the first instence of the ligand only?",default=True)
     parser.add_argument("-T", "--name_sm_atoms_same", type=bool,help="should rename all matching ligands with the same atom name. Uses the first file as a refrence", default=False)
-    parser.add_argument("-r", "--reference_path", type=str, help="path of the reference file for renaming ligands file default is first file in the input dir", default=None)
+    parser.add_argument("-r", "--sm_ligand_reference_path", type=str, help="path of the reference file for renaming sm ligands file default is first file in the input dir", default=None)
     parser.add_argument("-B", "--bond_length", type=float,help="distance that is considered a bond between 2 atoms for chemical graphs", default=2.1)
     parser.add_argument("-m", "--search_radius", type=float,help="distance that is considered for finding close things in mesh search", default=8.0)
     parser.add_argument("-M", "--mesh_search", type=str, help="add the chains, seqs, and sm for the mesh filter example: 'A,B;AWTRWARE,AWAWAWAW;TPA,ATP'", default=";;")
+    parser.add_argument("-A", "--seq_target_align", type=bool,help="Align the target protein in sequence space and results in pdb numbering aligning. Do not use for small molecules",default=False)
+    parser.add_argument("-a", "--seq_target_ref_pdb", type=str,help="Reference structure for target protein in seq_target_align",default=None,required=False)
     args = parser.parse_args()
-
-    # add option for ligand name and radius around it
-    # add option for recurision level
-    # add option to set radius
-
-    if not args.binder_seqs and not args.binder_chains and not args.binder_seq_fa:
-        print("You must enter a binder chain or sequence or both!")
-    #    exit(1)
 
     # checking to see if a sm or target_protein is present
     if not args.target_protein_seqs and not args.target_protein_chains and not args.target_sm_3_names and not args.target_sm_chains and not args.target_seq_fa:
@@ -712,16 +790,26 @@ if __name__ == "__main__":
         else:
             args.target_protein_seqs = parse_FA_file(args.target_protein_seq_fa)
 
-    if args.reference_path:
-        if not os.path.exists(args.reference_path):
+    if args.sm_ligand_reference_path:
+        if not os.path.exists(args.sm_ligand_reference_path):
             print("the reference sm file does not exist!")
             exit(1)
-        if not os.path.isfile(args.reference_path):
+        if not os.path.isfile(args.sm_ligand_reference_path):
             print("the reference sm file given was a directory not a file!")
             exit(1)
 
+
+    if args.seq_target_ref_pdb:
+        if not os.path.exists(args.seq_target_ref_pdb):
+            print("the reference sequence alignment file does not exist!")
+            exit(1)
+        if not os.path.isfile(args.seq_target_ref_pdb):
+            print("the reference sequence alignment file given was a directory not a file!")
+            exit(1)
+
+
     ref_tree = {}
-    if args.reference_path:
+    if args.sm_ligand_reference_path:
         sm_name = ""
         target_sm_chains = ""
         if args.target_sm_chains:
@@ -729,12 +817,18 @@ if __name__ == "__main__":
         if args.target_sm_3_names:
             sm_name = arg_spliter(args.target_sm_3_names)
         if args.name_sm_atoms_same:
-            first_ligand = sm_search(sm_name, target_sm_chains, args.search_first_sm, True,args.reference_path)
+            first_ligand = sm_search(sm_name, target_sm_chains, args.search_first_sm, True,args.sm_ligand_reference_path)
             ref_tree = get_sm_atom_names_and_connections(first_ligand,args.bond_length)
+
+
+
 
     # running the main method for a single file that is a .pdb
     if os.path.isfile(args.input_path):
-        pass
+        if args.seq_target_ref_pdb:
+            print("seq_target_ref_pdb cannot be used with only one pdb file")
+            exit(1)
+
         if pathlib.Path(args.input_path).suffix == ".pdb":
             if args.name_sm_atoms_same:
                 sm_name = ""
@@ -746,6 +840,8 @@ if __name__ == "__main__":
                 first_ligand = sm_search(sm_name, target_sm_chains,args.search_first_sm, True,args.input_path)
                 q_tree = get_sm_atom_names_and_connections(first_ligand,args.bond_length)
                 name_conversion_key = compare_tree_get_rename(ref_tree, q_tree)
+
+
                 main(args.input_path, args.output_path, args.binder_seqs, args.target_protein_seqs, args.binder_chains,args.target_protein_chains, args.search_first_protein, args.seq_identity, args.target_sm_3_names, args.target_sm_chains, args.search_first_sm, args.take_first_sm_only, name_conversion_key, args.target_protein_chain_rename, args.target_sm_chain_rename, args.binder_chain_rename, args.search_radius, args.mesh_search)
             else:
                 main(args.input_path, args.output_path, args.binder_seqs, args.target_protein_seqs, args.binder_chains,args.target_protein_chains, args.search_first_protein, args.seq_identity, args.target_sm_3_names, args.target_sm_chains, args.search_first_sm, args.take_first_sm_only, {}, args.target_protein_chain_rename, args.target_sm_chain_rename, args.binder_chain_rename, args.search_radius, args.mesh_search)
@@ -766,9 +862,17 @@ if __name__ == "__main__":
                     target_sm_chains = arg_spliter(args.target_sm_chains)
                 if args.target_sm_3_names:
                     sm_name = arg_spliter(args.target_sm_3_names)
-                if args.name_sm_atoms_same and file_counter == 1 and not args.reference_path:
+                if args.name_sm_atoms_same and file_counter == 1 and not args.sm_ligand_reference_path:
                     first_ligand = sm_search( sm_name, target_sm_chains, args.search_first_sm,True,os.path.join(args.input_path,file))
                     ref_tree = get_sm_atom_names_and_connections(first_ligand,args.bond_length)
+                    if args.seq_target_ref_pdb and args.seq_target_ref_pdb.split("/")[-1] != file:
+                        main(args.seq_target_ref_pdb, args.output_path, args.binder_seqs,
+                             args.target_protein_seqs, args.binder_chains, args.target_protein_chains,
+                             args.search_first_protein, args.seq_identity, args.target_sm_3_names,
+                             args.target_sm_chains, args.search_first_sm, args.take_first_sm_only, {},
+                             args.target_protein_chain_rename, args.target_sm_chain_rename, args.binder_chain_rename,
+                             args.search_radius, args.mesh_search)
+
                     main(os.path.join(args.input_path,file), args.output_path, args.binder_seqs, args.target_protein_seqs, args.binder_chains, args.target_protein_chains, args.search_first_protein, args.seq_identity, args.target_sm_3_names, args.target_sm_chains, args.search_first_sm,args.take_first_sm_only,{},args.target_protein_chain_rename, args.target_sm_chain_rename, args.binder_chain_rename, args.search_radius, args.mesh_search)
                 else:
                     name_conversion_key = {}
@@ -776,5 +880,12 @@ if __name__ == "__main__":
                     q_tree = get_sm_atom_names_and_connections(first_ligand,args.bond_length)
                     if args.name_sm_atoms_same:
                         name_conversion_key = compare_tree_get_rename(ref_tree,q_tree)
+                    if args.seq_target_ref_pdb and args.seq_target_ref_pdb.split("/")[-1] != file:
+                        main(args.seq_target_ref_pdb, args.output_path, args.binder_seqs,
+                             args.target_protein_seqs, args.binder_chains, args.target_protein_chains,
+                             args.search_first_protein, args.seq_identity, args.target_sm_3_names,
+                             args.target_sm_chains, args.search_first_sm, args.take_first_sm_only, {},
+                             args.target_protein_chain_rename, args.target_sm_chain_rename, args.binder_chain_rename,
+                            args.search_radius, args.mesh_search)
                     main(os.path.join(args.input_path,file), args.output_path, args.binder_seqs, args.target_protein_seqs, args.binder_chains, args.target_protein_chains, args.search_first_protein, args.seq_identity, args.target_sm_3_names, args.target_sm_chains, args.search_first_sm,args.take_first_sm_only,name_conversion_key,args.target_protein_chain_rename, args.target_sm_chain_rename, args.binder_chain_rename, args.search_radius, args.mesh_search)
 

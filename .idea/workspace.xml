@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6408f55b-b0f5-4da5-a85e-7c85272a7ca6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/MAGPIE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MAGPIE.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jupyter-settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jupyter-settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -13,568 +14,76 @@
       <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/MAGPIE_LOCAL-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/MAGPIE_LOCAL-checkpoint.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MAGPIE_LOCAL.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/MAGPIE_LOCAL.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MAGPIE_input_prep.py" beforeDir="false" afterPath="$PROJECT_DIR$/MAGPIE_input_prep.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/2-15_7L5B.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/298_7K9Z.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/2H2_7DK4.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/52_7K9Z.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/B38_7BZ5.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/BD-236_7CHB.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/BD-368-2_7CHF.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/BD-604_7CHF.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/BD-629_7CH5.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/BD23_7BYR.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/C002_7K8T.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/C102_7K8M.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/C104_7K8U.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/C105_6XCM.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/C110_7K8V.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/C119_7K8W.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/C121_7K8X.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/C135_7K8Z.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/C144_7K90.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/C1A-B12_7KFV.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/CB6_7C01.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/CC12.1_6XC3.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/CC12.3_6XC4.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/COVA1-16_7JMW.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/COVA2-04_7JMO.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/COVA2-39_7JMP.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/CR3014-C8_7KZB.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/CR3022_6YLA.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/CT-P59_7CM4.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/CV07-250_6XKQ.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/CV07-270_6XKP.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/CV30_6XE1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/DH1047_7LD1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/EY6A_6ZCZ.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/E_7KN5.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/H014_7CAI.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/H11-D4_6YZ5.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/H11-H4_6ZH9.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/LY-CoV481_7KMI.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/LY-CoV488_7KMH.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/LY-CoV555_7KMG.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/MR17_7C8W.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/Nb20_7JVB.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/P17_7CWN.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/P2B-2F6_7BWJ.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/P2C-1A3_7CDJ.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/P2C-1F11_7CDI.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/P4A1_7CJF.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/REGN10933_6XDG.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/REGN10987_6XDG.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/S2A4_7JVC.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/S2E12_7K4N.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/S2H13_7JV6.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/S2H14_7JX3.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/S2M11_7K43.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/S304_7JX3.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/S309_7JX3.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/SR4_7C8V.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/STE90-C11_7B3O.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/Sb16_7KGK.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/Sb23_7A29.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/Sb45_7KGJ.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/Sb68_7KLW.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/Ty1_6ZXN.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/U_7KN5.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/V_7KN6.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/W_7KN7.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/mNb6_7KKL.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/298_7K9Z_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/298_7K9Z_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/2H2_7DK4_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/2H2_7DK4_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/52_7K9Z_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/52_7K9Z_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/B38_7BZ5_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/B38_7BZ5_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/BD-236_7CHB_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/BD-236_7CHB_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/BD-368-2_7CHF_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/BD-368-2_7CHF_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/BD-604_7CHF_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/BD-604_7CHF_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/BD-629_7CH5_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/BD-629_7CH5_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/BD23_7BYR_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/BD23_7BYR_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/C002_7K8T_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/C002_7K8T_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/C102_7K8M_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/C102_7K8M_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/C104_7K8U_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/C104_7K8U_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/C105_6XCM_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/C105_6XCM_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/C110_7K8V_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/C110_7K8V_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/C119_7K8W_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/C119_7K8W_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/C121_7K8X_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/C121_7K8X_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/C135_7K8Z_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/C135_7K8Z_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/C144_7K90_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/C144_7K90_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/C1A-B12_7KFV_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/C1A-B12_7KFV_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/CB6_7C01_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/CB6_7C01_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/CC12.1_6XC3_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/CC12.1_6XC3_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/CC12.3_6XC4_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/CC12.3_6XC4_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/COVA1-16_7JMW_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/COVA1-16_7JMW_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/COVA2-04_7JMO_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/COVA2-04_7JMO_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/CR3014-C8_7KZB_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/CR3014-C8_7KZB_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/CR3022_6YLA_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/CR3022_6YLA_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/CT-P59_7CM4_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/CT-P59_7CM4_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/CV07-270_6XKP_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/CV07-270_6XKP_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/CV30_6XE1_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/CV30_6XE1_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/DH1047_7LD1_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/DH1047_7LD1_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/EY6A_6ZCZ_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/EY6A_6ZCZ_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/E_7KN5_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/E_7KN5_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/H014_7CAI_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/H014_7CAI_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/H11-D4_6YZ5_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/H11-D4_6YZ5_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/H11-H4_6ZH9_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/H11-H4_6ZH9_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/LY-CoV481_7KMI_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/LY-CoV481_7KMI_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/LY-CoV488_7KMH_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/LY-CoV488_7KMH_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/LY-CoV555_7KMG_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/LY-CoV555_7KMG_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/MR17_7C8W_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/MR17_7C8W_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/Nb20_7JVB_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/Nb20_7JVB_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/P17_7CWN_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/P17_7CWN_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/P2B-2F6_7BWJ_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/P2B-2F6_7BWJ_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/P2C-1A3_7CDJ_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/P2C-1A3_7CDJ_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/P2C-1F11_7CDI_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/P2C-1F11_7CDI_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/P4A1_7CJF_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/P4A1_7CJF_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/REGN10933_6XDG_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/REGN10933_6XDG_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/REGN10987_6XDG_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/REGN10987_6XDG_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/S2A4_7JVC_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/S2A4_7JVC_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/S2E12_7K4N_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/S2E12_7K4N_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/S2H13_7JV6_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/S2H13_7JV6_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/S2H14_7JX3_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/S2H14_7JX3_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/S2M11_7K43_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/S2M11_7K43_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/S304_7JX3_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/S304_7JX3_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/S309_7JX3_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/S309_7JX3_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/SR4_7C8V_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/SR4_7C8V_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/STE90-C11_7B3O_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/STE90-C11_7B3O_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/Sb16_7KGK_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/Sb16_7KGK_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/Sb23_7A29_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/Sb23_7A29_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/Sb45_7KGJ_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/Sb45_7KGJ_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/Sb68_7KLW_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/Sb68_7KLW_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/Ty1_6ZXN_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/Ty1_6ZXN_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/U_7KN5_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/U_7KN5_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/V_7KN6_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/V_7KN6_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/W_7KN7_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/W_7KN7_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/file_description.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/file_description.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example 2/mNb6_7KKL_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example 2/mNb6_7KKL_cleaned.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/align_protein_chain.py" beforeDir="false" afterPath="$PROJECT_DIR$/align_protein_chain.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/align_small_molecule.py" beforeDir="false" afterPath="$PROJECT_DIR$/align_small_molecule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1b76reference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1c0freference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1d4xreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1d9zreference_2.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1dejreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1e24reference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1e2qreference_2.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1e4greference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1e79reference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1e8xreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1ee1reference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1eqyreference_2.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1esqreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1esvreference_2.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1fmwreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1fq1reference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1g5treference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1g64reference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1gn8reference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1golreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1gtrreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1gy3reference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1gz3reference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1gz4reference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1h1vreference_2.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/1h1wreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/pdb1a0ireference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/pdb1a49reference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/pdb1a5ureference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/pdb1a82reference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/pdb1aq2reference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/pdb1aszreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/pdb1atnreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/pdb1b0ureference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/pdb1b38reference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/pdb1b39reference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/pdb1b8areference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/pdb1bcpreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/pdb1c0greference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/pdb1csnreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/pdb1do0reference_2.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/pdb1dv2reference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/pdb1dy3reference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/pdb1f2ureference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/pdb1f9areference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/pdb1finreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/pdb1g21reference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aligned/pdb1g3ireference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1b76.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1c0f.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1d4x.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1d9z.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1dej.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1e24.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1e2q.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1e4g.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1e79.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1e8x.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1ee1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1eqy.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1esq.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1esv.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1fmw.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1fq1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1g5t.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1g64.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1gn8.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1gol.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1gtr.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1gy3.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1gz3.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1gz4.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1h1v.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/1h1w.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/pdb1a0i.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/pdb1a49.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/pdb1a5u.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/pdb1a82.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/pdb1aq2.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/pdb1asz.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/pdb1atn.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/pdb1b0u.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/pdb1b38.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/pdb1b39.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/pdb1b8a.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/pdb1bcp.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/pdb1c0g.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/pdb1csn.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/pdb1do0.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/pdb1dv2.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/pdb1dy3.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/pdb1f2u.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/pdb1f9a.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/pdb1fin.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/pdb1g21.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_renumbered/pdb1g3i.pdb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hbonds_saltbridges.py" beforeDir="false" afterPath="$PROJECT_DIR$/hbonds_saltbridges.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help_aligined/3cmmreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/help_aligined/5l6i_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/help_aligined/5l6ireference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/help_aligined/6zqh_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/help_aligined/6zqhreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/help_aligined/pdb4ii3_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/help_aligined/pdb4ii3reference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/help_aligined/pdb5l6h_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/help_aligined/pdb5l6hreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/help_aligined/pdb5l6j_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/help_aligined/pdb5l6jreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/help_aligined/pdb5tr4_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/help_aligined/pdb5tr4reference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/help_aligined/pdb6dc6_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/help_aligined/pdb6dc6reference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/help_aligined/pdb6o82_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/help_aligined/pdb6o82reference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/help_aligined/pdb7pvnreference_1.pdb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/helper_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/helper_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001_1_602_15850_23_relaxed_0_passed_mpnn_relaxed_model_0_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001_1_602_15850_23_relaxed_0_passed_mpnn_relaxed_model_1_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001_1_602_15850_23_relaxed_0_passed_mpnn_relaxed_model_1_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001_1_602_15850_23_relaxed_0_passed_mpnn_relaxed_model_1_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001_1_602_15850_23_relaxed_0_passed_mpnn_relaxed_model_3_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001_1_602_15850_23_relaxed_0_passed_mpnn_relaxed_model_3_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001_1_602_15850_23_relaxed_0_passed_mpnn_relaxed_model_4_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001_1_602_15850_23_relaxed_1_passed_mpnn_relaxed_model_0_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001_1_602_15850_23_relaxed_1_passed_mpnn_relaxed_model_0_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001_1_602_15850_23_relaxed_1_passed_mpnn_relaxed_model_0_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001_1_602_15850_23_relaxed_1_passed_mpnn_relaxed_model_2_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001_1_602_15850_23_relaxed_1_passed_mpnn_relaxed_model_4_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001_1_602_15850_23_relaxed_3_passed_mpnn_relaxed_model_1_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001_1_602_15850_23_relaxed_4_passed_mpnn_relaxed_model_1_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001_1_602_15850_23_relaxed_4_passed_mpnn_relaxed_model_3_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001_1_602_15850_23_relaxed_4_passed_mpnn_relaxed_model_3_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001_1_602_15850_23_relaxed_4_passed_mpnn_relaxed_model_4_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001_1_602_15850_23_relaxed_4_passed_mpnn_relaxed_model_4_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_597_15850_18_relaxed_0_passed_mpnn_relaxed_model_1_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_597_15850_18_relaxed_0_passed_mpnn_relaxed_model_1_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_597_15850_18_relaxed_0_passed_mpnn_relaxed_model_2_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_597_15850_18_relaxed_1_passed_mpnn_relaxed_model_0_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_597_15850_18_relaxed_1_passed_mpnn_relaxed_model_0_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_597_15850_18_relaxed_1_passed_mpnn_relaxed_model_3_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_597_15850_18_relaxed_2_passed_mpnn_relaxed_model_1_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_597_15850_18_relaxed_2_passed_mpnn_relaxed_model_1_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_597_15850_18_relaxed_2_passed_mpnn_relaxed_model_2_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_597_15850_18_relaxed_3_passed_mpnn_relaxed_model_1_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_597_15850_18_relaxed_3_passed_mpnn_relaxed_model_1_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_597_15850_18_relaxed_3_passed_mpnn_relaxed_model_2_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_597_15850_18_relaxed_4_passed_mpnn_relaxed_model_0_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_597_15850_18_relaxed_4_passed_mpnn_relaxed_model_0_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputs_test/final_model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_597_15850_18_relaxed_4_passed_mpnn_relaxed_model_1_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001_1_602_15850_23_relaxed_0_passed_mpnn_relaxed_model_0_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_597_15850_18_relaxed_4_passed_mpnn_relaxed_model_1_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_597_15850_18_relaxed_4_passed_mpnn_relaxed_model_3_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_597_15850_18_relaxed_4_passed_mpnn_relaxed_model_3_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_597_15850_18_relaxed_4_passed_mpnn_relaxed_model_4_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_597_15850_18_relaxed_4_passed_mpnn_relaxed_model_4_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001_3_599_13227_20_relaxed_0_passed_mpnn_relaxed_model_0_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001_3_599_13227_20_relaxed_0_passed_mpnn_relaxed_model_0_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001_3_599_13227_20_relaxed_0_passed_mpnn_relaxed_model_0_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001_3_599_13227_20_relaxed_0_passed_mpnn_relaxed_model_1_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001_3_599_13227_20_relaxed_0_passed_mpnn_relaxed_model_1_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001_3_599_13227_20_relaxed_0_passed_mpnn_relaxed_model_2_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001_3_599_13227_20_relaxed_0_passed_mpnn_relaxed_model_2_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001_3_599_13227_20_relaxed_0_passed_mpnn_relaxed_model_4_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001_3_599_13227_20_relaxed_0_passed_mpnn_relaxed_model_4_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001_3_599_13227_20_relaxed_1_passed_mpnn_relaxed_model_3_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001_3_599_13227_20_relaxed_1_passed_mpnn_relaxed_model_3_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001_3_599_13227_20_relaxed_1_passed_mpnn_relaxed_model_4_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001_3_599_13227_20_relaxed_2_passed_mpnn_relaxed_model_0_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001_3_599_13227_20_relaxed_2_passed_mpnn_relaxed_model_1_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001_3_599_13227_20_relaxed_2_passed_mpnn_relaxed_model_2_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001_3_599_13227_20_relaxed_3_passed_mpnn_relaxed_model_2_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001_3_599_13227_20_relaxed_3_passed_mpnn_relaxed_model_3_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001_3_599_13227_20_relaxed_3_passed_mpnn_relaxed_model_4_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001_3_599_13227_20_relaxed_4_passed_mpnn_relaxed_model_4_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_600_00944_23_relaxed_0_passed_mpnn_relaxed_model_4_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_600_00944_23_relaxed_0_passed_mpnn_relaxed_model_4_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_600_00944_23_relaxed_0_passed_mpnn_relaxed_model_4_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_600_00944_23_relaxed_1_passed_mpnn_relaxed_model_0_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_600_00944_23_relaxed_1_passed_mpnn_relaxed_model_2_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_600_00944_23_relaxed_1_passed_mpnn_relaxed_model_2_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_600_00944_23_relaxed_1_passed_mpnn_relaxed_model_2_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_600_00944_23_relaxed_1_passed_mpnn_relaxed_model_4_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_600_00944_23_relaxed_2_passed_mpnn_relaxed_model_1_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_600_00944_23_relaxed_2_passed_mpnn_relaxed_model_1_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_600_00944_23_relaxed_2_passed_mpnn_relaxed_model_2_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_600_00944_23_relaxed_2_passed_mpnn_relaxed_model_2_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001_1_600_00944_23_relaxed_2_passed_mpnn_relaxed_model_2_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001_1_598_15850_19_relaxed_0_passed_mpnn_relaxed_model_3_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001_1_598_15850_19_relaxed_0_passed_mpnn_relaxed_model_3_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001_1_598_15850_19_relaxed_0_passed_mpnn_relaxed_model_3_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001_1_598_15850_19_relaxed_0_passed_mpnn_relaxed_model_3_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001_1_598_15850_19_relaxed_1_passed_mpnn_relaxed_model_0_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001_1_598_15850_19_relaxed_1_passed_mpnn_relaxed_model_1_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001_1_598_15850_19_relaxed_1_passed_mpnn_relaxed_model_1_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001_1_598_15850_19_relaxed_1_passed_mpnn_relaxed_model_2_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001_1_598_15850_19_relaxed_1_passed_mpnn_relaxed_model_2_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001_1_598_15850_19_relaxed_1_passed_mpnn_relaxed_model_2_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001_1_598_15850_19_relaxed_1_passed_mpnn_relaxed_model_4_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001_1_598_15850_19_relaxed_2_passed_mpnn_relaxed_model_1_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001_1_598_15850_19_relaxed_2_passed_mpnn_relaxed_model_1_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001_1_598_15850_19_relaxed_2_passed_mpnn_relaxed_model_2_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001_1_598_15850_19_relaxed_2_passed_mpnn_relaxed_model_3_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001_1_598_15850_19_relaxed_2_passed_mpnn_relaxed_model_4_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001_1_598_15850_19_relaxed_2_passed_mpnn_relaxed_model_4_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001_1_598_15850_19_relaxed_3_passed_mpnn_relaxed_model_4_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001_1_598_15850_19_relaxed_3_passed_mpnn_relaxed_model_4_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001_1_598_15850_19_relaxed_4_passed_mpnn_relaxed_model_0_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001_1_598_15850_19_relaxed_4_passed_mpnn_relaxed_model_4_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_3_desinged_bundles_fail_0001_1_599_15850_20_relaxed_4_passed_mpnn_relaxed_model_0_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_3_desinged_bundles_fail_0001_1_599_15850_20_relaxed_4_passed_mpnn_relaxed_model_1_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_3_desinged_bundles_fail_0001_1_599_15850_20_relaxed_4_passed_mpnn_relaxed_model_1_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_3_desinged_bundles_fail_0001_1_599_15850_20_relaxed_4_passed_mpnn_relaxed_model_1_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_3_desinged_bundles_fail_0001_1_599_15850_20_relaxed_4_passed_mpnn_relaxed_model_4_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_3_desinged_bundles_fail_0001_1_599_15850_20_relaxed_4_passed_mpnn_relaxed_model_4_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_3_desinged_bundles_fail_0001_1_599_15850_20_relaxed_4_passed_mpnn_relaxed_model_4_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_0_passed_mpnn_relaxed_model_0_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_0_passed_mpnn_relaxed_model_1_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_0_passed_mpnn_relaxed_model_1_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_0_passed_mpnn_relaxed_model_1_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_0_passed_mpnn_relaxed_model_1_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_0_passed_mpnn_relaxed_model_2_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_0_passed_mpnn_relaxed_model_2_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_0_passed_mpnn_relaxed_model_2_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_0_passed_mpnn_relaxed_model_2_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_0_passed_mpnn_relaxed_model_3_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_0_passed_mpnn_relaxed_model_4_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_1_passed_mpnn_relaxed_model_0_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_1_passed_mpnn_relaxed_model_2_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_1_passed_mpnn_relaxed_model_2_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_1_passed_mpnn_relaxed_model_3_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_1_passed_mpnn_relaxed_model_4_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_2_passed_mpnn_relaxed_model_1_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_2_passed_mpnn_relaxed_model_2_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_2_passed_mpnn_relaxed_model_2_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_2_passed_mpnn_relaxed_model_4_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_2_passed_mpnn_relaxed_model_4_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_2_passed_mpnn_relaxed_model_4_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_2_passed_mpnn_relaxed_model_4_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_3_passed_mpnn_relaxed_model_0_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_3_passed_mpnn_relaxed_model_1_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_3_passed_mpnn_relaxed_model_2_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_3_passed_mpnn_relaxed_model_2_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_3_passed_mpnn_relaxed_model_2_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_3_passed_mpnn_relaxed_model_2_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_3_passed_mpnn_relaxed_model_2_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_3_passed_mpnn_relaxed_model_3_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_3_passed_mpnn_relaxed_model_3_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_3_passed_mpnn_relaxed_model_4_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_3_passed_mpnn_relaxed_model_4_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_3_passed_mpnn_relaxed_model_4_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_3_passed_mpnn_relaxed_model_4_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_4_passed_mpnn_relaxed_model_0_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_4_passed_mpnn_relaxed_model_2_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_4_passed_mpnn_relaxed_model_4_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001_1_600_13227_20_relaxed_4_passed_mpnn_relaxed_model_4_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_0_passed_mpnn_relaxed_model_0_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_0_passed_mpnn_relaxed_model_0_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_0_passed_mpnn_relaxed_model_3_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_0_passed_mpnn_relaxed_model_3_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_0_passed_mpnn_relaxed_model_4_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_0_passed_mpnn_relaxed_model_4_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_0_passed_mpnn_relaxed_model_4_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_1_passed_mpnn_relaxed_model_4_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_2_passed_mpnn_relaxed_model_0_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_2_passed_mpnn_relaxed_model_0_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_2_passed_mpnn_relaxed_model_0_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_2_passed_mpnn_relaxed_model_1_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_2_passed_mpnn_relaxed_model_2_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_2_passed_mpnn_relaxed_model_3_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_2_passed_mpnn_relaxed_model_3_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_2_passed_mpnn_relaxed_model_4_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_2_passed_mpnn_relaxed_model_4_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_3_passed_mpnn_relaxed_model_2_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_3_passed_mpnn_relaxed_model_2_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_3_passed_mpnn_relaxed_model_4_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_4_passed_mpnn_relaxed_model_0_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_4_passed_mpnn_relaxed_model_0_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_4_passed_mpnn_relaxed_model_0_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_4_passed_mpnn_relaxed_model_0_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_4_passed_mpnn_relaxed_model_0_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_4_passed_mpnn_relaxed_model_1_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001_1_599_00944_20_relaxed_4_passed_mpnn_relaxed_model_1_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001_1_600_15850_21_relaxed_0_passed_mpnn_relaxed_model_0_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001_1_600_15850_21_relaxed_1_passed_mpnn_relaxed_model_0_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001_1_600_15850_21_relaxed_1_passed_mpnn_relaxed_model_0_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001_1_600_15850_21_relaxed_1_passed_mpnn_relaxed_model_0_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001_1_600_15850_21_relaxed_1_passed_mpnn_relaxed_model_2_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001_1_600_15850_21_relaxed_1_passed_mpnn_relaxed_model_4_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001_1_600_15850_21_relaxed_1_passed_mpnn_relaxed_model_4_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001_1_600_15850_21_relaxed_3_passed_mpnn_relaxed_model_0_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001_1_600_15850_21_relaxed_3_passed_mpnn_relaxed_model_0_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001_1_600_15850_21_relaxed_3_passed_mpnn_relaxed_model_2_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001_1_600_15850_21_relaxed_3_passed_mpnn_relaxed_model_2_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001_1_600_15850_21_relaxed_3_passed_mpnn_relaxed_model_2_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001_1_600_15850_21_relaxed_3_passed_mpnn_relaxed_model_2_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001_1_600_15850_21_relaxed_4_passed_mpnn_relaxed_model_1_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001_1_600_15850_21_relaxed_4_passed_mpnn_relaxed_model_1_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001_1_600_15850_21_relaxed_4_passed_mpnn_relaxed_model_1_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001_1_600_15850_21_relaxed_4_passed_mpnn_relaxed_model_2_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001_1_600_15850_21_relaxed_4_passed_mpnn_relaxed_model_2_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001_1_600_15850_21_relaxed_4_passed_mpnn_relaxed_model_2_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001_1_600_15850_21_relaxed_4_passed_mpnn_relaxed_model_3_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001_1_600_15850_21_relaxed_4_passed_mpnn_relaxed_model_3_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final_model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001_1_600_15850_21_relaxed_4_passed_mpnn_relaxed_model_4_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001~1~602~15850~23_relaxed_0_passed_mpnn_relaxed_model_0_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001~1~602~15850~23_relaxed_0_passed_mpnn_relaxed_model_0_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001~1~602~15850~23_relaxed_0_passed_mpnn_relaxed_model_1_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001~1~602~15850~23_relaxed_0_passed_mpnn_relaxed_model_1_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001~1~602~15850~23_relaxed_0_passed_mpnn_relaxed_model_1_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001~1~602~15850~23_relaxed_0_passed_mpnn_relaxed_model_3_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001~1~602~15850~23_relaxed_0_passed_mpnn_relaxed_model_3_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001~1~602~15850~23_relaxed_0_passed_mpnn_relaxed_model_4_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001~1~602~15850~23_relaxed_1_passed_mpnn_relaxed_model_0_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001~1~602~15850~23_relaxed_1_passed_mpnn_relaxed_model_0_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001~1~602~15850~23_relaxed_1_passed_mpnn_relaxed_model_0_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001~1~602~15850~23_relaxed_1_passed_mpnn_relaxed_model_2_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001~1~602~15850~23_relaxed_1_passed_mpnn_relaxed_model_4_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001~1~602~15850~23_relaxed_3_passed_mpnn_relaxed_model_1_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001~1~602~15850~23_relaxed_4_passed_mpnn_relaxed_model_1_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001~1~602~15850~23_relaxed_4_passed_mpnn_relaxed_model_3_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001~1~602~15850~23_relaxed_4_passed_mpnn_relaxed_model_3_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001~1~602~15850~23_relaxed_4_passed_mpnn_relaxed_model_4_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_5lwz_HELIX_5_A_passed_mpnn_4_desinged_bundles_fail_0001_passed_mpnn_1_desinged_bundles_fail_0001~1~602~15850~23_relaxed_4_passed_mpnn_relaxed_model_4_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~597~15850~18_relaxed_0_passed_mpnn_relaxed_model_1_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~597~15850~18_relaxed_0_passed_mpnn_relaxed_model_1_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~597~15850~18_relaxed_0_passed_mpnn_relaxed_model_2_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~597~15850~18_relaxed_1_passed_mpnn_relaxed_model_0_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~597~15850~18_relaxed_1_passed_mpnn_relaxed_model_0_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~597~15850~18_relaxed_1_passed_mpnn_relaxed_model_3_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~597~15850~18_relaxed_2_passed_mpnn_relaxed_model_1_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~597~15850~18_relaxed_2_passed_mpnn_relaxed_model_1_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~597~15850~18_relaxed_2_passed_mpnn_relaxed_model_2_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~597~15850~18_relaxed_3_passed_mpnn_relaxed_model_1_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~597~15850~18_relaxed_3_passed_mpnn_relaxed_model_1_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~597~15850~18_relaxed_3_passed_mpnn_relaxed_model_2_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~597~15850~18_relaxed_4_passed_mpnn_relaxed_model_0_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~597~15850~18_relaxed_4_passed_mpnn_relaxed_model_0_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~597~15850~18_relaxed_4_passed_mpnn_relaxed_model_1_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~597~15850~18_relaxed_4_passed_mpnn_relaxed_model_1_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~597~15850~18_relaxed_4_passed_mpnn_relaxed_model_3_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~597~15850~18_relaxed_4_passed_mpnn_relaxed_model_3_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~597~15850~18_relaxed_4_passed_mpnn_relaxed_model_4_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6cy8_HELIX_4_B_passed_mpnn_10_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~597~15850~18_relaxed_4_passed_mpnn_relaxed_model_4_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001~3~599~13227~20_relaxed_0_passed_mpnn_relaxed_model_0_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001~3~599~13227~20_relaxed_0_passed_mpnn_relaxed_model_0_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001~3~599~13227~20_relaxed_0_passed_mpnn_relaxed_model_0_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001~3~599~13227~20_relaxed_0_passed_mpnn_relaxed_model_1_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001~3~599~13227~20_relaxed_0_passed_mpnn_relaxed_model_1_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001~3~599~13227~20_relaxed_0_passed_mpnn_relaxed_model_2_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001~3~599~13227~20_relaxed_0_passed_mpnn_relaxed_model_2_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001~3~599~13227~20_relaxed_0_passed_mpnn_relaxed_model_4_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001~3~599~13227~20_relaxed_0_passed_mpnn_relaxed_model_4_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001~3~599~13227~20_relaxed_1_passed_mpnn_relaxed_model_3_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001~3~599~13227~20_relaxed_1_passed_mpnn_relaxed_model_3_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001~3~599~13227~20_relaxed_1_passed_mpnn_relaxed_model_4_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001~3~599~13227~20_relaxed_2_passed_mpnn_relaxed_model_0_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001~3~599~13227~20_relaxed_2_passed_mpnn_relaxed_model_1_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001~3~599~13227~20_relaxed_2_passed_mpnn_relaxed_model_2_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001~3~599~13227~20_relaxed_3_passed_mpnn_relaxed_model_2_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001~3~599~13227~20_relaxed_3_passed_mpnn_relaxed_model_3_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001~3~599~13227~20_relaxed_3_passed_mpnn_relaxed_model_4_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_1_6w5s_HELIX_8_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_5_desinged_bundles_fail_0001~3~599~13227~20_relaxed_4_passed_mpnn_relaxed_model_4_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~600~00944~23_relaxed_0_passed_mpnn_relaxed_model_4_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~600~00944~23_relaxed_0_passed_mpnn_relaxed_model_4_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~600~00944~23_relaxed_0_passed_mpnn_relaxed_model_4_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~600~00944~23_relaxed_1_passed_mpnn_relaxed_model_0_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~600~00944~23_relaxed_1_passed_mpnn_relaxed_model_2_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~600~00944~23_relaxed_1_passed_mpnn_relaxed_model_2_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~600~00944~23_relaxed_1_passed_mpnn_relaxed_model_2_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~600~00944~23_relaxed_1_passed_mpnn_relaxed_model_4_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~600~00944~23_relaxed_2_passed_mpnn_relaxed_model_1_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~600~00944~23_relaxed_2_passed_mpnn_relaxed_model_1_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~600~00944~23_relaxed_2_passed_mpnn_relaxed_model_2_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~600~00944~23_relaxed_2_passed_mpnn_relaxed_model_2_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6a2d_HELIX_16_A_passed_mpnn_3_desinged_bundles_fail_0001_passed_mpnn_4_desinged_bundles_fail_0001~1~600~00944~23_relaxed_2_passed_mpnn_relaxed_model_2_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001~1~598~15850~19_relaxed_0_passed_mpnn_relaxed_model_3_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001~1~598~15850~19_relaxed_0_passed_mpnn_relaxed_model_3_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001~1~598~15850~19_relaxed_0_passed_mpnn_relaxed_model_3_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001~1~598~15850~19_relaxed_0_passed_mpnn_relaxed_model_3_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001~1~598~15850~19_relaxed_1_passed_mpnn_relaxed_model_0_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001~1~598~15850~19_relaxed_1_passed_mpnn_relaxed_model_1_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001~1~598~15850~19_relaxed_1_passed_mpnn_relaxed_model_1_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001~1~598~15850~19_relaxed_1_passed_mpnn_relaxed_model_2_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001~1~598~15850~19_relaxed_1_passed_mpnn_relaxed_model_2_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001~1~598~15850~19_relaxed_1_passed_mpnn_relaxed_model_2_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001~1~598~15850~19_relaxed_1_passed_mpnn_relaxed_model_4_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001~1~598~15850~19_relaxed_2_passed_mpnn_relaxed_model_1_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001~1~598~15850~19_relaxed_2_passed_mpnn_relaxed_model_1_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001~1~598~15850~19_relaxed_2_passed_mpnn_relaxed_model_2_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001~1~598~15850~19_relaxed_2_passed_mpnn_relaxed_model_3_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001~1~598~15850~19_relaxed_2_passed_mpnn_relaxed_model_4_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001~1~598~15850~19_relaxed_2_passed_mpnn_relaxed_model_4_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001~1~598~15850~19_relaxed_3_passed_mpnn_relaxed_model_4_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001~1~598~15850~19_relaxed_3_passed_mpnn_relaxed_model_4_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001~1~598~15850~19_relaxed_4_passed_mpnn_relaxed_model_0_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_6cx0_HELIX_22_A_passed_mpnn_1_desinged_bundles_fail_0001_passed_mpnn_6_desinged_bundles_fail_0001~1~598~15850~19_relaxed_4_passed_mpnn_relaxed_model_4_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_3_desinged_bundles_fail_0001~1~599~15850~20_relaxed_4_passed_mpnn_relaxed_model_0_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_3_desinged_bundles_fail_0001~1~599~15850~20_relaxed_4_passed_mpnn_relaxed_model_1_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_3_desinged_bundles_fail_0001~1~599~15850~20_relaxed_4_passed_mpnn_relaxed_model_1_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_3_desinged_bundles_fail_0001~1~599~15850~20_relaxed_4_passed_mpnn_relaxed_model_1_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_3_desinged_bundles_fail_0001~1~599~15850~20_relaxed_4_passed_mpnn_relaxed_model_4_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_3_desinged_bundles_fail_0001~1~599~15850~20_relaxed_4_passed_mpnn_relaxed_model_4_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_3_desinged_bundles_fail_0001~1~599~15850~20_relaxed_4_passed_mpnn_relaxed_model_4_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_0_passed_mpnn_relaxed_model_0_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_0_passed_mpnn_relaxed_model_1_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_0_passed_mpnn_relaxed_model_1_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_0_passed_mpnn_relaxed_model_1_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_0_passed_mpnn_relaxed_model_1_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_0_passed_mpnn_relaxed_model_2_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_0_passed_mpnn_relaxed_model_2_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_0_passed_mpnn_relaxed_model_2_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_0_passed_mpnn_relaxed_model_2_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_0_passed_mpnn_relaxed_model_3_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_0_passed_mpnn_relaxed_model_4_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_1_passed_mpnn_relaxed_model_0_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_1_passed_mpnn_relaxed_model_2_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_1_passed_mpnn_relaxed_model_2_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_1_passed_mpnn_relaxed_model_3_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_1_passed_mpnn_relaxed_model_4_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_2_passed_mpnn_relaxed_model_1_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_2_passed_mpnn_relaxed_model_2_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_2_passed_mpnn_relaxed_model_2_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_2_passed_mpnn_relaxed_model_4_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_2_passed_mpnn_relaxed_model_4_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_2_passed_mpnn_relaxed_model_4_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_2_passed_mpnn_relaxed_model_4_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_3_passed_mpnn_relaxed_model_0_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_3_passed_mpnn_relaxed_model_1_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_3_passed_mpnn_relaxed_model_2_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_3_passed_mpnn_relaxed_model_2_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_3_passed_mpnn_relaxed_model_2_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_3_passed_mpnn_relaxed_model_2_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_3_passed_mpnn_relaxed_model_2_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_3_passed_mpnn_relaxed_model_3_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_3_passed_mpnn_relaxed_model_3_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_3_passed_mpnn_relaxed_model_4_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_3_passed_mpnn_relaxed_model_4_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_3_passed_mpnn_relaxed_model_4_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_3_passed_mpnn_relaxed_model_4_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_4_passed_mpnn_relaxed_model_0_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_4_passed_mpnn_relaxed_model_2_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_4_passed_mpnn_relaxed_model_4_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_7_desinged_bundles_fail_0001~1~600~13227~20_relaxed_4_passed_mpnn_relaxed_model_4_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_0_passed_mpnn_relaxed_model_0_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_0_passed_mpnn_relaxed_model_0_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_0_passed_mpnn_relaxed_model_3_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_0_passed_mpnn_relaxed_model_3_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_0_passed_mpnn_relaxed_model_4_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_0_passed_mpnn_relaxed_model_4_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_0_passed_mpnn_relaxed_model_4_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_1_passed_mpnn_relaxed_model_4_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_2_passed_mpnn_relaxed_model_0_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_2_passed_mpnn_relaxed_model_0_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_2_passed_mpnn_relaxed_model_0_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_2_passed_mpnn_relaxed_model_1_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_2_passed_mpnn_relaxed_model_2_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_2_passed_mpnn_relaxed_model_3_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_2_passed_mpnn_relaxed_model_3_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_2_passed_mpnn_relaxed_model_4_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_2_passed_mpnn_relaxed_model_4_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_3_passed_mpnn_relaxed_model_2_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_3_passed_mpnn_relaxed_model_2_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_3_passed_mpnn_relaxed_model_4_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_4_passed_mpnn_relaxed_model_0_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_4_passed_mpnn_relaxed_model_0_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_4_passed_mpnn_relaxed_model_0_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_4_passed_mpnn_relaxed_model_0_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_4_passed_mpnn_relaxed_model_0_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_4_passed_mpnn_relaxed_model_1_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_2_7ar8_HELIX_1_A_passed_mpnn_0_desinged_bundles_fail_0001_passed_mpnn_8_desinged_bundles_fail_0001~1~599~00944~20_relaxed_4_passed_mpnn_relaxed_model_1_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001~1~600~15850~21_relaxed_0_passed_mpnn_relaxed_model_0_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001~1~600~15850~21_relaxed_1_passed_mpnn_relaxed_model_0_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001~1~600~15850~21_relaxed_1_passed_mpnn_relaxed_model_0_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001~1~600~15850~21_relaxed_1_passed_mpnn_relaxed_model_0_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001~1~600~15850~21_relaxed_1_passed_mpnn_relaxed_model_2_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001~1~600~15850~21_relaxed_1_passed_mpnn_relaxed_model_4_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001~1~600~15850~21_relaxed_1_passed_mpnn_relaxed_model_4_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001~1~600~15850~21_relaxed_3_passed_mpnn_relaxed_model_0_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001~1~600~15850~21_relaxed_3_passed_mpnn_relaxed_model_0_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001~1~600~15850~21_relaxed_3_passed_mpnn_relaxed_model_2_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001~1~600~15850~21_relaxed_3_passed_mpnn_relaxed_model_2_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001~1~600~15850~21_relaxed_3_passed_mpnn_relaxed_model_2_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001~1~600~15850~21_relaxed_3_passed_mpnn_relaxed_model_2_model_4_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001~1~600~15850~21_relaxed_4_passed_mpnn_relaxed_model_1_model_0_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001~1~600~15850~21_relaxed_4_passed_mpnn_relaxed_model_1_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001~1~600~15850~21_relaxed_4_passed_mpnn_relaxed_model_1_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001~1~600~15850~21_relaxed_4_passed_mpnn_relaxed_model_2_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001~1~600~15850~21_relaxed_4_passed_mpnn_relaxed_model_2_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001~1~600~15850~21_relaxed_4_passed_mpnn_relaxed_model_2_model_3_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001~1~600~15850~21_relaxed_4_passed_mpnn_relaxed_model_3_model_1_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001~1~600~15850~21_relaxed_4_passed_mpnn_relaxed_model_3_model_2_saved.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pox_only_design/final~model_3_6qhd_HELIX_4_A_passed_mpnn_2_desinged_bundles_fail_0001_passed_mpnn_9_desinged_bundles_fail_0001~1~600~15850~21_relaxed_4_passed_mpnn_relaxed_model_4_model_0_saved.pdb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sequence_logo_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/sequence_logo_main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -734,7 +243,8 @@
       <workItem from="1704395133831" duration="15096000" />
       <workItem from="1704416582596" duration="122000" />
       <workItem from="1704416722272" duration="354000" />
-      <workItem from="1704417104781" duration="866000" />
+      <workItem from="1704417104781" duration="1744000" />
+      <workItem from="1704479657898" duration="393000" />
     </task>
     <servers />
   </component>
@@ -754,6 +264,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MAGPIE$surfaceMaker.coverage" NAME="surfaceMaker Coverage Results" MODIFIED="1700002287234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAGPIE$sequence_logo_main.coverage" NAME="sequence_logo_main Coverage Results" MODIFIED="1704418003563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAGPIE$sequence_logo_main.coverage" NAME="sequence_logo_main Coverage Results" MODIFIED="1704418065738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

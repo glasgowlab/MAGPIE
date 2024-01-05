@@ -480,7 +480,7 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance):
         if x is not None:
             target_to_to_plot.append(x)
     #
-    #create_3d_graph(residue_found_df,pd.DataFrame(target_to_to_plot), is_ligand, ligand_bonds)
+    create_3d_graph(residue_found_df,pd.DataFrame(target_to_to_plot), is_ligand, ligand_bonds)
 
     return residue_found_df,pd.DataFrame(target_chain_ca_coords[reference_id])
 
@@ -612,9 +612,6 @@ def sequence_logos(residues_found, target_residues, sequence_logo_targets, is_li
         plots_by_rows.append([plot, plots_rows[0+i*3], plots_rows[1+i*3], plots_rows[2+i*3]])
     plots_by_rows.insert(0, plots_by_rows.pop())
     create_sequence_logo_list(plots_by_rows,only_combined_logo, is_ligand)
-pdb_files = glob.glob("HA_docked_inputs/*.pdb")
-residues_found, target_chain = plot(pdb_files, "B","A",False, 8)
-sequence_logos(residues_found, target_chain, [x for x in range (200,251)], False,False, 8)
 
 
 

@@ -9,7 +9,7 @@ def align(path, output, chain, rmsd_threshold):
     pdb_files = glob.glob(path + "/*.pdb")
     for i, file in enumerate(pdb_files):
         pymol.cmd.load(file, str(i))
-        pymol.cmd.h_add(stringselection = "(all)" )
+        pymol.cmd.h_add( "all" )
         atom_count = pymol.cmd.count_atoms(f"chain {chain} and model {str(i)}")
         if atom_count == 0:
             print(f"Skipping {file} as it does not contain chain {chain}")
@@ -34,7 +34,7 @@ def align(path, output, chain, rmsd_threshold):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-c", "--chain_to_align", type=str, help="chain identifier for chains to align", default="A", required=True)
-    parser.add_argument("-T", "--rmsd_threshold", type=float, help="RMSD Threshold for filtering.", default=0.3)
+    parser.add_argument("-T", "--rmsd_threshold", type=float, help="RMSD Threshold for filtering.", default=3)
     parser.add_argument("-i", "--input_path", type=str, help="path of the input directory", required=True)
     parser.add_argument("-o", "--output_path", type=str, help="path of the output directory", required=True)
 

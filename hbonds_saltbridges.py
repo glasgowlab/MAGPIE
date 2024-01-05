@@ -165,7 +165,7 @@ def check_hydrogen_bond(donor_info, acceptor_info):
 
     # Angle criterion (> 120 degrees)
     angle = calculate_angle(donor_direction, acceptor_position - donor_position)
-    if angle <90:
+    if angle > 110:
         return False
 
     return True

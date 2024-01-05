@@ -17,6 +17,31 @@ import logomaker
 import numpy as np
 import helper_functions
 from Bio import *
+import plotly.offline as py
+
+aa_mapping = {
+    'ALA': 'A',
+    'ARG': 'R',
+    'ASN': 'N',
+    'ASP': 'D',
+    'CYS': 'C',
+    'GLN': 'Q',
+    'GLU': 'E',
+    'GLY': 'G',
+    'HIS': 'H',
+    'ILE': 'I',
+    'LEU': 'L',
+    'LYS': 'K',
+    'MET': 'M',
+    'PHE': 'F',
+    'PRO': 'P',
+    'SER': 'S',
+    'THR': 'T',
+    'TRP': 'W',
+    'TYR': 'Y',
+    'VAL': 'V'
+}
+
 
 def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
     # Get XYZ positions from the DataFrame columns
@@ -76,9 +101,12 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
     buttons = []
     buttons.append(dict(label='Shapely Colours', method='restyle',  args=[{'marker.color': [color_shapely]}, [0]]))
     buttons.append(dict(label='Amino Colours', method='restyle', args=[{'marker.color': [color_polar]}, [0]]))
-    buttons.append(dict(label='H-Bond BB', method='restyle',  args=[{'marker.color': [color_hb_bb]}, [0]]))
-    buttons.append(dict(label='H-Bond SC', method='restyle', args=[{'marker.color': [color_hb_sc]}, [0]]))
-    if not is_ligand:
+
+    if is_ligand:
+        buttons.append(dict(label='H-Bond', method='restyle', args=[{'marker.color': [color_hb_sc]}, [0]]))
+    else:
+        buttons.append(dict(label='H-Bond BB', method='restyle', args=[{'marker.color': [color_hb_bb]}, [0]]))
+        buttons.append(dict(label='H-Bond SC', method='restyle', args=[{'marker.color': [color_hb_sc]}, [0]]))
         buttons.append(dict(label='Polar Interactions', method='restyle', args=[{'marker.color': [color_salt]}, [0]]))
 
     updatemenus = [
@@ -145,6 +173,7 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
     iplot(fig)
 
 
+
 def find_nearest_points(target, binders, radius):
     target_points_in_contact = []
     binder_points_in_contact  = []
@@ -194,28 +223,6 @@ def calculate_arrow_position(subplot_index):
 
 def transform_to_1_letter_code(amino_acids_3_letter):
     # Mapping dictionary for 3-letter to 1-letter code
-    aa_mapping = {
-        'ALA': 'A',
-        'ARG': 'R',
-        'ASN': 'N',
-        'ASP': 'D',
-        'CYS': 'C',
-        'GLN': 'Q',
-        'GLU': 'E',
-        'GLY': 'G',
-        'HIS': 'H',
-        'ILE': 'I',
-        'LEU': 'L',
-        'LYS': 'K',
-        'MET': 'M',
-        'PHE': 'F',
-        'PRO': 'P',
-        'SER': 'S',
-        'THR': 'T',
-        'TRP': 'W',
-        'TYR': 'Y',
-        'VAL': 'V'
-    }
 
     amino_acids_1_letter = [aa_mapping[aa] for aa in amino_acids_3_letter]
     return amino_acids_1_letter
@@ -271,67 +278,77 @@ def calculate_bits(list_of_AA, sequence_list):
         heights.append(np.abs(f * 100))
     return heights
 
-def create_sequence_logo_list(residue_in_contact, h_bond_contact,is_ligand):
-    # Number of rows and columns for the grid
-    num_rows = len(residue_in_contact)
-    num_cols = 4  # 1 from residue_in_contact + 3 from h_bond_contact per row
+def create_sequence_logo_list(data,only_combined, is_ligand):
 
-    # Calculate the total figure height with some additional space for the last row's X-axis labels
-    total_fig_height = 5 * num_rows + 1  # Adjust the additional space as needed
+    # Titles for each type of graph
+    axis_label_fontsize = 28
+    title_fontsize = 32
+    xtick_label_fontsize = 24
+    titles = ["Residues in Contact", "H-Bond Backbone", "H-Bond Side-Chain", "Polar Contact"]
+    if is_ligand:
+        titles[2] = "H-Bonds"
+    for j, row in enumerate(data):
+        # Filter out the [None, None] graphs
+        valid_graphs = []
+        title_row= []
+        for i,graph in enumerate(row):
+            if graph[1] != None:
+                valid_graphs.append(graph)
+                title_row.append(titles[i])
+        num_graphs = len(valid_graphs)
 
-    fig, axes = plt.subplots(num_rows, num_cols, figsize=(5 * num_cols, total_fig_height))
-    axes_flat = axes.flatten()
+        # Only create subplots for the valid graphs
+        if num_graphs > 0:
+            if j == 0:
+                for i, graph in enumerate(valid_graphs):
+                    fig, ax = plt.subplots(figsize=(2*len(graph[1]), 12 ))  # Adjust the size as needed
 
-    # Plotting sequence logos from both lists
-    for i in range(num_rows):
-        # Plot from residue_in_contact
-        logo_data = residue_in_contact[i]
-        ax = axes_flat[i * num_cols]
-        logo = logomaker.Logo(logo_data[0], ax=ax, color_scheme='NajafabadiEtAl2017', shade_below=0.5)
-        logo.ax.set_ylabel('Frequency')
-        positions = [i for i in range(len(logo_data[1]))]
-        logo.ax.set_xticklabels(logo_data[1])
-        logo.ax.set_xticks(positions)
-        ax.set_title("Target residue(s)")
+                    # Create the logo with logomaker
+                    logo = logomaker.Logo(graph[0], ax=ax, color_scheme='NajafabadiEtAl2017', shade_below=0.5)
+                    logo.ax.set_ylabel('Frequency',fontsize=axis_label_fontsize)
 
-        # Plot 3 from h_bond_contact
+                    # Set x-ticks and labels
+                    positions = [k for k in range(len(graph[1]))]
+                    logo.ax.set_xticklabels(graph[1], fontsize=xtick_label_fontsize)  # Rotate labels for visibility
+                    logo.ax.set_xticks(positions)
 
-        for j in range(3):
-            logo_data = h_bond_contact[i * 3 + j]
-            if logo_data[1] != None:
-                ax = axes_flat[i * num_cols + j + 1]
-                logo = logomaker.Logo(logo_data[0], ax=ax, color_scheme='NajafabadiEtAl2017', shade_below=0.5)
-                logo.ax.set_ylabel('Frequency')
-                positions = [i for i in range(len(logo_data[1]))]
-                logo.ax.set_xticklabels(logo_data[1])
+                    # Set the title for this subplot
+                    ax.set_title(title_row[i], fontsize = title_fontsize)
+                    plt.tight_layout()
+                    plt.show()
+                if only_combined:
+                    break
+                else:
+                    continue
+
+            fig, axs = plt.subplots(1, num_graphs, figsize=(5 * num_graphs, 6))
+
+
+
+            fig.subplots_adjust(hspace=1.0)  # Increase the height space between rows
+
+
+
+            if num_graphs == 1:
+                axs = [axs]  # Make sure axs is iterable
+
+            for i, graph in enumerate(valid_graphs):
+                ax = axs[i]  # Select the subplot
+                # Create the logo with logomaker
+                logo = logomaker.Logo(graph[0], ax=ax, color_scheme='NajafabadiEtAl2017', shade_below=0.5)
+                logo.ax.set_ylabel('Frequency', fontsize=axis_label_fontsize)
+
+                # Set x-ticks and labels
+                positions = [k for k in range(len(graph[1]))]
+                logo.ax.set_xticklabels(graph[1], fontsize=xtick_label_fontsize)  # Rotate labels for visibility
                 logo.ax.set_xticks(positions)
-                if j == 0:
-                    ax.set_title("H-Bond Backbone")
-                if j == 1:
-                    ax.set_title("H-Bond Side-Chain")
-                if j == 2:
-                    ax.set_title("Polar Contact")
 
-
-
-    # Adjust subplot spacing to prevent label overlap
-    # Increase the vertical spacing between subplots
-    plt.subplots_adjust(wspace=0.5, hspace=0.7)  # Adjust hspace as needed
-
-    # Adjust the X-axis labels on the last row to prevent overlap
-    for ax in axes[-1, :]:
-        for label in ax.get_xticklabels():
-            label.set_rotation(45)  # Adjust the rotation angle as needed
-            label.set_ha('right')  # Align the labels to the right to prevent overlapping
-
-    # Hide unused axes
-    for ax in axes_flat[num_rows * num_cols:]:
-        ax.axis('off')
-
-    # Tweak the layout to fit everything and prevent overlapping
-    plt.tight_layout(pad=3.0)
-    plt.show()
-
+                # Set the title for this subplot
+                ax.set_title(title_row[i], fontsize=title_fontsize)
+            plt.tight_layout()
+            plt.show()  # Display the plot for this row
+        if only_combined:
+            break
 def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance):
 
 
@@ -404,11 +421,11 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance):
                     residues_in_contact_target.append([hbonds_saltbridges.hydrogen_bond_donor_optimal_positions_and_directions(residue),hbonds_saltbridges.hydrogen_bond_acceptor_optimal_positions_and_directions(residue)])
                     residues_salt_bridges_target.append(residue)
                     residues_salt_bridges_target.append(residue)
-        for l in range (len(residues_in_contact_binder)):
+        for k in range (len(residues_in_contact_target)):
             binder_h_bond_sc = False
             binder_h_bond_bb = False
             found_salt_bridge = False
-            for k in range (len(residues_in_contact_target)):
+            for l in range (len(residues_in_contact_binder)):
                 if not is_ligand and not found_salt_bridge:
                     salt_bridges_binder = residues_salt_bridges_binder[l]
                     salt_bridges_target = residues_salt_bridges_target[k]
@@ -423,7 +440,6 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance):
                         if not residue_2[2]  and not binder_h_bond_sc:
                             binder_h_bond_sc = hbonds_saltbridges.check_hydrogen_bond(residue,residue_2)
                 for residue in residues_in_contact_binder[l][1]:
-
                     for residue_2 in residues_in_contact_target[k][0]:
                         if residue_2[2]  and not binder_h_bond_bb:
                             binder_h_bond_bb = hbonds_saltbridges.check_hydrogen_bond(residue,residue_2)
@@ -464,7 +480,8 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance):
         if x is not None:
             target_to_to_plot.append(x)
     #
-    create_3d_graph(residue_found_df,pd.DataFrame(target_to_to_plot), is_ligand, ligand_bonds)
+    #create_3d_graph(residue_found_df,pd.DataFrame(target_to_to_plot), is_ligand, ligand_bonds)
+
     return residue_found_df,pd.DataFrame(target_chain_ca_coords[reference_id])
 
 def sequence_logos(residues_found, target_residues, sequence_logo_targets, is_ligand, only_combined_logo, radius ):
@@ -497,6 +514,9 @@ def sequence_logos(residues_found, target_residues, sequence_logo_targets, is_li
                 (residues_found['H-Bond SC'] == '#FF0000')]
         else:
             point = target_residues[target_residues['residue_index'] == target]
+            res_nem = point["AA"].values
+
+            target = f"{aa_mapping[res_nem[0]]}{target}"
             all_contacts = find_points_within_radius(point, residues_found, radius)
             bb_hydrogen_bonds = all_contacts.loc[
                  (residues_found['H-Bond BB'] == '#FF0000')]
@@ -587,38 +607,15 @@ def sequence_logos(residues_found, target_residues, sequence_logo_targets, is_li
                                        ignore_index=True)
             plots_rows.append([df_pc, resi_combined_pc])
 
-    if  only_combined_logo:
-        plots_rows = []
-        df_all_contact = pd.DataFrame(columns=model.columns)
-        df_all_contact = pd.concat([df_all_contact, pd.DataFrame(rows_bits_all_sq, columns=df_all_contact.columns)], ignore_index=True)
-        plots = [[df_all_contact, resi_combined_all_contacts]]
-        if len(rows_bits_bb) == 0 :
-            plots_rows.append([None,None])
-        else:
-            df_bb= pd.DataFrame(columns=model.columns)
-            df_bb = pd.concat([df_bb, pd.DataFrame(rows_bits_bb, columns=df_bb.columns)],
-                                       ignore_index=True)
-            plots_rows.append([df_bb, resi_combined_bb_hb])
-        if len(rows_bits_sc) == 0 :
-            plots_rows.append([None,None])
-        else:
-            df_sc= pd.DataFrame(columns=model.columns)
-            df_sc = pd.concat([df_sc, pd.DataFrame(rows_bits_sc, columns=df_sc.columns)],
-                                       ignore_index=True)
-            plots_rows.append([df_sc, resi_combined_sc_bb])
-        if len(rows_bits_pc )== 0:
-            plots_rows.append([None,None])
-        else:
-            df_pc= pd.DataFrame(columns=model.columns)
-            df_pc = pd.concat([df_pc, pd.DataFrame(rows_bits_pc, columns=df_bb.columns)],
-                                       ignore_index=True)
-            plots_rows.append([df_pc, resi_combined_pc])
+    plots_by_rows = []
+    for i,plot in enumerate(plots):
+        plots_by_rows.append([plot, plots_rows[0+i*3], plots_rows[1+i*3], plots_rows[2+i*3]])
+    plots_by_rows.insert(0, plots_by_rows.pop())
+    create_sequence_logo_list(plots_by_rows,only_combined_logo, is_ligand)
+pdb_files = glob.glob("HA_docked_inputs/*.pdb")
+residues_found, target_chain = plot(pdb_files, "B","A",False, 8)
+sequence_logos(residues_found, target_chain, [x for x in range (200,251)], False,False, 8)
 
-    create_sequence_logo_list(plots, plots_rows,is_ligand)
 
-# pd.set_option('display.max_columns', None)
-# pd.set_option('display.max_rows', None)
-#
-# paths = glob.glob("HA_docked_inputs/*.pdb")
-# df,target = plot(paths, "B","A",False,7)
-# sequence_logos(df, target,[x for x in range(100,200)], False,False, 7)
+
+

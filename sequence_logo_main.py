@@ -4,6 +4,7 @@ Created on Tue Jul  4 17:18:58 2023
 
 @author: camlo
 """
+import sys
 import hbonds_saltbridges
 import Bio.PDB.PDBParser
 from plotly.offline import init_notebook_mode, iplot
@@ -283,7 +284,7 @@ def create_sequence_logo_list(data,only_combined, is_ligand):
     # Titles for each type of graph
     axis_label_fontsize = 28
     title_fontsize = 32
-    xtick_label_fontsize = 24
+    xtick_label_fontsize = 28
     titles = ["Residues in Contact", "H-Bond Backbone", "H-Bond Side-Chain", "Polar Contact"]
     if is_ligand:
         titles[2] = "H-Bonds"
@@ -368,7 +369,7 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance):
             current_chain_id =  chain.get_id()
             if current_chain_id != target_id_chain and current_chain_id != binder_id_chain:
                 print(f"{path.split('/')[0]} contains chain {chain.get_id()}, which is not defined, please remove or rename chain.")
-                exit(0)
+                sys.exit()
             elif current_chain_id == target_id_chain:
                 chains_target.append(chain)
                 if len([x for x in chain]) > current_len:
@@ -429,10 +430,7 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance):
                 if not is_ligand and not found_salt_bridge:
                     salt_bridges_binder = residues_salt_bridges_binder[l]
                     salt_bridges_target = residues_salt_bridges_target[k]
-                    charged_binder = hbonds_saltbridges.determine_charge(salt_bridges_binder,given_ph, ph_range)
-                    charged_target = hbonds_saltbridges.determine_charge(salt_bridges_target,given_ph, ph_range)
-                    if charged_binder*charged_target == -1 and charged_target +charged_binder == 0:
-                        found_salt_bridge = hbonds_saltbridges.compare_residue_distances(salt_bridges_target, salt_bridges_binder,4)
+                    found_salt_bridge = hbonds_saltbridges.find_salt_bridge(salt_bridges_binder, salt_bridges_target)
                 for residue in residues_in_contact_binder[l][0]:
                     for residue_2 in residues_in_contact_target[k][1]:
                         if residue_2[2] and not binder_h_bond_bb:
@@ -535,6 +533,7 @@ def sequence_logos(residues_found, target_residues, sequence_logo_targets, is_li
 
         # Check if any transformed lists are empty and handle accordingly
         if len( AA_all_contacts) == 0:
+            print(f"No AA within {radius} Å of target id: {target}")
             continue
         else:
             residue_num = f' {target} \n n = {len(AA_all_contacts)} '

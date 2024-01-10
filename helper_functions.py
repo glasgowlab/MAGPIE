@@ -233,8 +233,3 @@ def make_chunks(data: list, thread_count) -> dict:
     return threads
 
 
-def create_directory(directory_path):
-    if os.path.exists(directory_path):
-        return f"The directory '{directory_path}' already exists."
-    else:
-        os.makedirs(directory_path)

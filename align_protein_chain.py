@@ -30,7 +30,11 @@ def align(path, output, chain, rmsd_threshold):
         else:
             print(f"Alignment RMSD {rmsd_value} for {file} exceeds threshold {rmsd_threshold}, so it is not included in the aligment")
     pymol.cmd.reinitialize()
-
+def create_directory(directory_path):
+    if os.path.exists(directory_path):
+        return f"The directory '{directory_path}' already exists."
+    else:
+        os.makedirs(directory_path)
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-c", "--chain_to_align", type=str, help="chain identifier for chains to align", default="A", required=True)

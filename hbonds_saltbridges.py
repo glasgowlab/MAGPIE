@@ -171,28 +171,12 @@ def check_hydrogen_bond(donor_info, acceptor_info):
     return True
 
 
-def determine_charge(residue, ph, range):
-
-    if not residue.get_resname() in dict_of_pka.keys():
-        return 0
-    pka_res = dict_of_pka[residue.get_resname()][2]
-    pka_diff_high = ph + range - pka_res
-    pka_diff_low = ph - range - pka_res
-    if pka_diff_low > 0 and  pka_diff_high > 0 :
-        return dict_of_pka[residue.get_resname()][0]
-    elif pka_diff_low < 0 and  pka_diff_high < 0:
-        return dict_of_pka[residue.get_resname()][1]
-    else:
-        if dict_of_pka[residue.get_resname()][0] == -1:
-            return dict_of_pka[residue.get_resname()][0]
-        else:
-            return dict_of_pka[residue.get_resname()][1]
-
-def compare_residue_distances(residue1, residue2, threshold):
+def find_salt_bridge(residue1, residue2):
 
     res1_name = residue1.get_resname()
     res2_name = residue2.get_resname()
-
+    if res1_name not in dict_of_pka.keys() or res2_name not in dict_of_pka.keys():
+        return False
     for atom_name1 in charged_atoms[res1_name]:
         for atom_name2 in charged_atoms[res2_name]:
             # Check if the residue has the atom
@@ -200,18 +184,22 @@ def compare_residue_distances(residue1, residue2, threshold):
                 atom1 = residue1[atom_name1]
                 atom2 = residue2[atom_name2]
                 distance = atom1 - atom2
-                # Return True if the distance is below the threshold
-                if distance < threshold:
+
+                charge_1 = dict_of_pka[res1_name]
+                charge_2 = dict_of_pka[res2_name]
+                if charge_1 * charge_2 == -1 and 2 < distance < 4:
                     return True
             return False
+
+
 dict_of_pka = {
-    'GLU': [-1, 0, 4.3],  # Glutamate
-    'ASP': [-1, 0, 3.9],  # Aspartate
-    'CYS': [-1, 0, 8.3],  # Cysteine
-    'TYR': [-1, 0, 10.1],  # Tyrosine
-    'LYS': [0, +1, 10.8],  # Lysine
-    'ARG': [0, +1, 12.5],  # Arginine
-    'HIS': [0, +1, 6.0]  # Histidine
+    'GLU': -1,  # Glutamate
+    'ASP': -1,  # Aspartate
+    'CYS': -1,  # Cysteine
+    'TYR': -1,  # Tyrosine
+    'LYS': 1,  # Lysine
+    'ARG': 1,  # Arginine
+    'HIS': 1  # Histidine
 }
 charged_atoms = {
     'GLU': ['OE1', 'OE2'],  # Glutamate

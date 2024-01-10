@@ -161,19 +161,25 @@ def extract_connections(pdb_file : str) -> list:
         for line in file:
             if "CONECT" in line:
                 positions = []
+
                 if len(line.split("  ")) != 1:
                   line_list = line.split("  ")
                 else:
                   line_list = line.split(" ")
-                for i in range(len(line_list)):
+                no_empty_line_line = list(filter(None, line_list))
+                line_list_clean = [x.strip() for x in no_empty_line_line ]
+                line_list_clean[len(line_list_clean)-1] =   line_list_clean[len(line_list_clean)-1] +"\n"
+                for i in range(len(line_list_clean)):
                     if i == 0 or i == 1:
                         continue
-                    if i == len(line_list) - 1:  
-                        positions.append(line_list[i][0:-1])  
+                    if i == len(line_list_clean) - 1:
+                        positions.append(line_list_clean[i][0:-1])
                     else:
-                        positions.append(line_list[i])
-                dict_of_atoms[line_list[1]] = positions
+                        positions.append(line_list_clean[i])
+                dict_of_atoms[line_list_clean[1]] = positions
     return dict_of_atoms
+
+
 def extract_info_ligand (pdb_file, chain_id) -> list:
     all_atoms = []
 

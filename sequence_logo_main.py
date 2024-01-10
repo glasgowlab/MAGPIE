@@ -396,8 +396,6 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance):
     target_in_contact, binder_in_contact = find_nearest_points(target_chain_data_frame, binder_chain_data_frame,
                                                                distance)
     residues_to_plot = []
-    given_ph = 7
-    ph_range = 1.5
 
     for i in range (len(target_in_contact)): #Every file
         residues_in_contact_binder = []

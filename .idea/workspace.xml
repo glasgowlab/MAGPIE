@@ -14,137 +14,124 @@
       <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/MAGPIE_LOCAL-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/MAGPIE_LOCAL-checkpoint.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MAGPIE_LOCAL.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/MAGPIE_LOCAL.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MAGPIE_input_prep.py" beforeDir="false" afterPath="$PROJECT_DIR$/MAGPIE_input_prep.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/298_7K9Z_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/298_7K9Z_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/2H2_7DK4_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/2H2_7DK4_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/52_7K9Z_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/52_7K9Z_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/B38_7BZ5_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/B38_7BZ5_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/BD-236_7CHB_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/BD-236_7CHB_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/BD-368-2_7CHF_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/BD-368-2_7CHF_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/BD-604_7CHF_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/BD-604_7CHF_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/BD-629_7CH5_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/BD-629_7CH5_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/BD23_7BYR_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/BD23_7BYR_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/C002_7K8T_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C002_7K8T_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/C102_7K8M_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C102_7K8M_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/C104_7K8U_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C104_7K8U_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/C105_6XCM_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C105_6XCM_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/C110_7K8V_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C110_7K8V_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/C119_7K8W_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C119_7K8W_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/C121_7K8X_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C121_7K8X_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/C135_7K8Z_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C135_7K8Z_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/C144_7K90_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C144_7K90_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/C1A-B12_7KFV_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C1A-B12_7KFV_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/CB6_7C01_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/CB6_7C01_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/CC12.1_6XC3_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/CC12.1_6XC3_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/CC12.3_6XC4_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/CC12.3_6XC4_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/COVA1-16_7JMW_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/COVA1-16_7JMW_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/COVA2-04_7JMO_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/COVA2-04_7JMO_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/CR3014-C8_7KZB_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/CR3014-C8_7KZB_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/CR3022_6YLA_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/CR3022_6YLA_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/CT-P59_7CM4_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/CT-P59_7CM4_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/CV07-270_6XKP_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/CV07-270_6XKP_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/CV30_6XE1_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/CV30_6XE1_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/DH1047_7LD1_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/DH1047_7LD1_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/EY6A_6ZCZ_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/EY6A_6ZCZ_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/E_7KN5_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/E_7KN5_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/H014_7CAI_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/H014_7CAI_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/H11-D4_6YZ5_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/H11-D4_6YZ5_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/H11-H4_6ZH9_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/H11-H4_6ZH9_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/LY-CoV481_7KMI_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/LY-CoV481_7KMI_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/LY-CoV488_7KMH_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/LY-CoV488_7KMH_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/LY-CoV555_7KMG_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/LY-CoV555_7KMG_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/MR17_7C8W_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/MR17_7C8W_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/Nb20_7JVB_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/Nb20_7JVB_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/P17_7CWN_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/P17_7CWN_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/P2B-2F6_7BWJ_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/P2B-2F6_7BWJ_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/P2C-1A3_7CDJ_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/P2C-1A3_7CDJ_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/P2C-1F11_7CDI_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/P2C-1F11_7CDI_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/P4A1_7CJF_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/P4A1_7CJF_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/REGN10933_6XDG_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/REGN10933_6XDG_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/REGN10987_6XDG_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/REGN10987_6XDG_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/S2A4_7JVC_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/S2A4_7JVC_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/S2E12_7K4N_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/S2E12_7K4N_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/S2H13_7JV6_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/S2H13_7JV6_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/S2H14_7JX3_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/S2H14_7JX3_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/S2M11_7K43_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/S2M11_7K43_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/S304_7JX3_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/S304_7JX3_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/S309_7JX3_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/S309_7JX3_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/SR4_7C8V_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/SR4_7C8V_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/STE90-C11_7B3O_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/STE90-C11_7B3O_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/Sb16_7KGK_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/Sb16_7KGK_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/Sb23_7A29_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/Sb23_7A29_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/Sb45_7KGJ_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/Sb45_7KGJ_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/Sb68_7KLW_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/Sb68_7KLW_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/Ty1_6ZXN_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/Ty1_6ZXN_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/U_7KN5_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/U_7KN5_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/V_7KN6_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/V_7KN6_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/W_7KN7_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/W_7KN7_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/file_description.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/file_description.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example 2/mNb6_7KKL_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/mNb6_7KKL_cleaned.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/298_7K9Z_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/2H2_7DK4_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/52_7K9Z_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/B38_7BZ5_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/BD-236_7CHB_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/BD-368-2_7CHF_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/BD-604_7CHF_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/BD-629_7CH5_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/BD23_7BYR_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/C002_7K8T_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/C102_7K8M_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/C104_7K8U_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/C105_6XCM_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/C119_7K8W_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/C121_7K8X_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/C144_7K90_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/C1A-B12_7KFV_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/CB6_7C01_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/CC12.1_6XC3_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/CC12.3_6XC4_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/COVA1-16_7JMW_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/COVA2-04_7JMO_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/COVA2-39_7JMP_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/CR3014-C8_7KZB_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/CR3022_6YLA_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/CT-P59_7CM4_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/CV07-270_6XKP_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/CV30_6XE1_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/EY6A_6ZCZ_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/E_7KN5_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/H014_7CAI_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/H11-D4_6YZ5_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/H11-H4_6ZH9_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/LY-CoV481_7KMI_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/LY-CoV488_7KMH_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/LY-CoV555_7KMG_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/MR17_7C8W_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/Nb20_7JVB_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/P17_7CWN_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/P2B-2F6_7BWJ_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/P2C-1A3_7CDJ_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/P2C-1F11_7CDI_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/P4A1_7CJF_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/REGN10933_6XDG_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/REGN10987_6XDG_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/S2A4_7JVC_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/S2E12_7K4N_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/S2H13_7JV6_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/S2H14_7JX3_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/S2M11_7K43_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/S304_7JX3_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/S309_7JX3_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/SR4_7C8V_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/STE90-C11_7B3O_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/Sb16_7KGK_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/Sb23_7A29_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/Sb45_7KGJ_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/Sb68_7KLW_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/Ty1_6ZXN_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/U_7KN5_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/V_7KN6_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/W_7KN7_aligned.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/mNb6_7KKL_aligned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/298_7K9Z_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/298_7K9Z_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/2H2_7DK4_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/2H2_7DK4_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/52_7K9Z_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/52_7K9Z_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/B38_7BZ5_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/B38_7BZ5_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/BD-236_7CHB_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/BD-236_7CHB_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/BD-368-2_7CHF_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/BD-368-2_7CHF_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/BD-604_7CHF_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/BD-604_7CHF_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/BD-629_7CH5_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/BD-629_7CH5_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/BD23_7BYR_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/BD23_7BYR_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/C002_7K8T_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C002_7K8T_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/C102_7K8M_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C102_7K8M_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/C104_7K8U_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C104_7K8U_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/C105_6XCM_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C105_6XCM_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/C110_7K8V_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C110_7K8V_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/C119_7K8W_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C119_7K8W_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/C121_7K8X_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C121_7K8X_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/C135_7K8Z_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C135_7K8Z_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/C144_7K90_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C144_7K90_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/C1A-B12_7KFV_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/C1A-B12_7KFV_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/CB6_7C01_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/CB6_7C01_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/CC12.1_6XC3_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/CC12.1_6XC3_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/CC12.3_6XC4_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/CC12.3_6XC4_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/COVA1-16_7JMW_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/COVA1-16_7JMW_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/COVA2-04_7JMO_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/COVA2-04_7JMO_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/CR3014-C8_7KZB_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/CR3014-C8_7KZB_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/CR3022_6YLA_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/CR3022_6YLA_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/CT-P59_7CM4_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/CT-P59_7CM4_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/CV07-270_6XKP_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/CV07-270_6XKP_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/CV30_6XE1_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/CV30_6XE1_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/DH1047_7LD1_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/DH1047_7LD1_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/EY6A_6ZCZ_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/EY6A_6ZCZ_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/E_7KN5_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/E_7KN5_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/H014_7CAI_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/H014_7CAI_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/H11-D4_6YZ5_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/H11-D4_6YZ5_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/H11-H4_6ZH9_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/H11-H4_6ZH9_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/LY-CoV481_7KMI_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/LY-CoV481_7KMI_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/LY-CoV488_7KMH_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/LY-CoV488_7KMH_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/LY-CoV555_7KMG_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/LY-CoV555_7KMG_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/MR17_7C8W_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/MR17_7C8W_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/Nb20_7JVB_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/Nb20_7JVB_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/P17_7CWN_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/P17_7CWN_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/P2B-2F6_7BWJ_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/P2B-2F6_7BWJ_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/P2C-1A3_7CDJ_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/P2C-1A3_7CDJ_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/P2C-1F11_7CDI_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/P2C-1F11_7CDI_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/P4A1_7CJF_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/P4A1_7CJF_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/REGN10933_6XDG_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/REGN10933_6XDG_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/REGN10987_6XDG_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/REGN10987_6XDG_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/S2A4_7JVC_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/S2A4_7JVC_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/S2E12_7K4N_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/S2E12_7K4N_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/S2H13_7JV6_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/S2H13_7JV6_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/S2H14_7JX3_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/S2H14_7JX3_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/S2M11_7K43_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/S2M11_7K43_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/S304_7JX3_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/S304_7JX3_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/S309_7JX3_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/S309_7JX3_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/SR4_7C8V_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/SR4_7C8V_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/STE90-C11_7B3O_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/STE90-C11_7B3O_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/Sb16_7KGK_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/Sb16_7KGK_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/Sb23_7A29_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/Sb23_7A29_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/Sb45_7KGJ_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/Sb45_7KGJ_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/Sb68_7KLW_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/Sb68_7KLW_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/Ty1_6ZXN_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/Ty1_6ZXN_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/U_7KN5_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/U_7KN5_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/V_7KN6_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/V_7KN6_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/W_7KN7_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/W_7KN7_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/file_description.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/file_description.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/mNb6_7KKL_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/mNb6_7KKL_cleaned.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/align_protein_chain.py" beforeDir="false" afterPath="$PROJECT_DIR$/align_protein_chain.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/align_small_molecule.py" beforeDir="false" afterPath="$PROJECT_DIR$/align_small_molecule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1atp.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1ayl.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1b76.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1c0f.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1d4x.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1d9z.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1dej.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1e24.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1e2q.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1e4g.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1e79.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1e8x.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1ee1.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1eqy.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1esq.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1esv.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1fmw.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1fq1.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1g5t.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1g64.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1gn8.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1gol.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1gtr.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1gy3.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1gz3.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1gz4.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1h1v.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/1h1w.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/pdb1a0i.ent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/pdb1a49.ent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/pdb1a5u.ent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/pdb1a82.ent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/pdb1aq2.ent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/pdb1asz.ent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/pdb1atn.ent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/pdb1b0u.ent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/pdb1b38.ent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/pdb1b39.ent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/pdb1b8a.ent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/pdb1bcp.ent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/pdb1c0g.ent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/pdb1csn.ent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/pdb1do0.ent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/pdb1dv2.ent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/pdb1dy3.ent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/pdb1f2u.ent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/pdb1f9a.ent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/pdb1fin.ent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/pdb1g21.ent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp/pdb1g3i.ent" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hbonds_saltbridges.py" beforeDir="false" afterPath="$PROJECT_DIR$/hbonds_saltbridges.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/helper_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/helper_functions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sequence_logo_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/sequence_logo_main.py" afterDir="false" />
@@ -153,6 +140,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -310,7 +300,7 @@
       <workItem from="1704479657898" duration="6376000" />
       <workItem from="1704578307913" duration="1295000" />
       <workItem from="1704914176355" duration="1166000" />
-      <workItem from="1704915513975" duration="2437000" />
+      <workItem from="1704915513975" duration="5853000" />
     </task>
     <servers />
   </component>
@@ -330,6 +320,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MAGPIE$surfaceMaker.coverage" NAME="surfaceMaker Coverage Results" MODIFIED="1700002287234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAGPIE$sequence_logo_main.coverage" NAME="sequence_logo_main Coverage Results" MODIFIED="1704917718603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAGPIE$sequence_logo_main.coverage" NAME="sequence_logo_main Coverage Results" MODIFIED="1704921491738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

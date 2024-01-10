@@ -43,5 +43,5 @@ if __name__ == "__main__":
     parser.add_argument("-o", "--output_path", type=str, help="path of the output directory", required=True)
 
     args = parser.parse_args()
-
+    create_directory(args.output_path)
     align(args.input_path, args.output_path, args.chain_to_align, args.rmsd_threshold)

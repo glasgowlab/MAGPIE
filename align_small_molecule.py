@@ -26,7 +26,6 @@ def align_small(path, output, chain, rmsd_threshold):
             references.append(ref_name)
             pdb_name = os.path.basename(file).replace(".pdb", f"{ref_name}.pdb")
             pymol.cmd.save(os.path.join(output, ref_name, pdb_name), f"model {str(i)}")
-
             continue
         pymol.cmd.select("current", f"chain {chain} and model {str(i)}")
 
@@ -34,15 +33,14 @@ def align_small(path, output, chain, rmsd_threshold):
         lowest_rmsd = 99999
         lowest_reference= ''
         for reference in references:
-            rmsd = pymol.cmd.align(str(reference), "current")
+            rmsd = pymol.cmd.align("current", str(reference))
             rmsd_value = rmsd[0]
-
-            if rmsd_value <= rmsd_threshold:
-                found_cluster = True
-                if rmsd_value < lowest_rmsd:
+            if rmsd_value <= rmsd_threshold and rmsd_value < lowest_rmsd:
+                    found_cluster = True
                     lowest_rmsd = rmsd_value
                     lowest_reference = reference
         if found_cluster:
+            pymol.cmd.align("current",str(lowest_reference))
             pdb_name = os.path.basename(file).replace(".pdb", f"{lowest_reference}.pdb")
             pymol.cmd.save(os.path.join(output, lowest_reference, pdb_name), f"model {str(i)}")
         else:

@@ -459,8 +459,11 @@ def seq_and_chain_search(input_pdb_path: str, binder_seq : str = None, target_pr
                         continue
                     pdb_hits["binder"].append(line)
             else:
-                print("Error, not sure what to do here")
-                exit(1)
+                print("Making everything else not the SM the other chain")
+                parsed = parse_pdb(input_pdb_path)
+                for line in parsed:
+                    pdb_hits["binder"].append(line)
+
         else:
             print("ERROR no chain or seq selected for binder")
             exit(1)
@@ -888,4 +891,3 @@ if __name__ == "__main__":
                              args.target_protein_chain_rename, args.target_sm_chain_rename, args.binder_chain_rename,
                             args.search_radius, args.mesh_search)
                     main(os.path.join(args.input_path,file), args.output_path, args.binder_seqs, args.target_protein_seqs, args.binder_chains, args.target_protein_chains, args.search_first_protein, args.seq_identity, args.target_sm_3_names, args.target_sm_chains, args.search_first_sm,args.take_first_sm_only,name_conversion_key,args.target_protein_chain_rename, args.target_sm_chain_rename, args.binder_chain_rename, args.search_radius, args.mesh_search)
-

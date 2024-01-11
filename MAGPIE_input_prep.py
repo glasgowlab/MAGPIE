@@ -154,13 +154,13 @@ def arg_spliter(arg_str : str) -> list:
     return [arg_str]
 
 
-def sm_search(sm_names : str = None, target_sm_chains : str = None, order: str = "chains", take_first_ligand_only: bool = True, input_pdb_path: str = None, filtered_pdb: list = None) -> list:
+def sm_search(sm_names : str = None, target_sm_chains : str = None, order: str = "chains", take_first_ligand_only: bool = True, input_pdb_path: str = None, filtered_pdb: list = None, res_indexs: list = None) -> list:
     """
     This function filtered the pdb file by your sm names and chains
     :param input_pdb_path: the pdb input path
     :param sm_names: the small molecule name you want to filter by
     :param target_sm_chains: the small molecule chains you want to filter by
-    :param order: Should you search by name or by chains first [chains,sequence]
+    :param order: Should you search by name or by chains first [chains,name]
     :return: list of filtered pdb lines
     """
 
@@ -172,10 +172,18 @@ def sm_search(sm_names : str = None, target_sm_chains : str = None, order: str =
             sm_filtered.append(line)
             continue
         chain = line[21]
+        res_num = line[22:26].strip()
         if order == "chains" and target_sm_chains:
             if chain in target_sm_chains:
                 if sm_names:
                     if line[17:20] in sm_names:
+                        if res_indexs:
+                            if res_num in res_indexs:
+                                sm_filtered.append(line)
+                        else:
+                            sm_filtered.append(line)
+                if res_indexs:
+                    if res_num in res_indexs:
                         sm_filtered.append(line)
                 else:
                     sm_filtered.append(line)
@@ -186,9 +194,17 @@ def sm_search(sm_names : str = None, target_sm_chains : str = None, order: str =
             if line[17:20] in sm_names:
                 if target_sm_chains:
                     if chain in target_sm_chains:
-                        sm_filtered.append(line)
+                        if res_indexs:
+                            if res_num in res_indexs:
+                                sm_filtered.append(line)
+                        else:
+                            sm_filtered.append(line)
                 else:
-                    sm_filtered.append(line)
+                    if res_indexs:
+                        if res_num in res_indexs:
+                            sm_filtered.append(line)
+                    else:
+                        sm_filtered.append(line)
         elif order == "name" and target_sm_chains:
             if chain in target_sm_chains:
                 sm_filtered.append(line)
@@ -301,7 +317,7 @@ def get_sub_struct_lines(hits:list, parsed_pdb: list):
     return final_pdb
 
 
-def mesh_search(sm_3_names: str,chains: str, seqs: str,input_pdb_path: str = None, search_radius: float = 8.0,seq_id :int = 95,take_first_only: bool = True) -> list:
+def mesh_search(sm_3_names: str,chains: str, seqs: str,input_pdb_path: str = None, search_radius: float = 8.0,seq_id :int = 95,take_first_only: bool = True, indexes: list = None) -> list:
     mesh_atoms = []
     mesh_atoms_filtered = []
     parsed_pdb = parse_full_pdb(input_pdb_path)
@@ -310,7 +326,7 @@ def mesh_search(sm_3_names: str,chains: str, seqs: str,input_pdb_path: str = Non
     if chains:
         mesh_atoms += chain_search(chains, parsed_pdb, None)
     if sm_3_names:
-        mesh_atoms += sm_search(sm_names=sm_3_names,take_first_ligand_only=take_first_only,input_pdb_path=input_pdb_path)
+        mesh_atoms += sm_search(sm_names=sm_3_names,take_first_ligand_only=take_first_only,input_pdb_path=input_pdb_path,res_indexs=indexes)
 
     for line in mesh_atoms:
         if "TER" in line[0:6] or "END" in line[0:6]:
@@ -378,7 +394,7 @@ def seq_search(seq : str, parsed_pdb : list = None,input_pdb_path: str = None, s
 
 
 
-def seq_and_chain_search(input_pdb_path: str, binder_seq : str = None, target_protein_seq : str = None, binder_chains : str = None, target_protein_chains : str = None, order : str = "chains", seq_id : int = 95, sm_name : str = None, target_sm_chains : str = None, search_sm : str = "chains", take_first_ligand_only: bool = True, mesh_search_results:list = []) -> [dict,int]:
+def seq_and_chain_search(input_pdb_path: str, binder_seq : str = None, target_protein_seq : str = None, binder_chains : str = None, target_protein_chains : str = None, order : str = "chains", seq_id : int = 95, sm_name : str = None, target_sm_chains : str = None, search_sm : str = "chains", take_first_ligand_only: bool = True, mesh_search_results:list = [], res_indexs:str = None) -> [dict,int]:
     """
     This function is used to determine the order of filtering and what to filter out using the user input. The binder/target_protein are identical calls, just different inputs
     All the params from main are passed into here
@@ -498,15 +514,16 @@ def seq_and_chain_search(input_pdb_path: str, binder_seq : str = None, target_pr
 
 
     if target_sm_chains or sm_name:
-
+        if res_indexs:
+            res_indexs = arg_spliter(res_indexs)
         if target_sm_chains:
             target_sm_chains = arg_spliter(target_sm_chains)
         if sm_name:
             sm_name = arg_spliter(sm_name)
         if mesh_search_results:
-            pdb_hits["sm"] = sm_search(sm_name,target_sm_chains,search_sm,take_first_ligand_only,input_pdb_path,mesh_search_results)
+            pdb_hits["sm"] = sm_search(sm_name,target_sm_chains,search_sm,take_first_ligand_only,input_pdb_path,mesh_search_results,res_indexs=res_indexs)
         else:
-            pdb_hits["sm"] = sm_search(sm_name,target_sm_chains,search_sm,take_first_ligand_only,input_pdb_path)
+            pdb_hits["sm"] = sm_search(sm_name,target_sm_chains,search_sm,take_first_ligand_only,input_pdb_path,res_indexs=res_indexs)
 
     if (target_protein_seq or target_protein_chains):
         global REF_SEQ
@@ -697,7 +714,7 @@ def get_sm_atom_names_and_connections(ligand_atoms: list,bond_length: float = 2.
 
 
 
-def main(input_pdb_path: str, output_path: str, binder_seq : str = None, target_protein_seq : str = None, binder_chains : str = None, anitgen_chains : str = None, order : str = None, seq_identity: int = 95, sm_name : str = None, target_sm_chains : str = None, search_sm : str = "chains", take_first_ligand: bool = True, name_conversion: dict = None, target_rename: str = "A", sm_rename: str = "B", binder_rename : str = "C",mesh_radius: float = 8.0, mesh_search_vars:str = ";;") -> None:
+def main(input_pdb_path: str, output_path: str, binder_seq : str = None, target_protein_seq : str = None, binder_chains : str = None, anitgen_chains : str = None, order : str = None, seq_identity: int = 95, sm_name : str = None, target_sm_chains : str = None, search_sm : str = "chains", take_first_ligand: bool = True, name_conversion: dict = None, target_rename: str = "A", sm_rename: str = "B", binder_rename : str = "C",mesh_radius: float = 8.0, mesh_search_vars:str = ";;;",res_indexes: str = None) -> None:
 
     """
     Main function that calls the parsing/filtering and writing of the new pdb file(s)
@@ -707,10 +724,11 @@ def main(input_pdb_path: str, output_path: str, binder_seq : str = None, target_
         chains = mesh_search_vars.split(";")[0]
         seqs = mesh_search_vars.split(";")[1]
         sm = mesh_search_vars.split(";")[2]
-        mesh_results = mesh_search(sm,chains,seqs,input_pdb_path,mesh_radius,seq_identity,take_first_ligand)
-        pdb_to_write = seq_and_chain_search(input_pdb_path,binder_seq,target_protein_seq,binder_chains,anitgen_chains,order,seq_identity,sm_name,target_sm_chains,search_sm,take_first_ligand,mesh_results)
+        indexes = mesh_search_vars.split(";")[3]
+        mesh_results = mesh_search(sm,chains,seqs,input_pdb_path,mesh_radius,seq_identity,take_first_ligand,indexes)
+        pdb_to_write = seq_and_chain_search(input_pdb_path,binder_seq,target_protein_seq,binder_chains,anitgen_chains,order,seq_identity,sm_name,target_sm_chains,search_sm,take_first_ligand,mesh_results,res_indexs=res_indexes)
     else:
-        pdb_to_write = seq_and_chain_search(input_pdb_path,binder_seq,target_protein_seq,binder_chains,anitgen_chains,order,seq_identity,sm_name,target_sm_chains,search_sm,take_first_ligand)
+        pdb_to_write = seq_and_chain_search(input_pdb_path,binder_seq,target_protein_seq,binder_chains,anitgen_chains,order,seq_identity,sm_name,target_sm_chains,search_sm,take_first_ligand,res_indexs=res_indexes)
 
     pdb_name = os.path.basename(input_pdb_path).replace(".pdb","_cleaned.pdb")
     write_pdbs(pdb_name,pdb_to_write[0],output_path, name_conversion,binder_rename,target_rename,sm_rename,pdb_to_write[1])
@@ -728,6 +746,7 @@ if __name__ == "__main__":
     parser.add_argument("-F", "--binder_seq_fa", type=str,help="the sequence file of the binder used for identification", default=None)
     parser.add_argument("-f", "--target_protein_seq_fa", type=str,help="the sequence file of the target protein used for identification", default=None)
     parser.add_argument("-L", "--target_sm_3_names", type=str, help="the three letter code of the small molecule(s)", default=None)
+    parser.add_argument("-I", "--target_sm_index", type=str, help="the index of the of the small molecule(s). Must be used in tandom with chain or name",default=None)
     parser.add_argument("-C", "--binder_chains", type=str, help="the chain(s) of the binder used for identification", default=None)
     parser.add_argument("-c", "--target_protein_chains", type=str, help="the chains of the target protein used for identification", default=None)
     parser.add_argument("-l", "--target_sm_chains", type=str, help="the chain(s) the small molecule is/are on", default=None)
@@ -744,7 +763,7 @@ if __name__ == "__main__":
     parser.add_argument("-r", "--sm_ligand_reference_path", type=str, help="path of the reference file for renaming sm ligands file default is first file in the input dir", default=None)
     parser.add_argument("-B", "--bond_length", type=float,help="distance that is considered a bond between 2 atoms for chemical graphs", default=2.1)
     parser.add_argument("-m", "--search_radius", type=float,help="distance that is considered for finding close things in mesh search", default=8.0)
-    parser.add_argument("-M", "--mesh_search", type=str, help="add the chains, seqs, and sm for the mesh filter example: 'A,B;AWTRWARE,AWAWAWAW;TPA,ATP'", default=";;")
+    parser.add_argument("-M", "--mesh_search", type=str, help="add the chains, seqs, and sm [you can use residue index with sm] for the mesh filter example: 'A,B;AWTRWARE,AWAWAWAW;TPA,ATP;1,2'", default=";;;")
     parser.add_argument("-A", "--seq_target_align", type=bool,help="Align the target protein in sequence space and results in pdb numbering aligning. Do not use for small molecules",default=False)
     parser.add_argument("-a", "--seq_target_ref_pdb", type=str,help="Reference structure for target protein in seq_target_align",default=None,required=False)
     args = parser.parse_args()
@@ -810,6 +829,9 @@ if __name__ == "__main__":
             print("the reference sequence alignment file given was a directory not a file!")
             exit(1)
 
+    if args.target_sm_index and not (args.target_sm_chains or args.target_sm_3_names):
+        print("You must use target_sm_index with either target_sm_chains or target_sm_3_names")
+        exit(1)
 
     ref_tree = {}
     if args.sm_ligand_reference_path:
@@ -840,14 +862,17 @@ if __name__ == "__main__":
                     target_sm_chains = arg_spliter(args.target_sm_chains)
                 if args.target_sm_3_names:
                     sm_name = arg_spliter(args.target_sm_3_names)
-                first_ligand = sm_search(sm_name, target_sm_chains,args.search_first_sm, True,args.input_path)
+                if args.target_sm_index and (args.target_sm_chains or args.target_sm_3_names):
+                    first_ligand = sm_search(sm_name, target_sm_chains, args.search_first_sm, True, args.input_path,arg_spliter(args.target_sm_index))
+                else:
+                    first_ligand = sm_search(sm_name, target_sm_chains,args.search_first_sm, True,args.input_path)
                 q_tree = get_sm_atom_names_and_connections(first_ligand,args.bond_length)
                 name_conversion_key = compare_tree_get_rename(ref_tree, q_tree)
 
 
-                main(args.input_path, args.output_path, args.binder_seqs, args.target_protein_seqs, args.binder_chains,args.target_protein_chains, args.search_first_protein, args.seq_identity, args.target_sm_3_names, args.target_sm_chains, args.search_first_sm, args.take_first_sm_only, name_conversion_key, args.target_protein_chain_rename, args.target_sm_chain_rename, args.binder_chain_rename, args.search_radius, args.mesh_search)
+                main(args.input_path, args.output_path, args.binder_seqs, args.target_protein_seqs, args.binder_chains,args.target_protein_chains, args.search_first_protein, args.seq_identity, args.target_sm_3_names, args.target_sm_chains, args.search_first_sm, args.take_first_sm_only, name_conversion_key, args.target_protein_chain_rename, args.target_sm_chain_rename, args.binder_chain_rename, args.search_radius, args.mesh_search, res_indexes= args.target_sm_index)
             else:
-                main(args.input_path, args.output_path, args.binder_seqs, args.target_protein_seqs, args.binder_chains,args.target_protein_chains, args.search_first_protein, args.seq_identity, args.target_sm_3_names, args.target_sm_chains, args.search_first_sm, args.take_first_sm_only, {}, args.target_protein_chain_rename, args.target_sm_chain_rename, args.binder_chain_rename, args.search_radius, args.mesh_search)
+                main(args.input_path, args.output_path, args.binder_seqs, args.target_protein_seqs, args.binder_chains,args.target_protein_chains, args.search_first_protein, args.seq_identity, args.target_sm_3_names, args.target_sm_chains, args.search_first_sm, args.take_first_sm_only, {}, args.target_protein_chain_rename, args.target_sm_chain_rename, args.binder_chain_rename, args.search_radius, args.mesh_search, res_indexes= args.target_sm_index)
 
         else:
             print("non .pdb file types are not supported!")
@@ -866,7 +891,10 @@ if __name__ == "__main__":
                 if args.target_sm_3_names:
                     sm_name = arg_spliter(args.target_sm_3_names)
                 if args.name_sm_atoms_same and file_counter == 1 and not args.sm_ligand_reference_path:
-                    first_ligand = sm_search( sm_name, target_sm_chains, args.search_first_sm,True,os.path.join(args.input_path,file))
+                    if args.target_sm_index and (args.target_sm_chains or args.target_sm_3_names):
+                        first_ligand = sm_search(sm_name, target_sm_chains, args.search_first_sm, True,os.path.join(args.input_path, file),arg_spliter(args.target_sm_index))
+                    else:
+                        first_ligand = sm_search( sm_name, target_sm_chains, args.search_first_sm,True,os.path.join(args.input_path,file))
                     ref_tree = get_sm_atom_names_and_connections(first_ligand,args.bond_length)
                     if args.seq_target_ref_pdb and args.seq_target_ref_pdb.split("/")[-1] != file:
                         main(args.seq_target_ref_pdb, args.output_path, args.binder_seqs,
@@ -874,12 +902,15 @@ if __name__ == "__main__":
                              args.search_first_protein, args.seq_identity, args.target_sm_3_names,
                              args.target_sm_chains, args.search_first_sm, args.take_first_sm_only, {},
                              args.target_protein_chain_rename, args.target_sm_chain_rename, args.binder_chain_rename,
-                             args.search_radius, args.mesh_search)
+                             args.search_radius, args.mesh_search, res_indexes= args.target_sm_index)
 
-                    main(os.path.join(args.input_path,file), args.output_path, args.binder_seqs, args.target_protein_seqs, args.binder_chains, args.target_protein_chains, args.search_first_protein, args.seq_identity, args.target_sm_3_names, args.target_sm_chains, args.search_first_sm,args.take_first_sm_only,{},args.target_protein_chain_rename, args.target_sm_chain_rename, args.binder_chain_rename, args.search_radius, args.mesh_search)
+                    main(os.path.join(args.input_path,file), args.output_path, args.binder_seqs, args.target_protein_seqs, args.binder_chains, args.target_protein_chains, args.search_first_protein, args.seq_identity, args.target_sm_3_names, args.target_sm_chains, args.search_first_sm,args.take_first_sm_only,{},args.target_protein_chain_rename, args.target_sm_chain_rename, args.binder_chain_rename, args.search_radius, args.mesh_search, res_indexes= args.target_sm_index)
                 else:
                     name_conversion_key = {}
-                    first_ligand = sm_search(sm_name, target_sm_chains,args.search_first_sm, True,os.path.join(args.input_path, file))
+                    if args.target_sm_index and (args.target_sm_chains or args.target_sm_3_names):
+                        first_ligand = sm_search(sm_name, target_sm_chains, args.search_first_sm, True,os.path.join(args.input_path, file), arg_spliter(args.target_sm_index))
+                    else:
+                        first_ligand = sm_search(sm_name, target_sm_chains, args.search_first_sm, True, os.path.join(args.input_path, file))
                     q_tree = get_sm_atom_names_and_connections(first_ligand,args.bond_length)
                     if args.name_sm_atoms_same:
                         name_conversion_key = compare_tree_get_rename(ref_tree,q_tree)
@@ -889,5 +920,5 @@ if __name__ == "__main__":
                              args.search_first_protein, args.seq_identity, args.target_sm_3_names,
                              args.target_sm_chains, args.search_first_sm, args.take_first_sm_only, {},
                              args.target_protein_chain_rename, args.target_sm_chain_rename, args.binder_chain_rename,
-                            args.search_radius, args.mesh_search)
-                    main(os.path.join(args.input_path,file), args.output_path, args.binder_seqs, args.target_protein_seqs, args.binder_chains, args.target_protein_chains, args.search_first_protein, args.seq_identity, args.target_sm_3_names, args.target_sm_chains, args.search_first_sm,args.take_first_sm_only,name_conversion_key,args.target_protein_chain_rename, args.target_sm_chain_rename, args.binder_chain_rename, args.search_radius, args.mesh_search)
+                            args.search_radius, args.mesh_search, res_indexes= args.target_sm_index)
+                    main(os.path.join(args.input_path,file), args.output_path, args.binder_seqs, args.target_protein_seqs, args.binder_chains, args.target_protein_chains, args.search_first_protein, args.seq_identity, args.target_sm_3_names, args.target_sm_chains, args.search_first_sm,args.take_first_sm_only,name_conversion_key,args.target_protein_chain_rename, args.target_sm_chain_rename, args.binder_chain_rename, args.search_radius, args.mesh_search, res_indexes= args.target_sm_index)

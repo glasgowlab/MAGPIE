@@ -143,36 +143,39 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
         )
         graphs.append(line_trace_target)
 
-    
-    bonds_made = []
+    else:
+        # Prepare line data
+        line_x, line_y, line_z = [], [], []
+        # Check distances and prepare line data
+        distance_threshold = 1.8
 
-    for bond in ligand_bonds:
-        for pair in ligand_bonds[bond]:
-            comb = [str(bond), str(pair)]
-            if comb not in bonds_made or comb not in bonds_made:
-                bonds_made.append(comb)
-                atom_coords = df2[df2['atom_serial_number'].isin(comb)]
-                if len(atom_coords) >= 2:
-                    point1 = atom_coords[['X', 'Y', 'Z']].values[0]
-                    point2 = atom_coords[['X', 'Y', 'Z']].values[1]
-                    line_trace = go.Scatter3d(
-                        x=[point1[0], point2[0]],
-                        y=[point1[1], point2[1]],
-                        z=[point1[2], point2[2]],
-                        mode='lines',
-                        line=dict(color='black', width=8),
-                        hoverinfo='skip',
-                        showlegend = False
-                    )
-                    
-                    graphs.append(line_trace)
+        n_points = len(x2)
+        for i in range(n_points):
+            for j in range(i + 1, n_points):
+                if "H" in names[i] and "H" in names[j]:
+                    continue
+                if euclidean_distance(x2[i], y2[i], z2[i], x2[j], y2[j], z2[j]) <= distance_threshold:
+                    line_x.extend([x2[i], x2[j], None])
+                    line_y.extend([y2[i], y2[j], None])
+                    line_z.extend([z2[i], z2[j], None])
+
+        # Create line plot for connections
+        lines = go.Scatter3d(x=line_x, y=line_y, z=line_z, mode='lines',
+                line=dict(
+                color='black',  # Choose a color that stands out
+                width=8 # Adjust line width as needed
+            ),
+            hoverinfo='skip',  # Optionally disable hover info for the lines
+            showlegend=False  # Optionally hide the line trace from the legend
+        )
+        graphs.append(lines)
 
     # Create the figure and add the traces
     fig = go.Figure(data=graphs, layout=layout)
     fig.update_layout(updatemenus=updatemenus)
     # Show the interactive plot
+    # py.plot(fig, filename='3D-scatter.html')
     iplot(fig)
-
 
 
 def find_nearest_points(target, binders, radius):
@@ -221,6 +224,9 @@ def calculate_arrow_position(subplot_index):
     arrow_x = (subplot_index - 1) * 0.25 + 0.1
     arrow_tail_x = arrow_x + 0.1
     return arrow_x, arrow_tail_x
+
+def euclidean_distance(x1, y1, z1, x2, y2, z2):
+    return np.sqrt((x2 - x1)**2 + (y2 - y1)**2 + (z2 - z1)**2)
 
 def transform_to_1_letter_code(amino_acids_3_letter):
     # Mapping dictionary for 3-letter to 1-letter code
@@ -389,9 +395,6 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance):
     target_chain_data_frame = pd.DataFrame(target_chain_ca_coords)
     binder_chain_data_frame = pd.DataFrame(binder_chain_ca_coords)
 
-    ligand_bonds ={}
-    if is_ligand:
-        ligand_bonds = helper_functions.extract_connections(list_of_paths[0])
 
     target_in_contact, binder_in_contact = find_nearest_points(target_chain_data_frame, binder_chain_data_frame,
                                                                distance)
@@ -400,50 +403,32 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance):
     for i in range (len(target_in_contact)): #Every file
         residues_in_contact_binder = []
         residues_in_contact_target = []
-        residues_salt_bridges_binder = []
-        residues_salt_bridges_target = []
         for k,residue in enumerate(chains_binder[i]):
             if k in binder_in_contact[i]:
-                residues_in_contact_binder.append([hbonds_saltbridges.hydrogen_bond_donor_optimal_positions_and_directions(residue),hbonds_saltbridges.hydrogen_bond_acceptor_optimal_positions_and_directions(residue)])
-                residues_salt_bridges_binder.append(residue)
-
+                residues_in_contact_binder.append(residue)
         if is_ligand:
             residue = chains_target[i].get_residues().__next__()
-            for k,atom in enumerate(residue):
-                if k in target_in_contact[i]:
-                    residues_in_contact_target.append(
-                        [hbonds_saltbridges.hydrogen_bond_donor_optimal_positions_and_directions_atom(atom,residue),
-                         hbonds_saltbridges.hydrogen_bond_acceptor_optimal_positions_and_directions_atom(atom,residue)])
+            residues_in_contact_target.append(residue)
         else:
             for k,residue in enumerate(chains_target[i]):
                 if k in target_in_contact[i]:
-                    residues_in_contact_target.append([hbonds_saltbridges.hydrogen_bond_donor_optimal_positions_and_directions(residue),hbonds_saltbridges.hydrogen_bond_acceptor_optimal_positions_and_directions(residue)])
-                    residues_salt_bridges_target.append(residue)
-                    residues_salt_bridges_target.append(residue)
-        for k in range (len(residues_in_contact_target)):
+                    residues_in_contact_target.append(residue)
+        for l in range (len(residues_in_contact_binder)):
             binder_h_bond_sc = False
             binder_h_bond_bb = False
             found_salt_bridge = False
-            for l in range (len(residues_in_contact_binder)):
-                if not is_ligand and not found_salt_bridge:
-                    salt_bridges_binder = residues_salt_bridges_binder[l]
-                    salt_bridges_target = residues_salt_bridges_target[k]
-                    found_salt_bridge = hbonds_saltbridges.find_salt_bridge(salt_bridges_binder, salt_bridges_target)
-                for residue in residues_in_contact_binder[l][0]:
-                    for residue_2 in residues_in_contact_target[k][1]:
-                        if residue_2[2] and not binder_h_bond_bb:
-                            binder_h_bond_bb = hbonds_saltbridges.check_hydrogen_bond(residue,residue_2)
-                        if not residue_2[2]  and not binder_h_bond_sc:
-                            binder_h_bond_sc = hbonds_saltbridges.check_hydrogen_bond(residue,residue_2)
-                for residue in residues_in_contact_binder[l][1]:
-                    for residue_2 in residues_in_contact_target[k][0]:
-                        if residue_2[2]  and not binder_h_bond_bb:
-                            binder_h_bond_bb = hbonds_saltbridges.check_hydrogen_bond(residue,residue_2)
-                        if not residue_2[2]  and not binder_h_bond_sc:
-                            binder_h_bond_sc = hbonds_saltbridges.check_hydrogen_bond(residue,residue_2)
+            binder_residue = residues_in_contact_binder[l]
 
+            for k in range (len(residues_in_contact_target)):
+                target_residue = residues_in_contact_target[k]
+                if not binder_h_bond_sc:
+                    binder_h_bond_sc = hbonds_saltbridges.find_hydrogen_bond(target_residue, binder_residue, is_ligand, False)
+                if not is_ligand:
+                     if not binder_h_bond_bb:
+                        binder_h_bond_bb = hbonds_saltbridges.find_hydrogen_bond(target_residue,binder_residue, is_ligand, True)
+                     if not found_salt_bridge:
+                        found_salt_bridge = hbonds_saltbridges.find_salt_bridge(target_residue,binder_residue)
                 if k == len(residues_in_contact_target)-1:
-
                     residue_found = binder_chain_data_frame.iloc[i][binder_in_contact[i][l]]
                     if  binder_h_bond_sc:
                         residue_found["H-Bond SC"] = '#FF0000'
@@ -459,7 +444,14 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance):
                     if not is_ligand and not found_salt_bridge:
                         residue_found["Salt Bridge"] = "#FFFFFF"
                     residues_to_plot.append(residue_found)
-
+                if binder_h_bond_sc and is_ligand:
+                    residue_found = binder_chain_data_frame.iloc[i][binder_in_contact[i][l]]
+                    residue_found["H-Bond SC"] = '#FF0000'
+                    residue_found["H-Bond BB"] = '#FFFFFF'
+                    if not is_ligand:
+                        residue_found["Salt Bridge"] = "#FFFFFF"
+                    residues_to_plot.append(residue_found)
+                    break
                 if binder_h_bond_sc and binder_h_bond_bb and found_salt_bridge:
                     residue_found = binder_chain_data_frame.iloc[i][binder_in_contact[i][l]]
                     residue_found["H-Bond SC"] = '#FF0000'
@@ -469,14 +461,15 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance):
                     residues_to_plot.append(residue_found)
                     break
 
+
     residue_found_df   = pd.DataFrame(residues_to_plot)
 
     target_to_to_plot = []
-    for x in target_chain_data_frame.iloc[0]:
+    for x in target_chain_data_frame.iloc[reference_id]:
         if x is not None:
             target_to_to_plot.append(x)
-    #
-    create_3d_graph(residue_found_df,pd.DataFrame(target_to_to_plot), is_ligand, ligand_bonds)
+
+    create_3d_graph(residue_found_df,pd.DataFrame(target_to_to_plot), is_ligand)
 
     return residue_found_df,pd.DataFrame(target_chain_ca_coords[reference_id])
 
@@ -609,7 +602,4 @@ def sequence_logos(residues_found, target_residues, sequence_logo_targets, is_li
         plots_by_rows.append([plot, plots_rows[0+i*3], plots_rows[1+i*3], plots_rows[2+i*3]])
     plots_by_rows.insert(0, plots_by_rows.pop())
     create_sequence_logo_list(plots_by_rows,only_combined_logo, is_ligand)
-
-
-
 

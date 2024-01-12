@@ -155,6 +155,7 @@ def extract_list_pdb(pdb_list, chain_id) ->list:
                         all_Ca.append(dict_of_atoms)
 
     return all_Ca
+
 def extract_connections(pdb_file : str) -> list:
     with open(pdb_file, "r") as file:
         dict_of_atoms = {}
@@ -213,7 +214,8 @@ def get_color_code(atom_name):
         'C': '#808080',  # Carbon - Grey
         'S': '#FFFF00',  # Sulfur - Yellow
         'P': '#FFA500',   # Phosphorus - Orange
-        'H': '#33FFFF'
+        'H': '#33FFFF',
+        'F': "#FF00FF"
        }
     return color.get(atom_name, "#000000") 
 
@@ -239,3 +241,23 @@ def make_chunks(data: list, thread_count) -> dict:
     return threads
 
 
+def process_residues_to_graph(sequence_logo_targets, is_ligand):
+    if is_ligand:
+        if "-" in sequence_logo_targets:
+            print("Range not allowed in small-molecule ligand-protein interactions!")
+            sys.exit()
+        plot_list = [str(x) for x in sequence_logo_targets.split(",")]
+
+    else:
+        plot_list = sequence_logo_targets.split(",")
+        list_to_plot = []
+        for item in plot_list:
+            if "-" in item:
+                if int(item.split("-")[0]) > int(item.split("-")[1]):
+                    print(f"Invalid Selection {item}. Selections must be in increasing order")
+                    continue
+                range_plot = [x for x in range(int(item.split("-")[0]), int(item.split("-")[1]) + 1)]
+                list_to_plot += range_plot
+            else:
+                list_to_plot.append(int(item))
+    return  list_to_plot

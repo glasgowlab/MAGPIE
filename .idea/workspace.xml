@@ -82,56 +82,27 @@
       <change beforePath="$PROJECT_DIR$/Protein Example/mNb6_7KKL_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/mNb6_7KKL_cleaned.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/align_protein_chain.py" beforeDir="false" afterPath="$PROJECT_DIR$/align_protein_chain.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/align_small_molecule.py" beforeDir="false" afterPath="$PROJECT_DIR$/align_small_molecule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1atp.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1ayl.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1b76.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1c0f.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1d4x.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1d9z.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1dej.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1e24.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1e2q.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1e4g.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1e79.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1e8x.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1ee1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1eqy.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1esq.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1esv.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1fmw.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1fq1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1g5t.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1g64.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1gn8.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1gol.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1gtr.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1gy3.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1gz3.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1gz4.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1h1v.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/1h1w.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/pdb1a0i.ent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/pdb1a49.ent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/pdb1a5u.ent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/pdb1a82.ent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/pdb1aq2.ent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/pdb1asz.ent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/pdb1atn.ent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/pdb1b0u.ent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/pdb1b38.ent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/pdb1b39.ent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/pdb1b8a.ent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/pdb1bcp.ent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/pdb1c0g.ent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/pdb1csn.ent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/pdb1do0.ent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/pdb1dv2.ent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/pdb1dy3.ent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/pdb1f2u.ent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/pdb1f9a.ent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/pdb1fin.ent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/pdb1g21.ent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp/pdb1g3i.ent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_1/1atp_cleanedreference_1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/atp_by_conformers/does_it_work/1atp_cleanedreference_1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_1/1b76_cleanedreference_1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/atp_by_conformers/reference_1/1b76_cleanedreference_1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_1/1d9z_cleanedreference_1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/atp_by_conformers/reference_1/1d9z_cleanedreference_1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_1/1e24_cleanedreference_1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/atp_by_conformers/reference_1/1e24_cleanedreference_1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_1/1e2q_cleanedreference_1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/atp_by_conformers/reference_1/1e2q_cleanedreference_1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_1/1e4g_cleanedreference_1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/atp_by_conformers/reference_1/1e4g_cleanedreference_1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_1/1e79_cleanedreference_1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/atp_by_conformers/reference_1/1e79_cleanedreference_1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_1/1e8x_cleanedreference_1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/atp_by_conformers/reference_1/1e8x_cleanedreference_1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_1/1ee1_cleanedreference_1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/atp_by_conformers/reference_1/1ee1_cleanedreference_1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_1/1esq_cleanedreference_1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/atp_by_conformers/reference_1/1esq_cleanedreference_1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_1/1fmw_cleanedreference_1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/atp_by_conformers/reference_1/1fmw_cleanedreference_1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_1/1fq1_cleanedreference_1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/atp_by_conformers/reference_1/1fq1_cleanedreference_1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_1/1gn8_cleanedreference_1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/atp_by_conformers/reference_1/1gn8_cleanedreference_1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_2/1ayl_cleanedreference_2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/atp_by_conformers/reference_2/1ayl_cleanedreference_2.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_3/1c0f_cleanedreference_3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/atp_by_conformers/reference_3/1c0f_cleanedreference_3.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_3/1d4x_cleanedreference_3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/atp_by_conformers/reference_3/1d4x_cleanedreference_3.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_3/1dej_cleanedreference_3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/atp_by_conformers/reference_3/1dej_cleanedreference_3.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_3/1eqy_cleanedreference_3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/atp_by_conformers/reference_3/1eqy_cleanedreference_3.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_3/1esv_cleanedreference_3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/atp_by_conformers/reference_3/1esv_cleanedreference_3.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_4/1g5t_cleanedreference_4.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/atp_by_conformers/reference_4/1g5t_cleanedreference_4.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_4/1g64_cleanedreference_4.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/atp_by_conformers/reference_4/1g64_cleanedreference_4.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hbonds_saltbridges.py" beforeDir="false" afterPath="$PROJECT_DIR$/hbonds_saltbridges.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/helper_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/helper_functions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sequence_logo_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/sequence_logo_main.py" afterDir="false" />
@@ -192,6 +163,13 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\camlo\Documents\GitHub\MAGPIE\atp_by_conformers\reference_1" />
+      <recent name="C:\Users\camlo\Documents\GitHub\MAGPIE\atp_by_conformers\does_it_work" />
+      <recent name="C:\Users\camlo\Documents\GitHub\MAGPIE\atp_by_conformers" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.sequence_logo_main">
     <configuration name="pdb_parser" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -300,7 +278,8 @@
       <workItem from="1704479657898" duration="6376000" />
       <workItem from="1704578307913" duration="1295000" />
       <workItem from="1704914176355" duration="1166000" />
-      <workItem from="1704915513975" duration="5853000" />
+      <workItem from="1704915513975" duration="6027000" />
+      <workItem from="1704922730990" duration="27868000" />
     </task>
     <servers />
   </component>
@@ -320,6 +299,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MAGPIE$surfaceMaker.coverage" NAME="surfaceMaker Coverage Results" MODIFIED="1700002287234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAGPIE$sequence_logo_main.coverage" NAME="sequence_logo_main Coverage Results" MODIFIED="1704921491738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAGPIE$sequence_logo_main.coverage" NAME="sequence_logo_main Coverage Results" MODIFIED="1705094423182" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

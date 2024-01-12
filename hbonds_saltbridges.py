@@ -2,11 +2,11 @@ from Bio.PDB import Residue
 import numpy as np
 from Bio.PDB.vectors import Vector
 
-def get_bonded_atoms(atom, residue, threshold=1.6):
+def get_bonded_hydrogens(atom, residue, a,threshold=1.6):
     """ Return a list of atoms bonded to a given atom within a specified distance threshold. """
     bonded_atoms = []
     for other_atom in residue:
-        if other_atom is not atom:
+        if other_atom is not atom and other_atom.element == "H":
             distance = (atom.get_vector() - other_atom.get_vector()).norm()
             if distance < threshold:
                 bonded_atoms.append(other_atom)
@@ -33,111 +33,8 @@ def is_backbone_hydrogen(atom, residue):
     except:
         return False
 
-def is_backbone_atom(atom, residue):
-    """ Check if the atom is a backbone atom. """
-    backbone_atoms = ['N', 'CA', 'C', 'O']
-    if atom.get_id() in backbone_atoms:
-        return True
 
-    # Additional check for backbone hydrogen atoms
-    return is_backbone_hydrogen(atom, residue)
-def hydrogen_bond_acceptor_optimal_positions_and_directions_atom( atom, residue: Residue) -> list:
-    optimal_position_and_directions = []
 
-    if atom.element in ['O', 'N']:
-        atom_coord = atom.get_vector()
-        bonded_atoms = get_bonded_atoms(atom, residue)
-        is_backbone = is_backbone_atom(atom,residue)
-        atom_name = str(atom.get_id())
-
-        if atom.element == 'O' and len(bonded_atoms) == 1 and bonded_atoms[0].element == 'C':
-            parent_atom_coord = bonded_atoms[0].get_vector()
-            direction = (atom_coord - parent_atom_coord).normalized()
-            travel_distance = 2 # Assuming a travel distance of 2
-            optimal_position = atom_coord + scale_vector(direction, travel_distance)
-            optimal_position_and_directions.append([optimal_position, direction, is_backbone, atom_name])
-
-        elif atom.element == 'N' and len(bonded_atoms) == 2.5:
-            direction = Vector(0.0, 0.0, 0.0)
-            for bonded_atom in bonded_atoms:
-                bonded_atom_coord = bonded_atom.get_vector()
-                delta = (bonded_atom_coord - atom_coord).normalized()
-                direction = direction + delta
-            direction = direction.normalized()
-            travel_distance = 2 # Assuming a travel distance of 2
-            optimal_position = atom_coord + scale_vector(direction, travel_distance)
-            optimal_position_and_directions.append([optimal_position, direction, is_backbone, atom_name])
-    return optimal_position_and_directions
-def hydrogen_bond_acceptor_optimal_positions_and_directions(residue: Residue) -> list:
-    optimal_position_and_directions = []
-
-    for atom in residue:
-        if atom.element in ['O', 'N', 'F']:
-            atom_coord = atom.get_vector()
-            bonded_atoms = get_bonded_atoms(atom, residue)
-            is_backbone = is_backbone_atom(atom,residue)
-            atom_name = str(atom.get_id())
-
-            if atom.element == 'O' and len(bonded_atoms) == 1 and bonded_atoms[0].element == 'C':
-                parent_atom_coord = bonded_atoms[0].get_vector()
-                direction = (atom_coord - parent_atom_coord).normalized()
-                travel_distance = 2 # Assuming a travel distance of 2
-                optimal_position = atom_coord + scale_vector(direction, travel_distance)
-                optimal_position_and_directions.append([optimal_position, direction, is_backbone, atom_name])
-
-            elif atom.element == 'N' and len(bonded_atoms) == 2.5:
-                direction = Vector(0.0, 0.0, 0.0)
-                for bonded_atom in bonded_atoms:
-                    bonded_atom_coord = bonded_atom.get_vector()
-                    delta = (bonded_atom_coord - atom_coord).normalized()
-                    direction = direction + delta
-                direction = direction.normalized()
-                travel_distance = 2 # Assuming a travel distance of 2
-                optimal_position = atom_coord + scale_vector(direction, travel_distance)
-                optimal_position_and_directions.append([optimal_position, direction, is_backbone, atom_name])
-    return optimal_position_and_directions
-
-def hydrogen_bond_donor_optimal_positions_and_directions_atom(atom , residue) -> list:
-    optimal_position_and_directions = []
-
-    if atom.element == 'H':  # Checking for hydrogen atoms
-        bonded_atoms = get_bonded_atoms(atom, residue)
-        for bonded_atom in bonded_atoms:
-            if bonded_atom.element in ['N', 'O']:  # Check if bonded to N or O
-                atom_coord = atom.get_vector()
-                bonded_atom_coord = bonded_atom.get_vector()
-
-                distance = (atom_coord - bonded_atom_coord).norm()
-                if distance > 0:  # Avoid division by zero
-                    delta = atom_coord - bonded_atom_coord
-                    direction = delta / distance
-                    travel_distance = 2  # Assuming a travel distance of 2
-                    optimal_position = atom_coord + scale_vector(direction, travel_distance)
-                    is_backbone = is_backbone_atom(atom, residue)
-                    atom_name = str(atom.get_id())
-                    optimal_position_and_directions.append([optimal_position, direction, is_backbone, atom_name])
-    return optimal_position_and_directions
-
-def hydrogen_bond_donor_optimal_positions_and_directions(residue: Residue) -> list:
-    optimal_position_and_directions = []
-    for atom in residue:
-        if atom.element == 'H':  # Checking for hydrogen atoms
-            bonded_atoms = get_bonded_atoms(atom, residue)
-            for bonded_atom in bonded_atoms:
-                if bonded_atom.element in ['N', 'O']:  # Check if bonded to N or O
-                    atom_coord = atom.get_vector()
-                    bonded_atom_coord = bonded_atom.get_vector()
-
-                    distance = (atom_coord - bonded_atom_coord).norm()
-                    if distance > 0:  # Avoid division by zero
-                        delta = atom_coord - bonded_atom_coord
-                        direction = delta / distance
-                        travel_distance = 2  # Assuming a travel distance of 2
-                        optimal_position = atom_coord + scale_vector(direction, travel_distance)
-                        is_backbone = is_backbone_atom(atom,residue)
-                        atom_name = str(atom.get_id())
-                        optimal_position_and_directions.append([optimal_position, direction, is_backbone, atom_name])
-    return optimal_position_and_directions
 
 def calculate_distance(vec1, vec2):
     """ Calculate the Euclidean distance between two vectors. """
@@ -149,27 +46,94 @@ def calculate_angle(vec1, vec2):
     angle = np.arccos(cos_angle)
     return np.degrees(angle)
 
-def check_hydrogen_bond(donor_info, acceptor_info):
-    """
-    Check if a donor and acceptor form a hydrogen bond.
-    donor_info and acceptor_info are lists containing the position vector, direction vector,
-    is_backbone flag, and atom name.
-    """
-    donor_position, donor_direction, _, _ = donor_info
-    acceptor_position, acceptor_direction, _, _ = acceptor_info
 
-    # Distance criterion (2.5 to 3.5 angstroms)
-    distance = calculate_distance(donor_position, acceptor_position)
-    if not 2 <= distance <= 4:
+def find_acceptor_and_donors_from_residue_sc(residue):
+    acceptors = []
+    donors = []
+    for atom in residue:
+        if atom.element in acceptor_names:
+            if atom.name in backbone_atoms:
+                continue
+            acceptor_coords = atom.get_coord()
+            neighboors = get_bonded_hydrogens(atom, residue, 1.2)
+            neighboors_H_and_direction = []
+            for neighboor in neighboors:
+                H_cords = neighboor.get_coord()
+                direction = acceptor_coords - H_cords
+                neighboors_H_and_direction.append([H_cords,direction])
+            acceptors.append(atom)
+            donors += neighboors_H_and_direction
+    return [acceptors,donors]
+def find_acceptor_and_donors_from_residue_bb(residue):
+    acceptors = []
+    donors = []
+    for atom in residue:
+        if atom.element in acceptor_names:
+            if not atom.name in backbone_atoms:
+                continue
+            acceptor_coords = atom.get_coord()
+            neighboors = get_bonded_hydrogens(atom, residue, 1.2)
+            neighboors_H_and_direction = []
+            for neighboor in neighboors:
+                H_cords = neighboor.get_coord()
+                direction = acceptor_coords - H_cords
+                neighboors_H_and_direction.append([H_cords,direction])
+            acceptors.append(atom)
+            donors += neighboors_H_and_direction
+    return [acceptors,donors]
+def find_all_acceptors_and_donors(residue):
+    acceptors = []
+    donors = []
+    for atom in residue:
+        if atom.element in acceptor_names:
+            neighboors = get_bonded_hydrogens(atom, residue, 1.2)
+            neighboors_H_and_direction = []
+            acceptor_coords = atom.get_coord()
+            for neighboor in neighboors:
+                H_cords = neighboor.get_coord()
+                direction = acceptor_coords - H_cords
+                neighboors_H_and_direction.append([H_cords,direction])
+            acceptors.append(atom)
+            donors += neighboors_H_and_direction
+    return [acceptors,donors]
+def find_hydrogen_bond(residue1, residue2,is_ligand, bb_flag):
+    if bb_flag:
+        acceptor_donors_1 = find_acceptor_and_donors_from_residue_bb(residue1)
+    else:
+        acceptor_donors_1 = find_acceptor_and_donors_from_residue_sc(residue1)
+    acceptor_donors_2_all =  find_all_acceptors_and_donors(residue2)
+    found_h_bond = False
+    for acceptor in acceptor_donors_1[0]:
+        for donor in acceptor_donors_2_all[1]:
+            if found_h_bond:
+                break
+            found_h_bond = check_h_bond(donor,acceptor)
+        if found_h_bond:
+            break
+    if found_h_bond:
+        return True
+    for donor in acceptor_donors_1[1]:
+        for acceptor in acceptor_donors_2_all[0]:
+            if found_h_bond:
+                break
+            found_h_bond = check_h_bond(donor, acceptor)
+        if found_h_bond:
+            break
+    if found_h_bond:
+        return True
+    else:
         return False
-
-    # Angle criterion (> 120 degrees)
-    angle = calculate_angle(donor_direction, acceptor_position - donor_position)
-    if angle > 110:
+def check_h_bond (donor, acceptor):
+    donor_direction = donor[1]
+    donor_coords = donor[0]
+    acceptor_coords = acceptor.get_coord()
+    donor_acceptor_direction =  acceptor_coords - donor_coords
+    distance = calculate_distance(acceptor_coords,donor_coords)
+    angle = calculate_angle(donor_direction, donor_acceptor_direction)
+    if 1.5 <= distance <= 4 and 120 < angle < 300:
+        return True
+    else:
         return False
-
-    return True
-
 
 def find_salt_bridge(residue1, residue2):
 
@@ -184,14 +148,15 @@ def find_salt_bridge(residue1, residue2):
                 atom1 = residue1[atom_name1]
                 atom2 = residue2[atom_name2]
                 distance = atom1 - atom2
-
                 charge_1 = dict_of_pka[res1_name]
                 charge_2 = dict_of_pka[res2_name]
-                if charge_1 * charge_2 == -1 and 2 < distance < 4:
+                if charge_1 * charge_2 == -1 and 1 < distance < 4.5:
                     return True
             return False
 
 
+acceptor_names = ["F","N","O"]
+backbone_atoms = ["N","O"]
 dict_of_pka = {
     'GLU': -1,  # Glutamate
     'ASP': -1,  # Aspartate

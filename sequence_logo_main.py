@@ -147,7 +147,7 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
         # Prepare line data
         line_x, line_y, line_z = [], [], []
         # Check distances and prepare line data
-        distance_threshold = 1.8
+        distance_threshold = 2
 
         n_points = len(x2)
         for i in range(n_points):
@@ -313,7 +313,7 @@ def create_sequence_logo_list(data,only_combined, is_ligand):
 
                     # Create the logo with logomaker
                     logo = logomaker.Logo(graph[0], ax=ax, color_scheme='NajafabadiEtAl2017', shade_below=0.5)
-                    logo.ax.set_ylabel('Frequency',fontsize=y_lable_size)
+                    logo.ax.set_ylabel('Frequency',fontsize=y_lable_size    )
 
                     # Set x-ticks and labels
                     positions = [k for k in range(len(graph[1]))]

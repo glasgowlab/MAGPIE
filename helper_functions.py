@@ -242,11 +242,12 @@ def make_chunks(data: list, thread_count) -> dict:
 
 
 def process_residues_to_graph(sequence_logo_targets, is_ligand):
+
     if is_ligand:
         if "-" in sequence_logo_targets:
             print("Range not allowed in small-molecule ligand-protein interactions!")
             sys.exit()
-        plot_list = [str(x) for x in sequence_logo_targets.split(",")]
+        list_to_plot = [str(x) for x in sequence_logo_targets.split(",")]
 
     else:
         plot_list = sequence_logo_targets.split(",")

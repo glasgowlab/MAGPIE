@@ -141,18 +141,16 @@ def find_salt_bridge(residue1, residue2):
     res2_name = residue2.get_resname()
     if res1_name not in dict_of_pka.keys() or res2_name not in dict_of_pka.keys():
         return False
-    for atom_name1 in charged_atoms[res1_name]:
-        for atom_name2 in charged_atoms[res2_name]:
-            # Check if the residue has the atom
-            if residue1.has_id(atom_name1) and residue2.has_id(atom_name2):
-                atom1 = residue1[atom_name1]
-                atom2 = residue2[atom_name2]
-                distance = atom1 - atom2
+    for atom1 in residue1:
+        for atom2 in residue2:
+            if atom1.name in charged_atoms[res1_name] and atom2.name in charged_atoms[res2_name]:
+                distance = calculate_distance(atom1.get_coord(), atom2.get_coord())
                 charge_1 = dict_of_pka[res1_name]
                 charge_2 = dict_of_pka[res2_name]
                 if charge_1 * charge_2 == -1 and 1 < distance < 4.5:
                     return True
-            return False
+
+    return False
 
 
 acceptor_names = ["F","N","O"]

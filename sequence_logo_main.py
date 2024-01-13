@@ -108,7 +108,7 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
     else:
         buttons.append(dict(label='H-Bond BB', method='restyle', args=[{'marker.color': [color_hb_bb]}, [0]]))
         buttons.append(dict(label='H-Bond SC', method='restyle', args=[{'marker.color': [color_hb_sc]}, [0]]))
-        buttons.append(dict(label='Polar Interactions', method='restyle', args=[{'marker.color': [color_salt]}, [0]]))
+        buttons.append(dict(label='Salt-Bridges', method='restyle', args=[{'marker.color': [color_salt]}, [0]]))
 
     updatemenus = [
         dict(buttons=buttons, showactive=True),
@@ -288,9 +288,10 @@ def calculate_bits(list_of_AA, sequence_list):
 def create_sequence_logo_list(data,only_combined, is_ligand):
 
     # Titles for each type of graph
-    axis_label_fontsize = 28
-    title_fontsize = 32
-    xtick_label_fontsize = 28
+    axis_label_fontsize = 30
+    title_fontsize = 36
+    xtick_label_fontsize = 30
+    y_lable_size = 34
     titles = ["Residues in Contact", "H-Bond Backbone", "H-Bond Side-Chain", "Polar Contact"]
     if is_ligand:
         titles[2] = "H-Bonds"
@@ -312,7 +313,7 @@ def create_sequence_logo_list(data,only_combined, is_ligand):
 
                     # Create the logo with logomaker
                     logo = logomaker.Logo(graph[0], ax=ax, color_scheme='NajafabadiEtAl2017', shade_below=0.5)
-                    logo.ax.set_ylabel('Frequency',fontsize=axis_label_fontsize)
+                    logo.ax.set_ylabel('Frequency',fontsize=y_lable_size)
 
                     # Set x-ticks and labels
                     positions = [k for k in range(len(graph[1]))]

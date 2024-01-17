@@ -50,9 +50,7 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
     x2, y2, z2 = df2['X'], df2['Y'], df2['Z']
     color_shapely = df1['shapely'].values.tolist()
     color_polar = df1['polar'].values.tolist()
-    color_hb_sc = df1['H-Bond SC'].values.tolist()
-    color_hb_bb = df1['H-Bond BB'].values.tolist()
-
+    color_hb = df1['H-bond'].values.tolist()
 
     if is_ligand:
         names = df2['atom_name'].values.tolist()
@@ -104,10 +102,9 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
     buttons.append(dict(label='Amino Colours', method='restyle', args=[{'marker.color': [color_polar]}, [0]]))
 
     if is_ligand:
-        buttons.append(dict(label='H-Bond', method='restyle', args=[{'marker.color': [color_hb_sc]}, [0]]))
+        buttons.append(dict(label='H-Bond', method='restyle', args=[{'marker.color': [color_hb]}, [0]]))
     else:
-        buttons.append(dict(label='H-Bond BB', method='restyle', args=[{'marker.color': [color_hb_bb]}, [0]]))
-        buttons.append(dict(label='H-Bond SC', method='restyle', args=[{'marker.color': [color_hb_sc]}, [0]]))
+        buttons.append(dict(label='H-Bond', method='restyle', args=[{'marker.color': [color_hb]}, [0]]))
         buttons.append(dict(label='Salt-Bridges', method='restyle', args=[{'marker.color': [color_salt]}, [0]]))
 
     updatemenus = [
@@ -147,8 +144,7 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
         # Prepare line data
         line_x, line_y, line_z = [], [], []
         # Check distances and prepare line data
-        distance_threshold = 2
-
+        distance_threshold = 2.55   
         n_points = len(x2)
         for i in range(n_points):
             for j in range(i + 1, n_points):
@@ -292,7 +288,7 @@ def create_sequence_logo_list(data,only_combined, is_ligand):
     title_fontsize = 36
     xtick_label_fontsize = 30
     y_lable_size = 34
-    titles = ["Residues in Contact", "H-Bond Backbone", "H-Bond Side-Chain", "Polar Contact"]
+    titles = ["Residues in Contact", "H-Bonds", "Salt Bridges"]
     if is_ligand:
         titles[2] = "H-Bonds"
     for j, row in enumerate(data):
@@ -435,11 +431,14 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance):
                         residue_found["H-Bond SC"] = '#FF0000'
                     else:
                         residue_found["H-Bond SC"] = '#FFFFFF'
-
                     if binder_h_bond_bb:
                         residue_found["H-Bond BB"] = '#FF0000'
                     else:
                         residue_found["H-Bond BB"] = '#FFFFFF'
+                    if binder_h_bond_sc or  binder_h_bond_bb:
+                        residue_found["H-bond"] = "#FF0000"
+                    else:
+                        residue_found["H-bond"] = "#FFFFFF"
                     if not is_ligand and found_salt_bridge:
                         residue_found["Salt Bridge"] = "#FF0000"
                     if not is_ligand and not found_salt_bridge:
@@ -449,14 +448,14 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance):
                     residue_found = binder_chain_data_frame.iloc[i][binder_in_contact[i][l]]
                     residue_found["H-Bond SC"] = '#FF0000'
                     residue_found["H-Bond BB"] = '#FFFFFF'
-                    if not is_ligand:
-                        residue_found["Salt Bridge"] = "#FFFFFF"
+                    residue_found["H-bond"] = "#FF0000"
                     residues_to_plot.append(residue_found)
                     break
                 if binder_h_bond_sc and binder_h_bond_bb and found_salt_bridge:
                     residue_found = binder_chain_data_frame.iloc[i][binder_in_contact[i][l]]
                     residue_found["H-Bond SC"] = '#FF0000'
                     residue_found["H-Bond BB"] = '#FF0000'
+                    residue_found["H-bond"] = '#FF0000'
                     if not is_ligand:
                         residue_found["Salt Bridge"] = "#FF0000"
                     residues_to_plot.append(residue_found)
@@ -481,7 +480,7 @@ def sequence_logos(residues_found, target_residues, sequence_logo_targets, is_li
                                          print_description=False)
     list_of_AA = model.columns.to_list()
     rows_bits_all_sq= []
-    rows_bits_bb= []
+    rows_bits_hb= []
     rows_bits_sc= []
     rows_bits_pc= []
 
@@ -498,26 +497,20 @@ def sequence_logos(residues_found, target_residues, sequence_logo_targets, is_li
         if is_ligand:
             point =  target_residues[target_residues['atom_name'] == target]
             all_contacts = find_points_within_radius(point, residues_found, radius)
-            bb_hydrogen_bonds = all_contacts.loc[
-                 (residues_found['H-Bond BB'] == '#FF0000')]
-            sc_hydrogen_bonds = all_contacts.loc[
-                (residues_found['H-Bond SC'] == '#FF0000')]
+
         else:
             point = target_residues[target_residues['residue_index'] == target]
             res_nem = point["AA"].values
 
             target = f"{aa_mapping[res_nem[0]]}{target}"
             all_contacts = find_points_within_radius(point, residues_found, radius)
-            bb_hydrogen_bonds = all_contacts.loc[
-                 (residues_found['H-Bond BB'] == '#FF0000')]
-            sc_hydrogen_bonds = all_contacts.loc[
-                (residues_found['H-Bond SC'] == '#FF0000')]
+            hydrogen_bonds = all_contacts.loc[
+                 (residues_found['H-bond'] == '#FF0000')]
             polar_contacts = all_contacts.loc[
                 (residues_found['Salt Bridge'] == '#FF0000')]
 
         AA_all_contacts = transform_to_1_letter_code(all_contacts['AA'].values.tolist())
-        AA_bb = transform_to_1_letter_code(bb_hydrogen_bonds['AA'].values.tolist())
-        AA_sc = transform_to_1_letter_code(sc_hydrogen_bonds['AA'].values.tolist())
+        AA_hb = transform_to_1_letter_code(hydrogen_bonds['AA'].values.tolist())
         if not is_ligand:
             AA_pc = transform_to_1_letter_code(polar_contacts['AA'].values.tolist())
         else:
@@ -538,27 +531,17 @@ def sequence_logos(residues_found, target_residues, sequence_logo_targets, is_li
             plots.append([df_all_contact, [residue_num]])
 
         # Repeat the same check for other contact types
-        if len( AA_bb) == 0:
+        if len( AA_hb) == 0:
             plots_rows.append([None,None])
         else:
-            bb_residue_num = f' {target} \n n = {len(AA_bb)} '
+            bb_residue_num = f' {target} \n n = {len(AA_hb)} '
             resi_combined_bb_hb.append(bb_residue_num)
-            bb_bits = calculate_bits(list_of_AA, AA_bb)
-            rows_bits_bb.append(bb_bits)
-            df_bb = pd.DataFrame(columns=model.columns)
-            df_bb = pd.concat([df_bb, pd.DataFrame([bb_bits], columns=df_bb.columns)], ignore_index=True)
-            plots_rows.append([df_bb, [bb_residue_num]])
+            hb_bits = calculate_bits(list_of_AA, AA_hb)
+            rows_bits_hb.append(hb_bits)
+            hb_bb = pd.DataFrame(columns=model.columns)
+            hb_bb = pd.concat([hb_bb, pd.DataFrame([hb_bits], columns=hb_bb.columns)], ignore_index=True)
+            plots_rows.append([hb_bb, [bb_residue_num]])
 
-        if len(AA_sc) == 0:
-            plots_rows.append([None,None])
-        else:
-            sc_residue_num = f' {target} \n n = {len(AA_sc)} '
-            resi_combined_sc_bb.append(sc_residue_num)
-            sc_bits = calculate_bits(list_of_AA, AA_sc)
-            rows_bits_sc.append(sc_bits)
-            df_sc = pd.DataFrame(columns=model.columns)
-            df_sc = pd.concat([df_sc, pd.DataFrame([sc_bits], columns=df_sc.columns)], ignore_index=True)
-            plots_rows.append([df_sc, [sc_residue_num]])
 
         if len( AA_pc) == 0:
             plots_rows.append([None,None])
@@ -575,21 +558,13 @@ def sequence_logos(residues_found, target_residues, sequence_logo_targets, is_li
         df_all_contact = pd.DataFrame(columns=model.columns)
         df_all_contact = pd.concat([df_all_contact, pd.DataFrame(rows_bits_all_sq, columns=df_all_contact.columns)], ignore_index=True)
         plots.append([df_all_contact, resi_combined_all_contacts])
-        if len(rows_bits_bb) == 0 :
+        if len(rows_bits_hb) == 0 :
             plots_rows.append([None,None])
         else:
-            df_bb= pd.DataFrame(columns=model.columns)
-            df_bb = pd.concat([df_bb, pd.DataFrame(rows_bits_bb, columns=df_bb.columns)],
+            hb_bb= pd.DataFrame(columns=model.columns)
+            hb_bb = pd.concat([hb_bb, pd.DataFrame(rows_bits_hb, columns=hb_bb.columns)],
                                        ignore_index=True)
-            plots_rows.append([df_bb, resi_combined_bb_hb])
-        if len(rows_bits_sc) == 0 :
-            plots_rows.append([None,None])
-        else:
-            df_sc= pd.DataFrame(columns=model.columns)
-            df_sc = pd.concat([df_sc, pd.DataFrame(rows_bits_sc, columns=df_sc.columns)],
-                                       ignore_index=True)
-            plots_rows.append([df_sc, resi_combined_sc_bb])
-
+            plots_rows.append([hb_bb, resi_combined_bb_hb])
         if len(rows_bits_pc) == 0:
             plots_rows.append([None,None])
         else:
@@ -600,7 +575,7 @@ def sequence_logos(residues_found, target_residues, sequence_logo_targets, is_li
 
     plots_by_rows = []
     for i,plot in enumerate(plots):
-        plots_by_rows.append([plot, plots_rows[0+i*3], plots_rows[1+i*3], plots_rows[2+i*3]])
+        plots_by_rows.append([plot, plots_rows[0+i*2], plots_rows[1+i*2]])
     plots_by_rows.insert(0, plots_by_rows.pop())
     create_sequence_logo_list(plots_by_rows,only_combined_logo, is_ligand)
 

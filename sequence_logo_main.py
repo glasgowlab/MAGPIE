@@ -19,9 +19,13 @@ import numpy as np
 import helper_functions
 from Bio import *
 import plotly.offline as py
+import seaborn as sns
+import matplotlib.colors as mcolors
+from sklearn.cluster import DBSCAN
 
 aa_mapping = {
     'ALA': 'A',
+
     'ARG': 'R',
     'ASN': 'N',
     'ASP': 'D',
@@ -51,7 +55,8 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
     color_shapely = df1['shapely'].values.tolist()
     color_polar = df1['polar'].values.tolist()
     color_hb = df1['H-bond'].values.tolist()
-
+    color_cluster = df1["cluster_color"].values.tolist()
+    cluster_names = df1["cluster_index"].values.tolist()
     if is_ligand:
         names = df2['atom_name'].values.tolist()
         color_df2=  df2["color"].values.tolist()
@@ -62,7 +67,7 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
         size2 = 15
         color_salt = df1['Salt Bridge'].values.tolist()
     # init_notebook_mode(connected=True)
-
+    print(color_salt)
     scatter_trace1 = go.Scatter3d(
         x=x1,
         y=y1,
@@ -98,14 +103,12 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
         
     )
     buttons = []
-    buttons.append(dict(label='Shapely Colours', method='restyle',  args=[{'marker.color': [color_shapely]}, [0]]))
-    buttons.append(dict(label='Amino Colours', method='restyle', args=[{'marker.color': [color_polar]}, [0]]))
-
-    if is_ligand:
-        buttons.append(dict(label='H-Bond', method='restyle', args=[{'marker.color': [color_hb]}, [0]]))
-    else:
-        buttons.append(dict(label='H-Bond', method='restyle', args=[{'marker.color': [color_hb]}, [0]]))
-        buttons.append(dict(label='Salt-Bridges', method='restyle', args=[{'marker.color': [color_salt]}, [0]]))
+    buttons.append(dict(label='Shapely Colours', method='restyle',  args=[{'text' : [df1['AA']],"marker.color": [color_shapely]}, [0]]))
+    buttons.append(dict(label='Amino Colours', method='restyle', args=[{'text' : [df1['AA']],'marker.color': [color_polar]}, [0]]))
+    buttons.append(dict(label='H-Bond', method='restyle', args=[{'text' : [df1['AA']],'marker.color': [color_hb]}, [0]]))
+    if not is_ligand:
+        buttons.append(dict(label='Salt-Bridges', method='restyle', args=[{'text' : [df1['AA']],'marker.color': [color_salt]}, [0]]))
+    buttons.append(dict(label='Color Cluster', method='restyle', args=[{'text' : [cluster_names],'marker.color': [color_cluster]}, [0]]))
 
     updatemenus = [
         dict(buttons=buttons, showactive=True),
@@ -170,8 +173,9 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
     fig = go.Figure(data=graphs, layout=layout)
     fig.update_layout(updatemenus=updatemenus)
     # Show the interactive plot
-    # py.plot(fig, filename='3D-scatter.html')
-    iplot(fig)
+    # iplot(fig)
+    py.plot(fig, filename='3D-scatter.html')
+
 
 
 def find_nearest_points(target, binders, radius):
@@ -266,21 +270,18 @@ def calculate_bits(list_of_AA, sequence_list):
     list_of_frequencies = []
     for AA in list_of_AA:
         list_of_frequencies.append(calculate_frequency(AA, sequence_list))
-    S = math.log2(20)
-    H = 0
-
-    for f in list_of_frequencies:
-        if f == 0:
-            continue
-        H = H + (-f) * (math.log2(f))
-    H = H + 19 / (np.log(2) * 2 * len(sequence_list))
-    R = S - H
 
     heights = []
     for f in list_of_frequencies:
         heights.append(np.abs(f * 100))
     return heights
 
+def remove_items(test_list, item):
+    # remove the item for all its occurrences
+    c = test_list.count(item)
+    for i in range(c):
+        test_list.remove(item)
+    return test_list
 def create_sequence_logo_list(data,only_combined, is_ligand):
 
     # Titles for each type of graph
@@ -289,8 +290,6 @@ def create_sequence_logo_list(data,only_combined, is_ligand):
     xtick_label_fontsize = 30
     y_lable_size = 34
     titles = ["Residues in Contact", "H-Bonds", "Salt Bridges"]
-    if is_ligand:
-        titles[2] = "H-Bonds"
     for j, row in enumerate(data):
         # Filter out the [None, None] graphs
         valid_graphs = []
@@ -353,8 +352,91 @@ def create_sequence_logo_list(data,only_combined, is_ligand):
             plt.show()  # Display the plot for this row
         if only_combined:
             break
-def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance):
 
+
+
+
+def assign_cluster_colors(dataframe):
+    # Get unique clusters excluding the noise (-1)
+    unique_clusters = dataframe['cluster_index'].unique().tolist()
+    n_clusters = len(unique_clusters)
+    # Generate a list of distinct colors in HEX format
+    base_colors = sns.color_palette('Spectral', n_clusters)
+    base_colors = base_colors.as_hex()
+    mapping_dict = {}
+    mapping_dict[-1] = "#FFFFFF"
+    for i in range(n_clusters):
+        mapping_dict[i] = base_colors[i]
+    return mapping_dict
+
+def map_column_with_dict(dataframe, mapping_dict, target_column, new_column_name):
+    """
+    Maps values in a specified column of a DataFrame according to a provided dictionary,
+    and creates a new column with these mapped values.
+
+    Parameters:
+    - dataframe (pd.DataFrame): The DataFrame to operate on.
+    - mapping_dict (dict): A dictionary where keys are the values to be mapped from the target_column
+                           and values are the corresponding new values for the new_column.
+    - target_column (str): The name of the column in the DataFrame whose values are to be mapped.
+    - new_column_name (str): The name of the new column that will be created with mapped values.
+
+    Returns:
+    - pd.DataFrame: The original DataFrame with the new column added.
+    """
+
+    # Check if the target column exists in the DataFrame
+    if target_column not in dataframe.columns:
+        raise ValueError(f"Column '{target_column}' not found in DataFrame")
+
+    # Map the target column values to the new column using the provided dictionary
+    dataframe[new_column_name] = dataframe[target_column].map(mapping_dict)
+
+    return dataframe
+
+def cluster_3d_points(dataframe):
+    # Ensure the DataFrame has the correct column names
+    if not set(['X', 'Y', 'Z']).issubset(dataframe.columns):
+        raise ValueError("Dataframe must contain 'X', 'Y', and 'Z' columns")
+
+    # Extract the points from the dataframe
+    points = dataframe[['X', 'Y', 'Z']].values
+
+    # Apply DBSCAN clustering
+    # The parameters `eps` and `min_samples` need to be chosen based on the dataset.
+    # These are common starting values, but for optimal results they should be fine-tuned
+    dbscan = DBSCAN(eps=1.7   , min_samples=5)
+    dbscan.fit(points)
+
+    # Add the cluster index to the dataframe
+    dataframe['cluster_index'] = dbscan.labels_
+
+    # Return the dataframe with the new 'cluster_index' column
+    return dataframe
+
+def plot_cluster_colors(cluster_color_map):
+    """
+    Plots a simple figure to show the color associated with each cluster index,
+    with adjustments as requested by the user: wider bars with black lines dividing them.
+    """
+    # Sort clusters to ensure -1 (if present) is first
+    clusters = sorted(cluster_color_map.keys(), key=lambda x: (x == -1, x))
+    colors = [cluster_color_map[cluster] for cluster in clusters]
+
+    # Plot each cluster index with its corresponding color
+    plt.figure(figsize=(12, 2))  # Adjust the figure size to make bars wider
+    bars = plt.bar(clusters, [1] * len(clusters), color=colors, edgecolor='black', linewidth=1, width=1.05)
+
+    # Adding labels inside bars
+    for bar, cluster in zip(bars, clusters):
+        plt.text(bar.get_x() + bar.get_width()/2, bar.get_height()/2, str(cluster),
+                 ha='center', va='center', color='black', fontsize=11)
+
+    plt.title('Cluster Color Representation')
+    plt.xticks([])  # Hide x-axis ticks
+    plt.yticks([])  # Hide y-axis ticks
+    plt.show()
+def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance, download_meta):
 
     chains_target = []
     chains_binder = []
@@ -414,19 +496,23 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance):
             binder_h_bond_sc = False
             binder_h_bond_bb = False
             found_salt_bridge = False
+            sb_info = ["",""]
             binder_residue = residues_in_contact_binder[l]
-
             for k in range (len(residues_in_contact_target)):
                 target_residue = residues_in_contact_target[k]
                 if not binder_h_bond_sc:
-                    binder_h_bond_sc = hbonds_saltbridges.find_hydrogen_bond(target_residue, binder_residue, is_ligand, False)
+                    binder_h_bond_sc, sc_info = hbonds_saltbridges.find_hydrogen_bond(target_residue, binder_residue, is_ligand, False)
                 if not is_ligand:
                      if not binder_h_bond_bb:
-                        binder_h_bond_bb = hbonds_saltbridges.find_hydrogen_bond(target_residue,binder_residue, is_ligand, True)
+                        binder_h_bond_bb, bb_info = hbonds_saltbridges.find_hydrogen_bond(target_residue,binder_residue, is_ligand, True)
                      if not found_salt_bridge:
-                        found_salt_bridge = hbonds_saltbridges.find_salt_bridge(target_residue,binder_residue)
+                        found_salt_bridge, sb_info = hbonds_saltbridges.find_salt_bridge(target_residue,binder_residue)
                 if k == len(residues_in_contact_target)-1:
                     residue_found = binder_chain_data_frame.iloc[i][binder_in_contact[i][l]]
+                    residue_found["H-Bond SC Info"] = f"Acceptor: {sc_info[0]}, donor {sc_info[1]}"
+                    residue_found["H-Bond BB Info"] = f"Acceptor: {bb_info[0]}, donor {bb_info[1]}"
+                    if (not sb_info[0] == "" or not bb_info[0] == "" or not sb_info[0] =="" )and not is_ligand:
+                        residue_found["Residue in target (Same PDB)"] = target_residue.get_full_id()[3][1]
                     if  binder_h_bond_sc:
                         residue_found["H-Bond SC"] = '#FF0000'
                     else:
@@ -441,29 +527,51 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance):
                         residue_found["H-bond"] = "#FFFFFF"
                     if not is_ligand and found_salt_bridge:
                         residue_found["Salt Bridge"] = "#FF0000"
+                        residue_found["Salt Bridge Info "] = f"atom1: {sb_info[0]}, atom2  {sb_info[1]}"
                     if not is_ligand and not found_salt_bridge:
                         residue_found["Salt Bridge"] = "#FFFFFF"
+                        residue_found["Salt Bridge Info"] = f"atom1: {sb_info[0]}, atom2  {sb_info[1]}"
                     residues_to_plot.append(residue_found)
                 if binder_h_bond_sc and is_ligand:
                     residue_found = binder_chain_data_frame.iloc[i][binder_in_contact[i][l]]
                     residue_found["H-Bond SC"] = '#FF0000'
+                    residue_found["H-Bond SC Info"] = f"Acceptor: {sc_info[0]}, donor {sc_info[1]}"
                     residue_found["H-Bond BB"] = '#FFFFFF'
+                    residue_found["H-Bond BB Info"] = f"Acceptor: {sc_info[0]}, donor {sc_info[1]}"
                     residue_found["H-bond"] = "#FF0000"
                     residues_to_plot.append(residue_found)
                     break
                 if binder_h_bond_sc and binder_h_bond_bb and found_salt_bridge:
                     residue_found = binder_chain_data_frame.iloc[i][binder_in_contact[i][l]]
-                    residue_found["H-Bond SC"] = '#FF0000'
                     residue_found["H-Bond BB"] = '#FF0000'
+                    residue_found["H-Bond BB Info"] = f"Acceptor: {bb_info[0]}, donor {bb_info[1]}"
+                    residue_found["H-Bond BB"] = '#FF0000'
+                    residue_found["H-Bond BB Info"] = f"Acceptor: {bb_info[0]}, donor {bb_info[1]}"
                     residue_found["H-bond"] = '#FF0000'
+                    residue_found["Residue in target (Same PDB)"] = target_residue.get_full_id()[3][1]
                     if not is_ligand:
                         residue_found["Salt Bridge"] = "#FF0000"
+                        residue_found["Salt Bridge Info"] = f"atom1: {sb_info[0]}, atom2  {sb_info[1]}"
                     residues_to_plot.append(residue_found)
                     break
 
+    polar_int_map = {}
+    polar_int_map["#FF0000"] = "True"
+    polar_int_map["#FFFFFF"] = "False"
 
     residue_found_df   = pd.DataFrame(residues_to_plot)
+    residue_found_df = cluster_3d_points(residue_found_df)
+    color_map = assign_cluster_colors(residue_found_df)
+    plot_cluster_colors(color_map)
+    residue_found_df = map_column_with_dict(residue_found_df, color_map, "cluster_index", "cluster_color")
 
+    if download_meta:
+        residue_found_df = map_column_with_dict(residue_found_df, polar_int_map, "H-Bond BB", "H-Bond BB Flag")
+        residue_found_df = map_column_with_dict(residue_found_df, polar_int_map, "H-Bond SC", "H-Bond SC Flag")
+        if not is_ligand:
+            residue_found_df = map_column_with_dict(residue_found_df, polar_int_map, "Salt Bridge", "Salt Bridge Flag")
+        name = list_of_paths[0].split("/")[-2]
+        residue_found_df.to_csv(f"meta_data_from_{name}.csv")
     target_to_to_plot = []
     for x in target_chain_data_frame.iloc[reference_id]:
         if x is not None:
@@ -578,4 +686,3 @@ def sequence_logos(residues_found, target_residues, sequence_logo_targets, is_li
         plots_by_rows.append([plot, plots_rows[0+i*2], plots_rows[1+i*2]])
     plots_by_rows.insert(0, plots_by_rows.pop())
     create_sequence_logo_list(plots_by_rows,only_combined_logo, is_ligand)
-

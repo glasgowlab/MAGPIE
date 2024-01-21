@@ -60,13 +60,14 @@ def find_acceptor_and_donors_from_residue_sc(residue):
             for neighboor in neighboors:
                 H_cords = neighboor.get_coord()
                 direction = acceptor_coords - H_cords
-                neighboors_H_and_direction.append([H_cords,direction])
+                neighboors_H_and_direction.append([H_cords,direction,neighboor.name])
             acceptors.append(atom)
             donors += neighboors_H_and_direction
     return [acceptors,donors]
 def find_acceptor_and_donors_from_residue_bb(residue):
     acceptors = []
     donors = []
+
     for atom in residue:
         if atom.element in acceptor_names:
             if not atom.name in backbone_atoms:
@@ -77,7 +78,7 @@ def find_acceptor_and_donors_from_residue_bb(residue):
             for neighboor in neighboors:
                 H_cords = neighboor.get_coord()
                 direction = acceptor_coords - H_cords
-                neighboors_H_and_direction.append([H_cords,direction])
+                neighboors_H_and_direction.append([H_cords,direction, neighboor.name])
             acceptors.append(atom)
             donors += neighboors_H_and_direction
     return [acceptors,donors]
@@ -92,11 +93,12 @@ def find_all_acceptors_and_donors(residue):
             for neighboor in neighboors:
                 H_cords = neighboor.get_coord()
                 direction = acceptor_coords - H_cords
-                neighboors_H_and_direction.append([H_cords,direction])
+                neighboors_H_and_direction.append([H_cords,direction, neighboor.name])
             acceptors.append(atom)
             donors += neighboors_H_and_direction
     return [acceptors,donors]
 def find_hydrogen_bond(residue1, residue2,is_ligand, bb_flag):
+    acceptor_donor_info = ["",""]
     if bb_flag:
         acceptor_donors_1 = find_acceptor_and_donors_from_residue_bb(residue1)
     else:
@@ -106,23 +108,33 @@ def find_hydrogen_bond(residue1, residue2,is_ligand, bb_flag):
     for acceptor in acceptor_donors_1[0]:
         for donor in acceptor_donors_2_all[1]:
             if found_h_bond:
+                acceptor_donor_info[0] = acceptor.name
+                acceptor_donor_info[1] = donor[2]
                 break
             found_h_bond = check_h_bond(donor,acceptor)
         if found_h_bond:
+            acceptor_donor_info[0] = acceptor.name
+            acceptor_donor_info[1] = donor[2]
             break
     if found_h_bond:
-        return True
+        return True, acceptor_donor_info
     for donor in acceptor_donors_1[1]:
         for acceptor in acceptor_donors_2_all[0]:
             if found_h_bond:
+
+
+                acceptor_donor_info[0] = acceptor.name
+                acceptor_donor_info[1] = donor[2]
                 break
             found_h_bond = check_h_bond(donor, acceptor)
         if found_h_bond:
+            acceptor_donor_info[0] = acceptor.name
+            acceptor_donor_info[1] = donor[2]
             break
     if found_h_bond:
-        return True
+        return True, acceptor_donor_info
     else:
-        return False
+        return False, acceptor_donor_info
 def check_h_bond (donor, acceptor):
     donor_direction = donor[1]
     donor_coords = donor[0]
@@ -140,7 +152,7 @@ def find_salt_bridge(residue1, residue2):
     res1_name = residue1.get_resname()
     res2_name = residue2.get_resname()
     if res1_name not in dict_of_pka.keys() or res2_name not in dict_of_pka.keys():
-        return False
+        return False, ["",""]
     for atom1 in residue1:
         for atom2 in residue2:
             if atom1.name in charged_atoms[res1_name] and atom2.name in charged_atoms[res2_name]:
@@ -148,9 +160,9 @@ def find_salt_bridge(residue1, residue2):
                 charge_1 = dict_of_pka[res1_name]
                 charge_2 = dict_of_pka[res2_name]
                 if charge_1 * charge_2 == -1 and 1 < distance < 4.5:
-                    return True
+                    return True, [atom1.name, atom2.name]
 
-    return False
+    return False ,["",""]
 
 
 acceptor_names = ["F","N","O"]

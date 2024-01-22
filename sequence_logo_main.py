@@ -67,7 +67,6 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
         size2 = 15
         color_salt = df1['Salt Bridge'].values.tolist()
     # init_notebook_mode(connected=True)
-    print(color_salt)
     scatter_trace1 = go.Scatter3d(
         x=x1,
         y=y1,
@@ -147,7 +146,7 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
         # Prepare line data
         line_x, line_y, line_z = [], [], []
         # Check distances and prepare line data
-        distance_threshold = 2.55   
+        distance_threshold = 2.0
         n_points = len(x2)
         for i in range(n_points):
             for j in range(i + 1, n_points):
@@ -173,8 +172,8 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
     fig = go.Figure(data=graphs, layout=layout)
     fig.update_layout(updatemenus=updatemenus)
     # Show the interactive plot
-    # iplot(fig)
-    py.plot(fig, filename='3D-scatter.html')
+    iplot(fig)
+    # py.plot(fig, filename='3D-scatter.html')
 
 
 
@@ -497,6 +496,7 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance, d
             binder_h_bond_bb = False
             found_salt_bridge = False
             sb_info = ["",""]
+            bb_info = ["",""]
             binder_residue = residues_in_contact_binder[l]
             for k in range (len(residues_in_contact_target)):
                 target_residue = residues_in_contact_target[k]

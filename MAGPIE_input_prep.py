@@ -4,6 +4,14 @@ from difflib import SequenceMatcher
 import argparse
 import os
 import pathlib
+import matplotlib.pyplot as plt
+import pandas as pd
+import logomaker
+import numpy as np
+import warnings
+from sequence_logo_main import calculate_bits, calculate_frequency, remove_items
+
+warnings.filterwarnings("ignore")
 
 from Bio import pairwise2
 from Bio.pairwise2 import format_alignment
@@ -16,6 +24,70 @@ VALID_3_LINE_STARTERS = {"ALA": "A", "CYS": "C", "ASP": "D", "GLU": "E", "GLY": 
                          "TRP": "W", "TYR": "T"}
 REF_SEQ = ""
 PROTEIN_OUT_FILES = {}
+
+
+
+def make_sequence_logo_from_msa(path):
+    axis_label_fontsize = 15
+    title_fontsize = 25
+    xtick_label_fontsize = 15
+    y_lable_size = 20
+    model = logomaker.get_example_matrix('ww_information_matrix',
+                                         print_description=False)
+    list_of_AA = model.columns.to_list()
+    with open(path, "r") as file:
+        sequences = []
+        sequence = ""
+        for line in file:
+            if ">" in line:
+                if sequence:
+                    sequences.append(sequence)
+                sequence = ""
+                continue
+
+            sequence += line.strip()
+        file.close()
+    seq_len = len(sequences[0]) - 1
+
+    residues_per_graph = 15
+    n_graphs = int(seq_len / residues_per_graph)
+    last_graph_residues = seq_len % residues_per_graph
+    fig, axes = plt.subplots(nrows=n_graphs + 1, ncols=1, figsize=(10, n_graphs * 5))
+    fig.subplots_adjust(hspace=0.8)  # Increase the height space between rows
+    fig.suptitle("MSA Logo", fontsize=title_fontsize, y=1)  # Adjust 'y' for vertical position
+    ticks = [x for x in range(residues_per_graph)]
+    for i in range(n_graphs + 1):
+        amino_acids_per_positions = []
+        positions = []
+        if i == n_graphs:
+            for j in range(residues_per_graph * i, residues_per_graph * (i) + last_graph_residues):
+                current_position = []
+                positions.append(j + 1)
+                for sequence in sequences:
+                    current_position.append(sequence[j])
+                amino_acids_per_positions.append(calculate_bits(list_of_AA, remove_items(current_position, "-")))
+        else:
+            for j in range(residues_per_graph * i, residues_per_graph * (i + 1)):
+                current_position = []
+                for sequence in sequences:
+                    current_position.append(sequence[j])
+                amino_acids_per_positions.append(calculate_bits(list_of_AA, remove_items(current_position, "-")))
+                positions.append(j + 1)
+        ax = axes[i]
+        df_seq_logo_msa = pd.DataFrame(columns=model.columns)
+        df_seq_logo_msa = pd.concat(
+            [df_seq_logo_msa, pd.DataFrame(amino_acids_per_positions, columns=df_seq_logo_msa.columns)],
+            ignore_index=True)
+        logo = logomaker.Logo(df_seq_logo_msa, ax=ax, color_scheme='NajafabadiEtAl2017', shade_below=0.5)
+        logo.ax.set_ylabel('Frequency', fontsize=y_lable_size)
+        logo.ax.set_xticklabels(positions, fontsize=xtick_label_fontsize,
+                                rotation=90)  # Rotate labels for visibility
+
+        logo.ax.set_xticks(ticks)
+
+    plt.tight_layout()
+    name = path.split(".fatsa")[0]
+    plt.savefig(f"seq_logo_for_{name}.png")
 
 
 def similar(string_a: str, string_b: str) -> int:
@@ -161,6 +233,7 @@ def arg_spliter(arg_str: str) -> list:
 def sm_search(sm_names: str = None, target_sm_chains: str = None, order: str = "chains",
               take_first_ligand_only: bool = True, input_pdb_path: str = None, filtered_pdb: list = None,
               res_indexs: list = None) -> list:
+
     """
     This function filtered the pdb file by your sm names and chains
     :param input_pdb_path: the pdb input path
@@ -171,7 +244,6 @@ def sm_search(sm_names: str = None, target_sm_chains: str = None, order: str = "
     """
     parsed = parse_small_molecule_pdb(input_pdb_path, filtered_pdb)
     sm_filtered = []
-
     for line in parsed:
         if "TER" in line[0:6] or "END" in line[0:6]:
             sm_filtered.append(line)
@@ -228,7 +300,6 @@ def sm_search(sm_names: str = None, target_sm_chains: str = None, order: str = "
         elif order == "name" and target_sm_chains:
             if chain in target_sm_chains:
                 sm_filtered.append(line)
-
     # only returning the first ligand if the option is set
     if take_first_ligand_only:
         kept_data = []
@@ -410,7 +481,6 @@ def seq_search(seq: str, parsed_pdb: list = None, input_pdb_path: str = None, se
 
     seq = arg_spliter(seq)
     pdb_seq_hits = find_similar_seqs(seq, parsed_pdb, seq_identity, search_first)
-
     return pdb_seq_hits
 
 
@@ -452,6 +522,7 @@ def seq_and_chain_search(input_pdb_path: str, binder_seq: str = None, target_pro
             pdb_hits["binder"] = chain_search(binder_chains, None, input_pdb_path)
     else:
         if (target_protein_seq or target_protein_chains):
+
             if (target_protein_seq):
                 if mesh_search_results:
                     holder = seq_search(target_protein_seq, mesh_search_results, None,
@@ -561,7 +632,10 @@ def seq_and_chain_search(input_pdb_path: str, binder_seq: str = None, target_pro
             largest_match_ref = max(alignment.split("\n")[0].split("-"), key=len)
             largest_match_align = max(alignment.split("\n")[2].split("-"), key=len)
 
-            match = SequenceMatcher(None, largest_match_ref, largest_match_align).find_longest_match(0, len(largest_match_ref), 0,len(largest_match_align))
+            match = SequenceMatcher(None, largest_match_ref, largest_match_align).find_longest_match(0,
+                                                                                                     len(largest_match_ref),
+                                                                                                     0,
+                                                                                                     len(largest_match_align))
 
             largest_match = largest_match_ref[match.a:match.a + match.size]
 
@@ -580,7 +654,8 @@ def seq_and_chain_search(input_pdb_path: str, binder_seq: str = None, target_pro
 
 
 def write_pdbs(pdb_name: str, pdb_hits: dict, output_path: str, name_conversion: dict = None, binder_chain_rename="C",
-               target_protein_chain_rename="A", target_sm_chain_rename="B", target_ref_start=None, new_numbering_list: list = None) -> None:
+               target_protein_chain_rename="A", target_sm_chain_rename="B", target_ref_start=None,
+               new_numbering_list: list = None) -> None:
     """
     used to write the output pdb file. Takes the info from the filtering step and outputs it into a pdb
     :param pdb_name: the name of the output pdb file
@@ -613,7 +688,7 @@ def write_pdbs(pdb_name: str, pdb_hits: dict, output_path: str, name_conversion:
                     if res_index != last_res_index or chain != last_chain:
                         if new_numbering_list and key == "target_protein" and new_numbering_list[out_res_index] == "-":
                             while new_numbering_list[out_res_index] == "-":
-                                out_res_index+=1
+                                out_res_index += 1
                         else:
                             out_res_index += 1
                         last_res_index = res_index
@@ -630,8 +705,9 @@ def write_pdbs(pdb_name: str, pdb_hits: dict, output_path: str, name_conversion:
                         out_chain = ord(target_protein_chain_rename)
                     else:
                         out_chain = ord(target_sm_chain_rename)
-                    output_pdb.write(line[0:6] + ((5 - len(str(out_atom_index))) * " ") + str(out_atom_index) + line[11:12] + atom_name + line[16:21] + chr(
-                        out_chain) + ((4 - len(str(out_res_index))) * " ") + str(out_res_index) + line[26:])
+                    output_pdb.write(line[0:6] + ((5 - len(str(out_atom_index))) * " ") + str(out_atom_index) + line[
+                    11:12] + atom_name + line[16:21] + chr(out_chain) + ((4 - len(str(out_res_index))) * " ")
+                                     + str(out_res_index) + line[26:])
 
 
 def parse_FA_file(file_path: str) -> str:
@@ -718,7 +794,6 @@ def get_sm_atom_names_and_connections(ligand_atoms: list, bond_length: float = 2
         if atom_element == "H":
             continue
 
-
         tree[atom_name, atom_element] = []
         connections = get_connections(atom_name, atom_element, ligand_atoms)
         for connection in connections:
@@ -741,6 +816,7 @@ def main(input_pdb_path: str, output_path: str, binder_seq: str = None, target_p
     Main function that calls the parsing/filtering and writing of the new pdb file(s)
     :return: None
     """
+
     if len(mesh_search_vars) > 2:
         chains = mesh_search_vars.split(";")[0]
         seqs = mesh_search_vars.split(";")[1]
@@ -761,8 +837,7 @@ def main(input_pdb_path: str, output_path: str, binder_seq: str = None, target_p
         write_pdbs(pdb_name, pdb_to_write[0], output_path, name_conversion, binder_rename, target_rename, sm_rename,
                    pdb_to_write[1])
     else:
-        PROTEIN_OUT_FILES[pdb_name] = [pdb_to_write[0],pdb_to_write[1],name_conversion]
-
+        PROTEIN_OUT_FILES[pdb_name] = [pdb_to_write[0], pdb_to_write[1], name_conversion]
 
 
 if __name__ == "__main__":
@@ -794,11 +869,8 @@ if __name__ == "__main__":
     parser.add_argument("-U", "--search_first_protein", type=str,
                         help="if using both chains and sequences search, what should be used to be filtered first?",
                         default="chains", choices=["chains", "sequences"])
-    parser.add_argument("-u", "--search_first_sm", type=str,
-                        help="if using both chains and name search for a small molecule, what should be used to be filtered first?",
-                        default="chains", choices=["chains", "name"])
-    parser.add_argument("-d", "--seq_identity", type=int, help="sequence identity cutoff for finding similar chains",
-                        default=95)
+    parser.add_argument("-u", "--search_first_sm", type=str,help="if using both chains and name search for a small molecule, what should be used to be filtered first?",default="chains", choices=["chains", "name"])
+    parser.add_argument("-d", "--seq_identity", type=int, help="sequence identity cutoff for finding similar chains",default=95)
     parser.add_argument("-i", "--input_path", type=str, help="path of the input pdb (file or directory)", required=True)
     parser.add_argument("-o", "--output_path", type=str, help="path of the output directory", required=True)
     parser.add_argument("-N", "--target_protein_chain_rename", type=str,
@@ -807,11 +879,10 @@ if __name__ == "__main__":
                         help="what the target ligand chain is supposed to be named", default="B")
     parser.add_argument("-b", "--binder_chain_rename", type=str, help="what the binder chain is supposed to be named",
                         default="C")
-    parser.add_argument("-t", "--take_first_sm_only", type=bool,
-                        help="should we take the first instence of the ligand only?", default=True)
-    parser.add_argument("-T", "--name_sm_atoms_same", type=bool,
-                        help="should rename all matching ligands with the same atom name. Uses the first file as a refrence",
-                        default=False)
+    parser.add_argument("-t", "--take_first_sm_only",
+                        help="should we take the first instance of the ligand only?",action='store_false')
+    parser.add_argument("-T", "--name_sm_atoms_same", action='store_true',
+                        help="should rename all matching ligands with the same atom name. Uses the first file as a reference")
     parser.add_argument("-r", "--sm_ligand_reference_path", type=str,
                         help="path of the reference file for renaming sm ligands file default is first file in the input dir",
                         default=None)
@@ -824,7 +895,7 @@ if __name__ == "__main__":
                         default=";;;")
     parser.add_argument("-A", "--seq_target_align", type=str,
                         help="Align the target protein in sequence space and results in pdb numbering aligning. Do not use for small molecules",
-                        default=None,choices=["1v1", "MSA"])
+                        default=None, choices=["1v1", "MSA"])
     parser.add_argument("-a", "--seq_target_ref_pdb", type=str,
                         help="Reference structure for target protein in seq_target_align", default=None, required=False)
     args = parser.parse_args()
@@ -892,7 +963,6 @@ if __name__ == "__main__":
     if args.target_sm_index and not (args.target_sm_chains or args.target_sm_3_names):
         print("You must use target_sm_index with either target_sm_chains or target_sm_3_names")
         exit(1)
-
     ref_tree = {}
     if args.sm_ligand_reference_path:
         sm_name = ""
@@ -990,7 +1060,6 @@ if __name__ == "__main__":
                          res_indexes=args.target_sm_index, do_ref=args.seq_target_align)
                 else:
 
-
                     name_conversion_key = {}
                     if args.target_sm_index and (args.target_sm_chains or args.target_sm_3_names):
                         first_ligand = sm_search(sm_name, target_sm_chains, args.search_first_sm, True,
@@ -1021,22 +1090,23 @@ if __name__ == "__main__":
                          do_ref=args.seq_target_align)
 
         if PROTEIN_OUT_FILES is not None and PROTEIN_OUT_FILES != {}:
-            with open("temp_in.fasta","w") as data_output:
+            with open("temp_in.fasta", "w") as data_output:
                 for key in PROTEIN_OUT_FILES:
-
-                    data_output.write(">"+key+"\n"+PROTEIN_OUT_FILES[key][1]+"\n")
-            process = subprocess.Popen("muscle -align temp_in.fasta -output temp_out.fasta",shell=True)
+                    if PROTEIN_OUT_FILES[key][1] == "" or PROTEIN_OUT_FILES[key][1] == None:
+                        continue
+                    data_output.write(">" + key + "\n" + PROTEIN_OUT_FILES[key][1] + "\n")
+            process = subprocess.Popen("muscle -align temp_in.fasta -output temp_out.fasta", shell=True)
             process.wait()
             data = ""
+            make_sequence_logo_from_msa("temp_out.fasta")
             with open("temp_out.fasta") as data_input:
                 for line in data_input:
                     data += line
-            data = {data_new.split(".pdb\n")[0]+".pdb":data_new.split(".pdb\n")[1].replace("\n","") for data_new in data.split(">") if data_new}
+            data = {data_new.split(".pdb\n")[0] + ".pdb": data_new.split(".pdb\n")[1].replace("\n", "") for data_new in
+                    data.split(">") if data_new}
             for key in PROTEIN_OUT_FILES:
-                write_pdbs(key, PROTEIN_OUT_FILES[key][0], args.output_path, PROTEIN_OUT_FILES[key][2], args.binder_chain_rename, args.target_protein_chain_rename, args.target_sm_chain_rename,new_numbering_list=data[key])
-
-
-
-
-
-
+                if key not in data:
+                    continue
+                write_pdbs(key, PROTEIN_OUT_FILES[key][0], args.output_path, PROTEIN_OUT_FILES[key][2],
+                           args.binder_chain_rename, args.target_protein_chain_rename, args.target_sm_chain_rename,
+                           new_numbering_list=data[key])

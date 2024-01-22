@@ -618,11 +618,12 @@ def sequence_logos(residues_found, target_residues, sequence_logo_targets, is_li
                 (residues_found['Salt Bridge'] == '#FF0000')]
 
         AA_all_contacts = transform_to_1_letter_code(all_contacts['AA'].values.tolist())
-        AA_hb = transform_to_1_letter_code(hydrogen_bonds['AA'].values.tolist())
         if not is_ligand:
+            AA_hb = transform_to_1_letter_code(hydrogen_bonds['AA'].values.tolist())
             AA_pc = transform_to_1_letter_code(polar_contacts['AA'].values.tolist())
         else:
             AA_pc = []
+            AA_hb = []
 
         # Check if any transformed lists are empty and handle accordingly
         if len( AA_all_contacts) == 0:

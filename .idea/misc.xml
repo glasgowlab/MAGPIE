@@ -4,7 +4,4 @@
     <option name="sdkName" value="Python 3.11.5 WSL (Ubuntu): (/home/daniel/anaconda3/envs/mpnn_rosetta/bin/python)" />
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11.5 WSL (Ubuntu): (/home/daniel/anaconda3/envs/mpnn_rosetta/bin/python)" project-jdk-type="Python SDK" />
-  <component name="PyPackaging">
-    <option name="earlyReleasesAsUpgrades" value="true" />
-  </component>
 </project>

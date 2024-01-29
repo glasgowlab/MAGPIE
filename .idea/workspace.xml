@@ -12,7 +12,65 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/LogoMaker-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/LogoMaker-checkpoint.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/MAGPIE_LOCAL-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/MAGPIE_LOCAL-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3D-scatter.html" beforeDir="false" afterPath="$PROJECT_DIR$/3D-scatter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3D-scatter.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_00279-80mpnn-1.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_00755-22mpnn-1.pdb-0.9_1_19.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_01053-171mpnn-1.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_01988-24mpnn-1.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_02702-116mpnn-1.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_03703-15mpnn-1.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_03901-108mpnn-0.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_03901-108mpnn-1.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_04028-144mpnn-0.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_04028-144mpnn-1.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_04424-154mpnn-0.pdb-0.9_1_17.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_04424-84mpnn-0.pdb-0.9_1_17.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_04547-68mpnn-0.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_04677-34mpnn-0.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_04677-34mpnn-1.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_05065-13mpnn-0.pdb-0.9_1_17.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_05067-127mpnn-1.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_05203-57mpnn-1.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_05408-77mpnn-1.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_06077-2mpnn-1.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_06392-61mpnn-0.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_06392-61mpnn-1.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_06449-195mpnn-0.pdb-0.9_1_19.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_06449-195mpnn-1.pdb-0.9_1_19.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_06449-195mpnn-3.pdb-0.9_1_19.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_06538-136mpnn-0.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_06815-122mpnn-1.pdb-0.9_1_17.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_07557-58mpnn-1.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_07557-58mpnn-2.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_07557-58mpnn-3.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_07557-58mpnn-4.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_07940-66mpnn-1.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_08261-22mpnn-0.pdb-0.9_1_17.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_08680-108mpnn-0.pdb-0.9_1_17.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_09388-35mpnn-0.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_09388-35mpnn-1.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_09889-7mpnn-1.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_10520-197mpnn-1.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_10905-30mpnn-0.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_11326-121mpnn-1.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_12058-94mpnn-1.pdb-0.9_1_17.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_12359-21mpnn-1.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_12363-74mpnn-0.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_12576-123mpnn-0.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_13082-19mpnn-1.pdb-0.9_1_17.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_13082-43mpnn-0.pdb-0.9_1_17.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_13552-180mpnn-1.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_13810-99mpnn-1.pdb-0.9_1_19.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_13810-9mpnn-0.pdb-0.9_1_19.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_14586-32mpnn-0.pdb-0.9_1_17.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_14586-32mpnn-1.pdb-0.9_1_17.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_15796-154mpnn-1.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_16192-5mpnn-1.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_16425-67mpnn-0.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_16425-67mpnn-1.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_16739-15mpnn-0.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_16739-15mpnn-1.pdb-0.9_1_16.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA_docked_inputs/helix_16854-171mpnn-0.pdb-0.9_1_16.pdb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/MAGPIE_LOCAL.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/MAGPIE_LOCAL.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MAGPIE_input_prep.py" beforeDir="false" afterPath="$PROJECT_DIR$/MAGPIE_input_prep.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Protein Example/298_7K9Z_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/298_7K9Z_cleaned.pdb" afterDir="false" />
@@ -106,7 +164,77 @@
       <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_4/1g64_cleanedreference_4.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/atp_by_conformers/reference_4/1g64_cleanedreference_4.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hbonds_saltbridges.py" beforeDir="false" afterPath="$PROJECT_DIR$/hbonds_saltbridges.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/helper_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/helper_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meta_data_from_Ligand Example.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meta_data_from_Protein Example.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/298_7K9Z_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/2H2_7DK4_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/52_7K9Z_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/B38_7BZ5_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/BD-236_7CHB_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/BD-368-2_7CHF_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/BD-604_7CHF_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/BD-629_7CH5_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/BD23_7BYR_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/C002_7K8T_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/C102_7K8M_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/C104_7K8U_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/C105_6XCM_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/C110_7K8V_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/C119_7K8W_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/C121_7K8X_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/C135_7K8Z_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/C144_7K90_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/C1A-B12_7KFV_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/CB6_7C01_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/CC12.1_6XC3_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/CC12.3_6XC4_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/COVA1-16_7JMW_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/COVA2-04_7JMO_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/CR3014-C8_7KZB_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/CR3022_6YLA_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/CT-P59_7CM4_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/CV07-270_6XKP_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/CV30_6XE1_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/DH1047_7LD1_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/EY6A_6ZCZ_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/E_7KN5_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/H014_7CAI_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/H11-D4_6YZ5_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/H11-H4_6ZH9_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/LY-CoV481_7KMI_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/LY-CoV488_7KMH_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/LY-CoV555_7KMG_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/MR17_7C8W_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Nb20_7JVB_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/P17_7CWN_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/P2B-2F6_7BWJ_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/P2C-1A3_7CDJ_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/P2C-1F11_7CDI_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/P4A1_7CJF_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/REGN10933_6XDG_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/REGN10987_6XDG_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/S2A4_7JVC_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/S2E12_7K4N_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/S2H13_7JV6_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/S2H14_7JX3_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/S2M11_7K43_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/S304_7JX3_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/S309_7JX3_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/SR4_7C8V_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/STE90-C11_7B3O_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Sb16_7KGK_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Sb23_7A29_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Sb45_7KGJ_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Sb68_7KLW_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Ty1_6ZXN_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/U_7KN5_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/V_7KN6_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/W_7KN7_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/mNb6_7KKL_cleaned_cleaned.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sequence_logo_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/sequence_logo_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_in.fasta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_out.fasta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,22 +276,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;local-version&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/camlo/Desktop&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Console&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "local-version",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/camlo/Desktop",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\camlo\Documents\GitHub\MAGPIE\atp_by_conformers\reference_1" />
@@ -172,6 +300,28 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.sequence_logo_main">
+    <configuration name="helper_functions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MAGPIE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/helper_functions.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="pdb_parser" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -242,6 +392,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.sequence_logo_main" />
+        <item itemvalue="Python.helper_functions" />
         <item itemvalue="Python.surfaceMaker" />
       </list>
     </recent_temporary>
@@ -282,7 +433,9 @@
       <workItem from="1704915513975" duration="6027000" />
       <workItem from="1704922730990" duration="34673000" />
       <workItem from="1705521844544" duration="17301000" />
-      <workItem from="1705790420491" duration="32049000" />
+      <workItem from="1705790420491" duration="32165000" />
+      <workItem from="1706209769020" duration="4014000" />
+      <workItem from="1706495283012" duration="19033000" />
     </task>
     <servers />
   </component>
@@ -302,6 +455,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MAGPIE$surfaceMaker.coverage" NAME="surfaceMaker Coverage Results" MODIFIED="1700002287234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAGPIE$sequence_logo_main.coverage" NAME="sequence_logo_main Coverage Results" MODIFIED="1705845596978" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAGPIE$helper_functions.coverage" NAME="helper_functions Coverage Results" MODIFIED="1706516129431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAGPIE$sequence_logo_main.coverage" NAME="sequence_logo_main Coverage Results" MODIFIED="1706524778094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

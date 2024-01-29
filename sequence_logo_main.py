@@ -4,6 +4,7 @@ Created on Tue Jul  4 17:18:58 2023
 
 @author: camlo
 """
+import os.path
 import sys
 import hbonds_saltbridges
 import Bio.PDB.PDBParser
@@ -107,7 +108,7 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
     buttons.append(dict(label='H-Bond', method='restyle', args=[{'text' : [df1['AA']],'marker.color': [color_hb]}, [0]]))
     if not is_ligand:
         buttons.append(dict(label='Salt-Bridges', method='restyle', args=[{'text' : [df1['AA']],'marker.color': [color_salt]}, [0]]))
-    buttons.append(dict(label='Color Cluster', method='restyle', args=[{'text' : [cluster_names],'marker.color': [color_cluster]}, [0]]))
+    buttons.append(dict(label='Hotspots', method='restyle', args=[{'text' : [cluster_names],'marker.color': [color_cluster]}, [0]]))
 
     updatemenus = [
         dict(buttons=buttons, showactive=True),
@@ -143,30 +144,23 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}):
         graphs.append(line_trace_target)
 
     else:
-        # Prepare line data
-        line_x, line_y, line_z = [], [], []
-        # Check distances and prepare line data
-        distance_threshold = 2.0
-        n_points = len(x2)
-        for i in range(n_points):
-            for j in range(i + 1, n_points):
-                if "H" in names[i] and "H" in names[j]:
-                    continue
-                if euclidean_distance(x2[i], y2[i], z2[i], x2[j], y2[j], z2[j]) <= distance_threshold:
-                    line_x.extend([x2[i], x2[j], None])
-                    line_y.extend([y2[i], y2[j], None])
-                    line_z.extend([z2[i], z2[j], None])
+        for bond in ligand_bonds:
+            for pair in ligand_bonds[bond]:
+                atom_coords1 = df2.loc[df2['atom_serial_number'] == str(bond)]
+                atom_coords2 = df2.loc[df2['atom_serial_number'] == str(pair)]
+                point1 = atom_coords1[['X', 'Y', 'Z']].values
+                point2 = atom_coords2[['X', 'Y', 'Z']].values
+                line_trace = go.Scatter3d(
+                    x=[point1[0][0], point2[0][0]],
+                    y=[point1[0][1], point2[0][1]],
+                    z=[point1[0][2], point2[0][2]],
+                    mode='lines',
+                    line=dict(color='black', width=8),
+                    hoverinfo='skip',
+                    showlegend=False
+                )
 
-        # Create line plot for connections
-        lines = go.Scatter3d(x=line_x, y=line_y, z=line_z, mode='lines',
-                line=dict(
-                color='black',  # Choose a color that stands out
-                width=8 # Adjust line width as needed
-            ),
-            hoverinfo='skip',  # Optionally disable hover info for the lines
-            showlegend=False  # Optionally hide the line trace from the legend
-        )
-        graphs.append(lines)
+                graphs.append(line_trace)
 
     # Create the figure and add the traces
     fig = go.Figure(data=graphs, layout=layout)
@@ -257,6 +251,22 @@ def find_points_within_radius(binder_point, target_points, radius):
 
     residues_points = target_points.iloc[points_within_radius]
     return residues_points
+
+def find_closest_point(df1, df2, is_ligand):
+    # Filter df2 to exclude rows where "atom_name" contains "H" if is_ligand is True
+    if is_ligand:
+        df2 = df2[~df2['atom_name'].str.contains("H", na=False)]
+    # Calculate the average position in df1
+    avg_position = df1[['X', 'Y', 'Z']].mean().values
+    # Convert df2 to a NumPy array
+    df2_np = np.array(df2[['X', 'Y', 'Z']])
+    # Build a KDTree from df2
+    tree = KDTree(df2_np)
+    # Query the KDTree to find the index of the closest point in df2 to the average position in df1
+    closest_index = tree.query(avg_position)[1]
+    # Get the closest point from df2
+    closest_point = df2.iloc[closest_index]
+    return closest_point
 
 def calculate_frequency(character, lst):
     count = lst.count(character)
@@ -404,7 +414,7 @@ def cluster_3d_points(dataframe):
     # Apply DBSCAN clustering
     # The parameters `eps` and `min_samples` need to be chosen based on the dataset.
     # These are common starting values, but for optimal results they should be fine-tuned
-    dbscan = DBSCAN(eps=1.7   , min_samples=5)
+    dbscan = DBSCAN(eps=0.8   , min_samples=10, algorithm="kd_tree")
     dbscan.fit(points)
 
     # Add the cluster index to the dataframe
@@ -413,6 +423,38 @@ def cluster_3d_points(dataframe):
     # Return the dataframe with the new 'cluster_index' column
     return dataframe
 
+
+def amino_acid_statistics_per_list(list_of_lists):
+    # Define all 20 amino acids (1-letter codes)
+    amino_acids = 'ACDEFGHIKLMNPQRSTVWY'
+
+    # Initialize dictionaries to hold counts and frequencies for each sublist
+    counts_per_list = {f'n{aa}': [] for aa in amino_acids}
+    frequencies_per_list = {f'f{aa}': [] for aa in amino_acids}
+    total_counts_per_list = []
+
+    # Process each sublist
+    for sublist in list_of_lists:
+        sublist_count = {aa: 0 for aa in amino_acids}
+        total_count = 0
+
+        # Count amino acids in the sublist
+        for aa in sublist:
+            if aa in sublist_count:
+                sublist_count[aa] += 1
+                total_count += 1
+
+        total_counts_per_list.append(total_count)
+
+        # Calculate frequencies and update the counts for this sublist
+        for aa in amino_acids:
+            counts_per_list[f'n{aa}'].append(sublist_count[aa])
+            frequency = sublist_count[aa] / total_count if total_count > 0 else 0
+            frequencies_per_list[f'f{aa}'].append(frequency)
+
+    # Combine the results into one dictionary
+    stats_per_list = {**counts_per_list, **frequencies_per_list, 'total_counts': total_counts_per_list}
+    return stats_per_list
 def plot_cluster_colors(cluster_color_map):
     """
     Plots a simple figure to show the color associated with each cluster index,
@@ -431,7 +473,7 @@ def plot_cluster_colors(cluster_color_map):
         plt.text(bar.get_x() + bar.get_width()/2, bar.get_height()/2, str(cluster),
                  ha='center', va='center', color='black', fontsize=11)
 
-    plt.title('Cluster Color Representation')
+    plt.title('Hotspots by Color')
     plt.xticks([])  # Hide x-axis ticks
     plt.yticks([])  # Hide y-axis ticks
     plt.show()
@@ -443,6 +485,7 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance, d
     parser  = Bio.PDB.PDBParser(QUIET=True)
     reference_id = 0
     current_len = 0
+    bonds = {}
     for i,path in enumerate(list_of_paths):
         current_structure  =  parser.get_structure(i, path)
         chains_list = list(current_structure.get_chains())  # Convert iterator to list once here
@@ -462,10 +505,12 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance, d
                 chains_binder.append(chain)
     target_chain_ca_coords = []
     binder_chain_ca_coords = []
-
     for i in range (0,len(chains_target)):
         if is_ligand:
-            target_chain_ca_coords.append(helper_functions.extract_info_ligand(list_of_paths[i],target_id_chain))
+            ligand_values = helper_functions.extract_info_ligand(list_of_paths[i],target_id_chain)
+            target_chain_ca_coords.append(ligand_values[0])
+            if i == reference_id:
+                bonds = ligand_values[1]
         else:
             target_chain_ca_coords.append(helper_functions.extract_atoms_from_chain(chains_target[i],"CA", list_of_paths[i]))
         binder_chain_ca_coords.append(helper_functions.extract_atoms_from_chain(chains_binder[i],"CA",list_of_paths[i]))
@@ -559,25 +604,60 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance, d
     polar_int_map["#FF0000"] = "True"
     polar_int_map["#FFFFFF"] = "False"
 
+
     residue_found_df   = pd.DataFrame(residues_to_plot)
     residue_found_df = cluster_3d_points(residue_found_df)
     color_map = assign_cluster_colors(residue_found_df)
     plot_cluster_colors(color_map)
     residue_found_df = map_column_with_dict(residue_found_df, color_map, "cluster_index", "cluster_color")
 
-    if download_meta:
-        residue_found_df = map_column_with_dict(residue_found_df, polar_int_map, "H-Bond BB", "H-Bond BB Flag")
-        residue_found_df = map_column_with_dict(residue_found_df, polar_int_map, "H-Bond SC", "H-Bond SC Flag")
-        if not is_ligand:
-            residue_found_df = map_column_with_dict(residue_found_df, polar_int_map, "Salt Bridge", "Salt Bridge Flag")
-        name = list_of_paths[0].split("/")[-2]
-        residue_found_df.to_csv(f"meta_data_from_{name}.csv")
+
     target_to_to_plot = []
     for x in target_chain_data_frame.iloc[reference_id]:
         if x is not None:
             target_to_to_plot.append(x)
+    target_plot_df = pd.DataFrame(target_to_to_plot)
+    if download_meta:
 
-    create_3d_graph(residue_found_df,pd.DataFrame(target_to_to_plot), is_ligand)
+        residue_found_df = map_column_with_dict(residue_found_df, polar_int_map, "H-Bond BB", "H-Bond BB Flag")
+        residue_found_df = map_column_with_dict(residue_found_df, polar_int_map, "H-Bond SC", "H-Bond SC Flag")
+        useless_columns = ["shapely", "polar", "H-Bond BB", "H-Bond SC", "H-bond", "cluster_color"]
+        if not is_ligand:
+            residue_found_df = map_column_with_dict(residue_found_df, polar_int_map, "Salt Bridge", "Salt Bridge Flag")
+            useless_columns.append("Salt Bridge")
+        residue_found_df_data = residue_found_df.copy()
+        residue_found_df_data.drop(useless_columns, axis=1, inplace=True)
+
+        clusters_ids = residue_found_df['cluster_index'].unique().tolist()
+        clusters_ids.remove(-1)
+        amino_acids = []
+        closest_names = []
+        for cluster_id in clusters_ids:
+            filtered_cluster = residue_found_df[residue_found_df['cluster_index'] == cluster_id]
+            closest_point = find_closest_point(filtered_cluster, target_plot_df, is_ligand)
+            amino_acids.append(transform_to_1_letter_code(filtered_cluster['AA'].values.tolist()))
+            if is_ligand:
+                closest_name = closest_point["atom_name"]
+            else:
+                residue_index = str(closest_point["residue_index"])
+                residue_name = aa_mapping[closest_point["AA"]]
+                closest_name = residue_name+residue_index
+            closest_names.append(closest_name)
+        cluster_distribution = amino_acid_statistics_per_list(amino_acids)
+        closest_point_dict = {}
+        closest_point_dict["Hotspot Residue"] = closest_names
+        closest_point_dict["Hotspot Index"] = clusters_ids
+        closest_point_dict.update(cluster_distribution)
+        cluster_df = pd.DataFrame(closest_point_dict)
+        name = list_of_paths[0].split("/")[-2]
+        metadata_directory = f"meta_data_for_{name}"
+        helper_functions.create_directory(metadata_directory)
+        magpie_data_name = f"proximity_and_polar_metadata_for_{name}.csv"
+        hotspost_data_name = f"hotspot_metadata_for{name}.csv"
+        residue_found_df_data.to_csv(os.path.join(metadata_directory, magpie_data_name))
+        cluster_df.to_csv(os.path.join(metadata_directory, hotspost_data_name))
+
+    create_3d_graph(residue_found_df,target_plot_df, is_ligand,bonds)
 
     return residue_found_df,pd.DataFrame(target_chain_ca_coords[reference_id])
 
@@ -685,5 +765,6 @@ def sequence_logos(residues_found, target_residues, sequence_logo_targets, is_li
     plots_by_rows = []
     for i,plot in enumerate(plots):
         plots_by_rows.append([plot, plots_rows[0+i*2], plots_rows[1+i*2]])
+
     plots_by_rows.insert(0, plots_by_rows.pop())
     create_sequence_logo_list(plots_by_rows,only_combined_logo, is_ligand)

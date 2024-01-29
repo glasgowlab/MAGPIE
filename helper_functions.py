@@ -1,3 +1,5 @@
+import glob
+
 import Bio.PDB.Chain
 
 import pdb_parser
@@ -156,55 +158,71 @@ def extract_list_pdb(pdb_list, chain_id) ->list:
 
     return all_Ca
 
-def extract_connections(pdb_file : str) -> list:
-    with open(pdb_file, "r") as file:
-        dict_of_atoms = {}
-        for line in file:
-            if "CONECT" in line:
-                positions = []
-
-                if len(line.split("  ")) != 1:
-                  line_list = line.split("  ")
-                else:
-                  line_list = line.split(" ")
-                no_empty_line_line = list(filter(None, line_list))
-                line_list_clean = [x.strip() for x in no_empty_line_line ]
-                line_list_clean[len(line_list_clean)-1] =   line_list_clean[len(line_list_clean)-1] +"\n"
-                for i in range(len(line_list_clean)):
-                    if i == 0 or i == 1:
-                        continue
-                    if i == len(line_list_clean) - 1:
-                        positions.append(line_list_clean[i][0:-1])
-                    else:
-                        positions.append(line_list_clean[i])
-                dict_of_atoms[line_list_clean[1]] = positions
-    return dict_of_atoms
-
-
-def extract_info_ligand (pdb_file, chain_id) -> list:
+def extract_info_ligand (pdb_file, chain_id) -> [list,dict]:
     all_atoms = []
-
+    conect_list = []
     with open(pdb_file, "r") as file:
         found_chain =  False
+        smaller_id = 1000000000
+        larger_id = 0
+        atom_ids = []
         for line in file:
-            dict_of_atoms = {}
-            if "ATOM " in line or "HETATM" in line:
+            bonds = {}
+            if "ATOM " in line or "HETATM" in line or "CONECT" in line:
                 if "TER" in line and  found_chain:
+                    continue
+                if "CONECT" in line:
+                    conect_list.append(line)
                     continue
                 parsed_line = pdb_parser.PDBLineParser(line)
                 parsed_line.parse_line()
                 if parsed_line.chain_identifier == chain_id:
-                    dict_of_atoms['X'] = parsed_line.x_cord
-                    dict_of_atoms['Y'] = parsed_line.y_cord
-                    dict_of_atoms['Z'] = parsed_line.z_cord
-                    dict_of_atoms['chain'] = parsed_line.chain_identifier
-                    dict_of_atoms['atom_serial_number'] = str(parsed_line.atom_serial_number)
-                    dict_of_atoms['atom_name'] = parsed_line.atom_name
-                    dict_of_atoms['file'] = pdb_file
-                    dict_of_atoms['color'] = get_color_code(parsed_line.atom_name[0])
-                    all_atoms.append(dict_of_atoms)
+                    bonds['X'] = parsed_line.x_cord
+                    bonds['Y'] = parsed_line.y_cord
+                    bonds['Z'] = parsed_line.z_cord
+                    bonds['chain'] = parsed_line.chain_identifier
+                    bonds['atom_serial_number'] = str(parsed_line.atom_serial_number)
+                    bonds['atom_name'] = parsed_line.atom_name
+                    bonds['file'] = pdb_file
+                    bonds['color'] = get_color_code(parsed_line.atom_name[0])
+                    all_atoms.append(bonds)
                     found_chain =True
-    return all_atoms
+                    if len(str(parsed_line.atom_serial_number)) == smaller_id and len(str(parsed_line.atom_serial_number)) == larger_id:
+                        continue
+                    if len(str(parsed_line.atom_serial_number)) < smaller_id:
+                        smaller_id = len(str(parsed_line.atom_serial_number))
+                    if len(str(parsed_line.atom_serial_number)) > larger_id:
+                        larger_id =  len(str(parsed_line.atom_serial_number))
+        bonds = {}
+        pairs_created = []
+        if smaller_id != larger_id:
+            print("Unable to solve small-molecule ligand bonds.")
+            return [all_atoms,bonds]
+        for line in conect_list:
+            if "CONECT" in line:
+                positions = []
+                line_list = line.split(" ")
+                if len(line_list) == 1:
+                    line_list = line.split("CONECT")
+                    line_string = line_list[1].strip()
+                    line_list =[]
+                    for i in range(larger_id, len(line_string)+larger_id, larger_id):
+                        line_list.append(line_string[i-larger_id: i])
+                else:
+                    line_list = [x.strip() for x in line_list if (not x == "") and not x == 'CONECT']
+                unique_pairs = []
+                for id in  range(len(line_list)):
+                    if id  == 0:
+                        continue
+                    current_pair = set((line_list[0],line_list[id]))
+                    if current_pair not in pairs_created:
+                        unique_pairs.append(line_list[id])
+                        pairs_created.append(current_pair)
+                    if len(unique_pairs) >0:
+                        bonds[line_list[0]] = unique_pairs
+
+    return [all_atoms,bonds]
+
 
 
 def get_color_code(atom_name):
@@ -262,3 +280,8 @@ def process_residues_to_graph(sequence_logo_targets, is_ligand):
             else:
                 list_to_plot.append(int(item))
     return  list_to_plot
+def create_directory(directory_path):
+    if os.path.exists(directory_path):
+        return f"The directory '{directory_path}' already exists."
+    else:
+        os.makedirs(directory_path)

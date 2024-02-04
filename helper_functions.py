@@ -157,7 +157,14 @@ def extract_list_pdb(pdb_list, chain_id) ->list:
                         all_Ca.append(dict_of_atoms)
 
     return all_Ca
+def filter_list(original_list, filter_list):
+    # Create a set for faster membership testing
+    filter_set = set(filter_list)
 
+    # Use list comprehension to filter elements
+    filtered_list = [x for x in original_list if x in filter_set]
+
+    return filtered_list
 def extract_info_ligand (pdb_file, chain_id) -> [list,dict]:
     all_atoms = []
     conect_list = []
@@ -165,10 +172,13 @@ def extract_info_ligand (pdb_file, chain_id) -> [list,dict]:
         found_chain =  False
         smaller_id = 1000000000
         larger_id = 0
-        atom_ids = []
-        for line in file:
+        smaller_index = 10000000
+        larger_index = 0
+
+        for i,line in enumerate(file):
+
             bonds = {}
-            if "ATOM " in line or "HETATM" in line or "CONECT" in line:
+            if "HETATM" in line or "CONECT" in line:
                 if "TER" in line and  found_chain:
                     continue
                 if "CONECT" in line:
@@ -187,14 +197,21 @@ def extract_info_ligand (pdb_file, chain_id) -> [list,dict]:
                     bonds['color'] = get_color_code(parsed_line.atom_name[0])
                     all_atoms.append(bonds)
                     found_chain =True
-                    if len(str(parsed_line.atom_serial_number)) == smaller_id and len(str(parsed_line.atom_serial_number)) == larger_id:
-                        continue
+
                     if len(str(parsed_line.atom_serial_number)) < smaller_id:
                         smaller_id = len(str(parsed_line.atom_serial_number))
                     if len(str(parsed_line.atom_serial_number)) > larger_id:
                         larger_id =  len(str(parsed_line.atom_serial_number))
+                    if int(parsed_line.atom_serial_number) > larger_index:
+                        larger_index = int(parsed_line.atom_serial_number)
+                    if int(parsed_line.atom_serial_number) < smaller_index:
+                        smaller_index  = int(parsed_line.atom_serial_number)
         bonds = {}
         pairs_created = []
+        list_range = list(range(smaller_index,larger_index+1))
+        list_range_str = []
+        for x in list_range:
+            list_range_str.append(str(x))
         if smaller_id != larger_id:
             print("Unable to solve small-molecule ligand bonds.")
             return [all_atoms,bonds]
@@ -210,6 +227,7 @@ def extract_info_ligand (pdb_file, chain_id) -> [list,dict]:
                         line_list.append(line_string[i-larger_id: i])
                 else:
                     line_list = [x.strip() for x in line_list if (not x == "") and not x == 'CONECT']
+                line_list = filter_list(line_list,list_range_str)
                 unique_pairs = []
                 for id in  range(len(line_list)):
                     if id  == 0:
@@ -285,3 +303,6 @@ def create_directory(directory_path):
         return f"The directory '{directory_path}' already exists."
     else:
         os.makedirs(directory_path)
+
+
+

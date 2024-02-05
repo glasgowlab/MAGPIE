@@ -624,11 +624,13 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance, d
         if len(chains_list) != 2:
             print(f"{path.split('/')[0]} contains {len(chains_list)} chains instead of expected 2.")
             exit(0)
+
         for chain in chains_list:
             current_chain_id =  chain.get_id()
+
             if current_chain_id != target_id_chain and current_chain_id != binder_id_chain:
                 print(f"{path.split('/')[0]} contains chain {chain.get_id()}, which is not defined, please remove or rename chain.")
-                sys.exit()
+                exit(0)
             elif current_chain_id == target_id_chain:
                 chains_target.append(chain)
                 if len([x for x in chain]) > current_len:

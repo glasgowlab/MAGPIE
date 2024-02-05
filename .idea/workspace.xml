@@ -12,49 +12,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/LogoMaker-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/LogoMaker-checkpoint.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/MAGPIE_LOCAL-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/MAGPIE_LOCAL-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example Conformers/reference_1/5xukreference_1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Conformers/reference_1/5xukreference_1.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example Conformers/reference_1/6ct5reference_1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Conformers/reference_1/6ct5reference_1.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example Conformers/reference_1/6qwureference_1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Conformers/reference_1/6qwureference_1.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example Conformers/reference_1/7b4rreference_1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Conformers/reference_1/7b4rreference_1.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example Conformers/reference_1/7bczreference_1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Conformers/reference_1/7bczreference_1.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example Conformers/reference_1/7ed0reference_1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Conformers/reference_1/7ed0reference_1.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example Conformers/reference_1/7n8ereference_1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Conformers/reference_1/7n8ereference_1.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example Conformers/reference_2/6arbreference_2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Conformers/reference_2/6arbreference_2.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example Conformers/reference_2/6as5reference_2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Conformers/reference_2/6as5reference_2.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example Conformers/reference_2/6b3treference_2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Conformers/reference_2/6b3treference_2.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example Conformers/reference_2/6be0reference_2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Conformers/reference_2/6be0reference_2.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example Conformers/reference_2/7s3ureference_2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Conformers/reference_2/7s3ureference_2.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example Conformers/reference_2/7uulreference_2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Conformers/reference_2/7uulreference_2.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example Conformers/reference_3/6he2reference_3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Conformers/reference_3/6he2reference_3.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example Conformers/reference_4/6j1ereference_4.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Conformers/reference_4/6j1ereference_4.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example Conformers/reference_4/7xwvreference_4.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Conformers/reference_4/7xwvreference_4.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example Conformers/reference_5/6ndsreference_5.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Conformers/reference_5/6ndsreference_5.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example Conformers/reference_5/6p7kreference_5.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Conformers/reference_5/6p7kreference_5.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example Conformers/reference_6/6zzkreference_6.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Conformers/reference_6/6zzkreference_6.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example Conformers/reference_7/8a9nreference_7.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Conformers/reference_7/8a9nreference_7.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example/5xuk.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Example/5xuk.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example/6arb.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Example/6arb.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example/6as5.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Example/6as5.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example/6b3t.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Example/6b3t.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example/6be0.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Example/6be0.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example/6ct5.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Example/6ct5.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example/6he2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Example/6he2.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example/6j1e.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Example/6j1e.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example/6nds.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Example/6nds.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example/6p7k.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Example/6p7k.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example/6qwu.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Example/6qwu.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example/6zzk.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Example/6zzk.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example/7b4r.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Example/7b4r.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example/7bcz.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Example/7bcz.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example/7ed0.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Example/7ed0.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example/7n8e.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Example/7n8e.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example/7s3u.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Example/7s3u.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example/7uul.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Example/7uul.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example/7xwv.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Example/7xwv.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ligand Example/8a9n.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Small-molecule Example/8a9n.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MAGPIE_LOCAL.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/MAGPIE_LOCAL.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MAGPIE_input_prep.py" beforeDir="false" afterPath="$PROJECT_DIR$/MAGPIE_input_prep.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Protein Example/298_7K9Z_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/298_7K9Z_cleaned.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example/298_7K9Z_cleaned.pdb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Protein Example/2H2_7DK4_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/2H2_7DK4_cleaned.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Protein Example/52_7K9Z_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/52_7K9Z_cleaned.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Protein Example/B38_7BZ5_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/B38_7BZ5_cleaned.pdb" afterDir="false" />
@@ -122,34 +82,8 @@
       <change beforePath="$PROJECT_DIR$/Protein Example/mNb6_7KKL_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/mNb6_7KKL_cleaned.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/align_protein_chain.py" beforeDir="false" afterPath="$PROJECT_DIR$/align_protein_chain.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/align_small_molecule.py" beforeDir="false" afterPath="$PROJECT_DIR$/align_small_molecule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_by_conformers/does_it_work/1atp_cleanedreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_1/1b76_cleanedreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_1/1d9z_cleanedreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_1/1e24_cleanedreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_1/1e2q_cleanedreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_1/1e4g_cleanedreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_1/1e79_cleanedreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_1/1e8x_cleanedreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_1/1ee1_cleanedreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_1/1esq_cleanedreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_1/1fmw_cleanedreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_1/1fq1_cleanedreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_1/1gn8_cleanedreference_1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_2/1ayl_cleanedreference_2.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_3/1c0f_cleanedreference_3.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_3/1d4x_cleanedreference_3.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_3/1dej_cleanedreference_3.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_3/1eqy_cleanedreference_3.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_3/1esv_cleanedreference_3.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_4/1g5t_cleanedreference_4.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atp_by_conformers/reference_4/1g64_cleanedreference_4.pdb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hbonds_saltbridges.py" beforeDir="false" afterPath="$PROJECT_DIR$/hbonds_saltbridges.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/helper_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/helper_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meta_data_for_Protein Example/hotspot_metadata_forProtein Example.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/meta_data_for_Protein Example/proximity_and_polar_metadata_for_Protein Example.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/meta_data_for_ref1_MAGPIE_input/hotspot_metadata_forref1_MAGPIE_input.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/meta_data_for_ref1_MAGPIE_input/proximity_and_polar_metadata_for_ref1_MAGPIE_input.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seq_logo_for_temp_out.fasta.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sequence_logo_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/sequence_logo_main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -355,6 +289,7 @@
       <workItem from="1706495283012" duration="19870000" />
       <workItem from="1706725907919" duration="601000" />
       <workItem from="1706730979349" duration="26296000" />
+      <workItem from="1707095868240" duration="323000" />
     </task>
     <servers />
   </component>
@@ -375,6 +310,6 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MAGPIE$surfaceMaker.coverage" NAME="surfaceMaker Coverage Results" MODIFIED="1700002287234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAGPIE$helper_functions.coverage" NAME="helper_functions Coverage Results" MODIFIED="1707035413175" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAGPIE$sequence_logo_main.coverage" NAME="sequence_logo_main Coverage Results" MODIFIED="1707049977266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAGPIE$sequence_logo_main.coverage" NAME="sequence_logo_main Coverage Results" MODIFIED="1707096182374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

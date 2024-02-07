@@ -50,27 +50,27 @@ aa_mapping = {
 }
 
 amino_acid_classes = {
-    'G': 'Hydrophobic',
-    'A': 'Hydrophobic',
-    'V': 'Hydrophobic',
-    'C': 'Hydrophobic',
-    'P': 'Hydrophobic',
-    'L': 'Hydrophobic',
-    'I': 'Hydrophobic',
-    'M': 'Hydrophobic',
-    'W': 'Aromatic',
-    'F': 'Aromatic',
-    'S': 'Hydrophilic',
-    'T': 'Hydrophilic',
-    'Y': 'Aromatic',
-    'N': 'Hydrophilic',
-    'Q': 'Hydrophilic',
-    'D': 'Charged interactions',
-    'E': 'Charged interactions',
-    'K': 'Charged interactions',
-    'R': 'Charged interactions',
-    'H': 'Charged interactions'
-}
+        'G': 'Hydrophobic',
+        'A': 'Hydrophobic',
+        'V': 'Hydrophobic',
+        'C': 'Hydrophobic',
+        'P': 'Hydrophobic',
+        'L': 'Hydrophobic',
+        'I': 'Hydrophobic',
+        'M': 'Hydrophobic',
+        'W': 'Aromatic',
+        'F': 'Aromatic',
+        'S': 'Hydrophilic',
+        'T': 'Hydrophilic',
+        'Y': 'Aromatic',
+        'N': 'Hydrophilic',
+        'Q': 'Hydrophilic',
+        'D': 'Charged interactions',
+        'E': 'Charged interactions',
+        'K': 'Charged interactions',
+        'R': 'Charged interactions',
+        'H': 'Charged interactions'
+    }
 
 def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}, name_file = "3d_scatter"):
     # Get XYZ positions from the DataFrame columns
@@ -407,34 +407,9 @@ def assing_class_for_cluster(AA_list):
     aromatic_width= aromatic/total
     charged_width = charged/total
 
-    unique_colors  = assign_hex_colors([hydrophi_width,hydropho_width,aromatic_width,charged_width])
 
-    return [[hydrophi_width,hydropho_width,aromatic_width,charged_width], unique_colors]
+    return [hydropho_width,hydrophi_width,aromatic_width,charged_width]
 
-
-def assign_hex_colors(values):
-    # Define HEX color for each property
-
-    properties = [ 'Hydrophilic','Hydrophobic', 'Aromatic', 'Charged interactions']
-
-    # Initialize the result list with the HEX code for gray
-    hex_colors = [color_key['Gray'] for _ in values]
-
-    # Check for elements greater than 0.8 and assign colors accordingly
-    for i, value in enumerate(values):
-        if value > 0.8:
-            # Set all elements to the color of the class of this element
-            dominant_color = color_key[properties[i]]
-            hex_colors = [dominant_color] * len(values)
-            return hex_colors
-
-    # If no element is greater than 0.8, assign colors based on their class
-    for i, value in enumerate(values):
-        if 0.1 < value < 0.8:
-            hex_colors[i] = color_key[properties[i]]
-        # Values < 0.1 are already set to gray
-
-    return hex_colors
 
 def add_mapped_column(df, column_to_map, mapping_dict, new_column_name):
     # Use the map method to create a new column based on the existing one
@@ -442,40 +417,31 @@ def add_mapped_column(df, column_to_map, mapping_dict, new_column_name):
     return df
 
 
-def add_cluster_coloring_column(df, cluster_id, class_id, value):
+def map_colors(df, color_key):
+    # Function to apply the color mapping with the exception
+    def color_for_row(row):
+        if row['cluster_index'] == -1:
+            return '#FFFFFF'  # White color for the exception case
+        else:
+            return color_key.get(row['AA Class'], "#FFFFFF")  # You can set a default color
 
-    # Create a boolean mask where both conditions (cluster_index and AA Class) are met
-    condition = (df['cluster_index'] == cluster_id) & (df['AA Class'] == class_id)
-
-    # Create the 'cluster_coloring' column if it doesn't exist, otherwise update it
-    df['cluster_color'] = df.get('cluster_color', pd.Series(index=df.index))  # Initialize if not exist
-
-    # Apply the coloring value to the 'cluster_coloring' column where the condition is True
-    df.loc[condition, 'cluster_color'] = str(value)
-
+    # Apply the function to each row
+    df['cluster_color'] = df.apply(color_for_row, axis=1)
     return df
 def assign_cluster_colors(dataframe):
     # Get unique clusters excluding the noise (-1)
     unique_clusters = dataframe['cluster_index'].unique().tolist()
-    widths= []
-    properties = ['Hydrophilic', 'Hydrophobic', 'Aromatic', 'Charged interactions']
+    widths= {}
     dataframe = add_mapped_column(dataframe,"AA", aa_mapping,"AA1")
+    dataframe = add_mapped_column(dataframe, "AA1", amino_acid_classes, "AA Class")
+    dataframe = map_colors(dataframe, color_key)
     for unique_cluster in unique_clusters:
         if unique_cluster == -1:
-            # Create a boolean mask where the cluster_index condition is met
-            condition = (dataframe['cluster_index'] == -1)
-            # Create the 'cluster_coloring' column if it doesn't exist, otherwise update it
-            dataframe['cluster_color'] = dataframe.get('cluster_color', pd.Series(index=dataframe.index))  # Initialize if not exist
-            # Apply the coloring value to the 'cluster_coloring' column where the condition is True
-            dataframe.loc[condition, 'cluster_color'] = "#FFFFFF"
             continue
         cluster_df = dataframe[dataframe["cluster_index"] == unique_cluster]
         AA_list = transform_to_1_letter_code(cluster_df['AA'].values.tolist())
         colors = assing_class_for_cluster(AA_list)
-        dataframe = add_mapped_column(dataframe,"AA1",amino_acid_classes,"AA Class")
-        for i in range(4):
-            dataframe =  add_cluster_coloring_column(dataframe,unique_cluster, properties[i], colors[1][i])
-        widths.append(colors[0])
+        widths[unique_cluster] = colors
     return [dataframe, widths]
 
 def map_column_with_dict(dataframe, mapping_dict, target_column, new_column_name):
@@ -556,58 +522,85 @@ def amino_acid_statistics_per_list(list_of_lists):
     stats_per_list = {**counts_per_list, **frequencies_per_list, 'total_counts': total_counts_per_list}
     return stats_per_list
 
-def plot_cluster_compositions(cluster_indexes, cluster_compositions):
-    # Number of clusters
-    num_clusters = len(cluster_indexes)
 
-    # Create a figure with subplots - one for each cluster
-    fig, axs = plt.subplots(num_clusters, 1, figsize=(10, num_clusters * 2 + 2))  # +2 for legend space
+# ef plot_cluster_compositions(cluster_compositions_dict):
+#     # Create a single figure and axis
+#     fig, ax = plt.subplots(figsize=(10, len(cluster_compositions_dict) * 1.5))  # Increased height for spacing
+#
+#     # Define the color for each composition entry
+#     composition_colors = [color_key['Hydrophobic'], color_key['Hydrophilic'],
+#                           color_key['Aromatic'], color_key['Charged interactions']]
+#
+#     # Sort the clusters to maintain order
+#     sorted_cluster_indexes = sorted(cluster_compositions_dict.keys())
+#
+#     # Adjust the height of each bar so that there is a space between them
+#     bar_height = 0.8  # Less than 1 to create a gap
+#
+#     # Loop through each cluster and its composition
+#     for cluster_index in sorted_cluster_indexes:
+#         composition = cluster_compositions_dict[cluster_index]
+#         # The starting point for each bar segment
+#         left = 0
+#         # Create each segment of the bar, with space between them
+#         for comp, color in zip(composition, composition_colors):
+#             # The bars are centered on the y-tick, so subtracting half the bar height for the starting y position
+#             ax.barh(cluster_index, comp, height=bar_height, color=color, left=left, edgecolor='white')
+#             left += comp  # Increment the left position
+#
+#     # Set the labels and ticks
+#     ax.set_xlabel('Proportion')
+#     ax.set_yticks(sorted_cluster_indexes)  # Set y-ticks to cluster indexes
+#     ax.set_yticklabels([f'Cluster {i}' for i in sorted_cluster_indexes])
 
-    # If there's only one cluster, axs is not a list so we put it in one
-    if num_clusters == 1:
-        axs = [axs]
+
+def plot_cluster_compositions(cluster_compositions_dict):
+    # Create a single figure and axis
+    fig, ax = plt.subplots(figsize=(15  , len(cluster_compositions_dict)))
 
     # Define the color for each composition entry
     composition_colors = [color_key['Hydrophobic'], color_key['Hydrophilic'],
                           color_key['Aromatic'], color_key['Charged interactions']]
 
+    # Sort the clusters to maintain order
+    sorted_cluster_indexes = sorted(cluster_compositions_dict.keys())
+
+    # Calculate the height of each bar so that there is no space between them
+    bar_height = 1.0
+
     # Loop through each cluster and its composition
-    for ax, cluster_index, composition in zip(axs, cluster_indexes, cluster_compositions):
+    for cluster_index in sorted_cluster_indexes:
+        composition = cluster_compositions_dict[cluster_index]
         # The starting point for each bar segment
         left = 0
         # Create each segment of the bar
         for comp, color in zip(composition, composition_colors):
-            ax.barh(cluster_index, comp, color=color, left=left, edgecolor='white')
+            ax.barh(cluster_index, comp, height=bar_height, color=color, left=left, edgecolor='white')
             left += comp  # Increment the left position
 
-        # Set the title and labels
-        ax.set_title(f'Cluster {cluster_index}', pad=20)
-        ax.set_xlim(0, 1)  # Assuming the composition adds up to 1
-        ax.set_xlabel('Proportion')
-        ax.set_yticks([])  # Hide y ticks
+    # Set the labels and ticks
+    ax.set_xlabel('Proportion')
+    ax.set_yticks(sorted_cluster_indexes)  # Set y-ticks to cluster indexes
+    ax.set_yticklabels([f'Cluster {i}' for i in sorted_cluster_indexes])
 
-        # Remove the spines for a cleaner look
-        ax.spines['top'].set_visible(False)
-        ax.spines['right'].set_visible(False)
-        ax.spines['left'].set_visible(False)
-        ax.spines['bottom'].set_visible(False)
 
-        # Hide the grid
-        ax.grid(False)
 
-    # Adjust the layout
-    plt.tight_layout()
+
+    # Remove the spines for a cleaner look
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+    ax.spines['left'].set_visible(False)
+    ax.spines['bottom'].set_visible(False)
 
     # Create a legend, moved further down by adjusting the bbox_to_anchor parameter
     handles = [plt.Rectangle((0, 0), 1, 1, color=color_key[label]) for label in color_key]
-    labels = list(color_key.keys())
-    plt.legend(handles, labels, loc='lower center', bbox_to_anchor=(0.5, -0.7), ncol=len(color_key))
-
+    labels = ["Hydrophobic (G,A,V,C,P,L,I,M)","Hydrophilic (S,T,N,Q)", "Aromatic (W,F,S)", "Charged (D,E,K,R,H)"]
+    plt.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 1), ncol=len(color_key))
+    # Adjust the layout
+    plt.tight_layout()
     # Show the plot
     plt.show()
 
-    # Show the plot
-    plt.show()
 
 def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance, download_meta, advance_options):
 
@@ -746,15 +739,13 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance, d
     target_to_to_plot = []
     clusters_ids = residue_found_df['cluster_index'].unique().tolist()
     clusters_ids.remove(-1)
-    plot_cluster_compositions(clusters_ids,return_from_clusters[1])
+    plot_cluster_compositions(return_from_clusters[1])
     for x in target_chain_data_frame.iloc[reference_id]:
         if x is not None:
             target_to_to_plot.append(x)
     target_plot_df = pd.DataFrame(target_to_to_plot)
     name = list_of_paths[0].split("/")[-2]
-
     if download_meta:
-
         residue_found_df = map_column_with_dict(residue_found_df, polar_int_map, "H-Bond BB", "H-Bond BB Flag")
         residue_found_df = map_column_with_dict(residue_found_df, polar_int_map, "H-Bond SC", "H-Bond SC Flag")
         useless_columns = ["shapely", "polar", "H-Bond BB", "H-Bond SC", "H-bond", "cluster_color"]
@@ -762,8 +753,7 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance, d
             residue_found_df = map_column_with_dict(residue_found_df, polar_int_map, "Salt Bridge", "Salt Bridge Flag")
             useless_columns.append("Salt Bridge")
         residue_found_df_data = residue_found_df.copy()
-        residue_found_df_data.drop(useless_columns, axis=1, inplace=True)
-
+        # residue_found_df_data.drop(useless_columns, axis=1, inplace=True)
         amino_acids = []
         closest_names = []
         for cluster_id in clusters_ids:
@@ -907,5 +897,8 @@ color_key = {
         'Hydrophilic': '#D02090',  # Pink
         'Aromatic': '#008000',  # Green
         'Charged interactions': '#FF0000',  # Red
-        'Gray': '#808080'  # Gray for values < 0.1
-}
+     }
+
+
+
+

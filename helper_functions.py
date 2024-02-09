@@ -212,7 +212,8 @@ def extract_info_ligand (pdb_file, chain_id) -> [list,dict]:
         list_range_str = []
         for x in list_range:
             list_range_str.append(str(x))
-        if smaller_id != larger_id:
+
+        if (smaller_id >= 5 or  larger_id >=5) and smaller_id != larger_id:
             print("Unable to solve small-molecule ligand bonds.")
             return [all_atoms,bonds]
         for line in conect_list:

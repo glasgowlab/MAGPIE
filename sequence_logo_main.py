@@ -653,7 +653,7 @@ def main(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance, d
 
 
 
-def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance, advance_options):
+def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance, download_meta, advance_options):
     chains_target = []
     chains_binder = []
 

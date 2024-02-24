@@ -1,0 +1,458 @@
+,X,Y,Z,chain,residue_index,AA,atom_name,shapely,polar,file,H-Bond SC Info,H-Bond BB Info,H-Bond SC,H-Bond BB,H-bond,cluster_index,AA1,AA Class,cluster_color,H-Bond BB Flag,H-Bond SC Flag
+0,-36.792,-10.072,-39.061,A,42,SER,CA,#FF7042,#FA9600,5xuk.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,S,Hydrophilic,#FFFFFF,False,False
+1,-30.984,-7.803,-24.434,A,77,LYS,CA,#4747B8,#145AFF,5xuk.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,K,Charged interactions,#FFFFFF,False,False
+2,-32.161,-9.009,-27.93,A,78,ASN,CA,#FF7C70,#00DCDC,5xuk.pdb,"Acceptor: O7A, donor H02","Acceptor: O7A, donor H02",#FF0000,#FFFFFF,#FF0000,0,N,Hydrophilic,#D02090,False,True
+3,-32.161,-9.009,-27.93,A,78,ASN,CA,#FF7C70,#00DCDC,5xuk.pdb,"Acceptor: O7A, donor H02","Acceptor: O7A, donor H02",#FF0000,#FFFFFF,#FF0000,0,N,Hydrophilic,#D02090,False,True
+4,-28.678,-10.069,-29.115,A,79,ALA,CA,#8CFF8C,#C8C8C8,5xuk.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+5,-28.791,-12.883,-31.745,A,80,PRO,CA,#525252,#DC9682,5xuk.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,7,P,Hydrophobic,#00008B,False,False
+6,-24.939,-10.285,-35.779,A,100,SER,CA,#FF7042,#FA9600,5xuk.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,S,Hydrophilic,#FFFFFF,False,False
+7,-27.798,-8.915,-37.863,A,101,ILE,CA,#004C00,#0F820F,5xuk.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,1,I,Hydrophobic,#00008B,False,False
+8,-28.913,-5.573,-39.215,A,102,SER,CA,#FF7042,#FA9600,5xuk.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,1,S,Hydrophilic,#D02090,False,False
+9,-31.52,-4.238,-41.614,A,103,HIS,CA,#7070FF,#8282D2,5xuk.pdb,"Acceptor: O1A, donor H01","Acceptor: O1A, donor H01",#FF0000,#FFFFFF,#FF0000,2,H,Charged interactions,#FF0000,False,True
+10,-31.52,-4.238,-41.614,A,103,HIS,CA,#7070FF,#8282D2,5xuk.pdb,"Acceptor: O1A, donor H01","Acceptor: O1A, donor H01",#FF0000,#FFFFFF,#FF0000,2,H,Charged interactions,#FF0000,False,True
+11,-32.288,-0.949,-43.211,A,104,ASP,CA,#A00042,#E60A0A,5xuk.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,D,Charged interactions,#FFFFFF,False,False
+12,-21.984,-6.754,-26.284,A,19,LEU,CA,#455E45,#0F820F,6arb.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,L,Hydrophobic,#FFFFFF,False,False
+13,-24.052,-3.965,-24.745,A,20,PHE,CA,#534C42,#3232AA,6arb.pdb,"Acceptor: O, donor H05","Acceptor: O, donor H05",#FF0000,#FFFFFF,#FF0000,3,F,Aromatic,#008000,False,True
+14,-24.052,-3.965,-24.745,A,20,PHE,CA,#534C42,#3232AA,6arb.pdb,"Acceptor: O, donor H05","Acceptor: O, donor H05",#FF0000,#FFFFFF,#FF0000,3,F,Aromatic,#008000,False,True
+15,-27.818,-4.478,-24.752,A,21,CYS,CA,#FFFF70,#E6E600,6arb.pdb,"Acceptor: O, donor H05","Acceptor: O, donor H05",#FF0000,#FFFFFF,#FF0000,-1,C,Hydrophobic,#FFFFFF,False,True
+16,-27.818,-4.478,-24.752,A,21,CYS,CA,#FFFF70,#E6E600,6arb.pdb,"Acceptor: O, donor H05","Acceptor: O, donor H05",#FF0000,#FFFFFF,#FF0000,-1,C,Hydrophobic,#FFFFFF,False,True
+17,-30.273,-1.944,-23.23,A,22,PRO,CA,#525252,#DC9682,6arb.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,P,Hydrophobic,#FFFFFF,False,False
+18,-33.183,-9.006,-27.482,A,28,ARG,CA,#00007C,#145AFF,6arb.pdb,"Acceptor: OAP, donor H04","Acceptor: OAP, donor H04",#FF0000,#FFFFFF,#FF0000,0,R,Charged interactions,#FF0000,False,True
+19,-33.183,-9.006,-27.482,A,28,ARG,CA,#00007C,#145AFF,6arb.pdb,"Acceptor: OAP, donor H04","Acceptor: OAP, donor H04",#FF0000,#FFFFFF,#FF0000,0,R,Charged interactions,#FF0000,False,True
+20,-31.538,-10.5,-24.375,A,29,PHE,CA,#534C42,#3232AA,6arb.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,F,Aromatic,#FFFFFF,False,False
+21,-30.232,-12.84,-29.033,A,31,LYS,CA,#4747B8,#145AFF,6arb.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,7,K,Charged interactions,#FF0000,False,False
+22,-27.482,-10.82,-27.372,A,32,ALA,CA,#8CFF8C,#C8C8C8,6arb.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+23,-27.421,-1.606,-19.502,A,42,ASP,CA,#A00042,#E60A0A,6arb.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,D,Charged interactions,#FFFFFF,False,False
+24,-27.204,5.71,-20.849,A,45,ASP,CA,#A00042,#E60A0A,6arb.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,D,Charged interactions,#FFFFFF,False,False
+25,-28.716,3.084,-23.191,A,46,GLY,CA,#FFFFFF,#EBEBEB,6arb.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,G,Hydrophobic,#FFFFFF,False,False
+26,-22.906,-2.132,-29.531,A,217,ILE,CA,#004C00,#0F820F,6arb.pdb,"Acceptor: O, donor H03","Acceptor: O, donor H03",#FF0000,#FFFFFF,#FF0000,4,I,Hydrophobic,#00008B,False,True
+27,-22.906,-2.132,-29.531,A,217,ILE,CA,#004C00,#0F820F,6arb.pdb,"Acceptor: O, donor H03","Acceptor: O, donor H03",#FF0000,#FFFFFF,#FF0000,4,I,Hydrophobic,#00008B,False,True
+28,-24.354,-4.313,-32.357,A,218,HIS,CA,#7070FF,#8282D2,6arb.pdb,"Acceptor: O1A, donor H02","Acceptor: O1A, donor H02",#FF0000,#FFFFFF,#FF0000,4,H,Charged interactions,#FF0000,False,True
+29,-24.354,-4.313,-32.357,A,218,HIS,CA,#7070FF,#8282D2,6arb.pdb,"Acceptor: O1A, donor H02","Acceptor: O1A, donor H02",#FF0000,#FFFFFF,#FF0000,4,H,Charged interactions,#FF0000,False,True
+30,-24.254,-8.117,-32.692,A,219,PRO,CA,#525252,#DC9682,6arb.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,P,Hydrophobic,#FFFFFF,False,False
+31,-21.999,-6.708,-26.173,A,19,LEU,CA,#455E45,#0F820F,6as5.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,3,L,Hydrophobic,#00008B,False,False
+32,-24.063,-3.865,-24.727,A,20,PHE,CA,#534C42,#3232AA,6as5.pdb,"Acceptor: O, donor H05","Acceptor: O, donor H05",#FF0000,#FFFFFF,#FF0000,3,F,Aromatic,#008000,False,True
+33,-24.063,-3.865,-24.727,A,20,PHE,CA,#534C42,#3232AA,6as5.pdb,"Acceptor: O, donor H05","Acceptor: O, donor H05",#FF0000,#FFFFFF,#FF0000,3,F,Aromatic,#008000,False,True
+34,-27.825,-4.312,-24.809,A,21,CYS,CA,#FFFF70,#E6E600,6as5.pdb,"Acceptor: O, donor H05","Acceptor: O, donor H05",#FF0000,#FFFFFF,#FF0000,-1,C,Hydrophobic,#FFFFFF,False,True
+35,-27.825,-4.312,-24.809,A,21,CYS,CA,#FFFF70,#E6E600,6as5.pdb,"Acceptor: O, donor H05","Acceptor: O, donor H05",#FF0000,#FFFFFF,#FF0000,-1,C,Hydrophobic,#FFFFFF,False,True
+36,-30.22,-1.784,-23.206,A,22,PRO,CA,#525252,#DC9682,6as5.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,P,Hydrophobic,#FFFFFF,False,False
+37,-33.275,-8.781,-27.484,A,28,ARG,CA,#00007C,#145AFF,6as5.pdb,"Acceptor: O5A, donor H06","Acceptor: O5A, donor H06",#FF0000,#FFFFFF,#FF0000,0,R,Charged interactions,#FF0000,False,True
+38,-33.275,-8.781,-27.484,A,28,ARG,CA,#00007C,#145AFF,6as5.pdb,"Acceptor: O5A, donor H06","Acceptor: O5A, donor H06",#FF0000,#FFFFFF,#FF0000,0,R,Charged interactions,#FF0000,False,True
+39,-31.65,-10.401,-24.436,A,29,PHE,CA,#534C42,#3232AA,6as5.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,F,Aromatic,#FFFFFF,False,False
+40,-30.177,-12.799,-28.99,A,31,LYS,CA,#4747B8,#145AFF,6as5.pdb,"Acceptor: O4B, donor H04","Acceptor: O4B, donor H04",#FF0000,#FFFFFF,#FF0000,7,K,Charged interactions,#FF0000,False,True
+41,-30.177,-12.799,-28.99,A,31,LYS,CA,#4747B8,#145AFF,6as5.pdb,"Acceptor: O4B, donor H04","Acceptor: O4B, donor H04",#FF0000,#FFFFFF,#FF0000,7,K,Charged interactions,#FF0000,False,True
+42,-27.552,-10.717,-27.238,A,32,ALA,CA,#8CFF8C,#C8C8C8,6as5.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+43,-27.401,-1.591,-19.462,A,42,ASP,CA,#A00042,#E60A0A,6as5.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,D,Charged interactions,#FFFFFF,False,False
+44,-27.158,5.898,-20.799,A,45,ASP,CA,#A00042,#E60A0A,6as5.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,D,Charged interactions,#FFFFFF,False,False
+45,-28.678,3.271,-23.09,A,46,GLY,CA,#FFFFFF,#EBEBEB,6as5.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,G,Hydrophobic,#FFFFFF,False,False
+46,-22.812,-2.131,-29.437,A,217,ILE,CA,#004C00,#0F820F,6as5.pdb,"Acceptor: O, donor H06","Acceptor: O, donor H06",#FF0000,#FFFFFF,#FF0000,4,I,Hydrophobic,#00008B,False,True
+47,-22.812,-2.131,-29.437,A,217,ILE,CA,#004C00,#0F820F,6as5.pdb,"Acceptor: O, donor H06","Acceptor: O, donor H06",#FF0000,#FFFFFF,#FF0000,4,I,Hydrophobic,#00008B,False,True
+48,-24.347,-4.217,-32.267,A,218,HIS,CA,#7070FF,#8282D2,6as5.pdb,"Acceptor: O1A, donor H02","Acceptor: O1A, donor H02",#FF0000,#FFFFFF,#FF0000,4,H,Charged interactions,#FF0000,False,True
+49,-24.347,-4.217,-32.267,A,218,HIS,CA,#7070FF,#8282D2,6as5.pdb,"Acceptor: O1A, donor H02","Acceptor: O1A, donor H02",#FF0000,#FFFFFF,#FF0000,4,H,Charged interactions,#FF0000,False,True
+50,-24.206,-7.995,-32.685,A,219,PRO,CA,#525252,#DC9682,6as5.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,P,Hydrophobic,#FFFFFF,False,False
+51,-17.367,-1.462,-25.985,A,82,LEU,CA,#455E45,#0F820F,6b3t.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,L,Hydrophobic,#FFFFFF,False,False
+52,-18.98,1.963,-25.732,A,83,SER,CA,#FF7042,#FA9600,6b3t.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,S,Hydrophilic,#FFFFFF,False,False
+53,-20.416,4.947,-27.623,A,84,PHE,CA,#534C42,#3232AA,6b3t.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,F,Aromatic,#FFFFFF,False,False
+54,-22.688,2.562,-29.548,A,85,VAL,CA,#FF8CFF,#0F820F,6b3t.pdb,"Acceptor: N4P, donor H01","Acceptor: N4P, donor H01",#FF0000,#FFFFFF,#FF0000,-1,V,Hydrophobic,#FFFFFF,False,True
+55,-22.688,2.562,-29.548,A,85,VAL,CA,#FF8CFF,#0F820F,6b3t.pdb,"Acceptor: N4P, donor H01","Acceptor: N4P, donor H01",#FF0000,#FFFFFF,#FF0000,-1,V,Hydrophobic,#FFFFFF,False,True
+56,-25.551,4.3,-31.345,A,86,ALA,CA,#8CFF8C,#C8C8C8,6b3t.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,5,A,Hydrophobic,#00008B,False,False
+57,-27.801,4.082,-34.384,A,87,VAL,CA,#FF8CFF,#0F820F,6b3t.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,V,Hydrophobic,#FFFFFF,False,False
+58,-33.449,1.68,-37.312,A,92,ARG,CA,#00007C,#145AFF,6b3t.pdb,"Acceptor: O5A, donor H03","Acceptor: O5A, donor H03",#FF0000,#FFFFFF,#FF0000,-1,R,Charged interactions,#FFFFFF,False,True
+59,-33.449,1.68,-37.312,A,92,ARG,CA,#00007C,#145AFF,6b3t.pdb,"Acceptor: O5A, donor H03","Acceptor: O5A, donor H03",#FF0000,#FFFFFF,#FF0000,-1,R,Charged interactions,#FFFFFF,False,True
+60,-34.141,-1.93,-38.245,A,93,ARG,CA,#00007C,#145AFF,6b3t.pdb,"Acceptor: O1A, donor H02","Acceptor: O1A, donor H02",#FF0000,#FFFFFF,#FF0000,-1,R,Charged interactions,#FFFFFF,False,True
+61,-34.141,-1.93,-38.245,A,93,ARG,CA,#00007C,#145AFF,6b3t.pdb,"Acceptor: O1A, donor H02","Acceptor: O1A, donor H02",#FF0000,#FFFFFF,#FF0000,-1,R,Charged interactions,#FFFFFF,False,True
+62,-31.613,-1.999,-41.082,A,94,ARG,CA,#00007C,#145AFF,6b3t.pdb,"Acceptor: O1A, donor H01","Acceptor: O1A, donor H01",#FF0000,#FFFFFF,#FF0000,2,R,Charged interactions,#FF0000,False,True
+63,-31.613,-1.999,-41.082,A,94,ARG,CA,#00007C,#145AFF,6b3t.pdb,"Acceptor: O1A, donor H01","Acceptor: O1A, donor H01",#FF0000,#FFFFFF,#FF0000,2,R,Charged interactions,#FF0000,False,True
+64,-28.788,-4.297,-39.806,A,95,GLY,CA,#FFFFFF,#EBEBEB,6b3t.pdb,"Acceptor: O1A, donor H06","Acceptor: O1A, donor H06",#FF0000,#FFFFFF,#FF0000,1,G,Hydrophobic,#00008B,False,True
+65,-28.788,-4.297,-39.806,A,95,GLY,CA,#FFFFFF,#EBEBEB,6b3t.pdb,"Acceptor: O1A, donor H06","Acceptor: O1A, donor H06",#FF0000,#FFFFFF,#FF0000,1,G,Hydrophobic,#00008B,False,True
+66,-26.368,-1.456,-38.893,A,96,LEU,CA,#455E45,#0F820F,6b3t.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,L,Hydrophobic,#FFFFFF,False,False
+67,-25.705,-2.688,-35.331,A,97,LEU,CA,#455E45,#0F820F,6b3t.pdb,"Acceptor: O2A, donor H01","Acceptor: O2A, donor H01",#FF0000,#FFFFFF,#FF0000,-1,L,Hydrophobic,#FFFFFF,False,True
+68,-25.705,-2.688,-35.331,A,97,LEU,CA,#455E45,#0F820F,6b3t.pdb,"Acceptor: O2A, donor H01","Acceptor: O2A, donor H01",#FF0000,#FFFFFF,#FF0000,-1,L,Hydrophobic,#FFFFFF,False,True
+69,-25.116,-6.32,-36.351,A,98,ARG,CA,#00007C,#145AFF,6b3t.pdb,"Acceptor: O2A, donor H02","Acceptor: O2A, donor H02",#FF0000,#FFFFFF,#FF0000,-1,R,Charged interactions,#FFFFFF,False,True
+70,-25.116,-6.32,-36.351,A,98,ARG,CA,#00007C,#145AFF,6b3t.pdb,"Acceptor: O2A, donor H02","Acceptor: O2A, donor H02",#FF0000,#FFFFFF,#FF0000,-1,R,Charged interactions,#FFFFFF,False,True
+71,-19.741,-3.421,-21.849,A,118,LEU,CA,#455E45,#0F820F,6b3t.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,L,Hydrophobic,#FFFFFF,False,False
+72,-22.532,-1.844,-19.802,A,119,HIS,CA,#7070FF,#8282D2,6b3t.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,H,Charged interactions,#FFFFFF,False,False
+73,-25.979,-2.497,-21.296,A,120,ALA,CA,#8CFF8C,#C8C8C8,6b3t.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+74,-28.537,0.262,-21.992,A,121,SER,CA,#FF7042,#FA9600,6b3t.pdb,"Acceptor: O5P, donor H02","Acceptor: O5P, donor H02",#FF0000,#FFFFFF,#FF0000,-1,S,Hydrophilic,#FFFFFF,False,True
+75,-28.537,0.262,-21.992,A,121,SER,CA,#FF7042,#FA9600,6b3t.pdb,"Acceptor: O5P, donor H02","Acceptor: O5P, donor H02",#FF0000,#FFFFFF,#FF0000,-1,S,Hydrophilic,#FFFFFF,False,True
+76,-29.962,-6.739,-26.791,A,125,ILE,CA,#004C00,#0F820F,6b3t.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,I,Hydrophobic,#FFFFFF,False,False
+77,-18.46,3.197,-19.509,A,402,PHE,CA,#534C42,#3232AA,6b3t.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,F,Aromatic,#FFFFFF,False,False
+78,-27.927,-1.337,-23.673,A,45,ILE,CA,#004C00,#0F820F,6be0.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,I,Hydrophobic,#FFFFFF,False,False
+79,-24.819,-7.14,-32.265,A,166,ARG,CA,#00007C,#145AFF,6be0.pdb,"Acceptor: O4B, donor HH12","Acceptor: O4B, donor HH12",#FF0000,#FFFFFF,#FF0000,-1,R,Charged interactions,#FFFFFF,False,True
+80,-24.819,-7.14,-32.265,A,166,ARG,CA,#00007C,#145AFF,6be0.pdb,"Acceptor: O4B, donor HH12","Acceptor: O4B, donor HH12",#FF0000,#FFFFFF,#FF0000,-1,R,Charged interactions,#FFFFFF,False,True
+81,-24.518,-5.564,-28.814,A,167,SER,CA,#FF7042,#FA9600,6be0.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,4,S,Hydrophilic,#D02090,False,False
+82,-21.861,-2.889,-28.435,A,168,SER,CA,#FF7042,#FA9600,6be0.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,4,S,Hydrophilic,#D02090,False,False
+83,-28.27,-11.733,-30.856,A,226,GLN,CA,#FF4C4C,#00DCDC,6be0.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,Q,Hydrophilic,#FFFFFF,False,False
+84,-30.876,-11.83,-33.614,A,227,GLY,CA,#FFFFFF,#EBEBEB,6be0.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,G,Hydrophobic,#FFFFFF,False,False
+85,-33.836,-14.057,-34.448,A,228,ALA,CA,#8CFF8C,#C8C8C8,6be0.pdb,"Acceptor: O7A, donor H","Acceptor: O7A, donor H",#FF0000,#FFFFFF,#FF0000,-1,A,Hydrophobic,#FFFFFF,False,True
+86,-33.836,-14.057,-34.448,A,228,ALA,CA,#8CFF8C,#C8C8C8,6be0.pdb,"Acceptor: O7A, donor H","Acceptor: O7A, donor H",#FF0000,#FFFFFF,#FF0000,-1,A,Hydrophobic,#FFFFFF,False,True
+87,-33.252,-13.509,-38.167,A,229,GLN,CA,#FF4C4C,#00DCDC,6be0.pdb,"Acceptor: O7A, donor HE21","Acceptor: O7A, donor HE21",#FF0000,#FFFFFF,#FF0000,-1,Q,Hydrophilic,#FFFFFF,False,True
+88,-33.252,-13.509,-38.167,A,229,GLN,CA,#FF4C4C,#00DCDC,6be0.pdb,"Acceptor: O7A, donor HE21","Acceptor: O7A, donor HE21",#FF0000,#FFFFFF,#FF0000,-1,Q,Hydrophilic,#FFFFFF,False,True
+89,-29.617,-14.543,-37.753,A,230,ARG,CA,#00007C,#145AFF,6be0.pdb,"Acceptor: O9A, donor HE","Acceptor: O9A, donor HE",#FF0000,#FFFFFF,#FF0000,-1,R,Charged interactions,#FFFFFF,False,True
+90,-29.617,-14.543,-37.753,A,230,ARG,CA,#00007C,#145AFF,6be0.pdb,"Acceptor: O9A, donor HE","Acceptor: O9A, donor HE",#FF0000,#FFFFFF,#FF0000,-1,R,Charged interactions,#FFFFFF,False,True
+91,-37.191,-8.226,-28.787,A,268,LYS,CA,#4747B8,#145AFF,6be0.pdb,"Acceptor: NZ, donor H02","Acceptor: NZ, donor H02",#FF0000,#FFFFFF,#FF0000,-1,K,Charged interactions,#FFFFFF,False,True
+92,-37.191,-8.226,-28.787,A,268,LYS,CA,#4747B8,#145AFF,6be0.pdb,"Acceptor: NZ, donor H02","Acceptor: NZ, donor H02",#FF0000,#FFFFFF,#FF0000,-1,K,Charged interactions,#FFFFFF,False,True
+93,-33.522,-8.149,-27.773,A,269,LEU,CA,#455E45,#0F820F,6be0.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,0,L,Hydrophobic,#00008B,False,False
+94,-31.26,-10.865,-26.367,A,270,SER,CA,#FF7042,#FA9600,6be0.pdb,"Acceptor: N3A, donor HG","Acceptor: N3A, donor HG",#FF0000,#FFFFFF,#FF0000,-1,S,Hydrophilic,#FFFFFF,False,True
+95,-31.26,-10.865,-26.367,A,270,SER,CA,#FF7042,#FA9600,6be0.pdb,"Acceptor: N3A, donor HG","Acceptor: N3A, donor HG",#FF0000,#FFFFFF,#FF0000,-1,S,Hydrophilic,#FFFFFF,False,True
+96,-29.492,-10.356,-23.041,A,271,ILE,CA,#004C00,#0F820F,6be0.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,I,Hydrophobic,#FFFFFF,False,False
+97,-36.822,-10.987,-39.755,A,52,PHE,CA,#534C42,#3232AA,6ct5.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,F,Aromatic,#FFFFFF,False,False
+98,-33.364,-5.589,-24.987,A,78,LYS,CA,#4747B8,#145AFF,6ct5.pdb,"Acceptor: NZ, donor H03","Acceptor: NZ, donor H03",#FF0000,#FFFFFF,#FF0000,6,K,Charged interactions,#FF0000,False,True
+99,-33.364,-5.589,-24.987,A,78,LYS,CA,#4747B8,#145AFF,6ct5.pdb,"Acceptor: NZ, donor H03","Acceptor: NZ, donor H03",#FF0000,#FFFFFF,#FF0000,6,K,Charged interactions,#FF0000,False,True
+100,-33.991,-7.248,-28.408,A,79,GLY,CA,#FFFFFF,#EBEBEB,6ct5.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,0,G,Hydrophobic,#00008B,False,False
+101,-30.597,-8.883,-28.551,A,80,GLU,CA,#660000,#E60A0A,6ct5.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,0,E,Charged interactions,#FF0000,False,False
+102,-30.471,-12.151,-30.521,A,81,PRO,CA,#525252,#DC9682,6ct5.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,7,P,Hydrophobic,#00008B,False,False
+103,-24.678,-10.321,-34.951,A,90,SER,CA,#FF7042,#FA9600,6ct5.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,S,Hydrophilic,#FFFFFF,False,False
+104,-27.544,-9.502,-37.361,A,91,LEU,CA,#455E45,#0F820F,6ct5.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,1,L,Hydrophobic,#00008B,False,False
+105,-28.398,-6.48,-39.481,A,92,THR,CA,#B84C00,#FA9600,6ct5.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,1,T,Hydrophilic,#D02090,False,False
+106,-31.046,-5.53,-42.048,A,93,HIS,CA,#7070FF,#8282D2,6ct5.pdb,"Acceptor: O1A, donor H01","Acceptor: O1A, donor H01",#FF0000,#FFFFFF,#FF0000,2,H,Charged interactions,#FF0000,False,True
+107,-31.046,-5.53,-42.048,A,93,HIS,CA,#7070FF,#8282D2,6ct5.pdb,"Acceptor: O1A, donor H01","Acceptor: O1A, donor H01",#FF0000,#FFFFFF,#FF0000,2,H,Charged interactions,#FF0000,False,True
+108,-31.554,-2.364,-44.048,A,94,CYS,CA,#FFFF70,#E6E600,6ct5.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,C,Hydrophobic,#FFFFFF,False,False
+109,-24.166,-3.14,-39.279,A,114,ASP,CA,#A00042,#E60A0A,6ct5.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,D,Charged interactions,#FFFFFF,False,False
+110,-23.973,-4.749,-30.95,A,161,LYS,CA,#4747B8,#145AFF,6ct5.pdb,"Acceptor: O2A, donor H03","Acceptor: O2A, donor H03",#FF0000,#FFFFFF,#FF0000,4,K,Charged interactions,#FF0000,False,True
+111,-23.973,-4.749,-30.95,A,161,LYS,CA,#4747B8,#145AFF,6ct5.pdb,"Acceptor: O2A, donor H03","Acceptor: O2A, donor H03",#FF0000,#FFFFFF,#FF0000,4,K,Charged interactions,#FF0000,False,True
+112,-20.558,-6.1,-30.034,A,162,ALA,CA,#8CFF8C,#C8C8C8,6ct5.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+113,-24.134,-5.333,-25.402,A,164,PHE,CA,#534C42,#3232AA,6ct5.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,3,F,Aromatic,#008000,False,False
+114,-23.866,-9.173,-25.237,A,165,PRO,CA,#525252,#DC9682,6ct5.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,3,P,Hydrophobic,#00008B,False,False
+115,-27.175,-12.22,-29.578,A,186,ALA,CA,#8CFF8C,#C8C8C8,6he2.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+116,-25.666,-9.471,-31.773,A,187,GLY,CA,#FFFFFF,#EBEBEB,6he2.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,G,Hydrophobic,#FFFFFF,False,False
+117,-25.73,-10.891,-35.311,A,188,ALA,CA,#8CFF8C,#C8C8C8,6he2.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+118,-28.399,-9.925,-37.952,A,189,PRO,CA,#525252,#DC9682,6he2.pdb,"Acceptor: O, donor H04","Acceptor: O, donor H04",#FF0000,#FFFFFF,#FF0000,1,P,Hydrophobic,#00008B,False,True
+119,-28.399,-9.925,-37.952,A,189,PRO,CA,#525252,#DC9682,6he2.pdb,"Acceptor: O, donor H04","Acceptor: O, donor H04",#FF0000,#FFFFFF,#FF0000,1,P,Hydrophobic,#00008B,False,True
+120,-31.13,-12.581,-38.351,A,190,GLY,CA,#FFFFFF,#EBEBEB,6he2.pdb,"Acceptor: O3B, donor H01","Acceptor: O3B, donor H01",#FF0000,#FFFFFF,#FF0000,-1,G,Hydrophobic,#FFFFFF,False,True
+121,-31.13,-12.581,-38.351,A,190,GLY,CA,#FFFFFF,#EBEBEB,6he2.pdb,"Acceptor: O3B, donor H01","Acceptor: O3B, donor H01",#FF0000,#FFFFFF,#FF0000,-1,G,Hydrophobic,#FFFFFF,False,True
+122,-30.608,-13.93,-34.782,A,191,MET,CA,#B8A042,#E6E600,6he2.pdb,"Acceptor: O, donor H07","Acceptor: O, donor H07",#FF0000,#FFFFFF,#FF0000,-1,M,Hydrophobic,#FFFFFF,False,True
+123,-30.608,-13.93,-34.782,A,191,MET,CA,#B8A042,#E6E600,6he2.pdb,"Acceptor: O, donor H07","Acceptor: O, donor H07",#FF0000,#FFFFFF,#FF0000,-1,M,Hydrophobic,#FFFFFF,False,True
+124,-33.801,-12.54,-33.108,A,192,SER,CA,#FF7042,#FA9600,6he2.pdb,"Acceptor: O7A, donor H02","Acceptor: O7A, donor H02",#FF0000,#FFFFFF,#FF0000,-1,S,Hydrophilic,#FFFFFF,False,True
+125,-33.801,-12.54,-33.108,A,192,SER,CA,#FF7042,#FA9600,6he2.pdb,"Acceptor: O7A, donor H02","Acceptor: O7A, donor H02",#FF0000,#FFFFFF,#FF0000,-1,S,Hydrophilic,#FFFFFF,False,True
+126,-36.179,-14.025,-35.745,A,193,ALA,CA,#8CFF8C,#C8C8C8,6he2.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+127,-33.61,-3.398,-24.143,A,212,SER,CA,#FF7042,#FA9600,6he2.pdb,"Acceptor: N1A, donor H01","Acceptor: N1A, donor H01",#FF0000,#FFFFFF,#FF0000,-1,S,Hydrophilic,#FFFFFF,False,True
+128,-33.61,-3.398,-24.143,A,212,SER,CA,#FF7042,#FA9600,6he2.pdb,"Acceptor: N1A, donor H01","Acceptor: N1A, donor H01",#FF0000,#FFFFFF,#FF0000,-1,S,Hydrophilic,#FFFFFF,False,True
+129,-32.852,-6.682,-25.958,A,213,TYR,CA,#8C704C,#3232AA,6he2.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,6,Y,Aromatic,#008000,False,False
+130,-36.604,-5.794,-29.113,A,216,HIS,CA,#7070FF,#8282D2,6he2.pdb,"Acceptor: O2A, donor H02","Acceptor: O2A, donor H02",#FF0000,#FFFFFF,#FF0000,-1,H,Charged interactions,#FFFFFF,False,True
+131,-36.604,-5.794,-29.113,A,216,HIS,CA,#7070FF,#8282D2,6he2.pdb,"Acceptor: O2A, donor H02","Acceptor: O2A, donor H02",#FF0000,#FFFFFF,#FF0000,-1,H,Charged interactions,#FFFFFF,False,True
+132,-37.593,3.293,-36.698,A,10,PHE,CA,#534C42,#3232AA,6j1e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,F,Aromatic,#FFFFFF,False,False
+133,-35.443,0.629,-38.338,A,11,ASN,CA,#FF7C70,#00DCDC,6j1e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,N,Hydrophilic,#FFFFFF,False,False
+134,-32.103,0.655,-40.18,A,12,SER,CA,#FF7042,#FA9600,6j1e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,S,Hydrophilic,#FFFFFF,False,False
+135,-32.559,-12.309,-38.817,A,194,SER,CA,#FF7042,#FA9600,6j1e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,S,Hydrophilic,#FFFFFF,False,False
+136,-25.683,-8.072,-34.927,A,306,ASN,CA,#FF7C70,#00DCDC,6j1e.pdb,"Acceptor: O7A, donor H02","Acceptor: O7A, donor H02",#FF0000,#FFFFFF,#FF0000,-1,N,Hydrophilic,#FFFFFF,False,True
+137,-25.683,-8.072,-34.927,A,306,ASN,CA,#FF7C70,#00DCDC,6j1e.pdb,"Acceptor: O7A, donor H02","Acceptor: O7A, donor H02",#FF0000,#FFFFFF,#FF0000,-1,N,Hydrophilic,#FFFFFF,False,True
+138,-23.4,-7.329,-30.13,A,308,ALA,CA,#8CFF8C,#C8C8C8,6j1e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,4,A,Hydrophobic,#00008B,False,False
+139,-23.353,-2.031,-31.149,A,343,ASN,CA,#FF7C70,#00DCDC,6j1e.pdb,"Acceptor: ND2, donor H02","Acceptor: ND2, donor H02",#FF0000,#FFFFFF,#FF0000,4,N,Hydrophilic,#D02090,False,True
+140,-23.353,-2.031,-31.149,A,343,ASN,CA,#FF7C70,#00DCDC,6j1e.pdb,"Acceptor: ND2, donor H02","Acceptor: ND2, donor H02",#FF0000,#FFFFFF,#FF0000,4,N,Hydrophilic,#D02090,False,True
+141,-21.653,-2.319,-27.744,A,344,GLY,CA,#FFFFFF,#EBEBEB,6j1e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,4,G,Hydrophobic,#00008B,False,False
+142,-22.564,-4.745,-24.987,A,345,MET,CA,#B8A042,#E6E600,6j1e.pdb,"Acceptor: O, donor H02","Acceptor: O, donor H02",#FF0000,#FFFFFF,#FF0000,3,M,Hydrophobic,#00008B,False,True
+143,-22.564,-4.745,-24.987,A,345,MET,CA,#B8A042,#E6E600,6j1e.pdb,"Acceptor: O, donor H02","Acceptor: O, donor H02",#FF0000,#FFFFFF,#FF0000,3,M,Hydrophobic,#00008B,False,True
+144,-24.59,-7.82,-25.928,A,346,ASN,CA,#FF7C70,#00DCDC,6j1e.pdb,"Acceptor: O, donor H05","Acceptor: O, donor H05",#FF0000,#FFFFFF,#FF0000,3,N,Hydrophilic,#D02090,False,True
+145,-24.59,-7.82,-25.928,A,346,ASN,CA,#FF7C70,#00DCDC,6j1e.pdb,"Acceptor: O, donor H05","Acceptor: O, donor H05",#FF0000,#FFFFFF,#FF0000,3,N,Hydrophilic,#D02090,False,True
+146,-28.008,-7.077,-24.429,A,347,LEU,CA,#455E45,#0F820F,6j1e.pdb,"Acceptor: N1A, donor H04","Acceptor: N1A, donor H04",#FF0000,#FFFFFF,#FF0000,-1,L,Hydrophobic,#FFFFFF,False,True
+147,-28.008,-7.077,-24.429,A,347,LEU,CA,#455E45,#0F820F,6j1e.pdb,"Acceptor: N1A, donor H04","Acceptor: N1A, donor H04",#FF0000,#FFFFFF,#FF0000,-1,L,Hydrophobic,#FFFFFF,False,True
+148,-29.173,-10.624,-25.189,A,348,ASN,CA,#FF7C70,#00DCDC,6j1e.pdb,"Acceptor: N1A, donor H02","Acceptor: N1A, donor H02",#FF0000,#FFFFFF,#FF0000,-1,N,Hydrophilic,#FFFFFF,False,True
+149,-29.173,-10.624,-25.189,A,348,ASN,CA,#FF7C70,#00DCDC,6j1e.pdb,"Acceptor: N1A, donor H02","Acceptor: N1A, donor H02",#FF0000,#FFFFFF,#FF0000,-1,N,Hydrophilic,#FFFFFF,False,True
+150,-22.531,1.378,-35.031,A,390,ALA,CA,#8CFF8C,#C8C8C8,6j1e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+151,-24.509,2.316,-31.95,A,391,GLY,CA,#FFFFFF,#EBEBEB,6j1e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,G,Hydrophobic,#FFFFFF,False,False
+152,-24.074,3.083,-28.227,A,392,ALA,CA,#8CFF8C,#C8C8C8,6j1e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+153,-20.808,1.632,-26.826,A,393,GLY,CA,#FFFFFF,#EBEBEB,6j1e.pdb,"Acceptor: N4P, donor H01","Acceptor: N4P, donor H01",#FF0000,#FFFFFF,#FF0000,-1,G,Hydrophobic,#FFFFFF,False,True
+154,-20.808,1.632,-26.826,A,393,GLY,CA,#FFFFFF,#EBEBEB,6j1e.pdb,"Acceptor: N4P, donor H01","Acceptor: N4P, donor H01",#FF0000,#FFFFFF,#FF0000,-1,G,Hydrophobic,#FFFFFF,False,True
+155,-19.776,0.395,-30.251,A,394,GLY,CA,#FFFFFF,#EBEBEB,6j1e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,G,Hydrophobic,#FFFFFF,False,False
+156,-26.184,6.288,-32.922,A,413,ASN,CA,#FF7C70,#00DCDC,6j1e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,N,Hydrophilic,#FFFFFF,False,False
+157,-27.682,5.809,-24.939,A,416,TYR,CA,#8C704C,#3232AA,6j1e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,Y,Aromatic,#FFFFFF,False,False
+158,-32.581,3.843,-26.399,A,418,ASN,CA,#FF7C70,#00DCDC,6j1e.pdb,"Acceptor: O9P, donor H02","Acceptor: O9P, donor H02",#FF0000,#FFFFFF,#FF0000,-1,N,Hydrophilic,#FFFFFF,False,True
+159,-32.581,3.843,-26.399,A,418,ASN,CA,#FF7C70,#00DCDC,6j1e.pdb,"Acceptor: O9P, donor H02","Acceptor: O9P, donor H02",#FF0000,#FFFFFF,#FF0000,-1,N,Hydrophilic,#FFFFFF,False,True
+160,-31.189,1.846,-23.453,A,419,ILE,CA,#004C00,#0F820F,6j1e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,I,Hydrophobic,#FFFFFF,False,False
+161,-35.326,-3.672,-26.799,A,539,PHE,CA,#534C42,#3232AA,6j1e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,F,Aromatic,#FFFFFF,False,False
+162,-34.498,-7.381,-26.433,A,540,VAL,CA,#FF8CFF,#0F820F,6j1e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,0,V,Hydrophobic,#00008B,False,False
+163,-27.917,-6.102,-23.567,A,51,PHE,CA,#534C42,#3232AA,6nds.pdb,"Acceptor: O, donor H05","Acceptor: O, donor H05",#FF0000,#FFFFFF,#FF0000,-1,F,Aromatic,#FFFFFF,False,True
+164,-27.917,-6.102,-23.567,A,51,PHE,CA,#534C42,#3232AA,6nds.pdb,"Acceptor: O, donor H05","Acceptor: O, donor H05",#FF0000,#FFFFFF,#FF0000,-1,F,Aromatic,#FFFFFF,False,True
+165,-27.176,-4.247,-26.801,A,52,VAL,CA,#FF8CFF,#0F820F,6nds.pdb,"Acceptor: O, donor H05","Acceptor: O, donor H05",#FF0000,#FFFFFF,#FF0000,-1,V,Hydrophobic,#FFFFFF,False,True
+166,-27.176,-4.247,-26.801,A,52,VAL,CA,#FF8CFF,#0F820F,6nds.pdb,"Acceptor: O, donor H05","Acceptor: O, donor H05",#FF0000,#FFFFFF,#FF0000,-1,V,Hydrophobic,#FFFFFF,False,True
+167,-26.519,-5.119,-30.425,A,53,SER,CA,#FF7042,#FA9600,6nds.pdb,"Acceptor: O9P, donor H02","Acceptor: O9P, donor H02",#FF0000,#FFFFFF,#FF0000,-1,S,Hydrophilic,#FFFFFF,False,True
+168,-26.519,-5.119,-30.425,A,53,SER,CA,#FF7042,#FA9600,6nds.pdb,"Acceptor: O9P, donor H02","Acceptor: O9P, donor H02",#FF0000,#FFFFFF,#FF0000,-1,S,Hydrophilic,#FFFFFF,False,True
+169,-23.362,-7.237,-30.805,A,54,PRO,CA,#525252,#DC9682,6nds.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,4,P,Hydrophobic,#00008B,False,False
+170,-22.664,-2.036,-31.915,A,56,ALA,CA,#8CFF8C,#C8C8C8,6nds.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,4,A,Hydrophobic,#00008B,False,False
+171,-20.688,-3.274,-28.886,A,57,ILE,CA,#004C00,#0F820F,6nds.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,4,I,Hydrophobic,#00008B,False,False
+172,-30.698,-1.532,-21.886,A,82,ILE,CA,#004C00,#0F820F,6nds.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,I,Hydrophobic,#FFFFFF,False,False
+173,-31.406,0.476,-25.075,A,83,PRO,CA,#525252,#DC9682,6nds.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,P,Hydrophobic,#FFFFFF,False,False
+174,-34.766,-0.973,-26.188,A,84,ASN,CA,#FF7C70,#00DCDC,6nds.pdb,"Acceptor: N7A, donor H02","Acceptor: N7A, donor H02",#FF0000,#FFFFFF,#FF0000,-1,N,Hydrophilic,#FFFFFF,False,True
+175,-34.766,-0.973,-26.188,A,84,ASN,CA,#FF7C70,#00DCDC,6nds.pdb,"Acceptor: N7A, donor H02","Acceptor: N7A, donor H02",#FF0000,#FFFFFF,#FF0000,-1,N,Hydrophilic,#FFFFFF,False,True
+176,-35.379,-6.525,-27.067,A,86,LYS,CA,#4747B8,#145AFF,6nds.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,0,K,Charged interactions,#FF0000,False,False
+177,-32.556,-5.784,-24.624,A,87,GLY,CA,#FFFFFF,#EBEBEB,6nds.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,6,G,Hydrophobic,#00008B,False,False
+178,-25.4,5.72,-30.354,A,113,ASN,CA,#FF7C70,#00DCDC,6nds.pdb,"Acceptor: N4P, donor H03","Acceptor: N4P, donor H03",#FF0000,#FFFFFF,#FF0000,5,N,Hydrophilic,#D02090,False,True
+179,-25.4,5.72,-30.354,A,113,ASN,CA,#FF7C70,#00DCDC,6nds.pdb,"Acceptor: N4P, donor H03","Acceptor: N4P, donor H03",#FF0000,#FFFFFF,#FF0000,5,N,Hydrophilic,#D02090,False,True
+180,-28.895,4.188,-30.451,A,114,MET,CA,#B8A042,#E6E600,6nds.pdb,"Acceptor: O, donor H01","Acceptor: O, donor H01",#FF0000,#FFFFFF,#FF0000,-1,M,Hydrophobic,#FFFFFF,False,True
+181,-28.895,4.188,-30.451,A,114,MET,CA,#B8A042,#E6E600,6nds.pdb,"Acceptor: O, donor H01","Acceptor: O, donor H01",#FF0000,#FFFFFF,#FF0000,-1,M,Hydrophobic,#FFFFFF,False,True
+182,-29.783,4.718,-34.139,A,115,ARG,CA,#00007C,#145AFF,6nds.pdb,"Acceptor: O2A, donor H06","Acceptor: O2A, donor H06",#FF0000,#FFFFFF,#FF0000,-1,R,Charged interactions,#FFFFFF,False,True
+183,-29.783,4.718,-34.139,A,115,ARG,CA,#00007C,#145AFF,6nds.pdb,"Acceptor: O2A, donor H06","Acceptor: O2A, donor H06",#FF0000,#FFFFFF,#FF0000,-1,R,Charged interactions,#FFFFFF,False,True
+184,-18.319,5.149,-25.193,A,240,CYS,CA,#FFFF70,#E6E600,6nds.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,C,Hydrophobic,#FFFFFF,False,False
+185,-17.136,4.055,-28.664,A,241,PRO,CA,#525252,#DC9682,6nds.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,P,Hydrophobic,#FFFFFF,False,False
+186,-19.795,6.203,-30.378,A,242,PHE,CA,#534C42,#3232AA,6nds.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,F,Aromatic,#FFFFFF,False,False
+187,-29.763,-15.649,-33.079,A,28,LEU,CA,#455E45,#0F820F,6p7k.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,L,Hydrophobic,#FFFFFF,False,False
+188,-32.836,-15.298,-35.315,A,29,PRO,CA,#525252,#DC9682,6p7k.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,P,Hydrophobic,#FFFFFF,False,False
+189,-35.739,-13.423,-33.774,A,30,ASN,CA,#FF7C70,#00DCDC,6p7k.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,N,Hydrophilic,#FFFFFF,False,False
+190,-34.167,-13.549,-30.3,A,31,PHE,CA,#534C42,#3232AA,6p7k.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,F,Aromatic,#FFFFFF,False,False
+191,-35.561,-10.115,-29.54,A,32,ARG,CA,#00007C,#145AFF,6p7k.pdb,"Acceptor: O1A, donor HH21","Acceptor: O1A, donor HH21",#FF0000,#FFFFFF,#FF0000,0,R,Charged interactions,#FF0000,False,True
+192,-35.561,-10.115,-29.54,A,32,ARG,CA,#00007C,#145AFF,6p7k.pdb,"Acceptor: O1A, donor HH21","Acceptor: O1A, donor HH21",#FF0000,#FFFFFF,#FF0000,0,R,Charged interactions,#FF0000,False,True
+193,-28.241,-2.022,-25.152,A,106,SER,CA,#FF7042,#FA9600,6p7k.pdb,"Acceptor: OG, donor HN4","Acceptor: OG, donor HN4",#FF0000,#FFFFFF,#FF0000,-1,S,Hydrophilic,#FFFFFF,False,True
+194,-28.241,-2.022,-25.152,A,106,SER,CA,#FF7042,#FA9600,6p7k.pdb,"Acceptor: OG, donor HN4","Acceptor: OG, donor HN4",#FF0000,#FFFFFF,#FF0000,-1,S,Hydrophilic,#FFFFFF,False,True
+195,-24.879,-3.713,-24.57,A,107,ILE,CA,#004C00,#0F820F,6p7k.pdb,"Acceptor: O, donor HN4","Acceptor: O, donor HN4",#FF0000,#FFFFFF,#FF0000,3,I,Hydrophobic,#00008B,False,True
+196,-24.879,-3.713,-24.57,A,107,ILE,CA,#004C00,#0F820F,6p7k.pdb,"Acceptor: O, donor HN4","Acceptor: O, donor HN4",#FF0000,#FFFFFF,#FF0000,3,I,Hydrophobic,#00008B,False,True
+197,-27.924,-5.899,-28.662,A,109,ALA,CA,#8CFF8C,#C8C8C8,6p7k.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+198,-25.123,-3.693,-29.891,A,110,ALA,CA,#8CFF8C,#C8C8C8,6p7k.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,4,A,Hydrophobic,#00008B,False,False
+199,-24.887,-8.778,-31.669,A,112,SER,CA,#FF7042,#FA9600,6p7k.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,S,Hydrophilic,#FFFFFF,False,False
+200,-25.526,-6.073,-34.297,A,113,TYR,CA,#8C704C,#3232AA,6p7k.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,Y,Aromatic,#FFFFFF,False,False
+201,-17.415,1.007,-23.783,A,289,GLY,CA,#FFFFFF,#EBEBEB,6p7k.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,G,Hydrophobic,#FFFFFF,False,False
+202,-21.5,-0.3,-31.573,A,388,GLY,CA,#FFFFFF,#EBEBEB,6p7k.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,G,Hydrophobic,#FFFFFF,False,False
+203,-20.979,2.774,-29.438,A,389,ALA,CA,#8CFF8C,#C8C8C8,6p7k.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+204,-24.477,4.914,-32.825,A,392,ALA,CA,#8CFF8C,#C8C8C8,6p7k.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,5,A,Hydrophobic,#00008B,False,False
+205,-36.58,-8.798,-40.56,A,49,PHE,CA,#534C42,#3232AA,6qwu.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,F,Aromatic,#FFFFFF,False,False
+206,-33.042,-7.952,-24.819,A,75,LYS,CA,#4747B8,#145AFF,6qwu.pdb,"Acceptor: NZ, donor H61A","Acceptor: NZ, donor H61A",#FF0000,#FFFFFF,#FF0000,6,K,Charged interactions,#FF0000,False,True
+207,-33.042,-7.952,-24.819,A,75,LYS,CA,#4747B8,#145AFF,6qwu.pdb,"Acceptor: NZ, donor H61A","Acceptor: NZ, donor H61A",#FF0000,#FFFFFF,#FF0000,6,K,Charged interactions,#FF0000,False,True
+208,-33.447,-8.423,-28.568,A,76,GLY,CA,#FFFFFF,#EBEBEB,6qwu.pdb,"Acceptor: O, donor H61A","Acceptor: O, donor H61A",#FF0000,#FFFFFF,#FF0000,0,G,Hydrophobic,#00008B,False,True
+209,-33.447,-8.423,-28.568,A,76,GLY,CA,#FFFFFF,#EBEBEB,6qwu.pdb,"Acceptor: O, donor H61A","Acceptor: O, donor H61A",#FF0000,#FFFFFF,#FF0000,0,G,Hydrophobic,#00008B,False,True
+210,-30.223,-10.267,-29.302,A,77,GLN,CA,#FF4C4C,#00DCDC,6qwu.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,Q,Hydrophilic,#FFFFFF,False,False
+211,-30.361,-12.853,-32.104,A,78,PRO,CA,#525252,#DC9682,6qwu.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,7,P,Hydrophobic,#00008B,False,False
+212,-24.766,-10.076,-35.773,A,87,SER,CA,#FF7042,#FA9600,6qwu.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,S,Hydrophilic,#FFFFFF,False,False
+213,-27.385,-8.54,-38.076,A,88,MET,CA,#B8A042,#E6E600,6qwu.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,1,M,Hydrophobic,#00008B,False,False
+214,-28.222,-5.047,-39.262,A,89,THR,CA,#B84C00,#FA9600,6qwu.pdb,"Acceptor: O1A, donor HG1","Acceptor: O1A, donor HG1",#FF0000,#FFFFFF,#FF0000,1,T,Hydrophilic,#D02090,False,True
+215,-28.222,-5.047,-39.262,A,89,THR,CA,#B84C00,#FA9600,6qwu.pdb,"Acceptor: O1A, donor HG1","Acceptor: O1A, donor HG1",#FF0000,#FFFFFF,#FF0000,1,T,Hydrophilic,#D02090,False,True
+216,-30.817,-3.324,-41.45,A,90,HIS,CA,#7070FF,#8282D2,6qwu.pdb,"Acceptor: O1A, donor HE2","Acceptor: O1A, donor HE2",#FF0000,#FFFFFF,#FF0000,2,H,Charged interactions,#FF0000,False,True
+217,-30.817,-3.324,-41.45,A,90,HIS,CA,#7070FF,#8282D2,6qwu.pdb,"Acceptor: O1A, donor HE2","Acceptor: O1A, donor HE2",#FF0000,#FFFFFF,#FF0000,2,H,Charged interactions,#FF0000,False,True
+218,-31.411,0.226,-42.618,A,91,THR,CA,#B84C00,#FA9600,6qwu.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,T,Hydrophilic,#FFFFFF,False,False
+219,-24.129,-1.937,-37.81,A,111,ASP,CA,#A00042,#E60A0A,6qwu.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,D,Charged interactions,#FFFFFF,False,False
+220,-25.134,-0.152,-41.04,A,112,ALA,CA,#8CFF8C,#C8C8C8,6qwu.pdb,"Acceptor: O2A, donor H","Acceptor: O2A, donor H",#FF0000,#FFFFFF,#FF0000,-1,A,Hydrophobic,#FFFFFF,False,True
+221,-25.134,-0.152,-41.04,A,112,ALA,CA,#8CFF8C,#C8C8C8,6qwu.pdb,"Acceptor: O2A, donor H","Acceptor: O2A, donor H",#FF0000,#FFFFFF,#FF0000,-1,A,Hydrophobic,#FFFFFF,False,True
+222,-21.406,2.959,-30.676,A,152,LYS,CA,#4747B8,#145AFF,6qwu.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,K,Charged interactions,#FFFFFF,False,False
+223,-24.278,0.682,-31.732,A,153,GLU,CA,#660000,#E60A0A,6qwu.pdb,"Acceptor: OE2, donor HO1","Acceptor: OE2, donor HO1",#FF0000,#FFFFFF,#FF0000,-1,E,Charged interactions,#FFFFFF,False,True
+224,-24.278,0.682,-31.732,A,153,GLU,CA,#660000,#E60A0A,6qwu.pdb,"Acceptor: OE2, donor HO1","Acceptor: OE2, donor HO1",#FF0000,#FFFFFF,#FF0000,-1,E,Charged interactions,#FFFFFF,False,True
+225,-21.75,-1.919,-32.949,A,154,THR,CA,#B84C00,#FA9600,6qwu.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,T,Hydrophilic,#FFFFFF,False,False
+226,-20.038,-1.667,-29.563,A,155,THR,CA,#B84C00,#FA9600,6qwu.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,T,Hydrophilic,#FFFFFF,False,False
+227,-23.279,-2.541,-27.764,A,156,TYR,CA,#8C704C,#3232AA,6qwu.pdb,"Acceptor: N6A, donor HH","Acceptor: N6A, donor HH",#FF0000,#FFFFFF,#FF0000,4,Y,Aromatic,#008000,False,True
+228,-23.279,-2.541,-27.764,A,156,TYR,CA,#8C704C,#3232AA,6qwu.pdb,"Acceptor: N6A, donor HH","Acceptor: N6A, donor HH",#FF0000,#FFFFFF,#FF0000,4,Y,Aromatic,#008000,False,True
+229,-23.973,-5.449,-30.111,A,157,LYS,CA,#4747B8,#145AFF,6qwu.pdb,"Acceptor: O1A, donor HZ3","Acceptor: O1A, donor HZ3",#FF0000,#FFFFFF,#FF0000,4,K,Charged interactions,#FF0000,False,True
+230,-23.973,-5.449,-30.111,A,157,LYS,CA,#4747B8,#145AFF,6qwu.pdb,"Acceptor: O1A, donor HZ3","Acceptor: O1A, donor HZ3",#FF0000,#FFFFFF,#FF0000,4,K,Charged interactions,#FF0000,False,True
+231,-20.518,-6.924,-29.478,A,158,ALA,CA,#8CFF8C,#C8C8C8,6qwu.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+232,-24.261,-7.478,-24.873,A,160,PHE,CA,#534C42,#3232AA,6qwu.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,3,F,Aromatic,#008000,False,False
+233,-23.822,-11.224,-25.589,A,161,PRO,CA,#525252,#DC9682,6qwu.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,P,Hydrophobic,#FFFFFF,False,False
+234,-26.862,-2.406,-20.839,A,166,TRP,CA,#4F4600,#B45AB4,6qwu.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,W,Aromatic,#FFFFFF,False,False
+235,-24.167,-0.119,-22.215,A,167,LEU,CA,#455E45,#0F820F,6qwu.pdb,"Acceptor: O, donor HN4","Acceptor: O, donor HN4",#FF0000,#FFFFFF,#FF0000,-1,L,Hydrophobic,#FFFFFF,False,True
+236,-24.167,-0.119,-22.215,A,167,LEU,CA,#455E45,#0F820F,6qwu.pdb,"Acceptor: O, donor HN4","Acceptor: O, donor HN4",#FF0000,#FFFFFF,#FF0000,-1,L,Hydrophobic,#FFFFFF,False,True
+237,-25.119,3.505,-22.755,A,168,GLY,CA,#FFFFFF,#EBEBEB,6qwu.pdb,"Acceptor: O, donor HN4","Acceptor: O, donor HN4",#FF0000,#FFFFFF,#FF0000,-1,G,Hydrophobic,#FFFFFF,False,True
+238,-25.119,3.505,-22.755,A,168,GLY,CA,#FFFFFF,#EBEBEB,6qwu.pdb,"Acceptor: O, donor HN4","Acceptor: O, donor HN4",#FF0000,#FFFFFF,#FF0000,-1,G,Hydrophobic,#FFFFFF,False,True
+239,-23.84,5.889,-25.387,A,169,PHE,CA,#534C42,#3232AA,6qwu.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,F,Aromatic,#FFFFFF,False,False
+240,-22.056,7.756,-22.582,A,170,GLU,CA,#660000,#E60A0A,6qwu.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,E,Charged interactions,#FFFFFF,False,False
+241,-20.423,4.516,-21.352,A,171,ASP,CA,#A00042,#E60A0A,6qwu.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,D,Charged interactions,#FFFFFF,False,False
+242,-17.878,4.083,-24.154,A,172,ALA,CA,#8CFF8C,#C8C8C8,6qwu.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+243,-36.143,-5.42,-33.446,A,496,THR,CA,#B84C00,#FA9600,6zzk.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,T,Hydrophilic,#FFFFFF,False,False
+244,-36.33,-6.077,-29.627,A,497,TYR,CA,#8C704C,#3232AA,6zzk.pdb,"Acceptor: O2B, donor H01","Acceptor: O2B, donor H01",#FF0000,#FFFFFF,#FF0000,-1,Y,Aromatic,#FFFFFF,False,True
+245,-36.33,-6.077,-29.627,A,497,TYR,CA,#8C704C,#3232AA,6zzk.pdb,"Acceptor: O2B, donor H01","Acceptor: O2B, donor H01",#FF0000,#FFFFFF,#FF0000,-1,Y,Aromatic,#FFFFFF,False,True
+246,-35.872,-2.349,-28.78,A,498,LEU,CA,#455E45,#0F820F,6zzk.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,L,Hydrophobic,#FFFFFF,False,False
+247,-32.168,6.504,-26.975,A,536,ILE,CA,#004C00,#0F820F,6zzk.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,I,Hydrophobic,#FFFFFF,False,False
+248,-28.363,6.041,-27.135,A,537,ALA,CA,#8CFF8C,#C8C8C8,6zzk.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+249,-27.267,5.942,-30.796,A,538,VAL,CA,#FF8CFF,#0F820F,6zzk.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,V,Hydrophobic,#FFFFFF,False,False
+250,-23.793,4.81,-31.857,A,539,ASP,CA,#A00042,#E60A0A,6zzk.pdb,"Acceptor: N8P, donor H01","Acceptor: N8P, donor H01",#FF0000,#FFFFFF,#FF0000,5,D,Charged interactions,#FF0000,False,True
+251,-23.793,4.81,-31.857,A,539,ASP,CA,#A00042,#E60A0A,6zzk.pdb,"Acceptor: N8P, donor H01","Acceptor: N8P, donor H01",#FF0000,#FFFFFF,#FF0000,5,D,Charged interactions,#FF0000,False,True
+252,-36.044,5.015,-33.337,A,564,ILE,CA,#004C00,#0F820F,6zzk.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,I,Hydrophobic,#FFFFFF,False,False
+253,-30.812,7.015,-35.54,A,568,ALA,CA,#8CFF8C,#C8C8C8,6zzk.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+254,-29.026,2.245,-24.067,A,589,THR,CA,#B84C00,#FA9600,6zzk.pdb,"Acceptor: OG1, donor H02","Acceptor: OG1, donor H02",#FF0000,#FFFFFF,#FF0000,-1,T,Hydrophilic,#FFFFFF,False,True
+255,-29.026,2.245,-24.067,A,589,THR,CA,#B84C00,#FA9600,6zzk.pdb,"Acceptor: OG1, donor H02","Acceptor: OG1, donor H02",#FF0000,#FFFFFF,#FF0000,-1,T,Hydrophilic,#FFFFFF,False,True
+256,-28.677,-0.894,-26.225,A,590,ASN,CA,#FF7C70,#00DCDC,6zzk.pdb,"Acceptor: O6A, donor H02","Acceptor: O6A, donor H02",#FF0000,#FFFFFF,#FF0000,-1,N,Hydrophilic,#FFFFFF,False,True
+257,-28.677,-0.894,-26.225,A,590,ASN,CA,#FF7C70,#00DCDC,6zzk.pdb,"Acceptor: O6A, donor H02","Acceptor: O6A, donor H02",#FF0000,#FFFFFF,#FF0000,-1,N,Hydrophilic,#FFFFFF,False,True
+258,-25.393,-2.248,-24.815,A,591,ILE,CA,#004C00,#0F820F,6zzk.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,3,I,Hydrophobic,#00008B,False,False
+259,-26.192,-5.67,-26.373,A,592,GLY,CA,#FFFFFF,#EBEBEB,6zzk.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,G,Hydrophobic,#FFFFFF,False,False
+260,-25.626,-4.171,-29.881,A,593,SER,CA,#FF7042,#FA9600,6zzk.pdb,"Acceptor: O2A, donor H02","Acceptor: O2A, donor H02",#FF0000,#FFFFFF,#FF0000,4,S,Hydrophilic,#D02090,False,True
+261,-25.626,-4.171,-29.881,A,593,SER,CA,#FF7042,#FA9600,6zzk.pdb,"Acceptor: O2A, donor H02","Acceptor: O2A, donor H02",#FF0000,#FFFFFF,#FF0000,4,S,Hydrophilic,#D02090,False,True
+262,-30.52,-3.795,-22.665,A,613,THR,CA,#B84C00,#FA9600,6zzk.pdb,"Acceptor: OG1, donor H06","Acceptor: OG1, donor H06",#FF0000,#FFFFFF,#FF0000,-1,T,Hydrophilic,#FFFFFF,False,True
+263,-30.52,-3.795,-22.665,A,613,THR,CA,#B84C00,#FA9600,6zzk.pdb,"Acceptor: OG1, donor H06","Acceptor: OG1, donor H06",#FF0000,#FFFFFF,#FF0000,-1,T,Hydrophilic,#FFFFFF,False,True
+264,-27.857,-6.503,-22.601,A,614,GLY,CA,#FFFFFF,#EBEBEB,6zzk.pdb,"Acceptor: O, donor H05","Acceptor: O, donor H05",#FF0000,#FFFFFF,#FF0000,-1,G,Hydrophobic,#FFFFFF,False,True
+265,-27.857,-6.503,-22.601,A,614,GLY,CA,#FFFFFF,#EBEBEB,6zzk.pdb,"Acceptor: O, donor H05","Acceptor: O, donor H05",#FF0000,#FFFFFF,#FF0000,-1,G,Hydrophobic,#FFFFFF,False,True
+266,-27.299,-9.092,-25.313,A,615,ALA,CA,#8CFF8C,#C8C8C8,6zzk.pdb,"Acceptor: O, donor H05","Acceptor: O, donor H05",#FF0000,#FFFFFF,#FF0000,-1,A,Hydrophobic,#FFFFFF,False,True
+267,-27.299,-9.092,-25.313,A,615,ALA,CA,#8CFF8C,#C8C8C8,6zzk.pdb,"Acceptor: O, donor H05","Acceptor: O, donor H05",#FF0000,#FFFFFF,#FF0000,-1,A,Hydrophobic,#FFFFFF,False,True
+268,-30.241,-11.546,-25.463,A,616,ILE,CA,#004C00,#0F820F,6zzk.pdb,"Acceptor: N1A, donor H01","Acceptor: N1A, donor H01",#FF0000,#FFFFFF,#FF0000,-1,I,Hydrophobic,#FFFFFF,False,True
+269,-30.241,-11.546,-25.463,A,616,ILE,CA,#004C00,#0F820F,6zzk.pdb,"Acceptor: N1A, donor H01","Acceptor: N1A, donor H01",#FF0000,#FFFFFF,#FF0000,-1,I,Hydrophobic,#FFFFFF,False,True
+270,-36.523,-10.668,-39.96,A,49,PHE,CA,#534C42,#3232AA,7b4r.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,F,Aromatic,#FFFFFF,False,False
+271,-33.138,-6.03,-24.759,A,75,LYS,CA,#4747B8,#145AFF,7b4r.pdb,"Acceptor: NZ, donor H61A","Acceptor: NZ, donor H61A",#FF0000,#FFFFFF,#FF0000,6,K,Charged interactions,#FF0000,False,True
+272,-33.138,-6.03,-24.759,A,75,LYS,CA,#4747B8,#145AFF,7b4r.pdb,"Acceptor: NZ, donor H61A","Acceptor: NZ, donor H61A",#FF0000,#FFFFFF,#FF0000,6,K,Charged interactions,#FF0000,False,True
+273,-33.905,-7.316,-28.326,A,76,GLY,CA,#FFFFFF,#EBEBEB,7b4r.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,0,G,Hydrophobic,#00008B,False,False
+274,-30.511,-9.035,-28.649,A,77,GLN,CA,#FF4C4C,#00DCDC,7b4r.pdb,"Acceptor: O, donor H61A","Acceptor: O, donor H61A",#FF0000,#FFFFFF,#FF0000,0,Q,Hydrophilic,#D02090,False,True
+275,-30.511,-9.035,-28.649,A,77,GLN,CA,#FF4C4C,#00DCDC,7b4r.pdb,"Acceptor: O, donor H61A","Acceptor: O, donor H61A",#FF0000,#FFFFFF,#FF0000,0,Q,Hydrophilic,#D02090,False,True
+276,-30.298,-12.214,-30.765,A,78,PRO,CA,#525252,#DC9682,7b4r.pdb,"Acceptor: O, donor HO2A","Acceptor: O, donor HO2A",#FF0000,#FFFFFF,#FF0000,7,P,Hydrophobic,#00008B,False,True
+277,-30.298,-12.214,-30.765,A,78,PRO,CA,#525252,#DC9682,7b4r.pdb,"Acceptor: O, donor HO2A","Acceptor: O, donor HO2A",#FF0000,#FFFFFF,#FF0000,7,P,Hydrophobic,#00008B,False,True
+278,-24.544,-9.95,-35.389,A,87,SER,CA,#FF7042,#FA9600,7b4r.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,S,Hydrophilic,#FFFFFF,False,False
+279,-27.323,-9.128,-37.852,A,88,MET,CA,#B8A042,#E6E600,7b4r.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,1,M,Hydrophobic,#00008B,False,False
+280,-28.41,-5.996,-39.712,A,89,THR,CA,#B84C00,#FA9600,7b4r.pdb,"Acceptor: O1A, donor HG1","Acceptor: O1A, donor HG1",#FF0000,#FFFFFF,#FF0000,1,T,Hydrophilic,#D02090,False,True
+281,-28.41,-5.996,-39.712,A,89,THR,CA,#B84C00,#FA9600,7b4r.pdb,"Acceptor: O1A, donor HG1","Acceptor: O1A, donor HG1",#FF0000,#FFFFFF,#FF0000,1,T,Hydrophilic,#D02090,False,True
+282,-31.004,-4.948,-42.247,A,90,HIS,CA,#7070FF,#8282D2,7b4r.pdb,"Acceptor: O1A, donor HE2","Acceptor: O1A, donor HE2",#FF0000,#FFFFFF,#FF0000,2,H,Charged interactions,#FF0000,False,True
+283,-31.004,-4.948,-42.247,A,90,HIS,CA,#7070FF,#8282D2,7b4r.pdb,"Acceptor: O1A, donor HE2","Acceptor: O1A, donor HE2",#FF0000,#FFFFFF,#FF0000,2,H,Charged interactions,#FF0000,False,True
+284,-24.483,-2.407,-39.242,A,111,ASP,CA,#A00042,#E60A0A,7b4r.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,D,Charged interactions,#FFFFFF,False,False
+285,-25.67,-1.347,-42.651,A,112,ALA,CA,#8CFF8C,#C8C8C8,7b4r.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+286,-23.942,-4.43,-31.017,A,157,LYS,CA,#4747B8,#145AFF,7b4r.pdb,"Acceptor: O1A, donor HZ2","Acceptor: O1A, donor HZ2",#FF0000,#FFFFFF,#FF0000,4,K,Charged interactions,#FF0000,False,True
+287,-23.942,-4.43,-31.017,A,157,LYS,CA,#4747B8,#145AFF,7b4r.pdb,"Acceptor: O1A, donor HZ2","Acceptor: O1A, donor HZ2",#FF0000,#FFFFFF,#FF0000,4,K,Charged interactions,#FF0000,False,True
+288,-20.343,-5.454,-30.173,A,158,ALA,CA,#8CFF8C,#C8C8C8,7b4r.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+289,-24.011,-5.424,-25.442,A,160,PHE,CA,#534C42,#3232AA,7b4r.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,3,F,Aromatic,#008000,False,False
+290,-23.072,-9.164,-25.648,A,161,PRO,CA,#525252,#DC9682,7b4r.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,3,P,Hydrophobic,#00008B,False,False
+291,-36.32,-8.871,-40.208,A,67,PHE,CA,#534C42,#3232AA,7bcz.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,F,Aromatic,#FFFFFF,False,False
+292,-33.692,-9.785,-24.672,A,93,ASP,CA,#A00042,#E60A0A,7bcz.pdb,"Acceptor: OD1, donor H06","Acceptor: OD1, donor H06",#FF0000,#FFFFFF,#FF0000,-1,D,Charged interactions,#FFFFFF,False,True
+293,-33.692,-9.785,-24.672,A,93,ASP,CA,#A00042,#E60A0A,7bcz.pdb,"Acceptor: OD1, donor H06","Acceptor: OD1, donor H06",#FF0000,#FFFFFF,#FF0000,-1,D,Charged interactions,#FFFFFF,False,True
+294,-34.348,-9.044,-28.386,A,94,ARG,CA,#00007C,#145AFF,7bcz.pdb,"Acceptor: N7A, donor H05","Acceptor: N7A, donor H05",#FF0000,#FFFFFF,#FF0000,0,R,Charged interactions,#FF0000,False,True
+295,-34.348,-9.044,-28.386,A,94,ARG,CA,#00007C,#145AFF,7bcz.pdb,"Acceptor: N7A, donor H05","Acceptor: N7A, donor H05",#FF0000,#FFFFFF,#FF0000,0,R,Charged interactions,#FF0000,False,True
+296,-30.867,-10.245,-29.343,A,95,ALA,CA,#8CFF8C,#C8C8C8,7bcz.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+297,-30.409,-13.055,-31.876,A,96,PRO,CA,#525252,#DC9682,7bcz.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,7,P,Hydrophobic,#00008B,False,False
+298,-24.458,-9.768,-35.901,A,105,SER,CA,#FF7042,#FA9600,7bcz.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,S,Hydrophilic,#FFFFFF,False,False
+299,-27.373,-8.436,-37.952,A,106,ILE,CA,#004C00,#0F820F,7bcz.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,1,I,Hydrophobic,#00008B,False,False
+300,-28.036,-4.905,-39.171,A,107,THR,CA,#B84C00,#FA9600,7bcz.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,1,T,Hydrophilic,#D02090,False,False
+301,-30.637,-3.449,-41.516,A,108,HIS,CA,#7070FF,#8282D2,7bcz.pdb,"Acceptor: O1A, donor H01","Acceptor: O1A, donor H01",#FF0000,#FFFFFF,#FF0000,2,H,Charged interactions,#FF0000,False,True
+302,-30.637,-3.449,-41.516,A,108,HIS,CA,#7070FF,#8282D2,7bcz.pdb,"Acceptor: O1A, donor H01","Acceptor: O1A, donor H01",#FF0000,#FFFFFF,#FF0000,2,H,Charged interactions,#FF0000,False,True
+303,-31.502,0.137,-42.352,A,109,GLY,CA,#FFFFFF,#EBEBEB,7bcz.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,G,Hydrophobic,#FFFFFF,False,False
+304,-24.254,-1.59,-37.75,A,129,ASP,CA,#A00042,#E60A0A,7bcz.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,D,Charged interactions,#FFFFFF,False,False
+305,-25.234,0.572,-40.711,A,130,VAL,CA,#FF8CFF,#0F820F,7bcz.pdb,"Acceptor: O2A, donor H01","Acceptor: O2A, donor H01",#FF0000,#FFFFFF,#FF0000,-1,V,Hydrophobic,#FFFFFF,False,True
+306,-25.234,0.572,-40.711,A,130,VAL,CA,#FF8CFF,#0F820F,7bcz.pdb,"Acceptor: O2A, donor H01","Acceptor: O2A, donor H01",#FF0000,#FFFFFF,#FF0000,-1,V,Hydrophobic,#FFFFFF,False,True
+307,-21.114,2.859,-30.542,A,174,LYS,CA,#4747B8,#145AFF,7bcz.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,K,Charged interactions,#FFFFFF,False,False
+308,-24.018,0.686,-31.691,A,175,GLU,CA,#660000,#E60A0A,7bcz.pdb,"Acceptor: OE2, donor H03","Acceptor: OE2, donor H03",#FF0000,#FFFFFF,#FF0000,-1,E,Charged interactions,#FFFFFF,False,True
+309,-24.018,0.686,-31.691,A,175,GLU,CA,#660000,#E60A0A,7bcz.pdb,"Acceptor: OE2, donor H03","Acceptor: OE2, donor H03",#FF0000,#FFFFFF,#FF0000,-1,E,Charged interactions,#FFFFFF,False,True
+310,-19.545,-1.8,-29.908,A,177,LEU,CA,#455E45,#0F820F,7bcz.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,L,Hydrophobic,#FFFFFF,False,False
+311,-22.764,-2.49,-27.997,A,178,PHE,CA,#534C42,#3232AA,7bcz.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,4,F,Aromatic,#008000,False,False
+312,-23.729,-5.413,-30.266,A,179,LYS,CA,#4747B8,#145AFF,7bcz.pdb,"Acceptor: O2A, donor H03","Acceptor: O2A, donor H03",#FF0000,#FFFFFF,#FF0000,4,K,Charged interactions,#FF0000,False,True
+313,-23.729,-5.413,-30.266,A,179,LYS,CA,#4747B8,#145AFF,7bcz.pdb,"Acceptor: O2A, donor H03","Acceptor: O2A, donor H03",#FF0000,#FFFFFF,#FF0000,4,K,Charged interactions,#FF0000,False,True
+314,-20.24,-6.915,-29.926,A,180,ALA,CA,#8CFF8C,#C8C8C8,7bcz.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+315,-23.488,-7.395,-25.019,A,182,TYR,CA,#8C704C,#3232AA,7bcz.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,3,Y,Aromatic,#008000,False,False
+316,-23.485,-11.209,-25.592,A,183,PRO,CA,#525252,#DC9682,7bcz.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,P,Hydrophobic,#FFFFFF,False,False
+317,-24.616,0.369,-21.711,A,189,PHE,CA,#534C42,#3232AA,7bcz.pdb,"Acceptor: O, donor H02","Acceptor: O, donor H02",#FF0000,#FFFFFF,#FF0000,-1,F,Aromatic,#FFFFFF,False,True
+318,-24.616,0.369,-21.711,A,189,PHE,CA,#534C42,#3232AA,7bcz.pdb,"Acceptor: O, donor H02","Acceptor: O, donor H02",#FF0000,#FFFFFF,#FF0000,-1,F,Aromatic,#FFFFFF,False,True
+319,-25.534,3.394,-23.779,A,190,TYR,CA,#8C704C,#3232AA,7bcz.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,Y,Aromatic,#FFFFFF,False,False
+320,-24.099,6.31,-25.744,A,191,PHE,CA,#534C42,#3232AA,7bcz.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,F,Aromatic,#FFFFFF,False,False
+321,-22.558,7.947,-22.665,A,192,GLU,CA,#660000,#E60A0A,7bcz.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,E,Charged interactions,#FFFFFF,False,False
+322,-20.668,4.804,-21.592,A,193,HIS,CA,#7070FF,#8282D2,7bcz.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,H,Charged interactions,#FFFFFF,False,False
+323,-18.167,4.809,-24.492,A,194,ALA,CA,#8CFF8C,#C8C8C8,7bcz.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+324,-36.833,-8.542,-40.522,A,52,PHE,CA,#534C42,#3232AA,7ed0.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,F,Aromatic,#FFFFFF,False,False
+325,-32.975,-7.961,-24.93,A,78,LYS,CA,#4747B8,#145AFF,7ed0.pdb,"Acceptor: NZ, donor H06","Acceptor: NZ, donor H06",#FF0000,#FFFFFF,#FF0000,6,K,Charged interactions,#FF0000,False,True
+326,-32.975,-7.961,-24.93,A,78,LYS,CA,#4747B8,#145AFF,7ed0.pdb,"Acceptor: NZ, donor H06","Acceptor: NZ, donor H06",#FF0000,#FFFFFF,#FF0000,6,K,Charged interactions,#FF0000,False,True
+327,-33.644,-8.81,-28.629,A,79,GLY,CA,#FFFFFF,#EBEBEB,7ed0.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,0,G,Hydrophobic,#00008B,False,False
+328,-30.242,-10.482,-29.356,A,80,GLU,CA,#660000,#E60A0A,7ed0.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,E,Charged interactions,#FFFFFF,False,False
+329,-30.413,-13.092,-32.157,A,81,PRO,CA,#525252,#DC9682,7ed0.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,7,P,Hydrophobic,#00008B,False,False
+330,-24.529,-9.546,-35.938,A,90,SER,CA,#FF7042,#FA9600,7ed0.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,S,Hydrophilic,#FFFFFF,False,False
+331,-27.409,-8.107,-38.029,A,91,LEU,CA,#455E45,#0F820F,7ed0.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,1,L,Hydrophobic,#00008B,False,False
+332,-28.292,-4.584,-39.261,A,92,THR,CA,#B84C00,#FA9600,7ed0.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,1,T,Hydrophilic,#D02090,False,False
+333,-30.66,-2.697,-41.567,A,93,HIS,CA,#7070FF,#8282D2,7ed0.pdb,"Acceptor: O1A, donor H01","Acceptor: O1A, donor H01",#FF0000,#FFFFFF,#FF0000,2,H,Charged interactions,#FF0000,False,True
+334,-30.66,-2.697,-41.567,A,93,HIS,CA,#7070FF,#8282D2,7ed0.pdb,"Acceptor: O1A, donor H01","Acceptor: O1A, donor H01",#FF0000,#FFFFFF,#FF0000,2,H,Charged interactions,#FF0000,False,True
+335,-24.103,-1.382,-37.89,A,114,ASP,CA,#A00042,#E60A0A,7ed0.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,D,Charged interactions,#FFFFFF,False,False
+336,-25.271,0.292,-41.114,A,115,ALA,CA,#8CFF8C,#C8C8C8,7ed0.pdb,"Acceptor: O2A, donor H01","Acceptor: O2A, donor H01",#FF0000,#FFFFFF,#FF0000,-1,A,Hydrophobic,#FFFFFF,False,True
+337,-25.271,0.292,-41.114,A,115,ALA,CA,#8CFF8C,#C8C8C8,7ed0.pdb,"Acceptor: O2A, donor H01","Acceptor: O2A, donor H01",#FF0000,#FFFFFF,#FF0000,-1,A,Hydrophobic,#FFFFFF,False,True
+338,-21.499,3.032,-30.742,A,156,LYS,CA,#4747B8,#145AFF,7ed0.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,K,Charged interactions,#FFFFFF,False,False
+339,-24.265,0.673,-32.104,A,157,GLU,CA,#660000,#E60A0A,7ed0.pdb,"Acceptor: OE2, donor H02","Acceptor: OE2, donor H02",#FF0000,#FFFFFF,#FF0000,-1,E,Charged interactions,#FFFFFF,False,True
+340,-24.265,0.673,-32.104,A,157,GLU,CA,#660000,#E60A0A,7ed0.pdb,"Acceptor: OE2, donor H02","Acceptor: OE2, donor H02",#FF0000,#FFFFFF,#FF0000,-1,E,Charged interactions,#FFFFFF,False,True
+341,-20.058,-1.643,-29.906,A,159,THR,CA,#B84C00,#FA9600,7ed0.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,T,Hydrophilic,#FFFFFF,False,False
+342,-23.352,-2.48,-28.015,A,160,TYR,CA,#8C704C,#3232AA,7ed0.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,4,Y,Aromatic,#008000,False,False
+343,-24.003,-5.478,-30.324,A,161,LYS,CA,#4747B8,#145AFF,7ed0.pdb,"Acceptor: O2A, donor H03","Acceptor: O2A, donor H03",#FF0000,#FFFFFF,#FF0000,4,K,Charged interactions,#FF0000,False,True
+344,-24.003,-5.478,-30.324,A,161,LYS,CA,#4747B8,#145AFF,7ed0.pdb,"Acceptor: O2A, donor H03","Acceptor: O2A, donor H03",#FF0000,#FFFFFF,#FF0000,4,K,Charged interactions,#FF0000,False,True
+345,-20.401,-6.93,-29.833,A,162,ALA,CA,#8CFF8C,#C8C8C8,7ed0.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+346,-24.2,-7.489,-25.118,A,164,PHE,CA,#534C42,#3232AA,7ed0.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,3,F,Aromatic,#008000,False,False
+347,-23.95,-11.275,-25.95,A,165,PRO,CA,#525252,#DC9682,7ed0.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,P,Hydrophobic,#FFFFFF,False,False
+348,-23.805,-0.351,-22.275,A,171,LEU,CA,#455E45,#0F820F,7ed0.pdb,"Acceptor: O, donor H01","Acceptor: O, donor H01",#FF0000,#FFFFFF,#FF0000,-1,L,Hydrophobic,#FFFFFF,False,True
+349,-23.805,-0.351,-22.275,A,171,LEU,CA,#455E45,#0F820F,7ed0.pdb,"Acceptor: O, donor H01","Acceptor: O, donor H01",#FF0000,#FFFFFF,#FF0000,-1,L,Hydrophobic,#FFFFFF,False,True
+350,-24.757,3.364,-22.492,A,172,GLY,CA,#FFFFFF,#EBEBEB,7ed0.pdb,"Acceptor: O, donor H01","Acceptor: O, donor H01",#FF0000,#FFFFFF,#FF0000,-1,G,Hydrophobic,#FFFFFF,False,True
+351,-24.757,3.364,-22.492,A,172,GLY,CA,#FFFFFF,#EBEBEB,7ed0.pdb,"Acceptor: O, donor H01","Acceptor: O, donor H01",#FF0000,#FFFFFF,#FF0000,-1,G,Hydrophobic,#FFFFFF,False,True
+352,-23.517,5.977,-25.032,A,173,PHE,CA,#534C42,#3232AA,7ed0.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,F,Aromatic,#FFFFFF,False,False
+353,-21.398,7.453,-22.148,A,174,GLU,CA,#660000,#E60A0A,7ed0.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,E,Charged interactions,#FFFFFF,False,False
+354,-19.934,3.954,-21.15,A,175,ASP,CA,#A00042,#E60A0A,7ed0.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,D,Charged interactions,#FFFFFF,False,False
+355,-17.567,3.635,-24.222,A,176,ALA,CA,#8CFF8C,#C8C8C8,7ed0.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+356,-39.661,-10.833,-44.359,A,50,ASN,CA,#FF7C70,#00DCDC,7n8e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,N,Hydrophilic,#FFFFFF,False,False
+357,-33.931,-10.794,-25.201,A,76,GLY,CA,#FFFFFF,#EBEBEB,7n8e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,G,Hydrophobic,#FFFFFF,False,False
+358,-35.452,-8.042,-23.103,A,77,ASP,CA,#A00042,#E60A0A,7n8e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,D,Charged interactions,#FFFFFF,False,False
+359,-33.814,-5.285,-25.175,A,78,LYS,CA,#4747B8,#145AFF,7n8e.pdb,"Acceptor: O, donor H04","Acceptor: O, donor H04",#FF0000,#FFFFFF,#FF0000,6,K,Charged interactions,#FF0000,False,True
+360,-33.814,-5.285,-25.175,A,78,LYS,CA,#4747B8,#145AFF,7n8e.pdb,"Acceptor: O, donor H04","Acceptor: O, donor H04",#FF0000,#FFFFFF,#FF0000,6,K,Charged interactions,#FF0000,False,True
+361,-34.362,-7.117,-28.468,A,79,GLY,CA,#FFFFFF,#EBEBEB,7n8e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,0,G,Hydrophobic,#00008B,False,False
+362,-22.068,-15.512,-30.173,A,88,VAL,CA,#FF8CFF,#0F820F,7n8e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,V,Hydrophobic,#FFFFFF,False,False
+363,-23.108,-13.549,-33.224,A,89,GLY,CA,#FFFFFF,#EBEBEB,7n8e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,G,Hydrophobic,#FFFFFF,False,False
+364,-24.707,-10.513,-34.802,A,90,SER,CA,#FF7042,#FA9600,7n8e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,S,Hydrophilic,#FFFFFF,False,False
+365,-27.531,-9.869,-37.276,A,91,LEU,CA,#455E45,#0F820F,7n8e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,1,L,Hydrophobic,#00008B,False,False
+366,-28.304,-6.947,-39.548,A,92,THR,CA,#B84C00,#FA9600,7n8e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,1,T,Hydrophilic,#D02090,False,False
+367,-21.102,-6.91,-34.055,A,112,GLY,CA,#FFFFFF,#EBEBEB,7n8e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,G,Hydrophobic,#FFFFFF,False,False
+368,-19.696,-1.144,-31.969,A,159,THR,CA,#B84C00,#FA9600,7n8e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,T,Hydrophilic,#FFFFFF,False,False
+369,-22.909,-1.166,-29.936,A,160,TYR,CA,#8C704C,#3232AA,7n8e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,4,Y,Aromatic,#008000,False,False
+370,-20.487,-6.071,-30.116,A,162,ALA,CA,#8CFF8C,#C8C8C8,7n8e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+371,-20.599,-4.135,-26.831,A,163,TRP,CA,#4F4600,#B45AB4,7n8e.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,W,Aromatic,#FFFFFF,False,False
+372,-31.07,0.091,-18.856,A,79,PHE,CA,#534C42,#3232AA,7s3u.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,F,Aromatic,#FFFFFF,False,False
+373,-30.72,2.439,-21.906,A,80,CYS,CA,#FFFF70,#E6E600,7s3u.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,C,Hydrophobic,#FFFFFF,False,False
+374,-32.518,5.681,-22.981,A,81,ASN,CA,#FF7C70,#00DCDC,7s3u.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,N,Hydrophilic,#FFFFFF,False,False
+375,-30.514,6.39,-26.189,A,82,ASP,CA,#A00042,#E60A0A,7s3u.pdb,"Acceptor: OD1, donor H02","Acceptor: OD1, donor H02",#FF0000,#FFFFFF,#FF0000,-1,D,Charged interactions,#FFFFFF,False,True
+376,-30.514,6.39,-26.189,A,82,ASP,CA,#A00042,#E60A0A,7s3u.pdb,"Acceptor: OD1, donor H02","Acceptor: OD1, donor H02",#FF0000,#FFFFFF,#FF0000,-1,D,Charged interactions,#FFFFFF,False,True
+377,-30.419,3.859,-29.059,A,83,LYS,CA,#4747B8,#145AFF,7s3u.pdb,"Acceptor: O2A, donor H04","Acceptor: O2A, donor H04",#FF0000,#FFFFFF,#FF0000,-1,K,Charged interactions,#FFFFFF,False,True
+378,-30.419,3.859,-29.059,A,83,LYS,CA,#4747B8,#145AFF,7s3u.pdb,"Acceptor: O2A, donor H04","Acceptor: O2A, donor H04",#FF0000,#FFFFFF,#FF0000,-1,K,Charged interactions,#FFFFFF,False,True
+379,-27.488,5.506,-31.001,A,84,TYR,CA,#8C704C,#3232AA,7s3u.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,Y,Aromatic,#FFFFFF,False,False
+380,-25.374,7.15,-28.292,A,85,PRO,CA,#525252,#DC9682,7s3u.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,P,Hydrophobic,#FFFFFF,False,False
+381,-32.356,-1.773,-24.757,A,112,LEU,CA,#455E45,#0F820F,7s3u.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,L,Hydrophobic,#FFFFFF,False,False
+382,-34.071,1.611,-24.979,A,113,PRO,CA,#525252,#DC9682,7s3u.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,P,Hydrophobic,#FFFFFF,False,False
+383,-33.851,-6.003,-27.78,A,130,THR,CA,#B84C00,#FA9600,7s3u.pdb,"Acceptor: OG1, donor H04","Acceptor: OG1, donor H04",#FF0000,#FFFFFF,#FF0000,0,T,Hydrophilic,#D02090,False,True
+384,-33.851,-6.003,-27.78,A,130,THR,CA,#B84C00,#FA9600,7s3u.pdb,"Acceptor: OG1, donor H04","Acceptor: OG1, donor H04",#FF0000,#FFFFFF,#FF0000,0,T,Hydrophilic,#D02090,False,True
+385,-37.635,-6.468,-28.251,A,131,LYS,CA,#4747B8,#145AFF,7s3u.pdb,"Acceptor: O3B, donor H02","Acceptor: O3B, donor H02",#FF0000,#FFFFFF,#FF0000,-1,K,Charged interactions,#FFFFFF,False,True
+386,-37.635,-6.468,-28.251,A,131,LYS,CA,#4747B8,#145AFF,7s3u.pdb,"Acceptor: O3B, donor H02","Acceptor: O3B, donor H02",#FF0000,#FFFFFF,#FF0000,-1,K,Charged interactions,#FFFFFF,False,True
+387,-17.655,4.234,-25.768,A,125,ILE,CA,#004C00,#0F820F,7uul.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,I,Hydrophobic,#FFFFFF,False,False
+388,-19.942,3.145,-22.931,A,126,ASN,CA,#FF7C70,#00DCDC,7uul.pdb,"Acceptor: N4P, donor H03","Acceptor: N4P, donor H03",#FF0000,#FFFFFF,#FF0000,-1,N,Hydrophilic,#FFFFFF,False,True
+389,-19.942,3.145,-22.931,A,126,ASN,CA,#FF7C70,#00DCDC,7uul.pdb,"Acceptor: N4P, donor H03","Acceptor: N4P, donor H03",#FF0000,#FFFFFF,#FF0000,-1,N,Hydrophilic,#FFFFFF,False,True
+390,-19.787,1.04,-28.437,A,185,ILE,CA,#004C00,#0F820F,7uul.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,I,Hydrophobic,#FFFFFF,False,False
+391,-22.713,0.103,-26.202,A,186,GLY,CA,#FFFFFF,#EBEBEB,7uul.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,G,Hydrophobic,#FFFFFF,False,False
+392,-22.909,-1.268,-22.675,A,187,ALA,CA,#8CFF8C,#C8C8C8,7uul.pdb,"Acceptor: N4P, donor H01","Acceptor: N4P, donor H01",#FF0000,#FFFFFF,#FF0000,-1,A,Hydrophobic,#FFFFFF,False,True
+393,-22.909,-1.268,-22.675,A,187,ALA,CA,#8CFF8C,#C8C8C8,7uul.pdb,"Acceptor: N4P, donor H01","Acceptor: N4P, donor H01",#FF0000,#FFFFFF,#FF0000,-1,A,Hydrophobic,#FFFFFF,False,True
+394,-21.191,0.225,-34.18,A,204,ILE,CA,#004C00,#0F820F,7uul.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,I,Hydrophobic,#FFFFFF,False,False
+395,-20.692,-2.357,-31.454,A,205,ILE,CA,#004C00,#0F820F,7uul.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,I,Hydrophobic,#FFFFFF,False,False
+396,-24.039,-3.199,-29.912,A,206,GLY,CA,#FFFFFF,#EBEBEB,7uul.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,4,G,Hydrophobic,#00008B,False,False
+397,-24.733,-3.663,-26.226,A,207,SER,CA,#FF7042,#FA9600,7uul.pdb,"Acceptor: N8P, donor H02","Acceptor: N8P, donor H02",#FF0000,#FFFFFF,#FF0000,3,S,Hydrophilic,#D02090,False,True
+398,-24.733,-3.663,-26.226,A,207,SER,CA,#FF7042,#FA9600,7uul.pdb,"Acceptor: N8P, donor H02","Acceptor: N8P, donor H02",#FF0000,#FFFFFF,#FF0000,3,S,Hydrophilic,#D02090,False,True
+399,-23.542,-7.051,-25.017,A,208,GLY,CA,#FFFFFF,#EBEBEB,7uul.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,3,G,Hydrophobic,#00008B,False,False
+400,-22.889,-2.953,-37.152,A,220,VAL,CA,#FF8CFF,#0F820F,7uul.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,V,Hydrophobic,#FFFFFF,False,False
+401,-24.207,-7.633,-32.301,A,222,VAL,CA,#FF8CFF,#0F820F,7uul.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,V,Hydrophobic,#FFFFFF,False,False
+402,-24.391,-10.75,-30.187,A,223,GLY,CA,#FFFFFF,#EBEBEB,7uul.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,G,Hydrophobic,#FFFFFF,False,False
+403,-25.901,-7.33,-38.527,A,229,LYS,CA,#4747B8,#145AFF,7uul.pdb,"Acceptor: O3B, donor H03","Acceptor: O3B, donor H03",#FF0000,#FFFFFF,#FF0000,1,K,Charged interactions,#FF0000,False,True
+404,-25.901,-7.33,-38.527,A,229,LYS,CA,#4747B8,#145AFF,7uul.pdb,"Acceptor: O3B, donor H03","Acceptor: O3B, donor H03",#FF0000,#FFFFFF,#FF0000,1,K,Charged interactions,#FF0000,False,True
+405,-27.528,-8.155,-38.828,A,32,THR,CA,#B84C00,#FA9600,7xwv.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,1,T,Hydrophilic,#D02090,False,False
+406,-26.869,-8.265,-35.006,A,33,LYS,CA,#4747B8,#145AFF,7xwv.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,K,Charged interactions,#FFFFFF,False,False
+407,-25.091,-4.822,-35.102,A,34,ARG,CA,#00007C,#145AFF,7xwv.pdb,"Acceptor: O3A, donor H04","Acceptor: O3A, donor H04",#FF0000,#FFFFFF,#FF0000,-1,R,Charged interactions,#FFFFFF,False,True
+408,-25.091,-4.822,-35.102,A,34,ARG,CA,#00007C,#145AFF,7xwv.pdb,"Acceptor: O3A, donor H04","Acceptor: O3A, donor H04",#FF0000,#FFFFFF,#FF0000,-1,R,Charged interactions,#FFFFFF,False,True
+409,-23.036,-7.519,-30.736,A,36,ALA,CA,#8CFF8C,#C8C8C8,7xwv.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+410,-22.574,-0.654,-36.553,A,69,ALA,CA,#8CFF8C,#C8C8C8,7xwv.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,A,Hydrophobic,#FFFFFF,False,False
+411,-23.429,-2.232,-30.503,A,72,ALA,CA,#8CFF8C,#C8C8C8,7xwv.pdb,"Acceptor: O, donor H02","Acceptor: O, donor H02",#FF0000,#FFFFFF,#FF0000,4,A,Hydrophobic,#00008B,False,True
+412,-23.429,-2.232,-30.503,A,72,ALA,CA,#8CFF8C,#C8C8C8,7xwv.pdb,"Acceptor: O, donor H02","Acceptor: O, donor H02",#FF0000,#FFFFFF,#FF0000,4,A,Hydrophobic,#00008B,False,True
+413,-21.82,-3.643,-27.297,A,73,GLY,CA,#FFFFFF,#EBEBEB,7xwv.pdb,"Acceptor: O, donor H02","Acceptor: O, donor H02",#FF0000,#FFFFFF,#FF0000,4,G,Hydrophobic,#00008B,False,True
+414,-21.82,-3.643,-27.297,A,73,GLY,CA,#FFFFFF,#EBEBEB,7xwv.pdb,"Acceptor: O, donor H02","Acceptor: O, donor H02",#FF0000,#FFFFFF,#FF0000,4,G,Hydrophobic,#00008B,False,True
+415,-22.568,-7.041,-25.668,A,74,MET,CA,#B8A042,#E6E600,7xwv.pdb,"Acceptor: O, donor H05","Acceptor: O, donor H05",#FF0000,#FFFFFF,#FF0000,3,M,Hydrophobic,#00008B,False,True
+416,-22.568,-7.041,-25.668,A,74,MET,CA,#B8A042,#E6E600,7xwv.pdb,"Acceptor: O, donor H05","Acceptor: O, donor H05",#FF0000,#FFFFFF,#FF0000,3,M,Hydrophobic,#00008B,False,True
+417,-25.237,-9.454,-27.08,A,75,ASP,CA,#A00042,#E60A0A,7xwv.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,D,Charged interactions,#FFFFFF,False,False
+418,-28.207,-9.008,-24.657,A,76,LEU,CA,#455E45,#0F820F,7xwv.pdb,"Acceptor: N1A, donor H01","Acceptor: N1A, donor H01",#FF0000,#FFFFFF,#FF0000,-1,L,Hydrophobic,#FFFFFF,False,True
+419,-28.207,-9.008,-24.657,A,76,LEU,CA,#455E45,#0F820F,7xwv.pdb,"Acceptor: N1A, donor H01","Acceptor: N1A, donor H01",#FF0000,#FFFFFF,#FF0000,-1,L,Hydrophobic,#FFFFFF,False,True
+420,-29.493,-12.562,-25.48,A,77,LYS,CA,#4747B8,#145AFF,7xwv.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,K,Charged interactions,#FFFFFF,False,False
+421,-22.525,2.765,-33.814,A,119,TRP,CA,#4F4600,#B45AB4,7xwv.pdb,"Acceptor: O5A, donor H02","Acceptor: O5A, donor H02",#FF0000,#FFFFFF,#FF0000,-1,W,Aromatic,#FFFFFF,False,True
+422,-22.525,2.765,-33.814,A,119,TRP,CA,#4F4600,#B45AB4,7xwv.pdb,"Acceptor: O5A, donor H02","Acceptor: O5A, donor H02",#FF0000,#FFFFFF,#FF0000,-1,W,Aromatic,#FFFFFF,False,True
+423,-22.055,1.4,-27.681,A,121,PHE,CA,#534C42,#3232AA,7xwv.pdb,"Acceptor: O, donor H02","Acceptor: O, donor H02",#FF0000,#FFFFFF,#FF0000,-1,F,Aromatic,#FFFFFF,False,True
+424,-22.055,1.4,-27.681,A,121,PHE,CA,#534C42,#3232AA,7xwv.pdb,"Acceptor: O, donor H02","Acceptor: O, donor H02",#FF0000,#FFFFFF,#FF0000,-1,F,Aromatic,#FFFFFF,False,True
+425,-21.418,0.102,-24.188,A,122,GLY,CA,#FFFFFF,#EBEBEB,7xwv.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,G,Hydrophobic,#FFFFFF,False,False
+426,-19.171,-2.988,-24.14,A,123,GLY,CA,#FFFFFF,#EBEBEB,7xwv.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,G,Hydrophobic,#FFFFFF,False,False
+427,-26.447,3.447,-23.026,A,145,SER,CA,#FF7042,#FA9600,7xwv.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,S,Hydrophilic,#FFFFFF,False,False
+428,-26.076,1.133,-19.957,A,146,GLU,CA,#660000,#E60A0A,7xwv.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,E,Charged interactions,#FFFFFF,False,False
+429,-27.11,7.909,-25.537,A,21,TYR,CA,#8C704C,#3232AA,8a9n.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,Y,Aromatic,#FFFFFF,False,False
+430,-28.044,5.011,-21.49,A,24,PHE,CA,#534C42,#3232AA,8a9n.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,F,Aromatic,#FFFFFF,False,False
+431,-20.752,5.653,-30.092,A,81,ASP,CA,#A00042,#E60A0A,8a9n.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,D,Charged interactions,#FFFFFF,False,False
+432,-23.833,4.023,-31.744,A,82,VAL,CA,#FF8CFF,#0F820F,8a9n.pdb,"Acceptor: O, donor H02","Acceptor: O, donor H02",#FF0000,#FFFFFF,#FF0000,5,V,Hydrophobic,#00008B,False,True
+433,-23.833,4.023,-31.744,A,82,VAL,CA,#FF8CFF,#0F820F,8a9n.pdb,"Acceptor: O, donor H02","Acceptor: O, donor H02",#FF0000,#FFFFFF,#FF0000,5,V,Hydrophobic,#00008B,False,True
+434,-27.388,4.827,-30.778,A,83,TYR,CA,#8C704C,#3232AA,8a9n.pdb,"Acceptor: O, donor H02","Acceptor: O, donor H02",#FF0000,#FFFFFF,#FF0000,5,Y,Aromatic,#008000,False,True
+435,-27.388,4.827,-30.778,A,83,TYR,CA,#8C704C,#3232AA,8a9n.pdb,"Acceptor: O, donor H02","Acceptor: O, donor H02",#FF0000,#FFFFFF,#FF0000,5,Y,Aromatic,#008000,False,True
+436,-30.944,4.487,-32.084,A,84,VAL,CA,#FF8CFF,#0F820F,8a9n.pdb,"Acceptor: O9P, donor H03","Acceptor: O9P, donor H03",#FF0000,#FFFFFF,#FF0000,-1,V,Hydrophobic,#FFFFFF,False,True
+437,-30.944,4.487,-32.084,A,84,VAL,CA,#FF8CFF,#0F820F,8a9n.pdb,"Acceptor: O9P, donor H03","Acceptor: O9P, donor H03",#FF0000,#FFFFFF,#FF0000,-1,V,Hydrophobic,#FFFFFF,False,True
+438,-35.543,0.433,-32.634,A,89,ARG,CA,#00007C,#145AFF,8a9n.pdb,"Acceptor: NH2, donor H01","Acceptor: NH2, donor H01",#FF0000,#FFFFFF,#FF0000,-1,R,Charged interactions,#FFFFFF,False,True
+439,-35.543,0.433,-32.634,A,89,ARG,CA,#00007C,#145AFF,8a9n.pdb,"Acceptor: NH2, donor H01","Acceptor: NH2, donor H01",#FF0000,#FFFFFF,#FF0000,-1,R,Charged interactions,#FFFFFF,False,True
+440,-35.386,-2.953,-34.351,A,90,ARG,CA,#00007C,#145AFF,8a9n.pdb,"Acceptor: O3A, donor H01","Acceptor: O3A, donor H01",#FF0000,#FFFFFF,#FF0000,-1,R,Charged interactions,#FFFFFF,False,True
+441,-35.386,-2.953,-34.351,A,90,ARG,CA,#00007C,#145AFF,8a9n.pdb,"Acceptor: O3A, donor H01","Acceptor: O3A, donor H01",#FF0000,#FFFFFF,#FF0000,-1,R,Charged interactions,#FFFFFF,False,True
+442,-36.054,-1.527,-37.836,A,91,GLN,CA,#FF4C4C,#00DCDC,8a9n.pdb,"Acceptor: O4A, donor H01","Acceptor: O4A, donor H01",#FF0000,#FFFFFF,#FF0000,-1,Q,Hydrophilic,#FFFFFF,False,True
+443,-36.054,-1.527,-37.836,A,91,GLN,CA,#FF4C4C,#00DCDC,8a9n.pdb,"Acceptor: O4A, donor H01","Acceptor: O4A, donor H01",#FF0000,#FFFFFF,#FF0000,-1,Q,Hydrophilic,#FFFFFF,False,True
+444,-32.462,-1.895,-39.19,A,92,GLY,CA,#FFFFFF,#EBEBEB,8a9n.pdb,"Acceptor: O1A, donor H03","Acceptor: O1A, donor H03",#FF0000,#FFFFFF,#FF0000,-1,G,Hydrophobic,#FFFFFF,False,True
+445,-32.462,-1.895,-39.19,A,92,GLY,CA,#FFFFFF,#EBEBEB,8a9n.pdb,"Acceptor: O1A, donor H03","Acceptor: O1A, donor H03",#FF0000,#FFFFFF,#FF0000,-1,G,Hydrophobic,#FFFFFF,False,True
+446,-31.281,1.686,-38.362,A,93,SER,CA,#FF7042,#FA9600,8a9n.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,S,Hydrophilic,#FFFFFF,False,False
+447,-28.109,0.539,-36.483,A,94,ALA,CA,#8CFF8C,#C8C8C8,8a9n.pdb,"Acceptor: O6A, donor H03","Acceptor: O6A, donor H03",#FF0000,#FFFFFF,#FF0000,-1,A,Hydrophobic,#FFFFFF,False,True
+448,-28.109,0.539,-36.483,A,94,ALA,CA,#8CFF8C,#C8C8C8,8a9n.pdb,"Acceptor: O6A, donor H03","Acceptor: O6A, donor H03",#FF0000,#FFFFFF,#FF0000,-1,A,Hydrophobic,#FFFFFF,False,True
+449,-27.435,-2.017,-39.253,A,95,LYS,CA,#4747B8,#145AFF,8a9n.pdb,"Acceptor: O2A, donor H02","Acceptor: O2A, donor H02",#FF0000,#FFFFFF,#FF0000,-1,K,Charged interactions,#FFFFFF,False,True
+450,-27.435,-2.017,-39.253,A,95,LYS,CA,#4747B8,#145AFF,8a9n.pdb,"Acceptor: O2A, donor H02","Acceptor: O2A, donor H02",#FF0000,#FFFFFF,#FF0000,-1,K,Charged interactions,#FFFFFF,False,True
+451,-18.723,-1.989,-25.648,A,117,THR,CA,#B84C00,#FA9600,8a9n.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,T,Hydrophilic,#FFFFFF,False,False
+452,-27.84,-6.447,-27.431,A,123,GLU,CA,#660000,#E60A0A,8a9n.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,E,Charged interactions,#FFFFFF,False,False
+453,-24.809,-4.547,-28.861,A,124,SER,CA,#FF7042,#FA9600,8a9n.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,4,S,Hydrophilic,#D02090,False,False
+454,-25.559,-9.328,-31.233,A,126,ARG,CA,#00007C,#145AFF,8a9n.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,R,Charged interactions,#FFFFFF,False,False
+455,-25.561,-6.215,-33.467,A,127,LEU,CA,#455E45,#0F820F,8a9n.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,L,Hydrophobic,#FFFFFF,False,False
+456,-24.242,-9.637,-37.169,A,130,LYS,CA,#4747B8,#145AFF,8a9n.pdb,"Acceptor: , donor ","Acceptor: , donor ",#FFFFFF,#FFFFFF,#FFFFFF,-1,K,Charged interactions,#FFFFFF,False,False

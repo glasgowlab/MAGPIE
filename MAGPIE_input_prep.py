@@ -847,57 +847,57 @@ if __name__ == "__main__":
     see below for what each term does
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument("-S", "--binder_seqs", type=str, help="the sequence(s) of the binder used for identification",
+    parser.add_argument("-S", "--binder_seqs", type=str, help="The sequence(s) of the binder used for identification.",
                         default=None)
     parser.add_argument("-s", "--target_protein_seqs", type=str,
-                        help="the sequence(s) of the target protein used for identification", default=None)
+                        help="The sequence(s) of the target protein used for identification.", default=None)
     parser.add_argument("-F", "--binder_seq_fa", type=str,
-                        help="the sequence file of the binder used for identification", default=None)
+                        help="The sequence file (fasta format) of the binder used for identification.", default=None)
     parser.add_argument("-f", "--target_protein_seq_fa", type=str,
-                        help="the sequence file of the target protein used for identification", default=None)
-    parser.add_argument("-L", "--target_sm_3_names", type=str, help="the three letter code of the small molecule(s)",
+                        help="The sequence file (fasta format) of the target protein used for identification.", default=None)
+    parser.add_argument("-L", "--target_sm_3_names", type=str, help="The three letter code of the small molecule(s).",
                         default=None)
     parser.add_argument("-I", "--target_sm_index", type=str,
-                        help="the index of the of the small molecule(s). Must be used in tandom with chain or name",
+                        help="The index of the small molecule(s). Must be used in tandem with chain or name.",
                         default=None)
-    parser.add_argument("-C", "--binder_chains", type=str, help="the chain(s) of the binder used for identification",
+    parser.add_argument("-C", "--binder_chains", type=str, help="The chain(s) of the binder used for identification.",
                         default=None)
     parser.add_argument("-c", "--target_protein_chains", type=str,
                         help="the chains of the target protein used for identification", default=None)
-    parser.add_argument("-l", "--target_sm_chains", type=str, help="the chain(s) the small molecule is/are on",
+    parser.add_argument("-l", "--target_sm_chains", type=str, help="The chain(s) the small molecule used for identification.",
                         default=None)
     parser.add_argument("-U", "--search_first_protein", type=str,
-                        help="if using both chains and sequences search, what should be used to be filtered first?",
+                        help="If using both chains and sequences search, what should be used to be filtered first? Choices: chains or sequences Default: chains",
                         default="chains", choices=["chains", "sequences"])
-    parser.add_argument("-u", "--search_first_sm", type=str,help="if using both chains and name search for a small molecule, what should be used to be filtered first?",default="chains", choices=["chains", "name"])
-    parser.add_argument("-d", "--seq_identity", type=int, help="sequence identity cutoff for finding similar chains",default=95)
+    parser.add_argument("-u", "--search_first_sm", type=str,help="If using both chains and sequences search, what should be used to be filtered first? Choices: chains or sequences Default: chains",default="chains", choices=["chains", "name"])
+    parser.add_argument("-d", "--seq_identity", type=int, help="Sequence identity cutoff for finding similar chains. Default: 95%",default=95)
     parser.add_argument("-i", "--input_path", type=str, help="path of the input pdb (file or directory)", required=True)
     parser.add_argument("-o", "--output_path", type=str, help="path of the output directory", required=True)
     parser.add_argument("-N", "--target_protein_chain_rename", type=str,
-                        help="what the target ligand chain is supposed to be named", default="A")
+                        help="What the target protein output chain is supposed to be named. Default: A", default="A")
     parser.add_argument("-n", "--target_sm_chain_rename", type=str,
-                        help="what the target ligand chain is supposed to be named", default="B")
-    parser.add_argument("-b", "--binder_chain_rename", type=str, help="what the binder chain is supposed to be named",
+                        help="What the target small molecule output chain is supposed to be named. Default: B", default="B")
+    parser.add_argument("-b", "--binder_chain_rename", type=str, help="What the binder output chain is supposed to be named. Default: C",
                         default="C")
     parser.add_argument("-t", "--take_first_sm_only",
-                        help="should we take the first instance of the ligand only?",action='store_false')
+                        help="Should we only take the first instance of the ligand?",action='store_false')
     parser.add_argument("-T", "--name_sm_atoms_same", action='store_true',
-                        help="should rename all matching ligands with the same atom name. Uses the first file as a reference")
+                        help="Should we rename all matching ligands with the same atom names? Uses the first file as a reference.")
     parser.add_argument("-r", "--sm_ligand_reference_path", type=str,
-                        help="path of the reference file for renaming sm ligands file default is first file in the input dir",
+                        help="Path of the reference file for renaming the small molecule ligands. Default is the first file in the found with Pyhton’s list directory function.",
                         default=None)
     parser.add_argument("-B", "--bond_length", type=float,
-                        help="distance that is considered a bond between 2 atoms for chemical graphs", default=2.1)
+                        help="Distance that is considered a bond between 2 atoms for chemical graphs. Default: 2.1", default=2.1)
     parser.add_argument("-m", "--search_radius", type=float,
-                        help="distance that is considered for finding close things in mesh search", default=8.0)
+                        help="dDistance that is considered for finding neighboring atoms in the mesh search. Default 8", default=8.0)
     parser.add_argument("-M", "--mesh_search", type=str,
-                        help="add the chains, seqs, and sm [you can use residue index with sm] for the mesh filter example: 'A,B;AWTRWARE,AWAWAWAW;TPA,ATP;1,2'",
+                        help="aThe chains, sequences, small molecules names, small molecule indexes for the mesh filter example: 'A,B;AWTRWARE,AWAWAWAW;TPA,ATP;1,2'",
                         default=";;;")
     parser.add_argument("-A", "--seq_target_align", type=str,
-                        help="Align the target protein in sequence space and results in pdb numbering aligning. Do not use for small molecules",
+                        help="Should we align the target protein in sequence space? Results in pdb numbering via alignment. Do not use it for small molecules. Choices: 1v1, MSA",
                         default=None, choices=["1v1", "MSA"])
     parser.add_argument("-a", "--seq_target_ref_pdb", type=str,
-                        help="Reference structure for target protein in seq_target_align", default=None, required=False)
+                        help="Reference structure for target protein in seq_target_align.", default=None, required=False)
     args = parser.parse_args()
 
     # checking to see if a sm or target_protein is present

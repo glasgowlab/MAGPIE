@@ -65,20 +65,9 @@ amino_acid_classes = {
     'Q': 'Hydrophilic',
     'D': 'Charged interactions',
     'E': 'Charged interactions',
-
-    Expand Down
-
-
-
-
-
-    Expand Up
-
-           @ @ -581, 28 + 583, 110 @ @
-
-                               'K': 'Charged interactions',
-'R': 'Charged interactions',
-'H': 'Charged interactions'
+    'K': 'Charged interactions',
+    'R': 'Charged interactions',
+    'H': 'Charged interactions'
 }
 
 def create_3d_graph(df1, df2, is_ligand, ligand_bonds={}, name_file="3d_scatter"):

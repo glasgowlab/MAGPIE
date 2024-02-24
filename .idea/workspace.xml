@@ -81,7 +81,6 @@
       <change beforePath="$PROJECT_DIR$/Protein Example/file_description.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/file_description.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Protein Example/mNb6_7KKL_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/mNb6_7KKL_cleaned.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/align_protein_chain.py" beforeDir="false" afterPath="$PROJECT_DIR$/align_protein_chain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/align_small_molecule.py" beforeDir="false" afterPath="$PROJECT_DIR$/align_small_molecule.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hbonds_saltbridges.py" beforeDir="false" afterPath="$PROJECT_DIR$/hbonds_saltbridges.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/helper_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/helper_functions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sequence_logo_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/sequence_logo_main.py" afterDir="false" />
@@ -150,7 +149,7 @@
       <recent name="C:\Users\camlo\Documents\GitHub\MAGPIE\atp_by_conformers" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.helper_functions">
+  <component name="RunManager" selected="Python.sequence_logo_main">
     <configuration name="helper_functions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MAGPIE" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -242,8 +241,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.helper_functions" />
         <item itemvalue="Python.sequence_logo_main" />
+        <item itemvalue="Python.helper_functions" />
         <item itemvalue="Python.surfaceMaker" />
       </list>
     </recent_temporary>
@@ -291,7 +290,11 @@
       <workItem from="1706730979349" duration="26296000" />
       <workItem from="1707095868240" duration="3211000" />
       <workItem from="1707253452689" duration="11378000" />
-      <workItem from="1707439032456" duration="2187000" />
+      <workItem from="1707439032456" duration="2414000" />
+      <workItem from="1707984174032" duration="6000" />
+      <workItem from="1708726296404" duration="2342000" />
+      <workItem from="1708729826247" duration="3454000" />
+      <workItem from="1708733331771" duration="1359000" />
     </task>
     <servers />
   </component>
@@ -311,7 +314,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MAGPIE$surfaceMaker.coverage" NAME="surfaceMaker Coverage Results" MODIFIED="1700002287234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAGPIE$helper_functions.coverage" NAME="helper_functions Coverage Results" MODIFIED="1707513197070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAGPIE$sequence_logo_main.coverage" NAME="sequence_logo_main Coverage Results" MODIFIED="1707513011022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAGPIE$helper_functions.coverage" NAME="helper_functions Coverage Results" MODIFIED="1708731639822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAGPIE$sequence_logo_main.coverage" NAME="sequence_logo_main Coverage Results" MODIFIED="1708733384906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

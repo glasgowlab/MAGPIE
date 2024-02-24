@@ -24,6 +24,8 @@ import seaborn as sns
 import matplotlib.colors as mcolors
 from sklearn.cluster import DBSCAN
 import warnings
+import multiprocessing
+
 warnings.simplefilter(action='ignore', category=FutureWarning)
 aa_mapping = {
     'ALA': 'A',
@@ -601,8 +603,90 @@ def plot_cluster_compositions(cluster_compositions_dict):
     # Show the plot
     plt.show()
 
+def main(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance, download_meta, advance_options, threads_n):
 
-def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance, download_meta, advance_options):
+    manager = multiprocessing.Manager()
+    containing_list = manager.list()  # Shared list
+    chunks = helper_functions.make_chunks(list_of_paths, threads_n)
+    threads = []
+    polar_int_map = {}
+    polar_int_map["#FF0000"] = "True"
+    polar_int_map["#FFFFFF"] = "False"
+    for thread_num in range(threads_n):
+        current_thread = multiprocessing.Process(target=plot, args=(
+            chunks[thread_num],  # PDB Files
+            target_id_chain,  # Target Chain
+            binder_id_chain,  # Binder ID
+            is_ligand,  # is ligand_
+            distance,  # distance lol
+            advance_options,  # clustering options
+            containing_list))  #
+        threads.append(current_thread)
+        current_thread.start()
+
+    for t in threads:
+        t.join()
+
+    binders_df = []
+    targets_df = []
+    bonds  = []
+
+    for y in containing_list:
+        binders_df.append(y[0])
+        targets_df = y[1]
+        bonds = y[2]
+        name = y [3]
+        ref = y[4]
+
+    residues_found_df = pd.concat(binders_df)
+    residue_found_df = cluster_3d_points(residues_found_df, advance_options)
+    return_from_clusters = assign_cluster_colors(residue_found_df)
+    residue_found_df = return_from_clusters[0]
+    clusters_ids = residue_found_df['cluster_index'].unique().tolist()
+    clusters_ids.remove(-1)
+    plot_cluster_compositions(return_from_clusters[1])
+    if download_meta:
+        residue_found_df = map_column_with_dict(residue_found_df, polar_int_map, "H-Bond BB", "H-Bond BB Flag")
+        residue_found_df = map_column_with_dict(residue_found_df, polar_int_map, "H-Bond SC", "H-Bond SC Flag")
+        useless_columns = ["shapely", "polar", "H-Bond BB", "H-Bond SC", "H-bond", "cluster_color"]
+        if not is_ligand:
+            residue_found_df = map_column_with_dict(residue_found_df, polar_int_map, "Salt Bridge", "Salt Bridge Flag")
+            useless_columns.append("Salt Bridge")
+        residue_found_df_data = residue_found_df.copy()
+        # residue_found_df_data.drop(useless_columns, axis=1, inplace=True)
+        amino_acids = []
+        closest_names = []
+        for cluster_id in clusters_ids:
+            filtered_cluster = residue_found_df[residue_found_df['cluster_index'] == cluster_id]
+            closest_point = find_closest_point(filtered_cluster, targets_df, is_ligand)
+            amino_acids.append(transform_to_1_letter_code(filtered_cluster['AA'].values.tolist()))
+            if is_ligand:
+                closest_name = closest_point["atom_name"]
+            else:
+                residue_index = str(closest_point["residue_index"])
+                residue_name = aa_mapping[closest_point["AA"]]
+                closest_name = residue_name+residue_index
+            closest_names.append(closest_name)
+        cluster_distribution = amino_acid_statistics_per_list(amino_acids)
+        closest_point_dict = {}
+        closest_point_dict["Hotspot Residue"] = closest_names
+        closest_point_dict["Hotspot Index"] = clusters_ids
+        closest_point_dict.update(cluster_distribution)
+        cluster_df = pd.DataFrame(closest_point_dict)
+        metadata_directory = f"meta_data_for_{name}"
+        helper_functions.create_directory(metadata_directory)
+        magpie_data_name = f"proximity_and_polar_metadata_for_{name}.csv"
+        hotspost_data_name = f"hotspot_metadata_for{name}.csv"
+        residue_found_df_data.to_csv(os.path.join(metadata_directory, magpie_data_name))
+        cluster_df.to_csv(os.path.join(metadata_directory, hotspost_data_name))
+
+
+
+    create_3d_graph(residue_found_df,targets_df, is_ligand,bonds, name)
+
+    return residue_found_df,pd.DataFrame(ref)
+
+def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance,advance_options, containing_list):
 
     chains_target = []
     chains_binder = []
@@ -727,63 +811,18 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance, d
                     residues_to_plot.append(residue_found)
                     break
 
-    polar_int_map = {}
-    polar_int_map["#FF0000"] = "True"
-    polar_int_map["#FFFFFF"] = "False"
 
 
-    residue_found_df   = pd.DataFrame(residues_to_plot)
-    residue_found_df = cluster_3d_points(residue_found_df, advance_options)
-    return_from_clusters = assign_cluster_colors(residue_found_df)
-    residue_found_df = return_from_clusters[0]
+
+    residues_df   = pd.DataFrame(residues_to_plot)
     target_to_to_plot = []
-    clusters_ids = residue_found_df['cluster_index'].unique().tolist()
-    clusters_ids.remove(-1)
-    plot_cluster_compositions(return_from_clusters[1])
+
     for x in target_chain_data_frame.iloc[reference_id]:
         if x is not None:
             target_to_to_plot.append(x)
     target_plot_df = pd.DataFrame(target_to_to_plot)
     name = list_of_paths[0].split("/")[-2]
-    if download_meta:
-        residue_found_df = map_column_with_dict(residue_found_df, polar_int_map, "H-Bond BB", "H-Bond BB Flag")
-        residue_found_df = map_column_with_dict(residue_found_df, polar_int_map, "H-Bond SC", "H-Bond SC Flag")
-        useless_columns = ["shapely", "polar", "H-Bond BB", "H-Bond SC", "H-bond", "cluster_color"]
-        if not is_ligand:
-            residue_found_df = map_column_with_dict(residue_found_df, polar_int_map, "Salt Bridge", "Salt Bridge Flag")
-            useless_columns.append("Salt Bridge")
-        residue_found_df_data = residue_found_df.copy()
-        # residue_found_df_data.drop(useless_columns, axis=1, inplace=True)
-        amino_acids = []
-        closest_names = []
-        for cluster_id in clusters_ids:
-            filtered_cluster = residue_found_df[residue_found_df['cluster_index'] == cluster_id]
-            closest_point = find_closest_point(filtered_cluster, target_plot_df, is_ligand)
-            amino_acids.append(transform_to_1_letter_code(filtered_cluster['AA'].values.tolist()))
-            if is_ligand:
-                closest_name = closest_point["atom_name"]
-            else:
-                residue_index = str(closest_point["residue_index"])
-                residue_name = aa_mapping[closest_point["AA"]]
-                closest_name = residue_name+residue_index
-            closest_names.append(closest_name)
-        cluster_distribution = amino_acid_statistics_per_list(amino_acids)
-        closest_point_dict = {}
-        closest_point_dict["Hotspot Residue"] = closest_names
-        closest_point_dict["Hotspot Index"] = clusters_ids
-        closest_point_dict.update(cluster_distribution)
-        cluster_df = pd.DataFrame(closest_point_dict)
-        metadata_directory = f"meta_data_for_{name}"
-        helper_functions.create_directory(metadata_directory)
-        magpie_data_name = f"proximity_and_polar_metadata_for_{name}.csv"
-        hotspost_data_name = f"hotspot_metadata_for{name}.csv"
-        residue_found_df_data.to_csv(os.path.join(metadata_directory, magpie_data_name))
-        cluster_df.to_csv(os.path.join(metadata_directory, hotspost_data_name))
-
-    create_3d_graph(residue_found_df,target_plot_df, is_ligand,bonds, name)
-
-    return residue_found_df,pd.DataFrame(target_chain_ca_coords[reference_id])
-
+    containing_list.append([residues_df    ,target_plot_df,bonds,name, target_chain_ca_coords[reference_id]])
 def sequence_logos(residues_found, target_residues, sequence_logo_targets, is_ligand, only_combined_logo, radius ):
 
     warnings.filterwarnings("ignore")
@@ -898,7 +937,5 @@ color_key = {
         'Aromatic': '#008000',  # Green
         'Charged interactions': '#FF0000',  # Red
      }
-
-
 
 

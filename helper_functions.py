@@ -7,6 +7,7 @@ import pdb_parser
 # from mpl_toolkits.mplot3d import Axes3D
 import os
 from Bio import *
+import sys
 def extract_atoms_from_chain(chain: Bio.PDB.Chain.Chain, atom_index: str = "" , file = "" ) -> list:
 
     shaply = {
@@ -305,5 +306,23 @@ def create_directory(directory_path):
     else:
         os.makedirs(directory_path)
 
+def make_chunks(data: list, thread_count) -> dict:
+    """
+    Takes a list and splits it into parts based on the thread count
+    :param data: a list that needs to be split up amongst the threads
+    :param thread_count: the number of threads to use
+    :return: None
+    """
+    threads = {}
 
+    for x in range(0, thread_count):
+        threads[x] = []
+
+    thread = 0
+    for x in range(0, len(data)):
+        threads[thread].append(data[x])
+        thread += 1
+        if thread == thread_count:
+            thread = 0
+    return threads
 

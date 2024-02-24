@@ -198,7 +198,7 @@ def create_3d_graph(df1, df2, is_ligand, ligand_bonds={}, name_file="3d_scatter"
     fig = go.Figure(data=graphs, layout=layout)
     fig.update_layout(updatemenus=updatemenus)
     # Show the interactive plot
-    py.plot(fig, filename=f'{name_file}.html')
+    fig.show()
 
 
 def find_nearest_points(target, binders, radius):
@@ -613,43 +613,6 @@ def plot_cluster_compositions(cluster_compositions_dict):
     plt.tight_layout()
     # Show the plot
     plt.show()
-
-
-def main(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance, download_meta, advance_options,
-         threads_n):
-    manager = multiprocessing.Manager()
-    containing_list = manager.list()  # Shared list
-    chunks = helper_functions.make_chunks(list_of_paths, threads_n)
-    threads = []
-    polar_int_map = {}
-    polar_int_map["#FF0000"] = "True"
-    polar_int_map["#FFFFFF"] = "False"
-    for thread_num in range(threads_n):
-        current_thread = multiprocessing.Process(target=plot, args=(
-            chunks[thread_num],  # PDB Files
-            target_id_chain,  # Target Chain
-            binder_id_chain,  # Binder ID
-            is_ligand,  # is ligand_
-            distance,  # distance lol
-            advance_options,  # clustering options
-            containing_list))  #
-        threads.append(current_thread)
-        current_thread.start()
-
-    for t in threads:
-        t.join()
-
-    binders_df = []
-    targets_df = []
-    bonds = []
-
-    for y in containing_list:
-        binders_df.append(y[0])
-        targets_df = y[1]
-        bonds = y[2]
-        name = y[3]
-        ref = y[4]
-
 
 
 

@@ -799,7 +799,7 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance, d
 
     create_3d_graph(residue_found_df,target_plot_df, is_ligand,bonds, name)
 
-    return residue_found_df,pd.DataFrame(target_chain_ca_coords[reference_id])
+    return residue_found_df,pd.DataFrame(target_chain_ca_coords[reference_id]), return_from_clusters[1]
 
 
 

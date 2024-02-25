@@ -249,7 +249,7 @@ def euclidean_distance(x1, y1, z1, x2, y2, z2):
 def transform_to_1_letter_code(amino_acids_3_letter):
     # Mapping dictionary for 3-letter to 1-letter code
 
-    amino_acids_1_letter = [aa_mapping[aa] for aa in amino_acids_3_letter]
+    amino_acids_1_letter = [aa_mapping.get(aa,"?") for aa in amino_acids_3_letter]
     return amino_acids_1_letter
 
 def find_points_within_radius(binder_point, target_points, radius):
@@ -394,7 +394,11 @@ def assing_class_for_cluster(AA_list):
     count_hydrophi = 0
     aromatic = 0
     charged = 0
+    no_res = 0
     for AA in AA_list:
+        if AA == "?":
+            no_res += 1
+            continue
         if amino_acid_classes[AA] == "Hydrophobic":
             count_hydropho+=1
         elif amino_acid_classes[AA] == "Hydrophilic":
@@ -403,7 +407,7 @@ def assing_class_for_cluster(AA_list):
             aromatic += 1
         else:
             charged += 1
-    total = len(AA_list)
+    total = len(AA_list) - no_res
     hydrophi_width =  count_hydrophi/total
     hydropho_width = count_hydropho/total
     aromatic_width= aromatic/total
@@ -612,20 +616,25 @@ def main(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance, d
     polar_int_map = {}
     polar_int_map["#FF0000"] = "True"
     polar_int_map["#FFFFFF"] = "False"
-    for thread_num in range(threads_n):
-        current_thread = multiprocessing.Process(target=plot, args=(
-            chunks[thread_num],  # PDB Files
-            target_id_chain,  # Target Chain
-            binder_id_chain,  # Binder ID
-            is_ligand,  # is ligand_
-            distance,  # distance lol
-            advance_options,  # clustering options
-            containing_list))  #
-        threads.append(current_thread)
-        current_thread.start()
 
-    for t in threads:
-        t.join()
+    if threads_n == 1:
+        containg_list = plot(list_of_paths, target_id_chain, binder_id_chain,is_ligand,distance,advance_options, containing_list)
+    else:
+
+        for thread_num in range(threads_n):
+            current_thread = multiprocessing.Process(target=plot, args=(
+                chunks[thread_num],  # PDB Files
+                target_id_chain,  # Target Chain
+                binder_id_chain,  # Binder ID
+                is_ligand,  # is ligand_
+                distance,  # distance lol
+                advance_options,  # clustering options
+                containing_list))  #
+            threads.append(current_thread)
+            current_thread.start()
+
+        for t in threads:
+            t.join()
 
     binders_df = []
     targets_df = []
@@ -725,7 +734,6 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance,ad
         else:
             target_chain_ca_coords.append(helper_functions.extract_atoms_from_chain(chains_target[i],"CA", list_of_paths[i]))
         binder_chain_ca_coords.append(helper_functions.extract_atoms_from_chain(chains_binder[i],"CA",list_of_paths[i]))
-
     target_chain_data_frame = pd.DataFrame(target_chain_ca_coords)
     binder_chain_data_frame = pd.DataFrame(binder_chain_ca_coords)
 
@@ -811,18 +819,17 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance,ad
                     residues_to_plot.append(residue_found)
                     break
 
-
-
-
     residues_df   = pd.DataFrame(residues_to_plot)
     target_to_to_plot = []
-
     for x in target_chain_data_frame.iloc[reference_id]:
         if x is not None:
             target_to_to_plot.append(x)
     target_plot_df = pd.DataFrame(target_to_to_plot)
     name = list_of_paths[0].split("/")[-2]
-    containing_list.append([residues_df    ,target_plot_df,bonds,name, target_chain_ca_coords[reference_id]])
+    containing_list.append([residues_df ,target_plot_df,bonds,name, target_chain_ca_coords[reference_id]])
+
+    return containing_list
+
 def sequence_logos(residues_found, target_residues, sequence_logo_targets, is_ligand, only_combined_logo, radius ):
 
     warnings.filterwarnings("ignore")
@@ -937,5 +944,4 @@ color_key = {
         'Aromatic': '#008000',  # Green
         'Charged interactions': '#FF0000',  # Red
      }
-
 

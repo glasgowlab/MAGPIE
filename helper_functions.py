@@ -189,7 +189,7 @@ def extract_info_ligand (pdb_file, chain_id) -> [list,dict]:
                 parsed_line.parse_line()
                 if parsed_line.chain_identifier == chain_id:
                     if parsed_line.atom_name == "UNK":
-                        continu
+                        continue
                     bonds['X'] = parsed_line.x_cord
                     bonds['Y'] = parsed_line.y_cord
                     bonds['Z'] = parsed_line.z_cord

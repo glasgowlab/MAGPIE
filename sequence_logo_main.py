@@ -258,9 +258,8 @@ def euclidean_distance(x1, y1, z1, x2, y2, z2):
 def transform_to_1_letter_code(amino_acids_3_letter):
     # Mapping dictionary for 3-letter to 1-letter code
 
-    amino_acids_1_letter = [aa_mapping[aa] for aa in amino_acids_3_letter]
+    amino_acids_1_letter = [aa_mapping.get(aa,"?") for aa in amino_acids_3_letter]
     return amino_acids_1_letter
-
 
 def find_points_within_radius(binder_point, target_points, radius):
     # Convert the binder_point DataFrame to a NumPy array
@@ -405,22 +404,28 @@ def assing_class_for_cluster(AA_list):
     count_hydrophi = 0
     aromatic = 0
     charged = 0
+    no_res = 0
     for AA in AA_list:
+        if AA == "?":
+            no_res += 1
+            continue
         if amino_acid_classes[AA] == "Hydrophobic":
-            count_hydropho += 1
+            count_hydropho+=1
         elif amino_acid_classes[AA] == "Hydrophilic":
             count_hydrophi += 1
         elif amino_acid_classes[AA] == "Aromatic":
             aromatic += 1
         else:
             charged += 1
-    total = len(AA_list)
-    hydrophi_width = count_hydrophi / total
-    hydropho_width = count_hydropho / total
-    aromatic_width = aromatic / total
-    charged_width = charged / total
+    total = len(AA_list) - no_res
+    hydrophi_width =  count_hydrophi/total
+    hydropho_width = count_hydropho/total
+    aromatic_width= aromatic/total
+    charged_width = charged/total
 
-    return [hydropho_width, hydrophi_width, aromatic_width, charged_width]
+
+    return [hydropho_width,hydrophi_width,aromatic_width,charged_width]
+
 
 
 def add_mapped_column(df, column_to_map, mapping_dict, new_column_name):

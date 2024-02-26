@@ -337,7 +337,6 @@ def create_sequence_logo_list(data, only_combined, is_ligand):
     title_fontsize = 36
     xtick_label_fontsize = 30
     y_lable_size = 34
-    print(data)
     titles = ["Residues in Contact", "H-Bonds", "Salt Bridges"]
     for j, row in enumerate(data):
         # Filter out the [None, None] graphs

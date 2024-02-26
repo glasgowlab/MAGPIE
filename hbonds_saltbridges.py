@@ -121,8 +121,6 @@ def find_hydrogen_bond(residue1, residue2,is_ligand, bb_flag):
     for donor in acceptor_donors_1[1]:
         for acceptor in acceptor_donors_2_all[0]:
             if found_h_bond:
-
-
                 acceptor_donor_info[0] = acceptor.name
                 acceptor_donor_info[1] = donor[2]
                 break
@@ -142,7 +140,7 @@ def check_h_bond (donor, acceptor):
     donor_acceptor_direction =  acceptor_coords - donor_coords
     distance = calculate_distance(acceptor_coords,donor_coords)
     angle = calculate_angle(donor_direction, donor_acceptor_direction)
-    if 1.5 <= distance <= 4 and 120 < angle < 300:
+    if 2 <= distance <= 4 and 120 <= angle <= 240:
         return True
     else:
         return False

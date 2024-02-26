@@ -30,8 +30,7 @@ def extract_atoms_from_chain(chain: Bio.PDB.Chain.Chain, atom_index: str = "" , 
         'HIS': '#7070FF',
         'CYS': '#FFFF70',
         'MET': '#B8A042',
-        'TRP': '#4F4600',
-        'Others': '#BEA06E'
+        'TRP': '#4F4600'
     }
     polar = {
         'ASP': '#E60A0A',
@@ -71,8 +70,8 @@ def extract_atoms_from_chain(chain: Bio.PDB.Chain.Chain, atom_index: str = "" , 
                 dict_of_atoms['residue_index'] = int(residue.__repr__().split("resseq=")[1].split(" icode")[0])
                 dict_of_atoms['AA'] = residue.get_resname()
                 dict_of_atoms['atom_name'] = atom.get_name()
-                dict_of_atoms['shapely'] = shaply[residue.get_resname()]
-                dict_of_atoms['polar'] = polar[residue.get_resname()]
+                dict_of_atoms['shapely'] = shaply.get(residue.get_resname(), "#BEA06E")
+                dict_of_atoms['polar'] = polar.get(residue.get_resname(), "#BEA06E")
                 dict_of_atoms['file'] = file.split("/")[-1]
 
                 if  atom_index == atom.get_name():
@@ -144,6 +143,8 @@ def extract_list_pdb(pdb_list, chain_id) ->list:
                     parsed_line = pdb_parser.PDBLineParser(line)
                     parsed_line.parse_line()
                     if parsed_line.chain_identifier == chain_id and parsed_line.atom_name == 'CA':
+                        if residue.get_resname() == "UNK":
+                            continue
                         dict_of_atoms['X'] = parsed_line.x_cord
                         dict_of_atoms['Y'] = parsed_line.y_cord
                         dict_of_atoms['Z'] = parsed_line.z_cord
@@ -152,8 +153,8 @@ def extract_list_pdb(pdb_list, chain_id) ->list:
                         dict_of_atoms['AA'] = parsed_line.residue_name
                         dict_of_atoms['atom_name'] = parsed_line.atom_name
                         dict_of_atoms['file'] = file.split("/")[-1]
-                        dict_of_atoms['shapely'] = shaply[parsed_line.residue_name]
-                        dict_of_atoms['polar'] = polar[parsed_line.residue_name]
+                        dict_of_atoms['shapely'] = shaply.get(residue.get_resname(), "#BEA06E")
+                        dict_of_atoms['polar'] = polar.get(residue.get_resname(), "#BEA06E")
                         found_chain = True
                         all_Ca.append(dict_of_atoms)
 
@@ -170,17 +171,16 @@ def extract_info_ligand (pdb_file, chain_id) -> [list,dict]:
     all_atoms = []
     conect_list = []
     with open(pdb_file, "r") as file:
-        found_chain =  False
+
         smaller_id = 1000000000
         larger_id = 0
         smaller_index = 10000000
         larger_index = 0
 
         for i,line in enumerate(file):
-
             bonds = {}
             if "HETATM" in line or "CONECT" in line:
-                if "TER" in line and  found_chain:
+                if "TER" in line:
                     continue
                 if "CONECT" in line:
                     conect_list.append(line)
@@ -188,6 +188,8 @@ def extract_info_ligand (pdb_file, chain_id) -> [list,dict]:
                 parsed_line = pdb_parser.PDBLineParser(line)
                 parsed_line.parse_line()
                 if parsed_line.chain_identifier == chain_id:
+                    if parsed_line.atom_name == "UNK":
+                        continu
                     bonds['X'] = parsed_line.x_cord
                     bonds['Y'] = parsed_line.y_cord
                     bonds['Z'] = parsed_line.z_cord
@@ -197,7 +199,6 @@ def extract_info_ligand (pdb_file, chain_id) -> [list,dict]:
                     bonds['file'] = pdb_file
                     bonds['color'] = get_color_code(parsed_line.atom_name[0])
                     all_atoms.append(bonds)
-                    found_chain =True
 
                     if len(str(parsed_line.atom_serial_number)) < smaller_id:
                         smaller_id = len(str(parsed_line.atom_serial_number))
@@ -325,4 +326,3 @@ def make_chunks(data: list, thread_count) -> dict:
         if thread == thread_count:
             thread = 0
     return threads
-

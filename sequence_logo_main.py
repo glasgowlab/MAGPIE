@@ -337,6 +337,7 @@ def create_sequence_logo_list(data, only_combined, is_ligand):
     title_fontsize = 36
     xtick_label_fontsize = 30
     y_lable_size = 34
+    print(data)
     titles = ["Residues in Contact", "H-Bonds", "Salt Bridges"]
     for j, row in enumerate(data):
         # Filter out the [None, None] graphs
@@ -808,15 +809,16 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance, d
 
 
 
-def sequence_logos(residues_found, target_residues, sequence_logo_targets, is_ligand, only_combined_logo, radius):
+def sequence_logos(residues_found, target_residues, sequence_logo_targets, is_ligand, only_combined_logo, radius ):
+
     warnings.filterwarnings("ignore")
     model = logomaker.get_example_matrix('ww_information_matrix',
                                          print_description=False)
     list_of_AA = model.columns.to_list()
-    rows_bits_all_sq = []
-    rows_bits_hb = []
-    rows_bits_sc = []
-    rows_bits_pc = []
+    rows_bits_all_sq= []
+    rows_bits_hb= []
+    rows_bits_sc= []
+    rows_bits_pc= []
 
     resi_combined_all_contacts = []
     resi_combined_sc_bb = []
@@ -826,12 +828,13 @@ def sequence_logos(residues_found, target_residues, sequence_logo_targets, is_li
     plots = []
     plots_rows = []
 
-    for i, target in enumerate(sequence_logo_targets):
+    for i,target in enumerate(sequence_logo_targets):
 
         if is_ligand:
-            point = target_residues[target_residues['atom_name'] == target]
+            point =  target_residues[target_residues['atom_name'] == target]
             all_contacts = find_points_within_radius(point, residues_found, radius)
-
+            hydrogen_bonds = all_contacts.loc[
+                 (residues_found['H-bond'] == '#FF0000')]
         else:
             point = target_residues[target_residues['residue_index'] == target]
             res_nem = point["AA"].values
@@ -839,20 +842,20 @@ def sequence_logos(residues_found, target_residues, sequence_logo_targets, is_li
             target = f"{aa_mapping[res_nem[0]]}{target}"
             all_contacts = find_points_within_radius(point, residues_found, radius)
             hydrogen_bonds = all_contacts.loc[
-                (residues_found['H-bond'] == '#FF0000')]
+                 (residues_found['H-bond'] == '#FF0000')]
             polar_contacts = all_contacts.loc[
                 (residues_found['Salt Bridge'] == '#FF0000')]
 
         AA_all_contacts = transform_to_1_letter_code(all_contacts['AA'].values.tolist())
+        AA_hb = transform_to_1_letter_code(hydrogen_bonds['AA'].values.tolist())
+
         if not is_ligand:
-            AA_hb = transform_to_1_letter_code(hydrogen_bonds['AA'].values.tolist())
             AA_pc = transform_to_1_letter_code(polar_contacts['AA'].values.tolist())
         else:
             AA_pc = []
-            AA_hb = []
 
         # Check if any transformed lists are empty and handle accordingly
-        if len(AA_all_contacts) == 0:
+        if len( AA_all_contacts) == 0:
             print(f"No AA within {radius} Å of target id: {target}")
             continue
         else:
@@ -866,8 +869,8 @@ def sequence_logos(residues_found, target_residues, sequence_logo_targets, is_li
             plots.append([df_all_contact, [residue_num]])
 
         # Repeat the same check for other contact types
-        if len(AA_hb) == 0:
-            plots_rows.append([None, None])
+        if len( AA_hb) == 0:
+            plots_rows.append([None,None])
         else:
             bb_residue_num = f' {target} \n n = {len(AA_hb)} '
             resi_combined_bb_hb.append(bb_residue_num)
@@ -877,8 +880,9 @@ def sequence_logos(residues_found, target_residues, sequence_logo_targets, is_li
             hb_bb = pd.concat([hb_bb, pd.DataFrame([hb_bits], columns=hb_bb.columns)], ignore_index=True)
             plots_rows.append([hb_bb, [bb_residue_num]])
 
-        if len(AA_pc) == 0:
-            plots_rows.append([None, None])
+
+        if len( AA_pc) == 0:
+            plots_rows.append([None,None])
         else:
             pc_residue_num = f' {target} \n n = {len(AA_pc)} '
             resi_combined_pc.append(pc_residue_num)
@@ -890,30 +894,29 @@ def sequence_logos(residues_found, target_residues, sequence_logo_targets, is_li
 
     if not len(resi_combined_all_contacts) == 1:
         df_all_contact = pd.DataFrame(columns=model.columns)
-        df_all_contact = pd.concat([df_all_contact, pd.DataFrame(rows_bits_all_sq, columns=df_all_contact.columns)],
-                                   ignore_index=True)
+        df_all_contact = pd.concat([df_all_contact, pd.DataFrame(rows_bits_all_sq, columns=df_all_contact.columns)], ignore_index=True)
         plots.append([df_all_contact, resi_combined_all_contacts])
-        if len(rows_bits_hb) == 0:
-            plots_rows.append([None, None])
+        if len(rows_bits_hb) == 0 :
+            plots_rows.append([None,None])
         else:
-            hb_bb = pd.DataFrame(columns=model.columns)
+            hb_bb= pd.DataFrame(columns=model.columns)
             hb_bb = pd.concat([hb_bb, pd.DataFrame(rows_bits_hb, columns=hb_bb.columns)],
-                              ignore_index=True)
+                                       ignore_index=True)
             plots_rows.append([hb_bb, resi_combined_bb_hb])
         if len(rows_bits_pc) == 0:
-            plots_rows.append([None, None])
+            plots_rows.append([None,None])
         else:
-            df_pc = pd.DataFrame(columns=model.columns)
+            df_pc= pd.DataFrame(columns=model.columns)
             df_pc = pd.concat([df_pc, pd.DataFrame(rows_bits_pc, columns=df_pc.columns)],
-                              ignore_index=True)
+                                       ignore_index=True)
             plots_rows.append([df_pc, resi_combined_pc])
 
     plots_by_rows = []
-    for i, plot in enumerate(plots):
-        plots_by_rows.append([plot, plots_rows[0 + i * 2], plots_rows[1 + i * 2]])
+    for i,plot in enumerate(plots):
+        plots_by_rows.append([plot, plots_rows[0+i*2], plots_rows[1+i*2]])
 
     plots_by_rows.insert(0, plots_by_rows.pop())
-    create_sequence_logo_list(plots_by_rows, only_combined_logo, is_ligand)
+    create_sequence_logo_list(plots_by_rows,only_combined_logo, is_ligand)
 
 
 color_key = {
@@ -922,3 +925,4 @@ color_key = {
     'Aromatic': '#008000',  # Green
     'Charged interactions': '#FF0000',  # Red
 }
+

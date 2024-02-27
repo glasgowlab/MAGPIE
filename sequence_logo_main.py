@@ -652,7 +652,8 @@ def main(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance, d
     return_from_clusters = assign_cluster_colors(residue_found_df)
     residue_found_df = return_from_clusters[0]
     clusters_ids = residue_found_df['cluster_index'].unique().tolist()
-    clusters_ids.remove(-1)
+    if -1 in clusters_ids:
+        clusters_ids.remove(-1)
     plot_cluster_compositions(return_from_clusters[1])
     if download_meta:
         residue_found_df = map_column_with_dict(residue_found_df, polar_int_map, "H-Bond BB", "H-Bond BB Flag")

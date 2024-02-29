@@ -335,7 +335,7 @@ def create_sequence_logo_list(data, only_combined, is_ligand):
     # Titles for each type of graph
     axis_label_fontsize = 30
     title_fontsize = 36
-    xtick_label_fontsize = 30
+    xtick_label_fontsize = 25
     y_lable_size = 34
     titles = ["Residues in Contact", "H-Bonds", "Salt Bridges"]
     for j, row in enumerate(data):

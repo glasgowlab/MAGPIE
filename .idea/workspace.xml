@@ -15,6 +15,7 @@
       <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/MAGPIE_LOCAL-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/MAGPIE_LOCAL-checkpoint.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MAGPIE_LOCAL.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/MAGPIE_LOCAL.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MAGPIE_input_prep.py" beforeDir="false" afterPath="$PROJECT_DIR$/MAGPIE_input_prep.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protein Example.html" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Protein Example/298_7K9Z_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/298_7K9Z_cleaned.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Protein Example/2H2_7DK4_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/2H2_7DK4_cleaned.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Protein Example/52_7K9Z_cleaned.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Protein Example/52_7K9Z_cleaned.pdb" afterDir="false" />
@@ -284,6 +285,8 @@
       <change beforePath="$PROJECT_DIR$/align_small_molecule.py" beforeDir="false" afterPath="$PROJECT_DIR$/align_small_molecule.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hbonds_saltbridges.py" beforeDir="false" afterPath="$PROJECT_DIR$/hbonds_saltbridges.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/helper_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/helper_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meta_data_for_Protein Example/hotspot_metadata_forProtein Example.csv" beforeDir="false" afterPath="$PROJECT_DIR$/meta_data_for_Protein Example/hotspot_metadata_forProtein Example.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meta_data_for_Protein Example/proximity_and_polar_metadata_for_Protein Example.csv" beforeDir="false" afterPath="$PROJECT_DIR$/meta_data_for_Protein Example/proximity_and_polar_metadata_for_Protein Example.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meta_data_for_small_molecule_example_reference_11/hotspot_metadata_forreference_11.csv" beforeDir="false" afterPath="$PROJECT_DIR$/meta_data_for_small_molecule_example_reference_11/hotspot_metadata_forreference_11.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meta_data_for_small_molecule_example_reference_11/proximity_and_polar_metadata_for_reference_11.csv" beforeDir="false" afterPath="$PROJECT_DIR$/meta_data_for_small_molecule_example_reference_11/proximity_and_polar_metadata_for_reference_11.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sequence_logo_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/sequence_logo_main.py" afterDir="false" />
@@ -498,6 +501,7 @@
       <workItem from="1708726296404" duration="2342000" />
       <workItem from="1708729826247" duration="3454000" />
       <workItem from="1708733331771" duration="1359000" />
+      <workItem from="1709269842436" duration="1205000" />
     </task>
     <servers />
   </component>

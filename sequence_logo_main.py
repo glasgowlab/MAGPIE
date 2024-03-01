@@ -319,7 +319,7 @@ def remove_items(test_list, item):
 def create_sequence_logo_list(data,only_combined, is_ligand):
 
     # Titles for each type of graph
-    axis_label_fontsize = 30
+    axis_label_fontsize = 20
     title_fontsize = 36
     xtick_label_fontsize = 25
     y_lable_size = 34
@@ -654,7 +654,8 @@ def main(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance, d
     clusters_ids = residue_found_df['cluster_index'].unique().tolist()
     if -1 in clusters_ids:
         clusters_ids.remove(-1)
-    plot_cluster_compositions(return_from_clusters[1])
+    if len(return_from_clusters[1]>1)
+        plot_cluster_compositions(return_from_clusters[1])
     if download_meta:
         residue_found_df = map_column_with_dict(residue_found_df, polar_int_map, "H-Bond BB", "H-Bond BB Flag")
         residue_found_df = map_column_with_dict(residue_found_df, polar_int_map, "H-Bond SC", "H-Bond SC Flag")

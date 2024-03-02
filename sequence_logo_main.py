@@ -170,7 +170,7 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}, name_file = "3d_scatt
         graphs.append(line_trace_target)
 
     else:
-        if len(bonds) == 0:
+        if len(ligand_bonds) == 0:
             points = np.array([x2, y2, z2]).T
             for i in range(len(points)):
                 for j in range( len(points)):

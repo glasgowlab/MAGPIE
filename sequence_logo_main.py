@@ -969,5 +969,3 @@ color_key = {
         'Charged interactions': '#FF0000',  # Red
      }
 
-files  =  glob.glob("Small molecule example/reference_1/*.pdb")
-main(files,"B","C",True,8,False,[2,15],5)

@@ -501,7 +501,7 @@
       <workItem from="1708726296404" duration="2342000" />
       <workItem from="1708729826247" duration="3454000" />
       <workItem from="1708733331771" duration="1359000" />
-      <workItem from="1709269842436" duration="1205000" />
+      <workItem from="1709269842436" duration="6122000" />
     </task>
     <servers />
   </component>
@@ -522,6 +522,6 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MAGPIE$surfaceMaker.coverage" NAME="surfaceMaker Coverage Results" MODIFIED="1700002287234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAGPIE$helper_functions.coverage" NAME="helper_functions Coverage Results" MODIFIED="1708731639822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAGPIE$sequence_logo_main.coverage" NAME="sequence_logo_main Coverage Results" MODIFIED="1708913388209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAGPIE$sequence_logo_main.coverage" NAME="sequence_logo_main Coverage Results" MODIFIED="1709338604180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

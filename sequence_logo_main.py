@@ -170,23 +170,45 @@ def create_3d_graph(df1, df2,is_ligand, ligand_bonds = {}, name_file = "3d_scatt
         graphs.append(line_trace_target)
 
     else:
-        for bond in ligand_bonds:
-            for pair in ligand_bonds[bond]:
-                atom_coords1 = df2.loc[df2['atom_serial_number'] == str(bond)]
-                atom_coords2 = df2.loc[df2['atom_serial_number'] == str(pair)]
-                point1 = atom_coords1[['X', 'Y', 'Z']].values
-                point2 = atom_coords2[['X', 'Y', 'Z']].values
-                line_trace = go.Scatter3d(
-                    x=[point1[0][0], point2[0][0]],
-                    y=[point1[0][1], point2[0][1]],
-                    z=[point1[0][2], point2[0][2]],
-                    mode='lines',
-                    line=dict(color='black', width=8),
-                    hoverinfo='skip',
-                    showlegend=False
-                )
+        if len(bonds) == 0:
+            points = np.array([x2, y2, z2]).T
+            for i in range(len(points)):
+                for j in range( len(points)):
+                    # Check if either of the points is named 'H'
+                    if 'H' in names[i] or  "H" in names[j]:
+                        continue
+                    # Check if the points are within the distance threshold
+                    if euclidean_distance(points[i], points[j]) <= 2:
+                        # Add a line between the points
+                        line_trace = go.Scatter3d (
+                            x=[points[i][0], points[j][0]],
+                            y=[points[i][1], points[j][1]],
+                            z=[points[i][2], points[j][2]],
+                            mode='lines',
+                            line=dict(color='black', width=8),
+                            hoverinfo='skip',
+                            showlegend=False
+                        )
+                        graphs.append(line_trace)
 
-                graphs.append(line_trace)
+        else:
+            for bond in ligand_bonds:
+                for pair in ligand_bonds[bond]:
+                    atom_coords1 = df2.loc[df2['atom_serial_number'] == str(bond)]
+                    atom_coords2 = df2.loc[df2['atom_serial_number'] == str(pair)]
+                    point1 = atom_coords1[['X', 'Y', 'Z']].values
+                    point2 = atom_coords2[['X', 'Y', 'Z']].values
+                    line_trace = go.Scatter3d(
+                        x=[point1[0][0], point2[0][0]],
+                        y=[point1[0][1], point2[0][1]],
+                        z=[point1[0][2], point2[0][2]],
+                        mode='lines',
+                        line=dict(color='black', width=8),
+                        hoverinfo='skip',
+                        showlegend=False
+                    )
+
+                    graphs.append(line_trace)
 
     # Create the figure and add the traces
     fig = go.Figure(data=graphs, layout=layout)
@@ -243,8 +265,8 @@ def calculate_arrow_position(subplot_index):
     arrow_tail_x = arrow_x + 0.1
     return arrow_x, arrow_tail_x
 
-def euclidean_distance(x1, y1, z1, x2, y2, z2):
-    return np.sqrt((x2 - x1)**2 + (y2 - y1)**2 + (z2 - z1)**2)
+def euclidean_distance(point1, point2):
+    return np.sqrt(np.sum((point1 - point2) ** 2))
 
 def transform_to_1_letter_code(amino_acids_3_letter):
     # Mapping dictionary for 3-letter to 1-letter code
@@ -654,7 +676,7 @@ def main(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance, d
     clusters_ids = residue_found_df['cluster_index'].unique().tolist()
     if -1 in clusters_ids:
         clusters_ids.remove(-1)
-    if len(return_from_clusters[1]>1)
+    if len(return_from_clusters[1])>1:
         plot_cluster_compositions(return_from_clusters[1])
     if download_meta:
         residue_found_df = map_column_with_dict(residue_found_df, polar_int_map, "H-Bond BB", "H-Bond BB Flag")
@@ -947,3 +969,5 @@ color_key = {
         'Charged interactions': '#FF0000',  # Red
      }
 
+files  =  glob.glob("Small molecule example/reference_1/*.pdb")
+main(files,"B","C",True,8,False,[2,15],5)

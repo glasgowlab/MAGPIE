@@ -785,7 +785,8 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance, d
     residue_found_df = return_from_clusters[0]
     target_to_to_plot = []
     clusters_ids = residue_found_df['cluster_index'].unique().tolist()
-    clusters_ids.remove(-1)
+    if -1 in clusters_ids:
+        clusters_ids.remove(-1)
     for x in target_chain_data_frame.iloc[reference_id]:
         if x is not None:
             target_to_to_plot.append(x)

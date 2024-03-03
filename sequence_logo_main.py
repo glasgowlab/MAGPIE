@@ -177,7 +177,7 @@ def create_3d_graph(df1, df2, is_ligand, ligand_bonds={}, name_file="3d_scatter"
         )
         graphs.append(line_trace_target)
     else:
-        if len(ligand_bonds) == 0:
+        if len(ligand_bonds ) == 0:
             points = np.array([x2, y2, z2]).T
             for i in range(len(points)):
                 for j in range( len(points)):
@@ -355,10 +355,11 @@ def remove_items(test_list, item):
 
 def create_sequence_logo_list(data, only_combined, is_ligand):
     # Titles for each type of graph
-    axis_label_fontsize = 20
-    title_fontsize = 36
-    xtick_label_fontsize = 20
-    y_lable_size = 34
+    axis_label_fontsize = 12
+    title_fontsize =14
+    xtick_label_fontsize = 10
+    y_lable_size = 12
+    ytick_label_fontsize = 12
     titles = ["Residues in Contact", "H-Bonds", "Salt Bridges"]
     for j, row in enumerate(data):
         # Filter out the [None, None] graphs
@@ -374,7 +375,7 @@ def create_sequence_logo_list(data, only_combined, is_ligand):
         if num_graphs > 0:
             if j == 0:
                 for i, graph in enumerate(valid_graphs):
-                    fig, ax = plt.subplots(figsize=(2 * len(graph[1]), 12))  # Adjust the size as needed
+                    fig, ax = plt.subplots(figsize=(1 * len(graph[1]), 6))  # Adjust the size as needed
 
                     # Create the logo with logomaker
                     logo = logomaker.Logo(graph[0], ax=ax, color_scheme='NajafabadiEtAl2017', shade_below=0.5)
@@ -384,6 +385,7 @@ def create_sequence_logo_list(data, only_combined, is_ligand):
                     positions = [k for k in range(len(graph[1]))]
                     logo.ax.set_xticklabels(graph[1], fontsize=xtick_label_fontsize)  # Rotate labels for visibility
                     logo.ax.set_xticks(positions)
+                    ax.yaxis.set_tick_params(labelsize=ytick_label_fontsize)
 
                     # Set the title for this subplot
                     ax.set_title(title_row[i], fontsize=title_fontsize)
@@ -783,8 +785,7 @@ def plot(list_of_paths, target_id_chain, binder_id_chain, is_ligand, distance, d
     residue_found_df = return_from_clusters[0]
     target_to_to_plot = []
     clusters_ids = residue_found_df['cluster_index'].unique().tolist()
-    if -1 in clusters_ids:
-        clusters_ids.remove(-1)
+    clusters_ids.remove(-1)
     for x in target_chain_data_frame.iloc[reference_id]:
         if x is not None:
             target_to_to_plot.append(x)
